@@ -1,0 +1,24 @@
+<p>doctors works!</p>
+
+  <div class="carousel">
+    <a class="carousel-item" ><img src="https://lorempixel.com/800/400/food/1"></a>
+    <a class="carousel-item" ><img src="https://lorempixel.com/800/400/food/2"></a>
+    <a class="carousel-item" ><img src="https://lorempixel.com/800/400/food/3"></a>
+    <a class="carousel-item" ><img src="https://lorempixel.com/800/400/food/4"></a>
+  </div>
+
+<h3>Resultados: {{total}}</h3>
+<div>
+    <ul>
+        <li *ngFor="let elemento of doctors.results">
+                <img [src]="elemento.picture.medium" />
+                <h4>{{elemento.email}}
+                    <small> by {{elemento.email}}</small>
+                </h4>
+
+            <p> {{elemento.name.title}}</p>
+        </li>
+        <br>
+    </ul>
+</div>
+

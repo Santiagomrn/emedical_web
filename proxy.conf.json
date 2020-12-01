@@ -1,0 +1,10 @@
+{
+    "/news": {
+      "target": "https://api.coronatracker.com/news/trending?limit=10&offset&country=Spain&countryCode",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/news": ""
+      }
+    }
+  }

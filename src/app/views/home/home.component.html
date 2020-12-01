@@ -1,0 +1,28 @@
+<div style="height: 400px; overflow: hidden;">
+  <div class="carousel carousel-slider" style="height: 100% !important" >
+    <a class="carousel-item" ><img src="assets/img/junta.jpg"></a>
+    <a class="carousel-item" ><img src="assets/img/digital.jpg"></a>
+    <a class="carousel-item" ><img src="assets/img/instalaciones.jpg"></a>
+
+  </div>
+</div>
+
+<p>home works!</p>
+<h3>Resultados: {{total}}</h3>
+<div>
+    <ul>
+        <li *ngFor="let elemento of news.items">
+            <a [href]="elemento.url">
+                <img [src]="elemento.urlToImage" />
+                <h4>{{elemento.title}}
+                    <small> by {{elemento.content}}</small>
+                </h4>
+            </a>
+            <p> {{elemento.description}}</p>
+        </li>
+        <br>
+    </ul>
+</div>
+
+
+
