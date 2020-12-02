@@ -9,7 +9,10 @@ import { DoctorsComponent } from './views/doctors/doctors.component';
 import { MedicamentsComponent } from './views/medicaments/medicaments.component';
 import { ContactUsComponent } from './views/contact-us/contact-us.component';
 import { AboutUsComponent } from './views/about-us/about-us.component';
+import { ListNewsComponent } from './components/list-news/list-news.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -56,6 +59,7 @@ import {MatTreeModule} from '@angular/material/tree';
     MedicamentsComponent,
     ContactUsComponent,
     AboutUsComponent,
+    ListNewsComponent,
   ],
   imports: [
     BrowserModule,

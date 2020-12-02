@@ -21,7 +21,7 @@ export class NewsService {
         resolve(this.cachedValues[limit+offset+country])
       } else {
         //this.http.get('http://api.coronatracker.com/news/trending?limit=' + limit + '&country=' + country + '&offset=' + offset)
-        this.http.get('/news')  
+        this.http.get('/news'+ 'trending?limit=' + limit + '&country=' + country + '&offset=' + offset)  
         .toPromise()
           .then((response) => {
             this.cachedValues[limit+offset+country]=response

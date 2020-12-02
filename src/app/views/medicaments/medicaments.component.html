@@ -1,1 +1,17 @@
 <p>medicaments works!</p>
+<h3>Resultados: {{total}}</h3>
+<div>
+    <ul>
+        <li *ngFor="let elemento of medicaments.resultados">
+            <a [href]="elemento.docs[0].url">
+                <img [src]="elemento.fotos[0].url" />
+                <h4>{{elemento.nombre}}
+                    <small> by {{elemento.pactivos}}</small>
+                </h4>
+            </a>
+            <p> {{elemento.labtitular}}</p>
+        </li>
+        <br>
+    </ul>
+</div>
+

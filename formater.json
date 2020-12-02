@@ -1,0 +1,1404 @@
+{
+    "totalFilas": 15,
+    "pagina": 1,
+    "tamanioPagina": 25,
+    "resultados": [
+        {
+            "nregistro": "51347",
+            "nombre": "ASPIRINA C 400 mg/240 mg COMPRIMIDOS EFERVESCENTES",
+            "pactivos": "ACETILSALICILICO ACIDO, ASCORBICO ACIDO",
+            "labtitular": "Bayer Hispania, S.L.",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 107737200000
+            },
+            "comerc": true,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 1,
+                    "url": "https://cima.aemps.es/cima/pdfs/ft/51347/FT_51347.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/ft/51347/FT_51347.html",
+                    "secc": true,
+                    "fecha": 1605054437000
+                },
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/51347/P_51347.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/p/51347/P_51347.html",
+                    "secc": true,
+                    "fecha": 1605054452000
+                }
+            ],
+            "fotos": [
+                {
+                    "tipo": "materialas",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/materialas/51347/51347_materialas.jpg",
+                    "fecha": 1519196603000
+                },
+                {
+                    "tipo": "formafarmac",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/formafarmac/51347/51347_formafarmac.jpg",
+                    "fecha": 1519196602000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "400",
+                    "unidad": "mg",
+                    "orden": 1
+                },
+                {
+                    "id": 61,
+                    "codigo": "61A",
+                    "nombre": "ASCORBICO ACIDO",
+                    "cantidad": "240",
+                    "unidad": "mg",
+                    "orden": 2
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 475,
+                    "nombre": "HIDROGENO CARBONATO DE SODIO",
+                    "cantidad": "900",
+                    "unidad": "mg",
+                    "orden": 1
+                },
+                {
+                    "id": 2100,
+                    "nombre": "CARBONATO DE SODIO ANHIDRO",
+                    "cantidad": "200",
+                    "unidad": "mg",
+                    "orden": 2
+                },
+                {
+                    "id": 2362,
+                    "nombre": "CITRATO DE SODIO (E-331)",
+                    "cantidad": "1242.0",
+                    "unidad": "mg",
+                    "orden": 9
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 43,
+                "nombre": "COMPRIMIDO EFERVESCENTE"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 13,
+                "nombre": "COMPRIMIDO EFERVESCENTE"
+            },
+            "vtm": {
+                "id": 139011000140103,
+                "nombre": "ácido acetilsalicílico + ácido ascórbico"
+            },
+            "dosis": "400/240 mg/mg"
+        },
+        {
+            "nregistro": "62280",
+            "nombre": "ASPIRINA COMPLEX GRANULADO EFERVESCENTE",
+            "pactivos": "ACETILSALICILICO ACIDO, CLORFENAMINA MALEATO, FENILEFRINA BITARTRATO",
+            "labtitular": "Bayer Hispania, S.L.",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 909874800000
+            },
+            "comerc": true,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 1,
+                    "url": "https://cima.aemps.es/cima/pdfs/ft/62280/FT_62280.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/ft/62280/FT_62280.html",
+                    "secc": true,
+                    "fecha": 1466219633000
+                },
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/62280/P_62280.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/p/62280/P_62280.html",
+                    "secc": true,
+                    "fecha": 1466219643000
+                }
+            ],
+            "fotos": [
+                {
+                    "tipo": "materialas",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/materialas/62280/62280_materialas.jpg",
+                    "fecha": 1530541911000
+                },
+                {
+                    "tipo": "formafarmac",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/formafarmac/62280/62280_formafarmac.jpg",
+                    "fecha": 1530541912000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 1
+                },
+                {
+                    "id": 323,
+                    "codigo": "323MA",
+                    "nombre": "CLORFENAMINA MALEATO",
+                    "cantidad": "2",
+                    "unidad": "mg",
+                    "orden": 2
+                },
+                {
+                    "id": 328,
+                    "codigo": "328BB",
+                    "nombre": "FENILEFRINA BITARTRATO",
+                    "cantidad": "15.58",
+                    "unidad": "mg",
+                    "orden": 3
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 1833,
+                    "nombre": "HIDROGENOCARBONATO DE SODIO",
+                    "cantidad": "1709.6",
+                    "unidad": "mg",
+                    "orden": 4
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 27,
+                "nombre": "GRANULADO EFERVESCENTE"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 44,
+                "nombre": "SOLUCIÓN/SUSPENSIÓN ORAL EFERVESCENTE"
+            },
+            "vtm": {
+                "id": 139071000140108,
+                "nombre": "ácido acetilsalicílico + clorfenamina + fenilefrina"
+            },
+            "dosis": "500 mg"
+        },
+        {
+            "nregistro": "12680",
+            "nombre": "ASPIRINA PLUS 500 mg/ 50 mg COMPRIMIDOS",
+            "pactivos": "ACETILSALICILICO ACIDO, CAFEINA",
+            "labtitular": "Bayer Hispania, S.L.",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": -639108000000
+            },
+            "comerc": true,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 1,
+                    "url": "https://cima.aemps.es/cima/pdfs/ft/12680/FT_12680.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/ft/12680/FT_12680.html",
+                    "secc": true,
+                    "fecha": 1445497326000
+                },
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/12680/P_12680.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/p/12680/P_12680.html",
+                    "secc": true,
+                    "fecha": 1445497360000
+                }
+            ],
+            "fotos": [
+                {
+                    "tipo": "materialas",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/materialas/12680/12680_materialas.jpg",
+                    "fecha": 1519196703000
+                },
+                {
+                    "tipo": "formafarmac",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/formafarmac/12680/12680_formafarmac.jpg",
+                    "fecha": 1519196702000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 1
+                },
+                {
+                    "id": 14,
+                    "codigo": "14A",
+                    "nombre": "CAFEINA",
+                    "cantidad": "50",
+                    "unidad": "mg",
+                    "orden": 2
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 1025,
+                    "nombre": "ALMIDON DE MAIZ",
+                    "cantidad": "50",
+                    "unidad": "mg",
+                    "orden": 1
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 40,
+                "nombre": "COMPRIMIDO"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 10,
+                "nombre": "COMPRIMIDO"
+            },
+            "vtm": {
+                "id": 412569008,
+                "nombre": "ácido acetilsalicílico + cafeína"
+            },
+            "dosis": "500/50 mg/mg"
+        },
+        {
+            "nregistro": "2011",
+            "nombre": "ASPIRINA 500 mg COMPRIMIDOS",
+            "pactivos": "ACETILSALICILICO ACIDO",
+            "labtitular": "Bayer Hispania, S.L.",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": -1499126400000
+            },
+            "comerc": true,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 1,
+                    "url": "https://cima.aemps.es/cima/pdfs/ft/2011/FT_2011.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/ft/2011/FT_2011.html",
+                    "secc": true,
+                    "fecha": 1436394454000
+                },
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/2011/P_2011.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/p/2011/P_2011.html",
+                    "secc": true,
+                    "fecha": 1436394454000
+                }
+            ],
+            "fotos": [
+                {
+                    "tipo": "materialas",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/materialas/2011/2011_materialas.jpg",
+                    "fecha": 1519196508000
+                },
+                {
+                    "tipo": "formafarmac",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/formafarmac/2011/2011_formafarmac.jpg",
+                    "fecha": 1519196507000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 1
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 1025,
+                    "nombre": "ALMIDON DE MAIZ",
+                    "cantidad": "50",
+                    "unidad": "mg",
+                    "orden": 1
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 40,
+                "nombre": "COMPRIMIDO"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 10,
+                "nombre": "COMPRIMIDO"
+            },
+            "vtm": {
+                "id": 7947003,
+                "nombre": "ácido acetilsalicílico"
+            },
+            "dosis": "500 mg"
+        },
+        {
+            "nregistro": "67268",
+            "nombre": "ASPIRINA 500 mg COMPRIMIDOS EFERVESCENTES",
+            "pactivos": "ACETILSALICILICO ACIDO",
+            "labtitular": "Bayer Hispania, S.L.",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 1132700400000
+            },
+            "comerc": true,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 1,
+                    "url": "https://cima.aemps.es/cima/pdfs/ft/67268/FT_67268.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/ft/67268/FT_67268.html",
+                    "secc": true,
+                    "fecha": 1436394454000
+                },
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/67268/P_67268.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/p/67268/P_67268.html",
+                    "secc": true,
+                    "fecha": 1436394454000
+                }
+            ],
+            "fotos": [
+                {
+                    "tipo": "materialas",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/materialas/67268/67268_materialas.jpg",
+                    "fecha": 1519196540000
+                },
+                {
+                    "tipo": "formafarmac",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/formafarmac/67268/67268_formafarmac.jpg",
+                    "fecha": 1519196540000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 1
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 9227,
+                    "nombre": "CITRATO SODICO DIBASICO",
+                    "cantidad": "1068",
+                    "unidad": "mg",
+                    "orden": 1
+                },
+                {
+                    "id": 2100,
+                    "nombre": "CARBONATO DE SODIO ANHIDRO",
+                    "cantidad": "254",
+                    "unidad": "mg",
+                    "orden": 2
+                },
+                {
+                    "id": 475,
+                    "nombre": "HIDROGENO CARBONATO DE SODIO",
+                    "cantidad": "1166",
+                    "unidad": "mg",
+                    "orden": 4
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 43,
+                "nombre": "COMPRIMIDO EFERVESCENTE"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 13,
+                "nombre": "COMPRIMIDO EFERVESCENTE"
+            },
+            "vtm": {
+                "id": 7947003,
+                "nombre": "ácido acetilsalicílico"
+            },
+            "dosis": "500 mg"
+        },
+        {
+            "nregistro": "67875",
+            "nombre": "ASPIRINA 500 mg GRANULADO",
+            "pactivos": "ACETILSALICILICO ACIDO",
+            "labtitular": "Bayer Hispania, S.L.",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 1150668000000
+            },
+            "comerc": true,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 1,
+                    "url": "https://cima.aemps.es/cima/pdfs/ft/67875/FT_67875.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/ft/67875/FT_67875.html",
+                    "secc": true,
+                    "fecha": 1436394455000
+                },
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/67875/P_67875.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/p/67875/P_67875.html",
+                    "secc": true,
+                    "fecha": 1497388083000
+                }
+            ],
+            "fotos": [
+                {
+                    "tipo": "materialas",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/materialas/67875/67875_materialas.jpg",
+                    "fecha": 1519196568000
+                },
+                {
+                    "tipo": "formafarmac",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/formafarmac/67875/67875_formafarmac.jpg",
+                    "fecha": 1519196567000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 1
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 5568,
+                    "nombre": "MANITOL (E-421)",
+                    "cantidad": "165",
+                    "unidad": "mg",
+                    "orden": 1
+                },
+                {
+                    "id": 15025,
+                    "nombre": "ASPARTAMO (E-951)",
+                    "cantidad": "5",
+                    "unidad": "mg",
+                    "orden": 6
+                },
+                {
+                    "id": 475,
+                    "nombre": "HIDROGENO CARBONATO DE SODIO",
+                    "cantidad": "50",
+                    "unidad": "mg",
+                    "orden": 7
+                },
+                {
+                    "id": 9227,
+                    "nombre": "CITRATO SODICO DIBASICO",
+                    "cantidad": "50",
+                    "unidad": "mg",
+                    "orden": 8
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 26,
+                "nombre": "GRANULADO"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 93,
+                "nombre": "SOLUCIÓN/SUSPENSIÓN ORAL"
+            },
+            "vtm": {
+                "id": 7947003,
+                "nombre": "ácido acetilsalicílico"
+            },
+            "dosis": "500 mg"
+        },
+        {
+            "nregistro": "8701",
+            "nombre": "CAFIASPIRINA 500 mg/50 mg COMPRIMIDOS",
+            "pactivos": "CAFEINA ANHIDRA, ACETILSALICILICO ACIDO",
+            "labtitular": "Bayer Hispania, S.L.",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": -1356998400000
+            },
+            "comerc": true,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 1,
+                    "url": "https://cima.aemps.es/cima/pdfs/ft/8701/FT_8701.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/ft/8701/FT_8701.html",
+                    "secc": true,
+                    "fecha": 1444301747000
+                },
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/8701/P_8701.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/p/8701/P_8701.html",
+                    "secc": true,
+                    "fecha": 1444301774000
+                }
+            ],
+            "fotos": [
+                {
+                    "tipo": "materialas",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/materialas/8701/8701_materialas.jpg",
+                    "fecha": 1519196926000
+                },
+                {
+                    "tipo": "formafarmac",
+                    "url": "https://cima.aemps.es/cima/fotos/thumbnails/formafarmac/8701/8701_formafarmac.jpg",
+                    "fecha": 1519196925000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 14,
+                    "codigo": "14ZU",
+                    "nombre": "CAFEINA ANHIDRA",
+                    "cantidad": "50",
+                    "unidad": "mg",
+                    "orden": 1
+                },
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 2
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 1025,
+                    "nombre": "ALMIDON DE MAIZ",
+                    "cantidad": "50",
+                    "unidad": "mg",
+                    "orden": 2
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 40,
+                "nombre": "COMPRIMIDO"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 10,
+                "nombre": "COMPRIMIDO"
+            },
+            "vtm": {
+                "id": 412569008,
+                "nombre": "ácido acetilsalicílico + cafeína"
+            },
+            "dosis": "500 mg/50 mg"
+        },
+        {
+            "nregistro": "57838",
+            "nombre": "ASPIRINA 500 mg COMPRIMIDOS MASTICABLES",
+            "pactivos": "ACETILSALICILICO ACIDO",
+            "labtitular": "Bayer Hispania, S.L.",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 612655200000,
+                "rev": 1489058185000
+            },
+            "comerc": false,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 1,
+                    "url": "https://cima.aemps.es/cima/pdfs/ft/57838/FT_57838.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/ft/57838/FT_57838.html",
+                    "secc": true,
+                    "fecha": 1436394454000
+                },
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/57838/P_57838.pdf",
+                    "urlHtml": "https://cima.aemps.es/cima/dochtml/p/57838/P_57838.html",
+                    "secc": true,
+                    "fecha": 1436394454000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 1
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 2098,
+                    "nombre": "CARBONATO SODICO",
+                    "cantidad": "30",
+                    "unidad": "mg",
+                    "orden": 3
+                },
+                {
+                    "id": 2198,
+                    "nombre": "CARMELOSA SODICA",
+                    "cantidad": "30",
+                    "unidad": "mg",
+                    "orden": 4
+                },
+                {
+                    "id": 15025,
+                    "nombre": "ASPARTAMO (E-951)",
+                    "cantidad": "16.5",
+                    "unidad": "mg",
+                    "orden": 5
+                },
+                {
+                    "id": 5568,
+                    "nombre": "MANITOL (E-421)",
+                    "cantidad": "402",
+                    "unidad": "mg",
+                    "orden": 7
+                },
+                {
+                    "id": 1025,
+                    "nombre": "ALMIDON DE MAIZ",
+                    "cantidad": "48",
+                    "unidad": "mg",
+                    "orden": 11
+                },
+                {
+                    "id": 1187,
+                    "nombre": "AMARILLO ANARANJADO S (E 110, CI=15985)",
+                    "cantidad": "3.5",
+                    "unidad": "mg",
+                    "orden": 12
+                },
+                {
+                    "id": 1221,
+                    "nombre": "ALMIDON PREGELATINIZADO",
+                    "cantidad": "36",
+                    "unidad": "mg",
+                    "orden": 13
+                },
+                {
+                    "id": 4562,
+                    "nombre": "FRUCTOSA",
+                    "cantidad": "9.85",
+                    "unidad": "mg",
+                    "orden": 14
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 49,
+                "nombre": "COMPRIMIDO MASTICABLE"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 15,
+                "nombre": "COMPRIMIDO MASTICABLE"
+            },
+            "vtm": {
+                "id": 7947003,
+                "nombre": "ácido acetilsalicílico"
+            },
+            "dosis": "500 mg"
+        },
+        {
+            "nregistro": "4554",
+            "nombre": "ASPIRINA C COMPRIMIDOS EFERVESCENTES",
+            "pactivos": "ACETILSALICILICO ACIDO, ASCORBICO ACIDO",
+            "labtitular": "Bayer Hellas Abee",
+            "cpresc": "Medicamento Sujeto A Prescripci\u00F3n M\u00E9dica",
+            "estado": {
+                "aut": 1269986400000
+            },
+            "comerc": false,
+            "receta": true,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "400",
+                    "unidad": "mg",
+                    "orden": 1
+                },
+                {
+                    "id": 61,
+                    "codigo": "61A",
+                    "nombre": "ASCORBICO ACIDO",
+                    "cantidad": "240",
+                    "unidad": "mg",
+                    "orden": 2
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 475,
+                    "nombre": "HIDROGENO CARBONATO DE SODIO",
+                    "cantidad": "0",
+                    "unidad": "-",
+                    "orden": 1
+                },
+                {
+                    "id": 2100,
+                    "nombre": "CARBONATO DE SODIO ANHIDRO",
+                    "cantidad": "0",
+                    "unidad": "-",
+                    "orden": 2
+                },
+                {
+                    "id": 2362,
+                    "nombre": "CITRATO DE SODIO (E-331)",
+                    "cantidad": "0",
+                    "unidad": "-",
+                    "orden": 3
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 43,
+                "nombre": "COMPRIMIDO EFERVESCENTE"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 13,
+                "nombre": "COMPRIMIDO EFERVESCENTE"
+            },
+            "vtm": {
+                "id": 139011000140103,
+                "nombre": "ácido acetilsalicílico + ácido ascórbico"
+            },
+            "dosis": "400/240 mg/mg"
+        },
+        {
+            "nregistro": "20000836",
+            "nombre": "ASPIRINA C 400 MG/240 MG COMPRIMIDOS EFERVESCENTES",
+            "pactivos": "ACETILSALICILICO ACIDO, ASCORBICO ACIDO",
+            "labtitular": "Bayer Bulgaria Eood",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 1561985611000
+            },
+            "comerc": true,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "400",
+                    "unidad": "mg",
+                    "orden": 1
+                },
+                {
+                    "id": 61,
+                    "codigo": "61A",
+                    "nombre": "ASCORBICO ACIDO",
+                    "cantidad": "240",
+                    "unidad": "mg",
+                    "orden": 2
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 475,
+                    "nombre": "HIDROGENO CARBONATO DE SODIO",
+                    "cantidad": "IP",
+                    "unidad": "IP",
+                    "orden": 1
+                },
+                {
+                    "id": 2100,
+                    "nombre": "CARBONATO DE SODIO ANHIDRO",
+                    "cantidad": "IP",
+                    "unidad": "IP",
+                    "orden": 2
+                },
+                {
+                    "id": 2362,
+                    "nombre": "CITRATO DE SODIO (E-331)",
+                    "cantidad": "IP",
+                    "unidad": "IP",
+                    "orden": 9
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 43,
+                "nombre": "COMPRIMIDO EFERVESCENTE"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 13,
+                "nombre": "COMPRIMIDO EFERVESCENTE"
+            },
+            "vtm": {
+                "id": 139011000140103,
+                "nombre": "ácido acetilsalicílico + ácido ascórbico"
+            },
+            "dosis": "400 MG/240 MG"
+        },
+        {
+            "nregistro": "2888001",
+            "nombre": "ASPIRINA C 400 MG/240 MG COMPRIMIDOS EFERVESCENTES",
+            "pactivos": "ACETILSALICILICO ACIDO, ASCORBICO ACIDO",
+            "labtitular": "Bayer Hellas S.A.",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 1513693467000
+            },
+            "comerc": false,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/2888001/P_2888001.pdf",
+                    "secc": false,
+                    "fecha": 1513069295000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "400",
+                    "unidad": "mg",
+                    "orden": 1
+                },
+                {
+                    "id": 61,
+                    "codigo": "61A",
+                    "nombre": "ASCORBICO ACIDO",
+                    "cantidad": "240",
+                    "unidad": "mg",
+                    "orden": 2
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 475,
+                    "nombre": "HIDROGENO CARBONATO DE SODIO",
+                    "cantidad": "IP",
+                    "unidad": "IP",
+                    "orden": 1
+                },
+                {
+                    "id": 2100,
+                    "nombre": "CARBONATO DE SODIO ANHIDRO",
+                    "cantidad": "IP",
+                    "unidad": "IP",
+                    "orden": 2
+                },
+                {
+                    "id": 2362,
+                    "nombre": "CITRATO DE SODIO (E-331)",
+                    "cantidad": "IP",
+                    "unidad": "IP",
+                    "orden": 9
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 43,
+                "nombre": "COMPRIMIDO EFERVESCENTE"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 13,
+                "nombre": "COMPRIMIDO EFERVESCENTE"
+            },
+            "vtm": {
+                "id": 139011000140103,
+                "nombre": "ácido acetilsalicílico + ácido ascórbico"
+            },
+            "dosis": "400 mg/240 mg"
+        },
+        {
+            "nregistro": "13738",
+            "nombre": "ASPIRINA COMPRIMIDOS",
+            "pactivos": "ACETILSALICILICO ACIDO",
+            "labtitular": "Bayer Hellas Abee",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 1270504800000
+            },
+            "comerc": false,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 1
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 1025,
+                    "nombre": "ALMIDON DE MAIZ",
+                    "cantidad": "0",
+                    "unidad": "-",
+                    "orden": 1
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 40,
+                "nombre": "COMPRIMIDO"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 10,
+                "nombre": "COMPRIMIDO"
+            },
+            "vtm": {
+                "id": 7947003,
+                "nombre": "ácido acetilsalicílico"
+            },
+            "dosis": "500 mg"
+        },
+        {
+            "nregistro": "40 400-95-96",
+            "nombre": "ASPIRINA COMPRIMIDOS",
+            "pactivos": "ACETILSALICILICO ACIDO",
+            "labtitular": "Bayer Hellas Abee",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 1031522400000
+            },
+            "comerc": true,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/40+400-95-96/P_40+400-95-96.pdf",
+                    "secc": false,
+                    "fecha": 1272789852000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 1
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 1025,
+                    "nombre": "ALMIDON DE MAIZ",
+                    "cantidad": "0",
+                    "unidad": "-",
+                    "orden": 1
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 40,
+                "nombre": "COMPRIMIDO"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 10,
+                "nombre": "COMPRIMIDO"
+            },
+            "vtm": {
+                "id": 7947003,
+                "nombre": "ácido acetilsalicílico"
+            },
+            "dosis": "500 mg"
+        },
+        {
+            "nregistro": "0416703",
+            "nombre": "ASPIRINA 500 MG COMPRIMIDOS",
+            "pactivos": "ACETILSALICILICO ACIDO",
+            "labtitular": "Bayer Hellas Abee",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 1496145449000
+            },
+            "comerc": false,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/0416703/P_0416703.pdf",
+                    "secc": false,
+                    "fecha": 1510838359000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 1
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 1025,
+                    "nombre": "ALMIDON DE MAIZ",
+                    "cantidad": "IP",
+                    "unidad": "IP",
+                    "orden": 1
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 40,
+                "nombre": "COMPRIMIDO"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 10,
+                "nombre": "COMPRIMIDO"
+            },
+            "vtm": {
+                "id": 7947003,
+                "nombre": "ácido acetilsalicílico"
+            },
+            "dosis": "500 mg"
+        },
+        {
+            "nregistro": "95-0312",
+            "nombre": "ASPIRINA 500MG COMPRIMIDOS",
+            "pactivos": "ACETILSALICILICO ACIDO",
+            "labtitular": "Uab Bayer",
+            "cpresc": "Sin Receta",
+            "estado": {
+                "aut": 1476114921000
+            },
+            "comerc": true,
+            "receta": false,
+            "generico": false,
+            "conduc": false,
+            "triangulo": false,
+            "huerfano": false,
+            "biosimilar": false,
+            "nosustituible": {
+                "id": 0,
+                "nombre": "N/A"
+            },
+            "psum": false,
+            "notas": false,
+            "materialesInf": false,
+            "ema": false,
+            "docs": [
+                {
+                    "tipo": 2,
+                    "url": "https://cima.aemps.es/cima/pdfs/p/95-0312/P_95-0312.pdf",
+                    "secc": false,
+                    "fecha": 1510838588000
+                }
+            ],
+            "principiosActivos": [
+                {
+                    "id": 176,
+                    "codigo": "176A",
+                    "nombre": "ACETILSALICILICO ACIDO",
+                    "cantidad": "500",
+                    "unidad": "mg",
+                    "orden": 1
+                }
+            ],
+            "excipientes": [
+                {
+                    "id": 1025,
+                    "nombre": "ALMIDON DE MAIZ",
+                    "cantidad": "IP",
+                    "unidad": "IP",
+                    "orden": 1
+                }
+            ],
+            "viasAdministracion": [
+                {
+                    "id": 48,
+                    "nombre": "V\u00CDA ORAL"
+                }
+            ],
+            "formaFarmaceutica": {
+                "id": 40,
+                "nombre": "COMPRIMIDO"
+            },
+            "formaFarmaceuticaSimplificada": {
+                "id": 10,
+                "nombre": "COMPRIMIDO"
+            },
+            "vtm": {
+                "id": 7947003,
+                "nombre": "ácido acetilsalicílico"
+            },
+            "dosis": "500 mg"
+        }
+    ]
+}
