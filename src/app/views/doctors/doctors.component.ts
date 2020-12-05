@@ -30,7 +30,7 @@ export class DoctorsComponent implements OnInit, AfterViewInit{
   }
   ngAfterViewInit() {
     let elems = document.querySelectorAll('.carousel');
-    let instances = M.Carousel.init(elems,{ fullWidth: true, indicators:true, shift: 15,numVisible: 5, noWrap: false });
+    let instances = M.Carousel.init(elems,{ fullWidth: true, indicators:false, shift: 2, numVisible: 1, noWrap: true });
   }
   
 }
