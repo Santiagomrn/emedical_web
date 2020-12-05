@@ -3,6 +3,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { ActivatedRoute,Router } from '@angular/router';
 import { DoctorInterface } from "../../interfaces/doctor/doctor-interface";
 import {DoctorService} from "../../services/doctor/doctor.service";
+
 @Component({
   selector: 'app-doctors',
   templateUrl: './doctors.component.html',
@@ -11,7 +12,9 @@ import {DoctorService} from "../../services/doctor/doctor.service";
 export class DoctorsComponent implements OnInit, AfterViewInit{
   doctors:DoctorInterface;
   total:number;
-  constructor(private DoctorService:DoctorService,private router: Router) { }
+
+  constructor(private DoctorService:DoctorService,private router: Router) { 
+    }
 
   ngOnInit(): void {
     this.getDoctors()
@@ -27,7 +30,7 @@ export class DoctorsComponent implements OnInit, AfterViewInit{
   }
   ngAfterViewInit() {
     let elems = document.querySelectorAll('.carousel');
-    let instances = M.Carousel.init(elems,{ fullWidth: false });
+    let instances = M.Carousel.init(elems,{ fullWidth: false,shift: 15,numVisible: 5, noWrap: false });
   }
-
+  
 }
