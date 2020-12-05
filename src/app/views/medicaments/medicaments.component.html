@@ -28,11 +28,9 @@
                             <ul>
                                 <li *ngFor="let elemento of medicaments.resultados">
                                     <div class="col s7 center-align">
-                                        <a [href]="elemento.docs[0].url">
-                                            <!-- <div [ngIf] = "elemento.fotos[0].url"> -->
-                                                <!-- <img [src]="elemento.fotos[0].url" /> -->
-                                            <!-- </div> -->
-                                        </a>
+                                        <a *ngIf="elemento.docs && elemento.fotos" [href]="elemento.docs[0].url"  >
+                                                <img [src]="elemento.fotos[0].url" /> 
+                                        </a> 
                                     </div>
                                     <div class="col s5 center-align">
                                         <p><b>Nombre: </b>{{elemento.nombre}}</p>
