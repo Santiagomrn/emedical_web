@@ -1,6 +1,6 @@
 .image{
     height:55em; background-size:cover; width:auto;
     /* background-image:url('https://thumbs.dreamstime.com/t/luz-suave-de-la-pendiente-del-color-fondo-azul-papel-pintado-brillante-hermoso-falta-definici%C3%B3n-imagen-tonalidad-118766950.jpg'); */
-    background-color: lightblue;
+    background-color: rgb(80, 131, 139);
     background-position:50% 50%;
   }

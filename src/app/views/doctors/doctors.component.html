@@ -9,20 +9,28 @@
 <body>
 
 <div class="image">
-  <div class="row">
+  <div class="row" style="width: 50%;">
   <div class="col s12">
 
     <div class="carousel  carousel-slider center">
 
       <div *ngFor="let elemento of doctors.results">  
       
-      <a class="carousel-item" href="#">{{elemento.name.first}} {{elemento.name.last}}
-        <!-- <img [src]="elemento.picture.large" width="50" height="50"> -->
-        <p><b>Edad: </b> {{elemento.dob.age}} años<br>
-        <b>Nacionalidad: </b> {{elemento.nat}}<br>
-        <b>Género: </b> {{elemento.gender}}</p>
+      <a class="carousel-item" href="#">
+        <h1>{{elemento.name.first}} {{elemento.name.last}}</h1>
+        <div class="col s12 m6">
+          <div style="width: 50%;">
+            <img [src]="elemento.picture.large" width="250" height="250">
+          </div>
+        </div>
+        <h2>
+          <div class="col s12 m4">
+            <p><b>Edad: </b> {{elemento.dob.age}} años<br>
+              <b>Nacionalidad: </b> {{elemento.nat}}<br>
+              <b>Género: </b> {{elemento.gender}}</p>
+            </div>
+        </h2>
       </a>
-     
       </div>
     </div>
   </div>
