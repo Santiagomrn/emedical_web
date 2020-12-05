@@ -15,7 +15,7 @@ import { AboutUsComponent } from './views/about-us/about-us.component';
 import { ListNewsComponent } from './components/list-news/list-news.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+// import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -71,8 +71,6 @@ import {MatTreeModule} from '@angular/material/tree';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    InfiniteScrollModule,
-
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
