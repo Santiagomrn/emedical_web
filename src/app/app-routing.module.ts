@@ -12,11 +12,7 @@ const routes: Routes = [
   pathMatch:'full'},
   {path: 'home', component: HomeComponent},
   {path: 'doctors', component: DoctorsComponent},
-  {path: 'medicaments',
-  redirectTo: '/medicaments/aspirina',
-  pathMatch: 'full' 
-  },
-  {path: 'medicaments/:query', component: MedicamentsComponent},
+  {path: 'medicaments', component: MedicamentsComponent},
   {path: 'about_us', component: AboutUsComponent},
   {path: 'contact_us', component: ContactUsComponent}
 ];
