@@ -28,7 +28,9 @@
                                 <li *ngFor="let elemento of medicaments.resultados">
                                     <div class="col s7 center-align">
                                         <a [href]="elemento.docs[0].url">
-                                            <!-- <img [src]="elemento.fotos[0].url" /> -->
+                                            <!-- <div [ngIf] = "elemento.fotos[0].url"> -->
+                                                <img [src]="elemento.fotos[0].url" />
+                                            <!-- </div> -->
                                         </a>
                                     </div>
                                     <div class="col s5 center-align">
