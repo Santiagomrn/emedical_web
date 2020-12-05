@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 
-import { FormsModule} from '@angular/forms';
 import { MedicamentService} from "./services/medicament/medicament.service"
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
@@ -16,7 +15,7 @@ import { AboutUsComponent } from './views/about-us/about-us.component';
 import { ListNewsComponent } from './components/list-news/list-news.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -71,6 +70,8 @@ import {MatTreeModule} from '@angular/material/tree';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    InfiniteScrollModule,
 
     MatAutocompleteModule,
     MatBadgeModule,

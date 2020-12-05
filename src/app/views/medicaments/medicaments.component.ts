@@ -1,8 +1,10 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component,OnInit,ElementRef,AfterViewInit,ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import { MedicamentInterface} from "../../interfaces/medicament/medicament-interface";
 import { MedicamentService} from "../../services/medicament/medicament.service"
+import {FormBuilder} from '@angular/forms';
+
 
 @Component({
   selector: 'app-medicaments',
@@ -11,26 +13,36 @@ import { MedicamentService} from "../../services/medicament/medicament.service"
 })
 export class MedicamentsComponent implements OnInit {
   medicaments:MedicamentInterface;
-  search_value:string;
+  valueMedicaments:string;
   total:number;
-  constructor( private MedicamentService: MedicamentService,private router: Router,private route: ActivatedRoute) { 
+  frmReactivo = this.fb.group({
+    inputQuery: ['',Validators.required]
+  })
+
+  constructor( private MedicamentService: MedicamentService,private router: Router,private route: ActivatedRoute,private fb: FormBuilder) { 
     this.total=0
   }
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap)=>{
-    this.search_value = params.get('query');
+  ngOnInit(): void { 
+  this.route.paramMap.subscribe((params: ParamMap)=>{
+    this.valueMedicaments = params.get('query');
     this.getMedicaments();
     })
   }
 
+
+  reactiveMedicaments(){
+      this.medicaments = null 
+      this.router.navigate(['/medicaments/' + this.frmReactivo.get('inputQuery').value])
+  }
+
   searchMedicaments = () => {
-    this.medicaments= null;
-    this.router.navigate(['/medicaments/' + this.search_value])
+    this.medicaments = null;
+    this.router.navigate(['/medicaments/' + this.valueMedicaments])
     } 
     
   getMedicaments(){
-    this.MedicamentService.getMedicaments_("1",this.search_value).then((response) => {
+    this.MedicamentService.getMedicaments_("1",this.valueMedicaments).then((response) => {
       this.medicaments = response;
       this.total=response.totalFilas;
       console.log(response)
