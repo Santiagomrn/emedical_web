@@ -12,7 +12,7 @@
 }
 .image{
     /* position: absolute; */
-    background: url(../../../assets/img/aboutus.jpg);
+    /* background: url(../../../assets/img/aboutus.jpg); */
     background-position: initial;
     background-size: cover;
     filter: blur(0px);
