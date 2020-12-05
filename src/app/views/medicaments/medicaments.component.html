@@ -1,4 +1,8 @@
 <p>medicaments works!</p>
+<input  name="query" placeholder="search..." [(ngModel)]="search_value" />
+<button  (click)="searchMedicaments()">Buscar</button>
+<br>
+
 <h3>Resultados: {{total}}</h3>
 <div>
     <ul>

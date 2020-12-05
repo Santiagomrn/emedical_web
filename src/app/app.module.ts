@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 
+import { FormsModule} from '@angular/forms';
+import { MedicamentService} from "./services/medicament/medicament.service"
+
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { DoctorsComponent } from './views/doctors/doctors.component';
@@ -66,6 +70,7 @@ import {MatTreeModule} from '@angular/material/tree';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
 
     MatAutocompleteModule,
     MatBadgeModule,
@@ -103,7 +108,7 @@ import {MatTreeModule} from '@angular/material/tree';
     MatTooltipModule,
     MatTreeModule
   ],
-  providers: [],
+  providers: [MedicamentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
