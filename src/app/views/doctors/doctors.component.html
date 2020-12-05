@@ -12,11 +12,12 @@
   <div class="row">
   <div class="col s12">
 
-    <div class="carousel">
+    <div class="carousel  carousel-slider center">
+
       <div *ngFor="let elemento of doctors.results">  
       
       <a class="carousel-item" href="#">{{elemento.name.first}} {{elemento.name.last}}
-        <img [src]="elemento.picture.large">
+        <!-- <img [src]="elemento.picture.large" width="50" height="50"> -->
         <p><b>Edad: </b> {{elemento.dob.age}} años<br>
         <b>Nacionalidad: </b> {{elemento.nat}}<br>
         <b>Género: </b> {{elemento.gender}}</p>
@@ -26,6 +27,7 @@
     </div>
   </div>
  </div>
+ <br>
  <div class="row">
   
   <div class="col s2"></div>
