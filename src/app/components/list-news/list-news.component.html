@@ -1,4 +1,17 @@
 <br>  
+<ng-template [ngIf] = "!news">
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</ng-template>
 <ng-template [ngIf]="news">
 <div class="row" *ngFor="let elemento of news.items" >
     <div class="col s12 m12">
@@ -16,20 +29,3 @@
       </div>
 </div>
 </ng-template>
-
-  <!-- <div>
-    <ul>
-        <ng-template [ngIf]="news">
-            <li *ngFor="let elemento of news.items">
-                <a [href]="elemento.url">
-                    <img [src]="elemento.urlToImage" />
-                    <h4>{{elemento.title}}
-                        <small> by {{elemento.content}}</small>
-                    </h4>
-                </a>
-                <p> {{elemento.description}}</p>
-            </li>
-            <br>
-        </ng-template>
-    </ul>
-</div> -->
