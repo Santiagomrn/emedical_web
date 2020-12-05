@@ -13,12 +13,12 @@ export class MedicamentService {
   constructor(private http: HttpClient) {
     this.http = http
   }  
-  getMedicaments = (page: string): Promise<MedicamentInterface > => {
+  getMedicaments = (page: string,medicament:string): Promise<MedicamentInterface > => {
     let promise = new Promise <MedicamentInterface>((resolve, reject) => {
       if (this.cachedValues[page]) {
         resolve(this.cachedValues[page])
       } else {
-        this.http.get("https://cima.aemps.es/cima/rest/medicamentos?&multiple=aspirina&cargaprincipiosactivos=true")
+        this.http.get("https://cima.aemps.es/cima/rest/medicamentos?&multiple="+medicament+"&cargaprincipiosactivos=true")
           .toPromise()
           .then((response) => {
             this.cachedValues[page]=response

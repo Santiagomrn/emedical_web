@@ -20,7 +20,7 @@ export class MedicamentsComponent implements OnInit {
   }
 
   getMedicaments=()=>{
-    this.MedicamentService.getMedicaments("1").then((response) => {
+    this.MedicamentService.getMedicaments("1","aspirina").then((response) => {
       this.medicaments = response;
       this.total=response.totalFilas;
       console.log(response)
