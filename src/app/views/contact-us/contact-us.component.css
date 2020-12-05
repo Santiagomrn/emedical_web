@@ -1,0 +1,26 @@
+.card{
+    width: 100%;
+}
+.image{
+    position: absolute;
+
+}
+.contactus{
+    position: absolute;
+    width: 85%;
+    height: 10%;
+    top: 26%;
+    /* background-color: rgba(223, 217, 217, 0.342); */
+    margin-left: -2%; 
+    margin-top: -2%; 
+}
+.redes{
+    position: absolute;
+    width: 85%;
+    height: 20%;
+    top: 40%;
+    left: 2%;
+    /* background-color: rgba(223, 217, 217, 0.342); */
+    margin-left: -2%; 
+    margin-top: -2%; 
+}
