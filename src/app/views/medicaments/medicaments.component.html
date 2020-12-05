@@ -1,4 +1,7 @@
+
+ 
 <div class="row">
+    <img class="image" src="../../../assets/img/Fondo_medicamentos.jpg" alt="Not Found" >
     <div class="col s4"></div>
     <div class="col s3"></div>
     <div class="col s3"></div>
@@ -28,16 +31,18 @@
                         <ng-template [ngIf]="medicaments">
                             <ul>
                                 <li *ngFor="let elemento of medicaments.resultados">
+                                 <div *ngIf="elemento.fotos[0].url != 'false'">
                                     <div class="col s7 center-align">
                                         <a [href]="elemento.docs[0].url">
-                                            <img [src]="elemento.fotos[0].url" />
+                                            <img [src]="elemento.fotos[0].url" />                                            
                                         </a>
                                     </div>
-                                    <div class="col s5 center-align">
+                                    <div class="col s5">
                                         <p><b>Nombre: </b>{{elemento.nombre}}</p>
                                         <p><b>Principio Activo: </b>{{elemento.principiosActivos[0].nombre}}</p>
                                         <p><b>Laboratorio: </b>{{elemento.labtitular}}</p>
                                     </div>
+                                 </div>
                                 </li>
                                 <br>
                                 <br>
