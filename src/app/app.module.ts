@@ -70,7 +70,6 @@ import {MatTreeModule} from '@angular/material/tree';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,

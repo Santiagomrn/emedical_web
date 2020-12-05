@@ -13,7 +13,7 @@ export class MedicamentService {
   constructor(private http: HttpClient) {
     this.http = http
   }  
-  getMedicaments = (medicament:string): Promise<MedicamentInterface > => {
+  getMedicaments = (page: string,medicament:string): Promise<MedicamentInterface > => {
     let promise = new Promise <MedicamentInterface>((resolve, reject) => {
       if (this.cachedValues[medicament]) {
         resolve(this.cachedValues[medicament])

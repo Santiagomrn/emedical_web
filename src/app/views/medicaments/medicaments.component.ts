@@ -38,7 +38,7 @@ export class MedicamentsComponent implements OnInit {
     
   getMedicaments(data){
     console.log(data)
-    this.MedicamentService.getMedicaments(data).then((response) => {
+    this.MedicamentService.getMedicaments("1",data).then((response) => {
       this.medicaments = response;
       this.total=response.totalFilas;
       console.log(response)

@@ -1,15 +1,12 @@
-
- 
 <div class="row">
-    <img class="image" src="../../../assets/img/Fondo_medicamentos.jpg" alt="Not Found" >
-    <div class="col s4"></div>
-    <div class="col s3"></div>
-    <div class="col s3"></div>
-    <div class="col s2">
+    <!-- <div class="col s4"></div> -->
+    <!-- <div class="col s3"></div>
+    <div class="col s3"></div> -->
+    <div class="col s6">
         <form [formGroup]="searchForm" (ngSubmit)="getMedicaments(searchForm.value.query)">
             <div>
                 <label for="name">
-                    Name
+                    Medicamento
                 </label>
                 <input id="name" type="text" formControlName="query">
             </div>
@@ -23,8 +20,6 @@
     <div class="col s12 m1 "></div>
     <div class="col s12 m6 contactus" style="left:5%; ">
         <main>
-
-
             <div class="card hoverable acrylic shadow">
                 <div class="card-content black-text">
                     <div class="row">
@@ -33,13 +28,13 @@
                                 <li *ngFor="let elemento of medicaments.resultados">
                                  <div *ngIf="elemento.fotos[0].url != 'false'">
                                     <div class="col s7 center-align">
-                                        <a [href]="elemento.docs[0].url">
-                                            <img [src]="elemento.fotos[0].url" />                                            
-                                        </a>
+                                        <a *ngIf="elemento.docs && elemento.fotos" [href]="elemento.docs[0].url"  >
+                                                <img [src]="elemento.fotos[0].url" /> 
+                                        </a> 
                                     </div>
                                     <div class="col s5">
                                         <p><b>Nombre: </b>{{elemento.nombre}}</p>
-                                        <p><b>Principio Activo: </b>{{elemento.principiosActivos[0].nombre}}</p>
+                                        <p><b>Principio Activo: </b>{{elemento.principiosActivos[0]["nombre"]}}</p>
                                         <p><b>Laboratorio: </b>{{elemento.labtitular}}</p>
                                     </div>
                                  </div>
