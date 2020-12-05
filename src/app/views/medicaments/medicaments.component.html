@@ -1,45 +1,50 @@
+<div class="row">
+    <div class="col s4"></div>
+    <div class="col s3"></div>
+    <div class="col s3"></div>
+    <div class="col s2">
+        <form [formGroup]="searchForm" (ngSubmit)="getMedicaments(searchForm.value.query)">
+            <div>
+                <label for="name">
+                    Name
+                </label>
+                <input id="name" type="text" formControlName="query">
+            </div>
+            <button type="submit"></button>
+        </form>
+    </div>
+</div>
 
-  <div class="row">
-        <div class="col s4"></div>
-        <div class="col s3"></div>
-        <div class="col s3"></div>
-        <div class="col s2">
-            <form [formGroup]="frmReactivo" (ngSubmit)="reactiveMedicaments()" >
-                <input type="text" placeholder="search..." formControlName="inputQuery"/>
-                <button type="submit" [disabled]="!frmReactivo.valid">Buscar</button>
-            </form>
-        </div>
-   </div>
 
-   
-   <div class="row center-align">
+<div class="row center-align">
     <div class="col s12 m1 "></div>
     <div class="col s12 m6 contactus" style="left:5%; ">
         <main>
 
 
-        <div class="card hoverable acrylic shadow">
-            <div class="card-content black-text">
-                <div class="row">
-                                <ul>
-                                    <li *ngFor="let elemento of medicaments.resultados">
-                                        <div class="col s7 center-align">
-                                            <a [href]="elemento.docs[0].url">
-                                                <img [src]="elemento.fotos[0].url" />
-                                            </a>
-                                        </div>
-                                        <div class="col s5 center-align">
-                                            <p><b>Nombre: </b>{{elemento.nombre}}</p>
-                                            <p><b>Principio Activo: </b>{{elemento.principiosActivos[0].nombre}}</p>
-                                            <p><b>Laboratorio: </b>{{elemento.labtitular}}</p>
-                                        </div>
-                                    </li>
-                                    <br>
-                                    <br>
-                                </ul>             
+            <div class="card hoverable acrylic shadow">
+                <div class="card-content black-text">
+                    <div class="row">
+                        <ng-template [ngIf]="medicaments">
+                            <ul>
+                                <li *ngFor="let elemento of medicaments.resultados">
+                                    <div class="col s7 center-align">
+                                        <a [href]="elemento.docs[0].url">
+                                            <img [src]="elemento.fotos[0].url" />
+                                        </a>
+                                    </div>
+                                    <div class="col s5 center-align">
+                                        <p><b>Nombre: </b>{{elemento.nombre}}</p>
+                                        <p><b>Principio Activo: </b>{{elemento.principiosActivos[0].nombre}}</p>
+                                        <p><b>Laboratorio: </b>{{elemento.labtitular}}</p>
+                                    </div>
+                                </li>
+                                <br>
+                                <br>
+                            </ul>
+                        </ng-template>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
     </div>
-

@@ -15,34 +15,30 @@ export class MedicamentsComponent implements OnInit {
   medicaments:MedicamentInterface;
   valueMedicaments:string;
   total:number;
-  frmReactivo = this.fb.group({
-    inputQuery: ['',Validators.required]
-  })
+  searchForm;
+  constructor( 
+    private MedicamentService: MedicamentService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder) { 
 
-  constructor( private MedicamentService: MedicamentService,private router: Router,private route: ActivatedRoute,private fb: FormBuilder) { 
+      this.searchForm = this.formBuilder.group({
+        query: ''
+      });
+
     this.total=0
   }
 
   ngOnInit(): void { 
   this.route.paramMap.subscribe((params: ParamMap)=>{
     this.valueMedicaments = params.get('query');
-    this.getMedicaments();
+    this.getMedicaments("ambroxol");
     })
   }
-
-
-  reactiveMedicaments(){
-      this.medicaments = null 
-      this.router.navigate(['/medicaments/' + this.frmReactivo.get('inputQuery').value])
-  }
-
-  searchMedicaments = () => {
-    this.medicaments = null;
-    this.router.navigate(['/medicaments/' + this.valueMedicaments])
-    } 
     
-  getMedicaments(){
-    this.MedicamentService.getMedicaments_("1",this.valueMedicaments).then((response) => {
+  getMedicaments(data){
+    console.log(data)
+    this.MedicamentService.getMedicaments("1",data).then((response) => {
       this.medicaments = response;
       this.total=response.totalFilas;
       console.log(response)
@@ -50,7 +46,4 @@ export class MedicamentsComponent implements OnInit {
       alert("Error: " + error.statusText);
     })
   }
-
-
-
 }
