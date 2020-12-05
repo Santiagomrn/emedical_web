@@ -1,12 +1,21 @@
 .footer {
     position: absolute;
-   font-weight: bold;
+    font-weight: bold;
     bottom: 0%;
     width: 100%;
-    height: 25%;
+    height: 20%;
     /* background-color: rgba(223, 217, 217, 0.342); */
     color: white;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.60);
+    background-color: rgba(0, 0, 0, 0.90);
     
+}
+.image{
+    /* position: absolute; */
+    background: url(../../../assets/img/aboutus.jpg);
+    background-position: initial;
+    background-size: cover;
+    filter: blur(0px);
+    width: 100%;
+    height: 100%;;
 }
