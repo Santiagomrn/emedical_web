@@ -62,8 +62,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ContactUsComponent,
     AboutUsComponent,
     ListNewsComponent,
-    FormsModule,
-    ReactiveFormsModule,
+
     FooterComponent,
     LoginComponent,
   ],
@@ -72,7 +71,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
+    FormsModule,
+    ReactiveFormsModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
