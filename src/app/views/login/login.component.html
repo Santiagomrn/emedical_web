@@ -5,29 +5,20 @@
         <mat-card-title>Login</mat-card-title>
         <mat-card-subtitle>Ingrese correo y contraseña</mat-card-subtitle>
         <mat-card-content>
-            <form class="example-form">
-                <mat-form-field class="example-full-width">
-                    <mat-label>Email</mat-label>
-                    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                        placeholder="Ex. pat@example.com">
-                    <mat-hint>Errors appear instantly!</mat-hint>
-                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                        Please enter a valid email address
-                    </mat-error>
-                    <mat-error *ngIf="emailFormControl.hasError('required')">
-                        Email is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-                <table class="example-full-width" cellspacing="0">
-                    <tr>
-                        <td>
-                            <mat-form-field class="example-full-width">
-                                <mat-label>First name</mat-label>
-                                <input matInput>
-                            </mat-form-field>
-                        </td>
-                    </tr>
-                </table>
+            <form action="">
+                <div class="col s12">
+                    <div class="input-field inline" style="width: 65%;">
+                            <input id="email_inline" type="email" class="validate">
+                            <label for="email_inline">Email</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                        <br>
+                        <br><br>
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                </div>
             </form>
 
         </mat-card-content>
