@@ -1,3 +1,4 @@
+import M from 'materialize-css';
 import { Component,OnInit,ElementRef,AfterViewInit,ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
@@ -45,6 +46,11 @@ export class MedicamentsComponent implements OnInit {
     }, (error) => {
       alert("Error: " + error.statusText);
     })
+  }
+
+  ngAfterViewInit() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {});
   }
 
   
