@@ -61,36 +61,36 @@
             </main>
         </div>
 
-        <div class="col s8"></div>
-        <div class="input-field right-align col s3">
-            <select [(ngModel)]="comercial" (change)="getComercial()">
-              <option value="" disabled selected>Escoger...</option>
-              <option value="1">Comercial</option>
-              <option value="0">Especializados</option>
-            </select>
-            <label>Comercialización</label>
-          </div>
+            <div class="col s8"></div>
+            <div class="input-field right-align col s3">
+                <select [(ngModel)]="comercial" (change)="getComercial()">
+                    <option value="" disabled selected>Escoger...</option>
+                    <option value="1">Comercial</option>
+                    <option value="0">Especializados</option>
+                </select>
+                    <label>Comercialización</label>
+            </div>
 
-          <div class="col s9"></div>
-          <div class="input-field right-align col s3">
-              <select [(ngModel)]="strip" (change)="getStrip()">
-                <option value="" disabled selected>Escoger...</option>
-                <option value="1">Biosimilar</option>
-                <option value="0">No Biosimilar</option>
-              </select>
-              <label>Tipo de medicamento</label>
+            <div class="col s9"></div>
+            <div class="input-field right-align col s3">
+                <select [(ngModel)]="strip" (change)="getStrip()">
+                    <option value="" disabled selected>Escoger...</option>
+                    <option value="1">Biosimilar</option>
+                    <option value="0">No Biosimilar</option>
+                </select>
+                     <label>Tipo de medicamento</label>
             </div>
 
             <div class="col s9"></div>
             <div class="input-field right-align col s3">
                 <select [(ngModel)]="activeprim" (change)="getActive()">
-                  <option value="" disabled selected>Escoger...</option>
-                  <option value="true">Con activo primario</option>
-                  <option value="false">Sin activo primario</option>
+                    <option value="" disabled selected>Escoger...</option>
+                    <option value="true">Con activo primario</option>
+                    <option value="false">Sin activo primario</option>
                 </select>
-                <label>Activo primario</label>
-              </div>
-    </div>
+                    <label>Activo primario</label>
+            </div>
+</div>
 
    
 

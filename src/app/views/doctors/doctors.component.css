@@ -4,3 +4,31 @@
    /* background-color: rgb(80, 131, 139);*/
     background-position:50% 50%;
   }
+
+.justification{
+ text-align: justify;
+}
+
+.image_background{
+    height:65em; background-size:cover; width:auto;
+    background-image:url('../../../assets/img/Fondo_medicamentos_azul.jpg'); 
+    background-position:50% 50%;
+  }
+
+
+.card{
+    width: 97%;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.color_text{
+  color: black;
+}
+
+.acrylic {
+    padding: 2em 6em;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+    margin: 1em;
+} 

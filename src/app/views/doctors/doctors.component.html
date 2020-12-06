@@ -1,65 +1,67 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<title>Doctores</title>
-</head>
-<body>
 
-<div class="image">
-  <div class="row" style="width: 50%;">
-  <div class="col s12">
-
-    <div class="carousel  carousel-slider center">
-
-      <div *ngFor="let elemento of doctors.results">  
-      
-      <a class="carousel-item" href="#">
-        <h1>{{elemento.name.first}} {{elemento.name.last}}</h1>
-        <div class="col s12 m6">
-          <div style="width: 50%;">
-            <img [src]="elemento.picture.large" width="250" height="250">
+<div class="image_background">
+  <div class="row" style="width: 100%;">
+    <div class="col s12">
+      <main>
+        <div class="card hoverable acrylic shadow" style="height: 400px; position:inherit">
+          <div class="card-content black-text">
+            <div class="carousel  carousel-slider center">
+              <div *ngFor="let elemento of doctors.results">  
+                <a class="carousel-item" href="#">
+                  <div class="col s12 m6 left-center">
+                    <div style="width: 100%;">
+                      <h1 class="color_text">{{elemento.name.first}} {{elemento.name.last}}</h1>
+                        <img [src]="elemento.picture.large" width="250" height="250">
+                    </div>
+                  </div>
+                  <h2>
+                  <div class="col s12 m4 left-align">
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                      <div class="color_text">
+                        <p><b>Edad: </b> {{elemento.dob.age}} años<br></p>
+                        <p><b>Nacionalidad: </b> {{elemento.nat}}<br></p>
+                        <p><b>Género: </b> {{elemento.gender}}</p>
+                        <p><b>Registro: </b> {{elemento.registered.date}}</p>
+                        <p><b>Correo: </b> <u style=" filter: blur(6px);">{{elemento.email}}</u></p>
+                        <p><b>Número telefónico: </b> <u style=" filter: blur(6px);">{{elemento.cell}}</u></p>
+                      </div>
+                  </div>
+                  </h2>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-        <h2>
-          <div class="col s12 m4">
-            <p><b>Edad: </b> {{elemento.dob.age}} años<br>
-              <b>Nacionalidad: </b> {{elemento.nat}}<br>
-              <b>Género: </b> {{elemento.gender}}</p>
-            </div>
-        </h2>
-      </a>
-      </div>
+      </main>
     </div>
   </div>
- </div>
- <br>
- <div class="row">
-  
-  <div class="col s2"></div>
-  <div class="col s8">
-    <h1>Especialistas</h1>
-    Contamos con los mejores especialistas en el sector de la salud, altamente capacitados y
-    graduados de las mejores universidades del mundo.
-
-  
-    <ul>
-      <li><i class="small material-icons">face</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos Generales</b></li>
-      <li><i class="small material-icons">favorite_border</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Cardiólogos</b></li>
-      <li><i class="small material-icons">pregnant_woman</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos obstretas</b></li>
-      <li><i class="small material-icons">record_voice_over</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Otorrinolaringólogo</b></li>
-      <li><i class="small material-icons">person</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos de diagnóstico</b></li>
-     </ul>
-
-     Facilitamos la accesibilidad de material farmacéutico y quirúrgico.
+  <br>
+  <div class="row">
+    <div class="col s2"></div>
+      <div class="col s8">
+        <h1><b>Especialistas</b></h1>
+          <p class="justification">
+          Contamos con una extensa variedad de profesionales de la salud, capacitados en diversas instituciones
+          especialiadas, además de mencionar que cuentan con diversos titulos expendidos por instituciones como:
+          Mayo Clinic, en Rochester (Minnesota, EEUU),
+          Brigham And Women's Hospital, en Boston (Massachusetts, EEUU),
+          Massachusetts General Hospital, en Boston (Massachusetts, EEUU) o
+          The Mount Sinai Hospital, en Nueva York (EEUU).
+          </p>
+            <ul>
+              <li><i class="small material-icons">face</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos Generales</b></li>
+              <li><i class="small material-icons">favorite_border</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Cardiólogos</b></li>
+              <li><i class="small material-icons">pregnant_woman</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos obstretas</b></li>
+              <li><i class="small material-icons">record_voice_over</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Otorrinolaringólogo</b></li>
+              <li><i class="small material-icons">person</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos de diagnóstico</b></li>
+            </ul>
+          <p class="justification">
+          Actualmente un grupo de especialiaste intenta desarrollar diversas vacunas para diversos virus con
+          técnicas innovandoras y la más alta tecnología de punta.
+          </p>
+      </div>
+    <div class="col s2"> </div>
   </div>
-
-  <div class="col s2"> </div>
- </div>
 </div>
 
-
-</body>
-</html>
