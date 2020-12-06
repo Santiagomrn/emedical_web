@@ -17,6 +17,15 @@ export class MedicamentsComponent implements OnInit {
   valueMedicaments:string;
   total:number;
   searchForm;
+  comercial: string;
+  selectComercial: string;
+
+  strip: string;
+  selectStrip: string;
+
+  activeprim: string;
+  selectActivePrim: string;
+
   constructor( 
     private MedicamentService: MedicamentService,
     private router: Router,
@@ -26,20 +35,38 @@ export class MedicamentsComponent implements OnInit {
       this.searchForm = this.formBuilder.group({
         query: ''
       });
-
     this.total=0
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
   this.route.paramMap.subscribe((params: ParamMap)=>{
     this.valueMedicaments = params.get('query');
+    this.selectComercial = '1';
+    this.selectStrip = '1';
+    this.selectActivePrim = 'true';
     this.getMedicaments("ambroxol");
     })
   }
+
+  getComercial(){
+  this.selectComercial = this.comercial;
+  console.log(this.selectComercial);
+  }
+
+  getStrip(){
+    this.selectStrip = this.strip;
+    console.log(this.selectStrip);
+    }
+
+  getActive(){
+    this.selectActivePrim = this.activeprim;
+    console.log(this.selectActivePrim);
+  }
+      
     
   getMedicaments(data){
     console.log(data)
-    this.MedicamentService.getMedicaments("1",data).then((response) => {
+    this.MedicamentService.getMedicaments("1",data,this.selectComercial,this.selectStrip,this.selectActivePrim ).then((response) => {
       this.medicaments = response;
       this.total=response.totalFilas;
       console.log(response)
