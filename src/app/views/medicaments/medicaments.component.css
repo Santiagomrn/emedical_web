@@ -1,15 +1,38 @@
 .card{
-    width: 150%;
-    height: 50%;
+    width: 140%;
     background-color: rgba(255, 255, 255, 0.85);
 }
+
 .acrylic {
     padding: 4em 6em;
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
     margin: 1em;
 } 
 
+input[type=search] {
+    border: 5px rgb(0, 0, 0);
+    border-radius: 10;
+    right:50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-appearance: 10px;
+  }
+  
+
+  
+.image_medicamentos{
+    width: 250px;
+    height: 150px;
+}
+
+.image_background{
+    height:55em; background-size:cover; width:auto;
+    background-image:url('../../../assets/img/Fondo_medicamentos.jpg'); 
+    background-position:50% 50%;
+  }
 
 .image{
     /* position: absolute; */
