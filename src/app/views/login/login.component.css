@@ -1,0 +1,23 @@
+.card{
+    width: 75%;
+}
+.image{
+    /* position: absolute; */
+    /* background: url(../../images/contactus.jpg); */
+    background-position: absolute;
+    background-size: cover;
+    filter: blur(5px);
+    width: 100%;
+    height: 70%;
+    
+}
+.login{
+    position: absolute;
+    width: 55%;
+    height: 40%;
+    top: 16%;
+    left: 25%;
+    /* background-color: rgba(223, 217, 217, 0.342); */
+    margin-left: -2%; 
+    margin-top: -2%; 
+}

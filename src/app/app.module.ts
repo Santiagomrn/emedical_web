@@ -49,6 +49,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './views/login/login.component';
 
 
 
@@ -62,6 +63,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AboutUsComponent,
     ListNewsComponent,
     FooterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
