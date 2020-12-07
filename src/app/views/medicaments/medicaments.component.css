@@ -6,8 +6,8 @@
 .acrylic {
     padding: 4em 6em;
     position: relative;
-    /*overflow: hidden;*/
-    overflow: scroll;
+    overflow: hidden;
+    /*overflow: scroll;*/
     margin: 1em;
 } 
 
@@ -22,8 +22,6 @@ input[type=search] {
     -webkit-appearance: 10px;
   }
   
-
-  
 .image_medicamentos{
     width: 250px;
     height: 150px;
@@ -35,6 +33,12 @@ input[type=search] {
     background-position:50% 50%;
   }
 
+.custom-pagination ::ng-deep .ngx-pagination .current {
+    background: blue;
+    margin: 0 5px;
+    border-radius: 2px;
+    line-height: 1.8rem;
+}
 
 .image{
     /* position: absolute; */

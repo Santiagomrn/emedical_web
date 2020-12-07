@@ -17,14 +17,21 @@ export class MedicamentsComponent implements OnInit {
   valueMedicaments:string;
   total:number;
   searchForm;
+
+  /* Select comercialización*/
   comercial: string;
   selectComercial: string;
 
+   /* Select tipo de medicamento*/
   strip: string;
   selectStrip: string;
 
+   /* Select activo primario*/
   activeprim: string;
   selectActivePrim: string;
+
+  /* Paginación */
+  pageActual: number = 1;
 
   constructor( 
     private MedicamentService: MedicamentService,
@@ -41,6 +48,7 @@ export class MedicamentsComponent implements OnInit {
   ngOnInit(): void {
   this.route.paramMap.subscribe((params: ParamMap)=>{
     this.valueMedicaments = params.get('query');
+   
     this.selectComercial = '1';
     this.selectStrip = '1';
     this.selectActivePrim = 'true';
@@ -66,10 +74,10 @@ export class MedicamentsComponent implements OnInit {
     
   getMedicaments(data){
     console.log(data)
-    this.MedicamentService.getMedicaments("1",data,this.selectComercial,this.selectStrip,this.selectActivePrim ).then((response) => {
-      this.medicaments = response;
-      this.total=response.totalFilas;
-      console.log(response)
+    this.MedicamentService.getMedicaments(data,this.selectComercial,this.selectStrip,this.selectActivePrim ).then((response) => {
+        this.medicaments = response;
+        this.total=response.totalFilas;
+        console.log(response)      
     }, (error) => {
       alert("Error: " + error.statusText);
     })
@@ -79,6 +87,5 @@ export class MedicamentsComponent implements OnInit {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, {});
   }
-
   
 }
