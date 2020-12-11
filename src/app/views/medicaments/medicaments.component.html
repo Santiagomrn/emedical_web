@@ -11,77 +11,79 @@
             </form>
         </div>
     </div>
-
+    
 
     <div class="row center-align">
         <div class="col s12 m1 "></div>
-        <div class="col s12 m6 contactus" style="left:5%; ">
-            <table>
-                <div class="card hoverable acrylic shadow" style="height: 720px;">
-                    <div class="card-content black-text">
-                        <div class="row">
-                            <ng-template [ngIf]="medicaments">
-                                <ul>
-                                    <li *ngFor="let elemento of medicaments.resultados | paginate: {itemsPerPage: 4, currentPage: pageActual}">
-                                        <div class="col s7 left-align">
-                                            <div *ngIf="(elemento.docs && elemento.fotos) else elseBlock">
-                                                <a [href]="elemento.docs[0].url"  >
-                                                    <img class="image_medicamentos" [src]="elemento.fotos[0].url" /> 
-                                                </a>
-                                            </div>
+        <div class="col s12 m6 contactus" style="left:10%;">
+            <div class="mat-elevation-z8; crd-content black-text">
+               
+                        <table mat-table [dataSource]="dataSource">
+                            <ng-container matColumnDef="imagen">
+                                <th mat-header-cell *matHeaderCellDef>Imagen</th>
+                                <td mat-cell *matCellDef="let element"> 
+                                    <div *ngIf="(element.docs && element.fotos) else elseBlock">
+                                        <a [href]="element.docs[0].url"  >
+                                            <img class="image_medicamentos" [src]="element.fotos[0].url" /> 
+                                        </a>
+                                    </div>
                                     <ng-template #elseBlock>
-                                            <img class="image_medicamentos" src="../../../assets/img/No_disponible.png" alt="Not Found" >
-                                            <br>
+                                        <img class="image_medicamentos" src="../../../assets/img/No_disponible.png" alt="Not Found" >
+                                        <br>
                                     </ng-template> 
-                                        </div>
-                                        <div class="col s5 left-align">
-                                            <p><b>Nombre: </b>{{elemento.nombre}}</p>
-                                            <p><b>Principio Activo: </b>{{elemento.principiosActivos[0]["nombre"]}}</p>
-                                            <p><b>Laboratorio: </b>{{elemento.labtitular}}</p>
-                                        </div>
-                                    </li>
-                                    <br>
-                                    <br>
-                                </ul>
-                            </ng-template>
-                        </div>
-                    </div>
-                </div>
-            </table>
-            <pagination-controls class="custom-pagination" style="position: absolute;" previousLabel="Anterior" nextLabel="Siguiente" maxSize="5" (pageChange)="pageActual = $event"></pagination-controls>
+                                </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="descrition">
+                                <th mat-header-cell *matHeaderCellDef>Descripción</th>
+                                <td mat-cell *matCellDef="let element"> 
+                                    <p><b>Nombre: </b>{{element.nombre}}</p>
+                                    <p><b>Principio Activo: </b>{{element.principiosActivos[0].nombre}}</p>
+                                    <p><b>Laboratorio: </b>{{element.labtitular}}</p>
+                                </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="loading">
+                                <mat-footer-cell *matFooterCellDef colspan="6">
+                                    Cargando datos...
+                                </mat-footer-cell>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                            <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide': response_resultados!=null}"></mat-footer-row>
+                        </table>
+                        <mat-paginator style="width: 70em;" [pageSizeOptions]="[3,6,9]" [pageSize]="6" showFirstLastButtons></mat-paginator>
+            </div>
         </div>
-
             <div class="col s8"></div>
-            <div class="input-field right-align col s3">
-                <select [(ngModel)]="comercial" (change)="getComercial()">
-                    <option value="" disabled selected>Escoger...</option>
-                    <option value="1">Comercial</option>
-                    <option value="0">Especializados</option> 
-                </select>
-                    <label>Comercialización</label>
+                <div class="input-field right-align col s3">
+                    <select [(ngModel)]="comercial" (change)="getComercial()">
+                        <option value="" disabled selected>Escoger...</option>
+                        <option value="1">Comercial</option>
+                        <option value="0">Especializados</option> 
+                    </select>
+                        <label>Comercialización</label>
+                </div>
+
+            <div class="col s9"></div>
+                <div class="input-field right-align col s3">
+                    <select [(ngModel)]="strip" (change)="getStrip()">
+                        <option value="" disabled selected>Escoger...</option>
+                        <option value="1">Biosimilar</option>
+                        <option value="0">No Biosimilar</option>
+                    </select>
+                        <label>Tipo de medicamento</label>
             </div>
 
             <div class="col s9"></div>
-            <div class="input-field right-align col s3">
-                <select [(ngModel)]="strip" (change)="getStrip()">
-                    <option value="" disabled selected>Escoger...</option>
-                    <option value="1">Biosimilar</option>
-                    <option value="0">No Biosimilar</option>
-                </select>
-                     <label>Tipo de medicamento</label>
+                <div class="input-field right-align col s3">
+                    <select [(ngModel)]="activeprim" (change)="getActive()">
+                        <option value="" disabled selected>Escoger...</option>
+                        <option value="true">Con activo primario</option>
+                        <option value="false">Sin activo primario</option>
+                    </select>
+                        <label>Activo primario</label>
             </div>
-
-            <div class="col s9"></div>
-            <div class="input-field right-align col s3">
-                <select [(ngModel)]="activeprim" (change)="getActive()">
-                    <option value="" disabled selected>Escoger...</option>
-                    <option value="true">Con activo primario</option>
-                    <option value="false">Sin activo primario</option>
-                </select>
-                    <label>Activo primario</label>
-            </div>
+    </div>        
 </div>
-
-   
-
-    

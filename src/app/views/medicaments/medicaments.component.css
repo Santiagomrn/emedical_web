@@ -23,14 +23,27 @@ input[type=search] {
   }
   
 .image_medicamentos{
-    width: 250px;
-    height: 150px;
+    width: 200px;
+    height: 100px;
+}
+
+.hide{
+    display: none;
+}
+
+mat-footer-row mat-footer-cell{
+    justify-content: left;
+    font-style: italic;
 }
 
 .image_background{
-    height:65em; background-size:cover; width:auto;
+    height:85em; background-size:cover; width:auto;
     background-image:url('../../../assets/img/Fondo_medicamentos.jpg'); 
     background-position:50% 50%;
+  }
+
+table{
+    width: 129%;
   }
 
 .custom-pagination ::ng-deep .ngx-pagination .current {

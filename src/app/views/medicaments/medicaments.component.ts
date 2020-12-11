@@ -1,10 +1,13 @@
 import M from 'materialize-css';
-import { Component,OnInit,ElementRef,AfterViewInit,ViewChild } from '@angular/core';
+import {AfterViewInit,ElementRef, OnInit, Component, ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import { MedicamentInterface} from "../../interfaces/medicament/medicament-interface";
 import { MedicamentService} from "../../services/medicament/medicament.service"
 import {FormBuilder} from '@angular/forms';
+import { element } from 'protractor';
 
 
 @Component({
@@ -31,7 +34,12 @@ export class MedicamentsComponent implements OnInit {
   selectActivePrim: string;
 
   /* Paginación */
-  pageActual: number = 1;
+  public response_resultados: any[];        
+  dataSource: MatTableDataSource<any>;
+  displayedColumns: string[] = ['imagen','descrition'];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  
 
   constructor( 
     private MedicamentService: MedicamentService,
@@ -45,15 +53,11 @@ export class MedicamentsComponent implements OnInit {
     this.total=0
   }
 
-  ngOnInit(): void {
-  this.route.paramMap.subscribe((params: ParamMap)=>{
-    this.valueMedicaments = params.get('query');
-   
+  ngOnInit() {
     this.selectComercial = '1';
     this.selectStrip = '1';
     this.selectActivePrim = 'true';
     this.getMedicaments("ambroxol");
-    })
   }
 
   getComercial(){
@@ -73,16 +77,22 @@ export class MedicamentsComponent implements OnInit {
       
     
   getMedicaments(data){
-    console.log(data)
-    this.MedicamentService.getMedicaments(data,this.selectComercial,this.selectStrip,this.selectActivePrim ).then((response) => {
-        this.medicaments = response;
-        this.total=response.totalFilas;
-        console.log(response)      
+    this.MedicamentService.getMedicaments(data,this.selectComercial,this.selectStrip,this.selectActivePrim ).then((response) => {  
+      this.response_resultados = response.resultados;
+
+      this.dataSource = new MatTableDataSource(this.response_resultados);
+      this.dataSource.paginator = this.paginator;
+      console.log(this.dataSource);
+    
+      this.medicaments = response;
+      this.total=response.totalFilas;
     }, (error) => {
       alert("Error: " + error.statusText);
     })
   }
 
+  
+  
   ngAfterViewInit() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, {});
