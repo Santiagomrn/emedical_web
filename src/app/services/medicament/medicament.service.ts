@@ -13,15 +13,18 @@ export class MedicamentService {
   constructor(private http: HttpClient) {
     this.http = http
   }  
-  getMedicaments = (page: string): Promise<MedicamentInterface > => {
+  getMedicaments = (medicament:string,selection_comerc: string, selection_strip: string,selection_active: string ): Promise<MedicamentInterface > => {
     let promise = new Promise <MedicamentInterface>((resolve, reject) => {
-      if (this.cachedValues[page]) {
-        resolve(this.cachedValues[page])
+      if (this.cachedValues[medicament]) {
+        resolve(this.cachedValues[medicament])
       } else {
-        this.http.get("https://cima.aemps.es/cima/rest/medicamentos?&multiple=aspirina&cargaprincipiosactivos=true")
+        console.log(selection_comerc);
+        console.log(selection_strip);
+        console.log(selection_active);
+        this.http.get("https://cima.aemps.es/cima/rest/medicamentos?&multiple="+medicament+"&cargaprincipiosactivos="+selection_active+ "&nomostrarip="+ selection_strip + "&comerc="+ selection_comerc)
           .toPromise()
           .then((response) => {
-            this.cachedValues[page]=response
+            this.cachedValues[medicament]=response
             resolve(response as MedicamentInterface )
           }, (error) => {
             reject(error);
@@ -31,3 +34,5 @@ export class MedicamentService {
     return promise;
   }
 }
+
+

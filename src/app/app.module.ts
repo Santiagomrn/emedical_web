@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 
+import { MedicamentService} from "./services/medicament/medicament.service"
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { DoctorsComponent } from './views/doctors/doctors.component';
@@ -12,7 +15,6 @@ import { AboutUsComponent } from './views/about-us/about-us.component';
 import { ListNewsComponent } from './components/list-news/list-news.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -51,7 +53,6 @@ import {MatTreeModule} from '@angular/material/tree';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './views/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
@@ -109,7 +110,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatTooltipModule,
     MatTreeModule
   ],
-  providers: [],
+  providers: [MedicamentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

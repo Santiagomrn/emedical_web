@@ -1,0 +1,92 @@
+.card{
+    width: 140%;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.acrylic {
+    padding: 4em 6em;
+    position: relative;
+    overflow: hidden;
+    /*overflow: scroll;*/
+    margin: 1em;
+} 
+
+input[type=search] {
+    border: 5px rgb(0, 0, 0);
+    border-radius: 10;
+    right:50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-appearance: 10px;
+  }
+  
+.image_medicamentos{
+    width: 200px;
+    height: 100px;
+}
+
+.hide{
+    display: none;
+}
+
+mat-footer-row mat-footer-cell{
+    justify-content: left;
+    font-style: italic;
+}
+
+.image_background{
+    height:85em; background-size:cover; width:auto;
+    background-image:url('../../../assets/img/Fondo_medicamentos.jpg'); 
+    background-position:50% 50%;
+  }
+
+table{
+    width: 129%;
+  }
+
+.custom-pagination ::ng-deep .ngx-pagination .current {
+    background: blue;
+    margin: 0 5px;
+    border-radius: 2px;
+    line-height: 1.8rem;
+}
+
+.image{
+    /* position: absolute; */
+    /* background: url(../../images/contactus.jpg); */
+    background-position: absolute;
+    background-size: cover;
+    filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    
+}
+.contactus{
+    position: absolute;
+    width: 85%;
+    height: 10%;
+    top: 26%;
+    /* background-color: rgba(223, 217, 217, 0.342); */
+    margin-left: -2%; 
+    margin-top: -2%; 
+}
+.redes{
+    position: absolute;
+    width: 85%;
+    height: 20%;
+    top: 40%;
+    left: 2%;
+    /* background-color: rgba(223, 217, 217, 0.342); */
+    margin-left: -2%; 
+    margin-top: -2%; 
+}
+
+.contenedor::-webkit-scrollbar(){
+    width: 7px;
+}
+
+.contendor::-webkit-scrollbar-thumb(){
+    background: #0000;
+}
