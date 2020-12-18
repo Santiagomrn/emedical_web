@@ -52,7 +52,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './views/login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
