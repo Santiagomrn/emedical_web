@@ -1,10 +1,11 @@
 <div class="image_background">
-    <div class="row right-align">
-        <div class="col s9"></div> 
-        <div class="col s3">
+    
+    <div class="row center-align">
+        <div class="col s9" style="font-size: 150%;  margin-top: 1%;"><b>{{conv_data}}</b></div> 
+        <div class="col s3 right-align">
             <form class="search" [formGroup]="searchForm" (ngSubmit)="getMedicaments(searchForm.value.query)">
                 <input class="input" placeholder="Buscar  medicamento..." id="name" type="search" formControlName="query">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">
+                    <button class="btn waves-effect buttoms waves-light" type="submit" name="action">
                     Buscar
                     </button>
                     
@@ -12,12 +13,10 @@
         </div>
     </div>
     
-
     <div class="row center-align">
         <div class="col s12 m1 "></div>
         <div class="col s12 m6 contactus" style="left:10%;">
             <div class="mat-elevation-z8; crd-content black-text">
-               
                         <table mat-table [dataSource]="dataSource">
                             <ng-container matColumnDef="imagen">
                                 <th mat-header-cell *matHeaderCellDef>Imagen</th>
@@ -53,7 +52,7 @@
                             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                             <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide': response_resultados!=null}"></mat-footer-row>
                         </table>
-                        <mat-paginator style="width: 70em;" [pageSizeOptions]="[3,6,9]" [pageSize]="6" showFirstLastButtons></mat-paginator>
+                        <mat-paginator style="width: 70em;" [pageSizeOptions]="[3,6]" [pageSize]="6" showFirstLastButtons></mat-paginator>
             </div>
         </div>
             <div class="col s8"></div>

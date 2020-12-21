@@ -33,6 +33,9 @@ export class MedicamentsComponent implements OnInit {
   activeprim: string;
   selectActivePrim: string;
 
+  /* Variable para pipe */
+  conv_data:string;
+
   /* Paginación */
   public response_resultados: any[];        
   dataSource: MatTableDataSource<any>;
@@ -77,13 +80,14 @@ export class MedicamentsComponent implements OnInit {
       
     
   getMedicaments(data){
+    this.conv_data = data.toUpperCase();
     this.MedicamentService.getMedicaments(data,this.selectComercial,this.selectStrip,this.selectActivePrim ).then((response) => {  
       this.response_resultados = response.resultados;
 
       this.dataSource = new MatTableDataSource(this.response_resultados);
       this.dataSource.paginator = this.paginator;
       console.log(this.dataSource);
-    
+      
       this.medicaments = response;
       this.total=response.totalFilas;
     }, (error) => {
