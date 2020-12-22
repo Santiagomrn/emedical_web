@@ -13,19 +13,32 @@
   </div>
 </ng-template>
 <ng-template [ngIf]="news">
+<div class="row">
 <div class="" *ngFor="let elemento of news.items" >
-    <div class="grid">
-        <h2 class="header">{{elemento.title}}</h2>
-        <div class="card horizontal">
+  <div class="container-fluid">
+    <div class="col s6">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
           <div class="card-image">
             <img [src]="elemento.urlToImage" >
           </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p> {{elemento.content}} </p>
-            </div>
-          </div>
+        </div>
+        <div class="card-content">
+          <span>
+          <h3 class="card-title activator">{{elemento.title}}</h3> 
+        </span>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{elemento.title}}
+            <i class="material-icons right">close</i>
+          </span>
+          <br>
+          <p> {{elemento.content}} </p>
         </div>
       </div>
+    </div>
+  </div>
+  </div>
+
 </div>
 </ng-template>
