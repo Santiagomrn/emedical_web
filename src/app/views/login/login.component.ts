@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from '@angular/forms';
+
 import {ErrorStateMatcher} from '@angular/material/core';
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -20,11 +21,27 @@ export class LoginComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
+  loginForm = new FormGroup({
+    mail: new FormControl(''),
+    pass: new FormControl(''),
+  });
 
   matcher = new MyErrorStateMatcher();
   constructor() { }
-
+  
   ngOnInit(): void {
+  }
+  onSubmit() {
+    this.loginUser(this.loginForm.value);
+  }
+  loginUser(login : FormGroup){
+    console.log("Hi From submit");
+    console.warn(this.loginForm.value);
+    // Validar mediante API
+
+    // Guardar token 
+    let key = '1';
+    localStorage.setItem('token', key);
   }
 
 }
