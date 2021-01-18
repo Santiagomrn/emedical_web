@@ -44,6 +44,11 @@
   margin: auto;
 }
 
+.password{
+  background-color: black;
+}
+
+
 .container-fluid .card{
   width: 250px;
   height: 400px;

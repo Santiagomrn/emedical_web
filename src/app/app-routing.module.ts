@@ -7,6 +7,9 @@ import {MedicamentsComponent} from './views/medicaments/medicaments.component';
 import {AboutUsComponent} from './views/about-us/about-us.component';
 import {ContactUsComponent} from './views/contact-us/contact-us.component';
 import {LoginComponent} from './views/login/login.component';
+import {DoctorsCreateComponent} from './views/doctors-create/doctors-create.component';
+import {PatientsCreateComponent} from './views/patients-create/patients-create.component';
+
 const routes: Routes = [
   {path : '', redirectTo:'home',
   pathMatch:'full'},
@@ -16,6 +19,8 @@ const routes: Routes = [
   {path: 'about_us', component: AboutUsComponent},
   {path: 'contact_us', component: ContactUsComponent},
   {path : 'login', component: LoginComponent},
+  {path: 'doctor_create', component: DoctorsCreateComponent},
+  {path: 'patients_create', component: PatientsCreateComponent}
 ];
 
 @NgModule({
