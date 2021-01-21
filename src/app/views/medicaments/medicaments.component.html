@@ -23,7 +23,7 @@
                                         </td>
                                         </ng-container>
                                         <ng-container matColumnDef="descrition">
-                                            <th mat-header-cell *matHeaderCellDef>Descripción</th>
+                                            <th mat-header-cell *matHeaderCellDef>DescripciÃ³n</th>
                                             <td mat-cell *matCellDef="let element"> 
                                                 <p><b>Nombre: </b>{{element.nombre}}</p>
                                                 <p><b>Principio Activo: </b>{{element.principiosActivos[0].nombre}}</p>
@@ -56,31 +56,15 @@
             </div>
         </div>
 
-<div class="row center-align">
-    <div class="col s12 m1 "></div>
-    <div class="col s12 m6 contactus" style="left:5%; ">
-        <main>
-            <div class="card hoverable acrylic shadow">
-                <div class="card-content black-text">
-                    <div class="row">
-                        <ng-template [ngIf]="medicaments">
-                            <ul>
-                                <li *ngFor="let elemento of medicaments.resultados">
-                                    <div class="col s7 center-align">
-                                        <a *ngIf="elemento.docs && elemento.fotos" [href]="elemento.docs[0].url"  >
-                                                <img [src]="elemento.fotos[0].url" /> 
-                                        </a> 
-                                    </div>
-                                    <div class="col s5 center-align">
-                                        <p><b>Nombre: </b>{{elemento.nombre}}</p>
-                                        <p><b>Principio Activo: </b>{{elemento.principiosActivos[0]["nombre"]}}</p>
-                                        <p><b>Laboratorio: </b>{{elemento.labtitular}}</p>
-                                    </div>
-                                </li>
-                                <br>
-                                <br>
-                            </ul>
-                        </ng-template>
+                <div class="card2">
+                    <div class="col s12 rigt-align">
+                        <form class="search" [formGroup]="searchForm" (ngSubmit)="getMedicaments(searchForm.value.query)">
+                            <input class="input" placeholder="Buscar  medicamento..." id="name" type="search" formControlName="query">
+                                <button class="btn waves-effect buttoms waves-light" type="submit" name="action">
+                                Buscar
+                                </button>
+                                
+                        </form>
                     </div>
                     <div class="input-field right-align col s12">
                             <select [(ngModel)]="comercial" (change)="getComercial()">
@@ -88,7 +72,7 @@
                                 <option value="1">Comercial</option>
                                 <option value="0">Especializados</option> 
                             </select>
-                                <label>Comercialización</label>
+                                <label>ComercializaciÃ³n</label>
                     </div>
                     <div class="input-field right-align col s12">
                         <select [(ngModel)]="strip" (change)="getStrip()">
