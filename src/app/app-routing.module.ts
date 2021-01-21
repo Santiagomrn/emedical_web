@@ -7,6 +7,9 @@ import {MedicamentsComponent} from './views/medicaments/medicaments.component';
 import {AboutUsComponent} from './views/about-us/about-us.component';
 import {ContactUsComponent} from './views/contact-us/contact-us.component';
 import {LoginComponent} from './views/login/login.component';
+//
+// 
+// Proteger las vistas 
 const routes: Routes = [
   {path : '', redirectTo:'home',
   pathMatch:'full'},
