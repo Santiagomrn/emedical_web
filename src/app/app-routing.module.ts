@@ -7,15 +7,9 @@ import {MedicamentsComponent} from './views/medicaments/medicaments.component';
 import {AboutUsComponent} from './views/about-us/about-us.component';
 import {ContactUsComponent} from './views/contact-us/contact-us.component';
 import {LoginComponent} from './views/login/login.component';
-<<<<<<< HEAD
-//
-// 
-// Proteger las vistas 
-=======
 import {DoctorsCreateComponent} from './views/doctors-create/doctors-create.component';
 import {PatientsCreateComponent} from './views/patients-create/patients-create.component';
 
->>>>>>> paco-develop
 const routes: Routes = [
   {path : '', redirectTo:'home',
   pathMatch:'full'},
