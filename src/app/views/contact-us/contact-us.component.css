@@ -1,25 +1,23 @@
 .card{
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
+    width: 50%;
+    margin: auto;
+    /* background-color: rgba(255, 255, 255, 0.85); */
 }
-.acrylic {
+/* .acrylic {
     padding: 4em 6em;
     position: relative;
     overflow: hidden;
     margin: 1em;
-} 
+}  */
 
 
 .image{
-    /* position: absolute; */
-    /* background: url(../../images/contactus.jpg); */
-    background-position: absolute;
-    background-size: cover;
-    filter: blur(5px);
-    width: 100%;
-    height: 100%;
-    
-}
+    height:52em; background-size:cover; width:auto;
+    background-color: #FFFFFF;
+    /*background-image:url('https://thumbs.dreamstime.com/t/luz-suave-de-la-pendiente-del-color-fondo-azul-papel-pintado-brillante-hermoso-falta-definici%C3%B3n-imagen-tonalidad-118766950.jpg'); */
+   /* background-color: rgb(80, 131, 139);*/
+    background-position:50% 50%;
+  }
 .contactus{
     position: absolute;
     width: 85%;

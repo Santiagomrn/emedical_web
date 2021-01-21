@@ -1,0 +1,15 @@
+.btn-separator:after {
+    content: ' ';
+    display: block;
+    float: left;
+    background: #ADADAD;
+    margin: 0 10px;
+    height: 34px;
+    width: 1px;
+}
+
+.input-group-text{
+    height: 30px;
+    width: 30px;
+    size: 10em;
+}

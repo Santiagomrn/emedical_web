@@ -1,0 +1,96 @@
+
+    <!-- IMAGEN -->
+    <!-- <img class="image" src="../../../assets/img/contactus.jpg" alt="Not Found" > -->
+    <!--  CARD -->
+    <div class="image"></div>  
+    <div class="container">
+        <div class="card" style="margin-top: 2em;" >
+            <h1 class="card-header" align="center">Registro de pacientes</h1>
+            <h2 class="card-header" style="padding-left: 10px;">Información personal</h2>
+            <div class="card-body"> 
+                <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                            <!-- Nombre del paciente -->
+                            <div class="input-field col s6">
+                                <span class="input-group-text">Nombre(s)</span>
+                                <input type="text" id="name" class="validate" name="name" required>
+                            </div>
+                            <!-- Apellido del paciente -->
+                            <div class="input-field col s6">
+                                <span class="input-group-text">Apellido(s)</span>
+                                <input type="text" id="lastName" class="validate" name="lastName" required>
+                            </div>
+                      </div>
+    
+                      <div class="row">
+                            <!-- Fecha de nacimiento del paciente -->
+                            <div class="input-field col s6">
+                                <span class="input-group-text">Fecha de nacimiento</span>
+                                <input type="date" id="birthdate" class="validate" name="birthdate" required>
+                            </div>
+                      </div>
+                      <div class="row">
+                            <!-- Número de teléfono del paciente -->
+                            <div class="input-field col s6">
+                                <span class="input-group-text">Teléfono</span>
+                                <input type="text" id="phone" class="validate" name="phone" required>
+                                <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>
+                            </div>
+                            <!-- Número de teléfono auxiliar del paciente -->
+                            <div class="input-field col s6">
+                                <span class="input-group-text">Teléfono(Opcional)</span>
+                                <input type="text" id="emergencyphone" class="validate" name="emergencyphone" required>
+                                <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>
+                            </div>
+                      </div>
+    
+    
+                      <h2 class="card-header">Información de cuenta</h2>
+                      <div class="row">
+                        <!-- Correo del paciente -->
+                        <div class="input-field col s12">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">Correo electrónico</span>
+                                </div>
+                                <input type="text" id="email" name="email" class="validate" required>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                                <!-- Contraseña del paciente -->
+                                <div class="input-field  col s6">
+                                    <span class="input-group-text">Contraseña</span>
+                                    <input type="text" class="validate" id="password" name="password" required>
+                                    <span class="helper-text" data-error="
+                                    Tenga una longitud mayor o igual a 8 caracteres.
+                                    Utilice una combinación de letras mayúsculas y minúsculas,
+                                    incluya caracteres especiales.
+                                    " data-success="right"></span>
+                                </div>
+                                <!-- Contraseña confirmada del paciente -->
+                                <div class="input-field  col s6">
+                                    <span class="input-group-text">Confirmar contraseña</span>
+                                    <input type="text" class="validate" id="confirm_password" name="confirm_password" required>
+                                    <span class="helper-text" data-error="
+                                    Tenga una longitud mayor o igual a 8 caracteres.
+                                    Utilice una combinación de letras mayúsculas y minúsculas,
+                                    incluya caracteres especiales.
+                                    " data-success="right"></span>
+                                </div>
+                      </div>
+    
+                                              
+                      <div class="row">
+                        <div class="col s9"></div>
+                        <div class="col s3 right-align">
+                            <button class="btn waves-effect buttoms waves-light" type="submit" name="action">
+                            Guardar datos
+                            </button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
