@@ -1,20 +1,60 @@
-<div class="row">
-    <!-- <div class="col s4"></div> -->
-    <!-- <div class="col s3"></div>
-    <div class="col s3"></div> -->
-    <div class="col s6">
-        <form [formGroup]="searchForm" (ngSubmit)="getMedicaments(searchForm.value.query)">
-            <div>
-                <label for="name">
-                    Medicamento
-                </label>
-                <input id="name" type="text" formControlName="query">
+<div class="image_background">
+        
+    <div class="row center-align">
+        <div class="col s12 m1 "></div>
+        <div class="col s12 m6 contactus" style="left:10%;">
+            <div class="mat-elevation-z8; crd-content black-text">
+                <div class="container-fluid">
+                    <div class="card">
+                        <p style="font-size: 150%;  margin-top: 1%;"><b>Resultado:</b> {{conv_data}}</p> 
+                        <table mat-table [dataSource]="dataSource">
+                            <ng-container matColumnDef="imagen">
+                                <th mat-header-cell *matHeaderCellDef>Imagen</th>
+                                <td mat-cell *matCellDef="let element"> 
+                                    <div *ngIf="(element.docs && element.fotos) else elseBlock">
+                                        <a [href]="element.docs[0].url"  >
+                                            <img class="image_medicamentos" [src]="element.fotos[0].url" /> 
+                                        </a>
+                                        </div>
+                                        <ng-template #elseBlock>
+                                            <img class="image_medicamentos" src="../../../assets/img/No_disponible.png" alt="Not Found" >
+                                            <br>
+                                            </ng-template> 
+                                        </td>
+                                        </ng-container>
+                                        <ng-container matColumnDef="descrition">
+                                            <th mat-header-cell *matHeaderCellDef>Descripción</th>
+                                            <td mat-cell *matCellDef="let element"> 
+                                                <p><b>Nombre: </b>{{element.nombre}}</p>
+                                                <p><b>Principio Activo: </b>{{element.principiosActivos[0].nombre}}</p>
+                                                <p><b>Laboratorio: </b>{{element.labtitular}}</p>
+                                            </td>
+                                        </ng-container>
+                                        <ng-container matColumnDef="loading">
+                                            <mat-footer-cell *matFooterCellDef colspan="6">
+                                                Cargando datos...
+                                                <div class="preloader-wrapper big active" style="float: center;">
+                                                    <div class="spinner-layer spinner-blue-only">
+                                                      <div class="circle-clipper left">
+                                                        <div class="circle"></div>
+                                                      </div><div class="gap-patch">
+                                                        <div class="circle"></div>
+                                                      </div><div class="circle-clipper right">
+                                                        <div class="circle"></div>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                            </mat-footer-cell>
+                                        </ng-container>
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide': response_resultados!=null}"></mat-footer-row>
+                        </table>
+                        <mat-paginator style="width: 70em;" [pageSizeOptions]="[3,6]" [pageSize]="6" showFirstLastButtons></mat-paginator>
+                    </div>    
+                </div>
             </div>
-            <button type="submit">Buscar</button>
-        </form>
-    </div>
-</div>
-
+        </div>
 
 <div class="row center-align">
     <div class="col s12 m1 "></div>
@@ -42,7 +82,30 @@
                             </ul>
                         </ng-template>
                     </div>
-                </div>
-            </div>
-        </main>
-    </div>
+                    <div class="input-field right-align col s12">
+                            <select [(ngModel)]="comercial" (change)="getComercial()">
+                                <option value="" disabled selected>Escoger...</option>
+                                <option value="1">Comercial</option>
+                                <option value="0">Especializados</option> 
+                            </select>
+                                <label>Comercialización</label>
+                    </div>
+                    <div class="input-field right-align col s12">
+                        <select [(ngModel)]="strip" (change)="getStrip()">
+                            <option value="" disabled selected>Escoger...</option>
+                            <option value="1">Biosimilar</option>
+                            <option value="0">No Biosimilar</option>
+                        </select>
+                            <label>Tipo de medicamento</label>
+                    </div>
+                    <div class="input-field right-align col s12">
+                        <select [(ngModel)]="activeprim" (change)="getActive()">
+                            <option value="" disabled selected>Escoger...</option>
+                            <option value="true">Con activo primario</option>
+                            <option value="false">Sin activo primario</option>
+                        </select>
+                            <label>Activo primario</label>
+                    </div>
+                </div>   
+    </div>        
+</div>

@@ -1,65 +1,64 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<title>Doctores</title>
-</head>
-<body>
-
 <div class="image">
-  <div class="row" style="width: 50%;">
-  <div class="col s12">
-
-    <div class="carousel  carousel-slider center">
-
-      <div *ngFor="let elemento of doctors.results">  
-      
-      <a class="carousel-item" href="#">
-        <h1>{{elemento.name.first}} {{elemento.name.last}}</h1>
-        <div class="col s12 m6">
-          <div style="width: 50%;">
-            <img [src]="elemento.picture.large" width="250" height="250">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col s12">
+        <div class="container-fluid">
+          <div class="row">
+            <div *ngIf="doctors.results; else elseBlock"></div>
+              <div *ngFor="let elemento of doctors.results">
+                <div class="col s3">
+                  <div class="card">
+                    <div class="card-image">
+                      <img [src]="elemento.picture.large" width="250" height="250">
+                      <span class="card-title"><h1>{{elemento.name.first}} {{elemento.name.last}}</h1></span>
+                    </div>
+                    <div class="card-content">
+                      <h2>
+                        <p> <b>Edad: </b> {{elemento.dob.age}} años<br>
+                            <b>Nacionalidad: </b> {{elemento.nat}}<br>
+                            <b>Género: </b> {{elemento.gender}}
+                        </p>
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <ng-template #elseBlock>Loading...</ng-template>
           </div>
         </div>
-        <h2>
-          <div class="col s12 m4">
-            <p><b>Edad: </b> {{elemento.dob.age}} años<br>
-              <b>Nacionalidad: </b> {{elemento.nat}}<br>
-              <b>Género: </b> {{elemento.gender}}</p>
-            </div>
-        </h2>
-      </a>
       </div>
     </div>
-  </div>
- </div>
- <br>
- <div class="row">
-  
-  <div class="col s2"></div>
-  <div class="col s8">
-    <h1>Especialistas</h1>
-    Contamos con los mejores especialistas en el sector de la salud, altamente capacitados y
-    graduados de las mejores universidades del mundo.
 
-  
-    <ul>
-      <li><i class="small material-icons">face</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos Generales</b></li>
-      <li><i class="small material-icons">favorite_border</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Cardiólogos</b></li>
-      <li><i class="small material-icons">pregnant_woman</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos obstretas</b></li>
-      <li><i class="small material-icons">record_voice_over</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Otorrinolaringólogo</b></li>
-      <li><i class="small material-icons">person</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos de diagnóstico</b></li>
-     </ul>
-
-     Facilitamos la accesibilidad de material farmacéutico y quirúrgico.
-  </div>
-
-  <div class="col s2"> </div>
- </div>
+  <div class="row">
+      <div class="col s2"></div>
+      <div class="col s8">
+        <p>
+          ¿Necesitas ayuda? ¿Los hospitales tradicionales no te dan solución? ¿Cansado de hospitales
+          con precios elevados?
+        </p>
+        <p>
+          Si alguna de las respuestas ha sido afirmativa... ¡Esta es tú web!
+        </p>
+        <p>
+        Contamos con los mejores especialistas en el sector de la salud, altamente capacitados y
+        graduados de las mejores universidades del mundo.
+        </p>
+        
+      
+        <ul>
+          <li><i class="small material-icons">face</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos Generales</b></li>
+          <li><i class="small material-icons">favorite_border</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Cardiólogos</b></li>
+          <li><i class="small material-icons">pregnant_woman</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos obstretas</b></li>
+          <li><i class="small material-icons">record_voice_over</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Otorrinolaringólogo</b></li>
+          <li><i class="small material-icons">person</i> <b>&nbsp;&nbsp;&nbsp;&nbsp;Médicos de diagnóstico</b></li>
+         </ul>
+    
+         <p>
+           Damos la facilidad de accesibilidad en material farmacéutico y quirúrgico, además de ofrecer un 
+           amplio número de especialistas en distintas áreas. 
+           Cabe mencionar que la OMS hizo mención honorífica al hospital, por sus medidas de seguridad y su 
+           compromiso con los clientes.
+         </p>
+      </div>
+  </div>    
 </div>
-
-
-</body>
-</html>

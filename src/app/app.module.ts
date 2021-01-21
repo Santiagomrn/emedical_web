@@ -50,8 +50,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './views/login/login.component';
-
+import { DoctorsCreateComponent } from './views/doctors-create/doctors-create.component';
+import { PatientsCreateComponent } from './views/patients-create/patients-create.component';
 
 
 @NgModule({
@@ -63,7 +65,11 @@ import { LoginComponent } from './views/login/login.component';
     ContactUsComponent,
     AboutUsComponent,
     ListNewsComponent,
+
+    FooterComponent,
     LoginComponent,
+    DoctorsCreateComponent,
+    PatientsCreateComponent,
   ],
   imports: [
     BrowserModule,

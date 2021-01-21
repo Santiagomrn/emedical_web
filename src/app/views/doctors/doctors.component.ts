@@ -20,7 +20,7 @@ export class DoctorsComponent implements OnInit, AfterViewInit{
     this.getDoctors()
   }
   getDoctors=()=>{
-    this.DoctorService.getDoctors("10","1").then((response) => {
+    this.DoctorService.getDoctors("4","1").then((response) => {
       this.doctors = response;
       this.total=response.info.results;
       console.log(response)
@@ -30,7 +30,7 @@ export class DoctorsComponent implements OnInit, AfterViewInit{
   }
   ngAfterViewInit() {
     let elems = document.querySelectorAll('.carousel');
-    let instances = M.Carousel.init(elems,{ fullWidth: true, indicators:true, shift: 15,numVisible: 5, noWrap: false });
+    let instances = M.Carousel.init(elems,{ fullWidth: true, indicators:true, shift: 2, numVisible: 4, noWrap: false });
   }
   
 }

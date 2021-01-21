@@ -1,35 +1,39 @@
 <br>  
+<ng-template [ngIf] = "!news">
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</ng-template>
 <ng-template [ngIf]="news">
-<div class="row" *ngFor="let elemento of news.items" >
-    <div class="col s12 m12">
-        <h2 class="header">{{elemento.title}}</h2>
-        <div class="card horizontal">
-          <div class="card-image">
-            <img [src]="elemento.urlToImage" >
-          </div>
-          <div class="card-stacked">
-            <div class="card-content">
-              <p> {{elemento.content}} </p>
+<div class="row">
+<div class="" *ngFor="let elemento of news.items" >
+  <div class="container-fluid">
+    <div class="col s6">
+      <a href="{{elemento.url}}" target="_blank">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <div class="card-image">
+              <img [src]="elemento.urlToImage" >
             </div>
           </div>
+          <div class="card-content">
+            <span>
+            <h3 class="card-title activator" style="color: black;">{{elemento.title}}</h3> 
+          </span>
+          </div>  
         </div>
-      </div>
+      </a>
+    </div>
+  </div>
+  </div>
+
 </div>
 </ng-template>
-
-  <!-- <div>
-    <ul>
-        <ng-template [ngIf]="news">
-            <li *ngFor="let elemento of news.items">
-                <a [href]="elemento.url">
-                    <img [src]="elemento.urlToImage" />
-                    <h4>{{elemento.title}}
-                        <small> by {{elemento.content}}</small>
-                    </h4>
-                </a>
-                <p> {{elemento.description}}</p>
-            </li>
-            <br>
-        </ng-template>
-    </ul>
-</div> -->
