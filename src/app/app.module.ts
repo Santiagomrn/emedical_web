@@ -56,6 +56,8 @@ import { DoctorsCreateComponent } from './views/doctors-create/doctors-create.co
 import { PatientsCreateComponent } from './views/patients-create/patients-create.component';
 import { AdministratorComponent } from './views/administrator/administrator.component';
 
+import { HomePatientsComponent } from './views/home-patients/home-patients.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,10 @@ import { AdministratorComponent } from './views/administrator/administrator.comp
     DoctorsCreateComponent,
     PatientsCreateComponent,
     AdministratorComponent,
+    HomePatientsComponent,
+    ProfileComponent,
+
+    
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import { MedicamentInterface} from "../../interfaces/medicament/medicament-interface";
-import { MedicamentService} from "../../services/medicament/medicament.service"
+import { MedicamentService} from "../../services/medicament/medicament.service";
 import {FormBuilder} from '@angular/forms';
 import { element } from 'protractor';
 
