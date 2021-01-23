@@ -72,11 +72,4 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  // Cancelamos los datos del usuario
-  cancel_patients_data = () =>{
-      // Redireccionamos a alguna vista
-      //this.router.navigateByUrl('\home');  MODIFICAR
-  }
-
-  
 }
