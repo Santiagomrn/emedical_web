@@ -1,8 +1,10 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a routerLink="/login">Doctor</a></li>
+  <li><a routerLink="/login" [queryParams] = "{ role: 'doctor'}">Doctor</a></li>
   <li class="divider"></li>
-  <li><a routerLink="/login">Pacient</a></li>
+  <li><a routerLink="/login" [queryParams] = "{ role: 'pacient'}">Pacient</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="/login" [queryParams] = "{ role: 'administrator'}">Administrator</a></li>
 </ul>
 <nav class="color">
   <div class="nav-wrapper">
@@ -49,7 +51,7 @@
           Sobre nosotros</a></li>
 
       <li>
-        <div *ngIf="login != '0'">
+        <div *ngIf="login === '0'">
           <a routerLink="/logout">
             <svg style="width:24px;height:17px" viewBox="0 0 24 24">
               <path fill="currentColor"
@@ -59,7 +61,7 @@
         </div>
       </li>
       <li>
-        <div *ngIf="login === '0'">
+        <div *ngIf="login != '0'">
           <a class="dropdown-trigger" href="#!" data-target="dropdown1">
             <svg style="width:24px;height:17px" viewBox="0 0 24 24">
               <path fill="currentColor"

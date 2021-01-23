@@ -9,6 +9,7 @@ import {ContactUsComponent} from './views/contact-us/contact-us.component';
 import {LoginComponent} from './views/login/login.component';
 import {DoctorsCreateComponent} from './views/doctors-create/doctors-create.component';
 import {PatientsCreateComponent} from './views/patients-create/patients-create.component';
+import { AdministratorComponent} from './views/administrator/administrator.component';
 
 const routes: Routes = [
   {path : '', redirectTo:'home',
@@ -20,7 +21,9 @@ const routes: Routes = [
   {path: 'contact_us', component: ContactUsComponent},
   {path : 'login', component: LoginComponent},
   {path: 'doctor_create', component: DoctorsCreateComponent},
-  {path: 'patients_create', component: PatientsCreateComponent}
+  {path: 'patients_create', component: PatientsCreateComponent},
+  {path: 'administrator', component : AdministratorComponent}, 
+
 ];
 
 @NgModule({

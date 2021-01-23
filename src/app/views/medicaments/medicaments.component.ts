@@ -83,7 +83,7 @@ export class MedicamentsComponent implements OnInit {
     this.conv_data = data.toUpperCase();
     this.MedicamentService.getMedicaments(data,this.selectComercial,this.selectStrip,this.selectActivePrim ).then((response) => {  
       this.response_resultados = response.resultados;
-
+      console.log(response.resultados);
       this.dataSource = new MatTableDataSource(this.response_resultados);
       this.dataSource.paginator = this.paginator;
       console.log(this.dataSource);

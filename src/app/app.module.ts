@@ -54,6 +54,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './views/login/login.component';
 import { DoctorsCreateComponent } from './views/doctors-create/doctors-create.component';
 import { PatientsCreateComponent } from './views/patients-create/patients-create.component';
+import { AdministratorComponent } from './views/administrator/administrator.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { PatientsCreateComponent } from './views/patients-create/patients-create
     LoginComponent,
     DoctorsCreateComponent,
     PatientsCreateComponent,
+    AdministratorComponent,
   ],
   imports: [
     BrowserModule,
