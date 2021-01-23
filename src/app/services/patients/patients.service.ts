@@ -20,12 +20,12 @@ export class PatientsService {
   // Filtramos todos los datos de los pacientes, omitimos las promesas ya que no comprometemos una búsqueda
   // específica
   getDataPatients = () => {
-    return this.http.get("https://medicalportal.herokuapp.com/api/v1/pathient");
+    return this.http.get("https://medicalportal.herokuapp.com/api/v1/pathient/");
   }   
 
   // Realizamos el guardado de los datos del paciente, pasando un objeto
   saveDataPatients = (data_patients: PatientsInterface) =>{
-    return this.http.post("https://medicalportal.herokuapp.com/api/v1/pathient",data_patients);
+    return this.http.post("https://medicalportal.herokuapp.com/api/v1/pathient/:id",data_patients);
   }
 
 
