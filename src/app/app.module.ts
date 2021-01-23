@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 
 import { MedicamentService} from "./services/medicament/medicament.service"
+import { PatientsService } from "./services/patients/patients.service";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -116,7 +117,7 @@ import { AdministratorComponent } from './views/administrator/administrator.comp
     MatTooltipModule,
     MatTreeModule
   ],
-  providers: [MedicamentService],
+  providers: [MedicamentService, PatientsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

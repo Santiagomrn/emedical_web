@@ -11,7 +11,7 @@ import {FormBuilder} from '@angular/forms';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  patients_data:PatientsInterface = {
+  patients:PatientsInterface = {
     id: null,
     name: null,
     lastName: null,
@@ -26,6 +26,8 @@ export class ProfileComponent implements OnInit {
   id:any;
   patients_data_response:PatientsInterface[];
 
+  data = "HOLA";
+   
   constructor(
     private result_service:  PatientsService,
     private form: FormBuilder,
@@ -41,20 +43,24 @@ export class ProfileComponent implements OnInit {
   //Obtenemos los datos mediante el id
   get_patient_ID = () =>{
     // Obtenemos el id del paciente mediante la URL
-    this.id = this.route.snapshot.params['id'];             
+    this.id = this.route.snapshot.params['id'];    
+    console.log(this.id);
     // Verificamos la existencia del parámetro 
     if(this.id){
         // Hacemos uso del servicio para la obtención de datos de la interfaz
         this.result_service.getDataPatients().subscribe((response:PatientsInterface[]) =>{
         // Respaldamos la información de todos los pacientes
         this.patients_data_response = response;
+        console.log(this.patients_data_response);
+        
         // Llamamos al obejeto vacio previamente definido
-        this.patients_data = this.patients_data_response
+        this.patients = this.patients_data_response
         .find((m)=>{
           // Se realiza una busqueda en donde se obtiene los id de todos los pacientes registrados,
           // se compara con el id obtenido actualmente
           return (m.id == this.id);           
         });
+        console.log(this.patients);
       });
     }
   }
@@ -62,11 +68,11 @@ export class ProfileComponent implements OnInit {
   // Respaldamos los datos del paciente 
   save_patients_data = () =>{
     // Guardamos los datos de los pacientes, según el objeto local
-    this.result_service.saveDataPatients(this.patients_data).subscribe((response) =>{
+    this.result_service.saveDataPatients(this.patients).subscribe((response) =>{
       // Msotramos mensaje de confirmación del usuario
       confirm('¿Esta segur@ de guardar datos?');
       // Redireccionamos a alguna vista
-      //this.router.navigateByUrl('\home');  MODIFICAR
+      this.router.navigateByUrl('\home');  
     },(error) => {
       alert("Error: " + error.statusText);
     });
