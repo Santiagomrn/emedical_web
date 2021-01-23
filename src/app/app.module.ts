@@ -54,8 +54,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './views/login/login.component';
 import { DoctorsCreateComponent } from './views/doctors-create/doctors-create.component';
 import { PatientsCreateComponent } from './views/patients-create/patients-create.component';
-import { HomePatientsComponent } from './views/home-patients/home-patients.component';
-import { ProfileComponent } from './views/profile/profile.component';
+import { AdministratorComponent } from './views/administrator/administrator.component';
+
 
 @NgModule({
   declarations: [
@@ -71,10 +71,7 @@ import { ProfileComponent } from './views/profile/profile.component';
     LoginComponent,
     DoctorsCreateComponent,
     PatientsCreateComponent,
-    HomePatientsComponent,
-    ProfileComponent,
-
-    
+    AdministratorComponent,
   ],
   imports: [
     BrowserModule,

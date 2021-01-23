@@ -1,0 +1,144 @@
+
+
+.acrylic {
+    padding: 4em 6em;
+    position: relative;
+    overflow: hidden;
+    /*overflow: scroll;*/
+    margin: 1em;
+} 
+
+input[type=search] {
+    border: 5px rgb(0, 0, 0);
+    border-radius: 10;
+    border: #CBCBCB  0.2px solid;
+    right:50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    -webkit-appearance: 10px;
+    background-color: #F0EFF1  ;
+  }
+  
+.image_medicamentos{
+    width: 200px;
+    height: 100px;
+}
+
+.hide{
+    display: none;
+}
+
+mat-footer-row mat-footer-cell{
+    justify-content: left;
+    font-style: italic;
+}
+
+
+.image_background{
+    height:65em; 
+    width:auto;
+    background-size:cover; 
+    background-color:  #FFFFFF;
+    /* background-image:url('../../../assets/img/Fondo_medicamentos.jpg'); */
+    background-position:50% 50%;
+  }
+
+.custom-pagination ::ng-deep .ngx-pagination .current {
+    background: blue;
+    margin: 0 5px;
+    border-radius: 2px;
+    line-height: 1.8rem;
+}
+
+.image{
+    /* position: absolute; */
+    /* background: url(../../images/contactus.jpg); */
+    background-position: absolute;
+    background-size: cover;
+    filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    
+}
+.contactus{
+    position: absolute;
+    width: 85%;
+    height: 10%;
+    text-align: left;
+    top: 26%;
+    /* background-color: rgba(223, 217, 217, 0.342); */
+    margin-left: -2%; 
+    margin-top: -2%;
+}
+
+.buttoms{
+    margin: 5px;
+    background: #F5587C ;
+}
+
+
+.redes{
+    position: absolute;
+    width: 85%;
+    height: 20%;
+    top: 40%;
+    left: 2%;
+    /* background-color: rgba(223, 217, 217, 0.342); */
+    margin-left: -2%; 
+    margin-top: -2%; 
+}
+
+.contenedor::-webkit-scrollbar(){
+    width: 7px;
+}
+
+.contendor::-webkit-scrollbar-thumb(){
+    background: #0000;
+}
+
+
+.container-fluid{
+    width: auto;
+    max-width: 1000px;
+    height: auto;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+
+  .container-fluid .card{
+    width: 135%;
+    
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.678);
+    overflow: hidden;
+    /*margin: 20px;*/
+    border-top: #CBCBCB  0.2px solid;
+    text-align: center;
+  }
+
+  .card2{
+    width: 24%;
+    height: 18rem;
+    float: right;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.678);
+    overflow: hidden;
+    /*margin: 20px;*/
+    border-top: #CBCBCB  1px solid;
+    text-align: right;
+    margin-right: 8px;
+    align-content: right;
+    margin-top: 10px;
+  }
+
+  table{
+    width: 129%;
+    border-top: #CBCBCB  0.2px solid;
+  }
+
+  .container-fluid .table{
+    border-collapse: collapse;
+    border: black;
+  }
