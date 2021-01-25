@@ -1,13 +1,14 @@
 import M from 'materialize-css';
 import { Component } from '@angular/core';
 import { MedicamentService} from "./services/medicament/medicament.service";
+import { PatientsService } from "./services/patients/patients.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private MedicamentService: MedicamentService){}
+  constructor(private MedicamentService: MedicamentService, private result_service:  PatientsService){}
   login : string;
   ngOnInit(){
     this.login = localStorage.getItem("token");

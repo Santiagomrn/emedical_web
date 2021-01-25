@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 
 import { MedicamentService} from "./services/medicament/medicament.service"
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PatientsService } from "./services/patients/patients.service";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
@@ -54,7 +55,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './views/login/login.component';
 import { DoctorsCreateComponent } from './views/doctors-create/doctors-create.component';
 import { PatientsCreateComponent } from './views/patients-create/patients-create.component';
-import { HomePatientsComponent } from './views/home-patients/home-patients.component';
+import { AdministratorComponent } from './views/administrator/administrator.component';
+import { ListPatientsComponent } from './views/list-patients/list-patients.component';
 import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
@@ -66,22 +68,21 @@ import { ProfileComponent } from './views/profile/profile.component';
     ContactUsComponent,
     AboutUsComponent,
     ListNewsComponent,
+    ProfileComponent,
 
     FooterComponent,
     LoginComponent,
     DoctorsCreateComponent,
     PatientsCreateComponent,
-    HomePatientsComponent,
-    ProfileComponent,
-
-    
+    AdministratorComponent,
+    ListPatientsComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatBadgeModule,
@@ -119,7 +120,7 @@ import { ProfileComponent } from './views/profile/profile.component';
     MatTooltipModule,
     MatTreeModule
   ],
-  providers: [MedicamentService],
+  providers: [MedicamentService, PatientsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

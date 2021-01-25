@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Interface } from 'readline';
 import { PatientsInterface } from "../../interfaces/patients/patients-interface";
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule,  HttpHeaders , HttpResponse} from '@angular/common/http';
 import { resourceLimits } from 'worker_threads';
+import { resolve } from 'dns';
+import { rejects } from 'assert';
 
 
 @Injectable({
@@ -9,9 +12,8 @@ import { resourceLimits } from 'worker_threads';
 })
 export class PatientsService {
 
-  cachedValues: Array<{
-    [query: string]: PatientsInterface
-  }> = [];
+  AccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJwYXRoaWVudCIsImlkIjoyOCwiaWF0IjoxNjExNjAxNjA5LCJleHAiOjE2MTE2MDM0MDl9.RuCDv5RtnacnoiwqZ10Zq15u7ikNonIUK3CmYWVWY3Y";
+ 
 
   constructor(private http: HttpClient) {
     this.http = http;
@@ -19,34 +21,34 @@ export class PatientsService {
 
   // Filtramos todos los datos de los pacientes, omitimos las promesas ya que no comprometemos una búsqueda
   // específica
-  getDataPatients = () => {
-    return this.http.get("https://medicalportal.herokuapp.com/api/v1/pathient/");
+  // Para todos los datos hacemos uso de (null,'1')
+  // Para un dato especifico (id,'2')
+  getDataPatients = (id,data) => {
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+        if(data == true){
+          return this.http.get<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/", { headers: HeadersForPatientsAPI });
+        }else if(data == false){
+          return this.http.get<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/"+id, { headers: HeadersForPatientsAPI });
+        }
+      
+    }
+  
   }   
 
   // Realizamos el guardado de los datos del paciente, pasando un objeto
-  saveDataPatients = (data_patients: PatientsInterface) =>{
-    return this.http.post("https://medicalportal.herokuapp.com/api/v1/pathient/:id",data_patients);
+  saveDataPatients = (data_patients: PatientsInterface) =>{  
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.post<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/:id=1", data_patients, { headers: HeadersForPatientsAPI });
+    }
   }
 
-
-  /*
-   saveAppointment = (results_itf: AppointmentInterface): Promise<AppointmentInterface> =>{
-    let promise = new Promise <AppointmentInterface>((resolve, reject) => {
-      if (this.cachedValues[this.results+this.page]) {
-        resolve(this.cachedValues[this.results+this.page])
-      }else {
-        this.http.post(this.Url + this.results + '&page=' + this.page,results_itf)
-          .toPromise()
-          .then((response) => {
-            this.cachedValues[this.results+this.page]=response
-            resolve(response as AppointmentInterface)
-          }, (error) => {
-            reject(error);
-          })
-      } 
-    });
-    return promise;
-   }
-  */
-
+  
 }

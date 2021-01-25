@@ -1,8 +1,10 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a routerLink="/login">Doctor</a></li>
+  <li><a routerLink="/login" [queryParams] = "{ role: 'doctor'}">Doctor</a></li>
   <li class="divider"></li>
-  <li><a routerLink="/login">Pacient</a></li>
+  <li><a routerLink="/login" [queryParams] = "{ role: 'pacient'}">Pacient</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="/login" [queryParams] = "{ role: 'administrator'}">Administrator</a></li>
 </ul>
 <nav class="color">
   <div class="nav-wrapper">
@@ -12,14 +14,19 @@
     <!-- Dropdown Trigger -->
     <ul class="right hide-on-med-and-down">
       <li>
-        <a routerLink="patients/profile-patients/{{1}}">
+        <a routerLink="/profile_patients/{{28}}">
          Profile
         </a>
     </li>
       <li>
-          <a routerLink="/home_patients">
+          <a routerLink="/list_patients">
            Lista pacientes
           </a>
+      </li>
+      <li>
+        <a routerLink="/dashboard_patients">
+          Home de pacientes
+        </a>
       </li>
       <!--
       <li><a routerLink="/doctor_create">
@@ -62,7 +69,7 @@
           Sobre nosotros</a></li>
 
       <li>
-        <div *ngIf="login != '0'">
+        <div *ngIf="login === '0'">
           <a routerLink="/logout">
             <svg style="width:24px;height:17px" viewBox="0 0 24 24">
               <path fill="currentColor"
@@ -72,7 +79,7 @@
         </div>
       </li>
       <li>
-        <div *ngIf="login === '0'">
+        <div *ngIf="login != '0'">
           <a class="dropdown-trigger" href="#!" data-target="dropdown1">
             <svg style="width:24px;height:17px" viewBox="0 0 24 24">
               <path fill="currentColor"
@@ -87,4 +94,5 @@
 </nav>
 
 <router-outlet></router-outlet>
+
 <app-footer></app-footer>
