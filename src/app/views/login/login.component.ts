@@ -18,7 +18,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  role : Object;
+  role : string;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -38,18 +38,33 @@ export class LoginComponent implements OnInit {
   }
   loginUser(login : FormGroup){
     const headers = new Headers;
-    headers.append('Access-Control-Allow-Origin', '*');
+    // headers.append('Access-Control-Allow-Origin', '*');
     console.log("Hi From submit");
     console.warn(this.loginForm.value);
     // Acceder al query params
     this.role =  this.route.snapshot.queryParamMap.get('role');
     // Validar mediante API
     console.log("https://medicalportal.herokuapp.com/api/v1/login/"+this.role);
-    let _url ="https://medicalportal.herokuapp.com/api/v1/login/"+this.role ;
-    this.http.get<any>(_url, { headers: headers }).subscribe(data => {
-      console.log(data.data); 
-   },
-   error => {
+    let _url ="https://medicalportal.herokuapp.com/api/v1/login/"+this.role;
+    var self = this;
+    this.http.post<any>(_url, 
+      {
+      email : this.loginForm.get("mail").value,
+      password : this.loginForm.get("pass").value,
+      }
+      ).subscribe(data => {
+      console.log(data); 
+      let key = data.token;
+      let role = self.role;
+      localStorage.setItem('token', key );
+      localStorage.setItem('role', role );
+      localStorage.setItem('login', '1' );
+      // self.router.navigate([self.role]);
+      self.router.navigate(['home']);
+    },
+    error => {
+      alert("Usuario y/o contraseña erróneo");
+      localStorage.setItem('login', '0' );
     console.log(error);
     }
    );

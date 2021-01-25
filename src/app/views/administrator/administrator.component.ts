@@ -26,7 +26,7 @@ export class AdministratorComponent implements OnInit {
   /* Variable para pipe */
   conv_data:string;
 
-  url: string = 'https://reqres.in/api/users/';
+  url: string = 'https://medicalportal.herokuapp.com/api/v1/doctor/';
   totalAngularPackages; // <---
   error;
   /* Paginación */
@@ -75,10 +75,10 @@ export class AdministratorComponent implements OnInit {
       this.conv_data = data.toUpperCase();
       let _url = this.url+this.searchForm.get('query').value;
       this.http.get<any>(_url).subscribe(data => {
-        console.log(data.data);
-        this.response_resultados = data.data;
+        console.log(data);
+        this.response_resultados = data;
         if(this.searchForm.get('query').value != ""){
-          this.dataSource = new MatTableDataSource([data.data]);
+          this.dataSource = new MatTableDataSource([data]);
           return;
         }
         console.log(this.response_resultados);

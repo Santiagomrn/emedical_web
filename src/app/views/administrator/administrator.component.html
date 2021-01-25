@@ -8,14 +8,21 @@
                     <div class="card">
                         <p style="font-size: 150%;  margin-top: 1%;"><b>Doctor :</b> {{conv_data}}</p> 
                         <table mat-table [dataSource]="dataSource">
+                            <!-- <ng-container matColumnDef="id">
+                                <th mat-header-cell *matHeaderCellDef>id</th>
+                                <td mat-cell *matCellDef="let element"> 
+                                    <p>{{element.id}}</p>
+                                </td>
+                            </ng-container> -->
                             <ng-container matColumnDef="nombre">
-                                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                                <th mat-header-cell *matHeaderCellDef>Datos Doctor</th>
                                 <td mat-cell *matCellDef="let element"> 
                                     <div *ngIf="(true) else elseBlock">
                                         <!-- <a [href]="element.docs[0].url"  >
                                             <img class="image_medicamentos" [src]="element.fotos[0].url" /> 
                                         </a> -->
-                                        <p>{{element.first_name}}</p>
+                                        <p><b>ID: </b>{{element.id}}</p>
+                                        <p><b>Nombre: </b>{{element.name}}</p>
                                         </div>
                                         <ng-template #elseBlock>
                                             <img class="image_medicamentos" src="../../../assets/img/No_disponible.png" alt="Not Found" >
@@ -26,13 +33,15 @@
                                         <ng-container matColumnDef="descripcion">
                                             <th mat-header-cell *matHeaderCellDef>Descripción</th>
                                             <td mat-cell *matCellDef="let element"> 
-                                                <p><b>Descripcion: </b>{{element.last_name}}</p>
+                                                <p><b>Descripción: </b>{{element.description}}</p>
                                                 <p><b>Email: </b>{{element.email}}</p>
+                                                <p><b>Teléfono: </b>{{element.phone}}</p>
+                                                <p><b>Área Médica: </b>{{element.medicalArea}}</p>
                                             </td>
                                         </ng-container>
                                         <ng-container matColumnDef="loading">
                                             <mat-footer-cell *matFooterCellDef colspan="6">
-                                                Cargando datos... 
+                                                Cargando datos...
                                                 <div class="preloader-wrapper big active" style="float: center;">
                                                     <div class="spinner-layer spinner-blue-only">
                                                       <div class="circle-clipper left">

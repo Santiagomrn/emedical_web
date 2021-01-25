@@ -15,6 +15,7 @@ import {AppointmentComponent} from './views/appointment/appointment.component';
 import { AppComponent } from './app.component';
 import {ProfileComponent} from './views/profile/profile.component';
 import { AuthGuardService as AuthGuard} from './services/auth/auth-guard.service';
+import { RoleGuardService } from './services/auth/role-guard.service';
 
 const routes: Routes = [
   {path : '', redirectTo:'home',
@@ -25,9 +26,20 @@ const routes: Routes = [
   {path: 'about_us', component: AboutUsComponent},
   {path: 'contact_us', component: ContactUsComponent}, 
   {path : 'login', component: LoginComponent},
-  {path: 'doctor_create', component: DoctorsCreateComponent},
+  
+  {path: 'doctor_create', component: DoctorsCreateComponent,
+    canActivate : [RoleGuardService],
+    data: {
+      expectedRole: 'manager'
+    }
+  },
   {path: 'patients_create', component: PatientsCreateComponent},
-  {path: 'administrator', component : AdministratorComponent}, 
+  {path: 'administrator', component : AdministratorComponent,
+    canActivate: [RoleGuardService],
+    data:{
+      expectedRole : 'manager'
+    }
+  }, 
 
   {path: 'home_patients', component: HomePatientsComponent},
   {path: 'home_patients/appointment_create', component: AppointmentComponent},
