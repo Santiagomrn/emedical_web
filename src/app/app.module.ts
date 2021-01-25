@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 
 import { MedicamentService} from "./services/medicament/medicament.service"
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PatientsService } from "./services/patients/patients.service";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
@@ -57,6 +58,7 @@ import { PatientsCreateComponent } from './views/patients-create/patients-create
 import { AdministratorComponent } from './views/administrator/administrator.component';
 
 import { HomePatientsComponent } from './views/home-patients/home-patients.component';
+import { ListPatientsComponent } from './views/list-patients/list-patients.component';
 import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
@@ -68,6 +70,7 @@ import { ProfileComponent } from './views/profile/profile.component';
     ContactUsComponent,
     AboutUsComponent,
     ListNewsComponent,
+    ProfileComponent,
 
     FooterComponent,
     LoginComponent,
@@ -78,13 +81,14 @@ import { ProfileComponent } from './views/profile/profile.component';
     ProfileComponent,
 
     
+    ListPatientsComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatBadgeModule,
@@ -122,7 +126,7 @@ import { ProfileComponent } from './views/profile/profile.component';
     MatTooltipModule,
     MatTreeModule
   ],
-  providers: [MedicamentService],
+  providers: [MedicamentService, PatientsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

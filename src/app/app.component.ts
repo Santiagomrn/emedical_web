@@ -2,16 +2,19 @@ import M from 'materialize-css';
 import { Component } from '@angular/core';
 import { MedicamentService} from "./services/medicament/medicament.service";
 import { ActivatedRoute, Router } from '@angular/router';
+import { PatientsService } from "./services/patients/patients.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private MedicamentService: MedicamentService, private route: ActivatedRoute, private router: Router){}
+  constructor(private MedicamentService: MedicamentService, private route: ActivatedRoute, private router: Router,
+    private result_service:  PatientsService  
+    ){}
   login : string ;
   isRole : string;
-  ngOnInit(){
+ngOnInit(){
     // Modificar logout cuando ya se tiene la sesión iniciada. 
     // Verificar qué devuelve administrador
     // Proteger pestañas desde el navbar

@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import {ProfileComponent} from './views/profile/profile.component';
 import { AuthGuardService as AuthGuard} from './services/auth/auth-guard.service';
 import { RoleGuardService } from './services/auth/role-guard.service';
-
+import {ListPatientsComponent} from './views/list-patients/list-patients.component';
 const routes: Routes = [
   {path : '', redirectTo:'home',
   pathMatch:'full'},
@@ -44,8 +44,10 @@ const routes: Routes = [
   {path: 'home_patients', component: HomePatientsComponent},
   {path: 'home_patients/appointment_create', component: AppointmentComponent},
   {path: 'home_patients/appointment_create/:id', component: AppointmentComponent},
-  {path: 'patients/profile-patients/:id',component:ProfileComponent},
-  {path : '**' , redirectTo : 'home'}
+  {path : '**' , redirectTo : 'home'}, 
+  {path: 'profile_patients/:id', component: ProfileComponent},
+  {path: 'dashboard_patients', component:HomePatientsComponent},
+  {path: 'list_patients', component: ListPatientsComponent}
 ];
 
 @NgModule({

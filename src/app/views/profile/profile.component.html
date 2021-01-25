@@ -1,112 +1,116 @@
-<div class="container">
-    <div class="row">
-        <div class="col s6">
-            <h2 style="margin-top: 4em; margin-left: -2.9em;">Información Básica</h2>
-            <div class="card" style="margin-top: -0.7em; margin-left: -4.2em; width: 30rem; ">
-                <table>
-                    <thead>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>Nombre(s)</th>
-                            <td style="text-decoration: underline;"><input [(ngModel)]="patients_data.name"/></td>
-                            <td>
-                                <div style="box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);  overflow: hidden;  border-radius: 8px;">
-                                    <i class="small material-icons" (click)="save_patients_data()" style="margin-left: 0.5em;">
-                                        create_new_folder
-                                    </i>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Apellido(s)</th>
-                            <td style="text-decoration: underline;"><input [(ngModel)]="patients_data.lastName"/></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>Correo electrónico</th>
-                            <td><input [(ngModel)]="patients_data.email"/></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>Contraseña</th>
-                            <td><input [(ngModel)]="patients_data.password"/></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="row">
-                <div class="col s6">
-                    <h2 style="margin-top: 1em;margin-left: -2.9em;">Información Adicional</h2>
-                    <div class="card" style="margin-top: -0.7em; margin-left: -4.2em; width: 30rem; ">
-                        <table>
-                            <thead>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>Fecha de nacimiento</th>
-                                    <td><input [(ngModel)]="patients_data.birthdate"/></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>Teléfono</th>
-                                    <td><input [(ngModel)]="patients_data.phone"/></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th>Teléfono(Opcional)</th>
-                                    <td><input [(ngModel)]="patients_data.emergencyPhone"/></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+    <div class="container" *ngFor="let patients of patients_data_response">
+        <div class="row">
+            <div class="col s6">
+                <h2 style="margin-top: 4em; margin-left: -2.9em;">Información Básica</h2>
+                <div class="card" style="margin-top: -0.7em; margin-left: -4.2em; width: 30rem; ">
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Nombre(s)</th>
+                                <td style="text-decoration: underline;">
+                                    
+                                        <input [(ngModel)]="patients.name" id="name" name="name"  />  
+                            
+                                                      
+                                </td>
+                                <td>
+                                    <div style="box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);  overflow: hidden;  border-radius: 8px;">
+                                        <i class="small material-icons" (click)="save_patients_data()" style="margin-left: 0.5em;">
+                                            create_new_folder
+                                        </i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Apellido(s)</th>
+                                <td style="text-decoration: underline;"><input [(ngModel)]="patients.lastName" id="lastName" name="lastName" /></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Correo electrónico</th>
+                                <td><input [(ngModel)]="patients.email" id="email" name="email" /></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Contraseña</th>
+                                <td><input [(ngModel)]="patients.password" id="password" name="password" /></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="col s6">
-                        <h2 style="margin-top: -6.8em; margin-left: 14em;">Configuración</h2>
-                        <div class="card" style="margin-top: -0.7em; margin-left: 20em; width: 30rem; ">
+                <div class="row">
+                    <div class="col s6">
+                        <h2 style="margin-top: 1em;margin-left: -2.9em;">Información Adicional</h2>
+                        <div class="card" style="margin-top: -0.7em; margin-left: -4.2em; width: 30rem; ">
                             <table>
                                 <thead>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>Lenguaje</th>
-                                        <td>Español</td>
+                                        <th>Fecha de nacimiento</th>
+                                        <td><input [(ngModel)]="patients.birthdate" id="birthdate" name="birthdate" /></td>
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <th>Política de privacidad</th>
-                                        <td>
-                                            <p>Los doctores y administradores</p>
-                                            <p>del portal web cuenta con</p>
-                                            <p>acceso a este perfil, ningún</p>
-                                            <p>otro paciente cuenta con acceso.</p>
-                                        </td>                        
+                                        <th>Teléfono</th>
+                                        <td><input [(ngModel)]="patients.phone" id="phone" name="phone" /></td>
                                         <td></td>
-                                    </tr>        
+                                    </tr>
                                     <tr>
-                                        <th>Condiciones</th>
-                                        <td>
-                                            <p>El uso correcto de este portal</p>
-                                            <p>web, es responsabilidad de cada</p>
-                                            <p>usuario.</p>
-                                            <p>Se recomienda el cambio de </p>
-                                            <p>contraseña una vez por mes.</p>
-                                        </td>
-                                    </tr>           
+                                        <th>Teléfono(Opcional)</th>
+                                        <td><input [(ngModel)]="patients.emergencyPhone" id="emergencyPhone" name="emergencyPhone" /></td>
+                                        <td></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                    <div class="col s6">
+                            <h2 style="margin-top: -6.8em; margin-left: 14em;">Configuración</h2>
+                            <div class="card" style="margin-top: -0.7em; margin-left: 20em; width: 30rem; ">
+                                <table>
+                                    <thead>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Lenguaje</th>
+                                            <td>Español</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Política de privacidad</th>
+                                            <td>
+                                                <p>Los doctores y administradores</p>
+                                                <p>del portal web cuenta con</p>
+                                                <p>acceso a este perfil, ningún</p>
+                                                <p>otro paciente cuenta con acceso.</p>
+                                            </td>                        
+                                            <td></td>
+                                        </tr>        
+                                        <tr>
+                                            <th>Condiciones</th>
+                                            <td>
+                                                <p>El uso correcto de este portal</p>
+                                                <p>web, es responsabilidad de cada</p>
+                                                <p>usuario.</p>
+                                                <p>Se recomienda el cambio de </p>
+                                                <p>contraseña una vez por mes.</p>
+                                            </td>
+                                        </tr>           
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
                 </div>
+            </div>    
+            <div class="col s6">
+                <img src="assets/img/perfil2.jpg" class="img_profile"/>
+                <p style="margin-left: 18em; text-decoration: underline; color: blue">
+                    Perfil
+                </p>
             </div>
-        </div>    
-        <div class="col s6">
-            <img src="assets/img/perfil2.jpg" class="img_profile"/>
-            <p style="margin-left: 18em; text-decoration: underline; color: blue">
-                Perfil
-            </p>
-         </div>
+        </div>
     </div>
-    
-</div>

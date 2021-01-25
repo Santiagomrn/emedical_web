@@ -1,89 +1,71 @@
 import { Injectable } from '@angular/core';
 import { AppointmentInterface } from "../../interfaces/appointment/appointment-interface";
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule,  HttpHeaders , HttpResponse} from '@angular/common/http';
 import { resourceLimits } from 'worker_threads';
+import { Interface } from 'readline';
+import { resolve } from 'dns';
+import { rejects } from 'assert';
+
 
 @Injectable({
   providedIn: 'root'
 }) 
 export class AppointmentService {
 
-  //Url = 'https://medicalportal.herokuapp.com/api/v1/medicalAppointment/?q=';
-  Url = 'https://randomuser.me/api/?exc=login,location,id&results=';
-  page = '1';
-  results = 'number';
-  cachedValues: Array<{
-    [query: string]: AppointmentInterface 
-  }> = [];
+  AccessToken = "";
 
+  constructor(private http: HttpClient) {
+  this.http = http
+  }
 
-    constructor(private http: HttpClient) {
-    this.http = http
-   }
+  // Obtenemos los datos de la cita de cada paciente
+  // Para obtener todos los datos (null,'1')
+  // Para obtener datos especificos mediante id (id,'2')
+  getAppointment = (id,data) =>{
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+        if(data == '1'){
+          return this.http.get<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/", { headers: HeadersForPatientsAPI });
+        }else if(data == '2'){
+          return this.http.get<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment?id="+id, { headers: HeadersForPatientsAPI });
+        }
+    }
+  }
 
-   getAppointmentAll = () =>{
-    return  this.http.get(this.Url);
-   }
+  // Guardamos los datos de la cita 
+  saveAppointment = (result_appoinmtment: AppointmentInterface) =>{
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.post<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/",result_appoinmtment ,{ headers: HeadersForPatientsAPI });
+    }
+  }
 
-   getAppointment = (data: string): Promise<AppointmentInterface> =>{
-    let promise = new Promise <AppointmentInterface>((resolve, reject) => {
-      if (this.cachedValues[data+this.page]) {
-        resolve(this.cachedValues[data+this.page])
-      }else {
-        this.http.get(this.Url + data + '&page=' + this.page)
-          .toPromise()
-          .then((response) => {
-            this.cachedValues[data+this.page]=response
-            resolve(response as AppointmentInterface)
-          }, (error) => {
-            reject(error);
-          })
-      } 
-    });
-    return promise;
-   }
-
-
-   saveAppointment = (results_itf: AppointmentInterface): Promise<AppointmentInterface> =>{
-    let promise = new Promise <AppointmentInterface>((resolve, reject) => {
-      if (this.cachedValues[this.results+this.page]) {
-        resolve(this.cachedValues[this.results+this.page])
-      }else {
-        this.http.post(this.Url + this.results + '&page=' + this.page,results_itf)
-          .toPromise()
-          .then((response) => {
-            this.cachedValues[this.results+this.page]=response
-            resolve(response as AppointmentInterface)
-          }, (error) => {
-            reject(error);
-          })
-      } 
-    });
-    return promise;
-   }
-
-
-   editAppointment = (results_itf: AppointmentInterface): Promise<AppointmentInterface> =>{
-    let promise = new Promise <AppointmentInterface>((resolve, reject) => {
-      if (this.cachedValues[this.results+this.page]) {
-        resolve(this.cachedValues[this.results+this.page])
-      }else {
-        this.http.put(this.Url + results_itf.id + '&page=' + this.page,results_itf)
-          .toPromise()
-          .then((response) => {
-            this.cachedValues[this.results+this.page]=response
-            resolve(response as AppointmentInterface)
-          }, (error) => {
-            reject(error);
-          })
-      } 
-    });
-    return promise;
-   }
-
-   
-   deleteAppointment = (id) =>{
-    return this.http.delete(this.Url + id)
+  // Editamos datos de la cita
+  editAppointment = (id,result_appoinmtment: AppointmentInterface) =>{
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.put<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment?id="+id,result_appoinmtment ,{ headers: HeadersForPatientsAPI });
+    }
+  }
+  
+  // Cancelación de la cita
+  deleteAppointment = (id) =>{
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.delete<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment?id="+id,{ headers: HeadersForPatientsAPI });
+    }
    }
 
 }
