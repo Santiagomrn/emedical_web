@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 
 import { MedicamentService} from "./services/medicament/medicament.service"
 import { PatientsService } from "./services/patients/patients.service";
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
@@ -56,7 +56,8 @@ import { LoginComponent } from './views/login/login.component';
 import { DoctorsCreateComponent } from './views/doctors-create/doctors-create.component';
 import { PatientsCreateComponent } from './views/patients-create/patients-create.component';
 import { AdministratorComponent } from './views/administrator/administrator.component';
-
+import { ListPatientsComponent } from './views/list-patients/list-patients.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -67,19 +68,21 @@ import { AdministratorComponent } from './views/administrator/administrator.comp
     ContactUsComponent,
     AboutUsComponent,
     ListNewsComponent,
+    ProfileComponent,
 
     FooterComponent,
     LoginComponent,
     DoctorsCreateComponent,
     PatientsCreateComponent,
     AdministratorComponent,
+    ListPatientsComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatBadgeModule,

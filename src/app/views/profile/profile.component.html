@@ -1,4 +1,4 @@
-    <div class="container">
+    <div class="container" *ngFor="let patients of patients_data_response">
         <div class="row">
             <div class="col s6">
                 <h2 style="margin-top: 4em; margin-left: -2.9em;">Información Básica</h2>
@@ -10,9 +10,9 @@
                             <tr>
                                 <th>Nombre(s)</th>
                                 <td style="text-decoration: underline;">
-                                    <form>
-                                        <input id="name" name="name"/>  
-                                    </form>
+                                    
+                                        <input [(ngModel)]="patients.name" id="name" name="name"  />  
+                            
                                                       
                                 </td>
                                 <td>
@@ -25,17 +25,17 @@
                             </tr>
                             <tr>
                                 <th>Apellido(s)</th>
-                                <td style="text-decoration: underline;"><input/></td>
+                                <td style="text-decoration: underline;"><input [(ngModel)]="patients.lastName" id="lastName" name="lastName" /></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <th>Correo electrónico</th>
-                                <td><input /></td>
+                                <td><input [(ngModel)]="patients.email" id="email" name="email" /></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <th>Contraseña</th>
-                                <td><input /></td>
+                                <td><input [(ngModel)]="patients.password" id="password" name="password" /></td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -51,17 +51,17 @@
                                 <tbody>
                                     <tr>
                                         <th>Fecha de nacimiento</th>
-                                        <td><input /></td>
+                                        <td><input [(ngModel)]="patients.birthdate" id="birthdate" name="birthdate" /></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <th>Teléfono</th>
-                                        <td><input /></td>
+                                        <td><input [(ngModel)]="patients.phone" id="phone" name="phone" /></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <th>Teléfono(Opcional)</th>
-                                        <td><input /></td>
+                                        <td><input [(ngModel)]="patients.emergencyPhone" id="emergencyPhone" name="emergencyPhone" /></td>
                                         <td></td>
                                     </tr>
                                 </tbody>

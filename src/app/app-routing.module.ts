@@ -12,6 +12,7 @@ import {PatientsCreateComponent} from './views/patients-create/patients-create.c
 import {AdministratorComponent} from './views/administrator/administrator.component';
 import {ProfileComponent} from './views/profile/profile.component';
 import {HomePatientsComponent } from './views/home-patients/home-patients.component';
+import {ListPatientsComponent} from './views/list-patients/list-patients.component';
 
 const routes: Routes = [
   {path : '', redirectTo:'home',
@@ -26,6 +27,8 @@ const routes: Routes = [
   {path: 'patients_create', component: PatientsCreateComponent},
   {path: 'administrator', component : AdministratorComponent}, 
   {path: 'profile_patients/:id', component: ProfileComponent},
+  {path: 'dashboard_patients', component:HomePatientsComponent},
+  {path: 'list_patients', component: ListPatientsComponent}
   
 ];
 
