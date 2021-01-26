@@ -41,7 +41,7 @@ export class AppointmentComponent implements OnInit {
   getID = () =>{
     this.id = this.route.snapshot.params['id'];
     if(this.id){
-      this.appointmentService.getAppointmentAll().subscribe((response:AppointmentInterface[]) => {
+      this.appointmentService.getAppointment(null, true).subscribe((response:AppointmentInterface[]) => {
         this.appointments = response;
         this.appointment = this.appointments.find((m)=>{ return m.id==this.id});
       }, (error) => {
@@ -51,8 +51,8 @@ export class AppointmentComponent implements OnInit {
   }
 
   getNumber = () => {
-    this.appointmentService.getAppointment("number").then((response) => {  
-        this.appointment = response;
+    this.appointmentService.getAppointment("number", false).subscribe((response) => {  
+        this.appointments = response;
       }, (error) => {
         alert("Error: " + error.statusText);
       });
@@ -61,7 +61,7 @@ export class AppointmentComponent implements OnInit {
     
     saveAppointmentCreate = () => {
       if(this.editing){
-        this.appointmentService.saveAppointment(this.appointment).then((response) =>{
+        this.appointmentService.saveAppointment(this.appointment).subscribe((response) =>{
           this.router.navigateByUrl('\home_patients');
           alert('Cita Actualizada');
         },(error) => {
@@ -69,7 +69,7 @@ export class AppointmentComponent implements OnInit {
         });
 
       }else{
-        this.appointmentService.saveAppointment(this.appointment).then((response) =>{
+        this.appointmentService.saveAppointment(this.appointment).subscribe((response) =>{
             this.router.navigateByUrl('\home_patients');
             alert('Cita Programada');
         },(error) => {
