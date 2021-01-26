@@ -12,7 +12,7 @@ import { threadId } from 'worker_threads';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-/*  patients:PatientsInterface = {
+    patients:PatientsInterface = {
     id: null,
     name: null,
     lastName: null,
@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
     birthdate: null,
     created_at: null,
     updated_at: null
-  }*/
+  }
   id:any;
   patients_data_response:PatientsInterface[];
   patients_birthdate: any;
@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
 
 
         console.log(this.patients_data_response);
-        /*
+        
         // Llamamos al obejeto vacio previamente definido
         this.patients = this.patients_data_response
         .find((m)=>{
@@ -73,7 +73,7 @@ export class ProfileComponent implements OnInit {
         });
         console.log(this.patients);
 
-        */
+        
         /*
         // Respaldamos el valor de birthdate
         this.patients_birthdate = this.patients.birthdate;
@@ -83,7 +83,7 @@ export class ProfileComponent implements OnInit {
     }
 
   }
-/*
+
   // Respaldamos los datos del paciente 
   save_patients_data = () =>{
     // Regresamos el valor actual de birthdate
@@ -99,6 +99,6 @@ export class ProfileComponent implements OnInit {
       alert("Error: " + error.statusText);
     });
 
-  }*/
+  }
 
 }

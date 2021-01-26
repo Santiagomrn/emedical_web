@@ -19,18 +19,18 @@ export class AppointmentService {
   }
 
   // Obtenemos los datos de la cita de cada paciente
-  // Para obtener todos los datos (null,'1')
-  // Para obtener datos especificos mediante id (id,'2')
+  // Para obtener todos los datos (null,true)
+  // Para obtener datos especificos mediante id (id,false)
   getAppointment = (id,data) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-        if(data == '1'){
+        if(data == true){
           return this.http.get<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/", { headers: HeadersForPatientsAPI });
-        }else if(data == '2'){
-          return this.http.get<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment?id="+id, { headers: HeadersForPatientsAPI });
+        }else if(data == false){
+          return this.http.get<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/"+id, { headers: HeadersForPatientsAPI });
         }
     }
   }
