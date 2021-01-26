@@ -1,4 +1,5 @@
-    <div class="container">
+<div class="container">
+    <form [formGroup]="frmpatients" (ngSubmit)="save_patients_data()">
         <div class="row">
             <div class="col s6">
                 <h2 style="margin-top: 4em; margin-left: -2.9em;">Información Básica</h2>
@@ -10,32 +11,32 @@
                             <tr>
                                 <th>Nombre(s)</th>
                                 <td style="text-decoration: underline;">
-                                    
-                                        <input [(ngModel)]="patients.name" id="name" name="name"  />  
-                            
-                                                      
+                                    <input [(ngModel)]="patients.name" formControlName="frname" id="name" name="name" type="text"  />  
                                 </td>
                                 <td>
                                     <div style="box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);  overflow: hidden;  border-radius: 8px;">
-                                        <i class="small material-icons" (click)="save_patients_data()" style="margin-left: 0.5em;">
+                                        
+                                        <button type="submit" style="width: 40px; height: 40px; background: white; border: 0em;">
+                                        <i class="small material-icons">
                                             create_new_folder
                                         </i>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <th>Apellido(s)</th>
-                                <td style="text-decoration: underline;"><input [(ngModel)]="patients.lastName" id="lastName" name="lastName" /></td>
+                                <td style="text-decoration: underline;"><input [(ngModel)]="patients.lastName"  id="lastName" name="lastName" formControlName="frlastName" /></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <th>Correo electrónico</th>
-                                <td><input [(ngModel)]="patients.email" id="email" name="email" /></td>
+                                <td><input readonly disabled [(ngModel)]="patients.email"  id="email" name="email"  formControlName="fremail" /></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <th>Contraseña</th>
-                                <td><input [(ngModel)]="patients.password" id="password" name="password" /></td>
+                                <td><input readonly disabled [(ngModel)]="patients.password"  id="password" name="password" formControlName="frpassword" style="filter: blur(6px);" /></td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -51,17 +52,19 @@
                                 <tbody>
                                     <tr>
                                         <th>Fecha de nacimiento</th>
-                                        <td><input [(ngModel)]="patients.birthdate" id="birthdate" name="birthdate" /></td>
+                                        <td><input class="trim-info" [(ngModel)]="patients.birthdate" id="birthdate" name="birthdate" formControlName="frbirthdate" />
+                                        <hr style="margin-top: -0.70em;">
+                                        </td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <th>Teléfono</th>
-                                        <td><input [(ngModel)]="patients.phone" id="phone" name="phone" /></td>
+                                        <td><input [(ngModel)]="patients.phone" id="phone" name="phone"  formControlName="frphone" /></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <th>Teléfono(Opcional)</th>
-                                        <td><input [(ngModel)]="patients.emergencyPhone" id="emergencyPhone" name="emergencyPhone" /></td>
+                                        <td><input [(ngModel)]="patients.emergencyPhone" id="emergencyPhone" name="emergencyPhone"  formControlName="fremergencyPhone" /></td>
                                         <td></td>
                                     </tr>
                                 </tbody>
@@ -113,4 +116,5 @@
                 </p>
             </div>
         </div>
-    </div>
+    </form>
+</div>

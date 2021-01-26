@@ -16,26 +16,13 @@ import { element } from 'protractor';
 })
 export class ListPatientsComponent implements OnInit {
 
-  patients_search:PatientsInterface= {
-    id: null,
-    name: null,
-    lastName: null,
-    phone: null,
-    email: null,
-    emergencyPhone: null,
-    password: null,
-    birthdate: null,
-    created_at: null,
-    updated_at: null
-  }
-
-  patients:PatientsInterface[];
-  valuePatients:string;
-  total:number;
+  patients:PatientsInterface;
+  search_value:string;
   searchForm;
 
+
   /* Paginación */
-  public response_resultados: any[];        
+  response_resultados: any[];        
   dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = ['name','lastName','email','birthdate','phone','emergencyPhone'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -49,7 +36,6 @@ export class ListPatientsComponent implements OnInit {
       this.searchForm = this.formBuilder.group({
         query: ''
       });
-      this.total = 0;
      }
 
   ngOnInit(): void {
@@ -60,9 +46,9 @@ export class ListPatientsComponent implements OnInit {
   // Obtenemos los pacientes registrados
   get_patients = () =>{
      // Hacemos uso del servicio para la obtención de datos de la interfaz
-     this.result_service.getDataPatients('all','1').subscribe((response:PatientsInterface[]) =>{
+     this.result_service.getDataListPatients(1,true).subscribe((response) =>{
      // Respaldamos el resultado obtenido
-     this.response_resultados = response;
+    this.response_resultados = response;
      console.log(response);
 
      // Realizamos paginación correspondiente
@@ -70,24 +56,33 @@ export class ListPatientsComponent implements OnInit {
      this.dataSource.paginator = this.paginator;
      console.log(this.dataSource);
      
-     // Respaldamos los datos a utilizar
-     this.patients = response;
-     
     }, (error) => {
       alert("Error: " + error.statusText);
     });
 }
 
 // Se hace uso de filtrado para encontrar al paciente
-get_patients_email = (data) =>{
+get_patients_id = () =>{
 
-  // Validamos a que el formulario tenga texto
-  if(data){
-    console.log(data);
+  this.search_value = this.searchForm.get('query').value;
+
+  console.log(this.search_value);
+
+  // Hacemos uso del servicio para la obtención de datos de la interfaz
+  this.result_service.getDataListPatients(this.search_value,false).subscribe((response) =>{
+    // Respaldamos el resultado obtenido
+   this.response_resultados = response;
+   console.log(this.response_resultados);
+
+    // Realizamos paginación correspondiente
+    this.dataSource = new MatTableDataSource([this.response_resultados]);
+    this.dataSource.paginator = this.paginator;
+    console.log(this.dataSource);
     
+   }, (error) => {
+     alert("Error: " + error.statusText);
+   });
   }
-
-}
 
 
 }
