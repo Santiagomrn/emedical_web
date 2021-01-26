@@ -1,9 +1,9 @@
 import M from 'materialize-css';
 import {AfterViewInit,Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+// import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from '@angular/forms';
-
+import { HttpClient, HttpClientModule,  HttpHeaders , HttpResponse} from '@angular/common/http';
 @Component({
   selector: 'app-doctors-create',
   templateUrl: './doctors-create.component.html',
@@ -66,13 +66,17 @@ export class DoctorsCreateComponent implements OnInit,AfterViewInit {
     //     "Authorization": 'Bearer ' + localStorage.getItem("token")
     //   })
     // };
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Accept" : "application/vnd.api+json",
-        "Content-Type" : "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtYW5hZ2VyIiwiaWQiOjEsImlhdCI6MTYxMTU5NzUyNiwiZXhwIjoxNjExNTk5MzI2fQ.miUHMNe7WzhkQrgTrN-RYwb4Qks1qv3V6Z2INTfjGPw"
-      })
-    };
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     "Accept" : "application/vnd.api+json",
+    //     "Content-Type" : "application/json",
+    //     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtYW5hZ2VyIiwiaWQiOjEsImlhdCI6MTYxMTU5NzUyNiwiZXhwIjoxNjExNTk5MzI2fQ.miUHMNe7WzhkQrgTrN-RYwb4Qks1qv3V6Z2INTfjGPw"
+    //   })
+    // };
+    const HeadersForPatientsAPI = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + (token)
+    });
     // var headers = new Headers();
     // headers.append('Authorization', 'Bearer ' + localStorage.getItem("token"));
     // headers.append('Content-Type', 'application/json');
@@ -92,7 +96,7 @@ export class DoctorsCreateComponent implements OnInit,AfterViewInit {
       nationality : this.doctorForm.get("nationality").value,
       maritalStatus : this.doctorForm.get("maritalStatus").value,
     }
-    this.http.post<any>(_url, body, httpOptions ).subscribe(data => {
+    this.http.post<any>(_url, body, { headers: HeadersForPatientsAPI } ).subscribe(data => {
       console.log(data); 
     },
     error => {
