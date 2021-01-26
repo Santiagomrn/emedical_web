@@ -11,7 +11,7 @@ import {DoctorsCreateComponent} from './views/doctors-create/doctors-create.comp
 import {PatientsCreateComponent} from './views/patients-create/patients-create.component';
 import {AdministratorComponent} from './views/administrator/administrator.component';
 import {ProfileComponent} from './views/profile/profile.component';
-import {HomePatientsComponent } from './views/home-patients/home-patients.component';
+import {DashbordAppoinmentComponent} from './views/dashbord-appoinment/dashbord-appoinment.component';
 import {ListPatientsComponent} from './views/list-patients/list-patients.component';
 
 const routes: Routes = [
@@ -27,7 +27,7 @@ const routes: Routes = [
   {path: 'patients_create', component: PatientsCreateComponent},
   {path: 'administrator', component : AdministratorComponent}, 
   {path: 'profile_patients/:id', component: ProfileComponent},
-  {path: 'dashboard_patients', component:HomePatientsComponent},
+  {path: 'dashboard_patients', component:DashbordAppoinmentComponent},
   {path: 'list_patients', component: ListPatientsComponent}
   
 ];
