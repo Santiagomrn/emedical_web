@@ -76,10 +76,10 @@ export class AppointmentComponent implements OnInit {
         });
       }
     }
-    
+    */    
     cancelAppointmentCreate = () => {
        this.router.navigateByUrl('\home_patients');
     }
 
-*/    
+
 }
