@@ -7,11 +7,11 @@
 }
 
 .trim-info {
-    max-width: 70px;
+    max-width: 82px;
     display: inline-block;
     overflow: hidden;
     margin-top: 1em;
     white-space: nowrap;  
-    line-height: 15px;
+    line-height: 50px;
     position:relative;
  }

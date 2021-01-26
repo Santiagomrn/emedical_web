@@ -21,7 +21,7 @@ export class AppointmentService {
   // Obtenemos los datos de la cita de cada paciente
   // Para obtener todos los datos (null,true)
   // Para obtener datos especificos mediante id (id,false)
-  getAppointment = (id,data) =>{
+  getAppointment = (id,data:boolean) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
         'Content-Type': 'application/json',

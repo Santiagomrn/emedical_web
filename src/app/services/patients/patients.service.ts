@@ -12,41 +12,47 @@ import { rejects } from 'assert';
 })
 export class PatientsService {
 
-  AccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJwYXRoaWVudCIsImlkIjoyOCwiaWF0IjoxNjExNjAxNjA5LCJleHAiOjE2MTE2MDM0MDl9.RuCDv5RtnacnoiwqZ10Zq15u7ikNonIUK3CmYWVWY3Y";
- 
+  AccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJkb2N0b3IiLCJpZCI6MSwiaWF0IjoxNjExNjgwNjQwLCJleHAiOjE2MTE2ODI0NDB9.5qEH2A20WL67bbSm4Z2O0vWNlvkPQgqHynC2ug7347Q";
 
   constructor(private http: HttpClient) {
     this.http = http;
    }
 
   // Filtramos todos los datos de los pacientes, omitimos las promesas ya que no comprometemos una búsqueda
-  // específica
-  // Para todos los datos hacemos uso de (null,'1')
-  // Para un dato especifico (id,'2')
-  getDataPatients = (id,data) => {
+  // específica, realizamos filtrado de solo un paciente
+  getDataPatients = (id) => {
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-        if(data == true){
-          return this.http.get<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/", { headers: HeadersForPatientsAPI });
-        }else if(data == false){
-          return this.http.get<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/"+id, { headers: HeadersForPatientsAPI });
-        }
-      
-    }
-  
+      return this.http.get<PatientsInterface>("https://medicalportal.herokuapp.com/api/v1/pathient/"+id, { headers: HeadersForPatientsAPI });  
+    }  
   }   
 
-  // Realizamos el guardado de los datos del paciente, pasando un objeto
-  saveDataPatients = (data_patients: PatientsInterface) =>{  
+  // Realizamos el filtrado de diversos pacientes para la visualización del doctor
+  getDataListPatients = (id,data:boolean) => {
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-      return this.http.post<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/:id=1", data_patients, { headers: HeadersForPatientsAPI });
+      if(data == true){
+        return this.http.get<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/", { headers: HeadersForPatientsAPI });
+      }else{
+        return this.http.get<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/"+id, { headers: HeadersForPatientsAPI });
+      }
+    }
+  }
+
+  // Realizamos el guardado de los datos del paciente, pasando un objeto
+  saveDataPatients = (id,data_patients: PatientsInterface) =>{  
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.put<PatientsInterface>("https://medicalportal.herokuapp.com/api/v1/pathient/"+id, data_patients, { headers: HeadersForPatientsAPI });
     }
   }
 

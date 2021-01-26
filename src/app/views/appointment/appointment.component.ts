@@ -35,7 +35,6 @@ export class AppointmentComponent implements OnInit {
 
   ngOnInit(): void {
     this. getID();
-    this.getNumber();
   }
 
   getID = () =>{
@@ -49,7 +48,7 @@ export class AppointmentComponent implements OnInit {
       });
     }
   }
-
+/*
   getNumber = () => {
     this.appointmentService.getAppointment("number", false).subscribe((response) => {  
         this.appointments = response;
@@ -77,8 +76,10 @@ export class AppointmentComponent implements OnInit {
         });
       }
     }
-    
+    */    
     cancelAppointmentCreate = () => {
        this.router.navigateByUrl('\home_patients');
     }
+
+
 }
