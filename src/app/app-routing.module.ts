@@ -42,10 +42,15 @@ const routes: Routes = [
   }, 
   {path: 'home_patients/appointment_create', component: AppointmentComponent},
   {path: 'home_patients/appointment_create/:id', component: AppointmentComponent},
-  {path : '**' , redirectTo : 'home'}, 
   {path: 'profile_patients/:id', component: ProfileComponent},
   {path: 'dashboard_patients', component:DashbordAppoinmentComponent},
-  {path: 'list_patients', component: ListPatientsComponent}
+  {path: 'list_patients', component: ListPatientsComponent,
+    canActivate: [RoleGuardService],
+    data:{
+      expectedRole : 'doctor'
+    }
+  },
+  {path : '**' , redirectTo : 'home'}, 
 ];
 
 @NgModule({

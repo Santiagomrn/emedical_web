@@ -12,7 +12,8 @@ import { rejects } from 'assert';
 })
 export class PatientsService {
 
-  AccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJkb2N0b3IiLCJpZCI6MSwiaWF0IjoxNjExNjgwNjQwLCJleHAiOjE2MTE2ODI0NDB9.5qEH2A20WL67bbSm4Z2O0vWNlvkPQgqHynC2ug7347Q";
+  // AccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJkb2N0b3IiLCJpZCI6MSwiaWF0IjoxNjExNjgwNjQwLCJleHAiOjE2MTE2ODI0NDB9.5qEH2A20WL67bbSm4Z2O0vWNlvkPQgqHynC2ug7347Q";
+  AccessToken = localStorage.getItem("token");
 
   constructor(private http: HttpClient) {
     this.http = http;

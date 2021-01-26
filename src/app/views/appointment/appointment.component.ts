@@ -78,7 +78,7 @@ export class AppointmentComponent implements OnInit {
     }
     */    
     cancelAppointmentCreate = () => {
-       this.router.navigateByUrl('\home_patients');
+      this.router.navigateByUrl('\home_patients');
     }
 
 
