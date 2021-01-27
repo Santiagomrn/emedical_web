@@ -6,6 +6,7 @@ import { HttpClientModule} from '@angular/common/http';
 
 import { MedicamentService} from "./services/medicament/medicament.service"
 import { PatientsService } from "./services/patients/patients.service";
+import {DoctorAPIService } from './services/doctor/doctor-api.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
@@ -56,11 +57,14 @@ import { LoginComponent } from './views/login/login.component';
 import { DoctorsCreateComponent } from './views/doctors-create/doctors-create.component';
 import { PatientsCreateComponent } from './views/patients-create/patients-create.component';
 import { AdministratorComponent } from './views/administrator/administrator.component';
+
 import { ListPatientsComponent } from './views/list-patients/list-patients.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { DashbordAppoinmentComponent } from './views/dashbord-appoinment/dashbord-appoinment.component';
 import { AppointmentComponent} from './views/appointment/appointment.component';
 import { AppointmentCreateComponent } from './views/appointment-create/appointment-create.component';
+import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
+
 
 @NgModule({
   declarations: [
@@ -79,9 +83,13 @@ import { AppointmentCreateComponent } from './views/appointment-create/appointme
     DoctorsCreateComponent,
     PatientsCreateComponent,
     AdministratorComponent,
+    ProfileComponent,
+
+    
     ListPatientsComponent,
     DashbordAppoinmentComponent,
     AppointmentCreateComponent,
+    ProfileDoctorComponent,
   ],
   imports: [
     BrowserModule,
@@ -126,7 +134,7 @@ import { AppointmentCreateComponent } from './views/appointment-create/appointme
     MatTooltipModule,
     MatTreeModule
   ],
-  providers: [MedicamentService, PatientsService ],
+  providers: [MedicamentService, PatientsService,DoctorAPIService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

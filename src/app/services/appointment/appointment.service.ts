@@ -12,7 +12,7 @@ import { rejects } from 'assert';
 }) 
 export class AppointmentService {
 
-  AccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJwYXRoaWVudCIsImlkIjoxLCJpYXQiOjE2MTE3MTI4NzksImV4cCI6MTYxMTcxNDY3OX0.bS5iox_gKVFePsZ4vNTcI6Mm71C4BFhCbk5Vsmm_x0k";
+  AccessToken = localStorage.getItem("token");
 
   constructor(private http: HttpClient) {
   this.http = http

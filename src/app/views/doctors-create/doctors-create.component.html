@@ -9,17 +9,17 @@
         <h2 class="card-header" style="padding-left: 10px;">Información personal</h2>
         <div class="card-body"> 
             <div class="row">
-                <form class="col s12">
+                <form class="col s12" [formGroup] = "doctorForm" (ngSubmit)="onSubmit()">
                   <div class="row">
                         <!-- Nombre del médico -->
                         <div class="input-field col s6">
                             <span class="input-group-text">Nombre(s)</span>
-                            <input type="text" id="name" class="validate" name="name" required>
+                            <input type="text" id="name" class="validate" name="name"  formControlName="name" required>
                         </div>
                         <!-- Apellido del médico -->
                         <div class="input-field col s6">
                             <span class="input-group-text">Apellido(s)</span>
-                            <input type="text" id="lastName" class="validate" name="lastName" required>
+                            <input type="text" id="lastName" class="validate" name="lastName"  formControlName="lastName" required>
                         </div>
                   </div>
 
@@ -27,12 +27,12 @@
                         <!-- Nacionalidad del médico -->
                         <div class="input-field col s6">
                             <span class="input-group-text">Nacionalidad</span>
-                            <input type="text" id="nationality" class="validate" name="nationality">
+                            <input type="text" id="nationality" class="validate" name="nationality"  formControlName ="nationality"> 
                         </div>
                         <!-- Estado del médico -->
                         <div class="input-field col s6">
                             <span class="input-group-text">Estado civil</span>
-                            <select>
+                            <select formControlName ="maritalStatus">
                               <option value="" disabled selected>Escoger...</option>
                               <option value="casado">Casado</option>
                               <option value="soltero">Soltero</option>
@@ -47,20 +47,20 @@
                         <!-- Fecha de nacimiento del médico -->
                         <div class="input-field col s6">
                             <span class="input-group-text">Fecha de nacimiento</span>
-                            <input type="date" id="birthdate" class="validate" name="birthdate" required>
+                            <input type="date" id="birthdate" class="validate" name="birthdate" formControlName = "birthdate" required>
                         </div>
                   </div>
                   <div class="row">
                         <!-- Número de teléfono del médico -->
                         <div class="input-field col s6">
                             <span class="input-group-text">Teléfono</span>
-                            <input type="text" id="phone" class="validate" name="phone" required>
+                            <input type="text" id="phone" class="validate" name="phone" formControlName = "phone" required>
                             <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>
                         </div>
                         <!-- Número de teléfono auxiliar del médico -->
                         <div class="input-field col s6">
                             <span class="input-group-text">Teléfono(Opcional)</span>
-                            <input type="text" id="emergencyphone" class="validate" name="emergencyphone" required>
+                            <input type="text" id="emergencyphone" class="validate" name="emergencyPhone" formControlName = "emergencyPhone" required>
                             <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>
                         </div>
                   </div>
@@ -73,7 +73,7 @@
                             <div class="input-group-prepend">
                             <span class="input-group-text">Correo electrónico</span>
                             </div>
-                            <input type="text" id="email" name="email" class="validate" required>
+                            <input type="text" id="email" name="email" class="validate" formControlName = "email" required>
                     </div>
                   </div>
                   
@@ -91,7 +91,7 @@
                             <!-- Contraseña confirmada del médico -->
                             <div class="input-field  col s6">
                                 <span class="input-group-text">Confirmar contraseña</span>
-                                <input type="text" class="validate" id="confirm_password" name="confirm_password" required>
+                                <input type="text" class="validate" id="confirm_password" name="confirm_password" formControlName ="password" required>
                                 <span class="helper-text" data-error="
                                 Tenga una longitud mayor o igual a 8 caracteres.
                                 Utilice una combinación de letras mayúsculas y minúsculas,
@@ -107,15 +107,15 @@
                                 <div class="input-group-prepend">
                                 <span class="input-group-text">Licencia profesional</span>
                                 </div>
-                                <input type="text" id="professionalLicense" name="professionalLicense" class="validate" required>
+                                <input type="text" id="professionalLicense" name="professionalLicense" class="validate" formControlName = "professionalLicense" required>
                             </div>
                             
                             <!-- Areá a postular del médico -->
                             <div class="input-field col s6">
                                 <span class="input-group-text">Areá a postularse</span>
-                                <select>
+                                <select formControlName = "medicalArea" >
                                   <option value="" disabled selected>Escoger...</option>
-                                  <option value="medico_general">Médico general</option>
+                                  <option value="médico general">Médico general</option>
                                   <option value="dentista">Dentista</option>
                                   <option value="pediatra">Pediatra</option>
                                   <option value="nutriologo">Nutriólogo</option>
@@ -130,20 +130,24 @@
                             <!-- Descripción del médico -->
                             <div class="input-field col s6">
                                 <span class="input-group-text">Descripción</span>
-                                <input type="text" id="description" class="validate" name="description">
+                                <input type="text" id="description" class="validate" name="description" formControlName = "description">
                             </div>
                             <!-- Especialidad del médico -->
                             <div class="input-field col s6">
                                 <div class="input-group-prepend">
                                 <span class="input-group-text">Especialidad</span>
                                 </div>
-                                <input type="text" id="jobTitle" name="jobTitle" class="validate">
+                                <input type="text" id="jobTitle" name="jobTitle" class="validate" formControlName = "jobTitle">
                             </div>                            
                   </div>
                   <div class="row">
-                    <div class="col s9"></div>
+                    <div class="col s9">
+                        <button class="btn waves-effect buttoms waves-light" type="submit" name="action" (click) = "volver()"> 
+                        Regresar
+                        </button>
+                    </div>
                     <div class="col s3 right-align">
-                        <button class="btn waves-effect buttoms waves-light" type="submit" name="action">
+                        <button class="btn waves-effect buttoms waves-light" type="submit" name="action" >
                         Guardar datos
                         </button>
                     </div>

@@ -9,17 +9,17 @@
             <h2 class="card-header" style="padding-left: 10px;">Información personal</h2>
             <div class="card-body"> 
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12"   action = "" [formGroup] = "userCreateForm" (ngSubmit)="onSubmit()">
                       <div class="row">
                             <!-- Nombre del paciente -->
                             <div class="input-field col s6">
                                 <span class="input-group-text">Nombre(s)</span>
-                                <input type="text" id="name" class="validate" name="name" required>
+                                <input type="text" id="name" class="validate" name="name" formControlName="name" required>
                             </div>
                             <!-- Apellido del paciente -->
                             <div class="input-field col s6">
                                 <span class="input-group-text">Apellido(s)</span>
-                                <input type="text" id="lastName" class="validate" name="lastName" required>
+                                <input type="text" id="lastName" class="validate" name="lastName" formControlName="lastName" required>
                             </div>
                       </div>
     
@@ -27,20 +27,20 @@
                             <!-- Fecha de nacimiento del paciente -->
                             <div class="input-field col s6">
                                 <span class="input-group-text">Fecha de nacimiento</span>
-                                <input type="date" id="birthdate" class="validate" name="birthdate" required>
+                                <input type="date" id="birthdate" class="validate" name="birthdate" formControlName="birthdate" required>
                             </div>
                       </div>
                       <div class="row">
                             <!-- Número de teléfono del paciente -->
                             <div class="input-field col s6">
                                 <span class="input-group-text">Teléfono</span>
-                                <input type="text" id="phone" class="validate" name="phone" required>
+                                <input type="text" id="phone" class="validate" name="phone" formControlName="phone" required>
                                 <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>
                             </div>
                             <!-- Número de teléfono auxiliar del paciente -->
                             <div class="input-field col s6">
-                                <span class="input-group-text">Teléfono(Opcional)</span>
-                                <input type="text" id="emergencyphone" class="validate" name="emergencyphone" required>
+                            <span class="input-group-text">Teléfono(Opcional)</span>
+                                <input type="text" id="emergencyphone" class="validate" name="emergencyphone" formControlName="emergencyPhone" required>
                                 <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>
                             </div>
                       </div>
@@ -53,7 +53,7 @@
                                 <div class="input-group-prepend">
                                 <span class="input-group-text">Correo electrónico</span>
                                 </div>
-                                <input type="text" id="email" name="email" class="validate" required>
+                                <input type="text" id="email" name="email" class="validate"  formControlName="email" required>
                         </div>
                       </div>
                       
@@ -61,7 +61,7 @@
                                 <!-- Contraseña del paciente -->
                                 <div class="input-field  col s6">
                                     <span class="input-group-text">Contraseña</span>
-                                    <input type="text" class="validate" id="password" name="password" required>
+                                    <input type="text" class="validate" id="password" name="password"  required>
                                     <span class="helper-text" data-error="
                                     Tenga una longitud mayor o igual a 8 caracteres.
                                     Utilice una combinación de letras mayúsculas y minúsculas,
@@ -71,7 +71,7 @@
                                 <!-- Contraseña confirmada del paciente -->
                                 <div class="input-field  col s6">
                                     <span class="input-group-text">Confirmar contraseña</span>
-                                    <input type="text" class="validate" id="confirm_password" name="confirm_password" required>
+                                    <input type="text" class="validate" id="confirm_password" name="confirm_password" formControlName="password"  required>
                                     <span class="helper-text" data-error="
                                     Tenga una longitud mayor o igual a 8 caracteres.
                                     Utilice una combinación de letras mayúsculas y minúsculas,

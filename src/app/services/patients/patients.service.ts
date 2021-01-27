@@ -12,7 +12,8 @@ import { rejects } from 'assert';
 })
 export class PatientsService {
 
-  AccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJwYXRoaWVudCIsImlkIjoxLCJpYXQiOjE2MTE2OTY5MDAsImV4cCI6MTYxMTY5ODcwMH0.j1zNOtWNLpOhOQB0-_cHbSWBb_b1yaZ2a0-RahTYDFM";
+  // AccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJkb2N0b3IiLCJpZCI6MSwiaWF0IjoxNjExNjgwNjQwLCJleHAiOjE2MTE2ODI0NDB9.5qEH2A20WL67bbSm4Z2O0vWNlvkPQgqHynC2ug7347Q";
+  AccessToken = localStorage.getItem("token");
 
   constructor(private http: HttpClient) {
     this.http = http;
@@ -52,7 +53,7 @@ export class PatientsService {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-      return this.http.put<PatientsInterface>("https://medicalportal.herokuapp.com/api/v1/pathient/"+id, data_patients, { headers: HeadersForPatientsAPI });
+      return this.http.put<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/"+id, data_patients, { headers: HeadersForPatientsAPI });
     }
   }
 

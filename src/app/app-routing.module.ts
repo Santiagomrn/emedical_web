@@ -9,13 +9,17 @@ import {ContactUsComponent} from './views/contact-us/contact-us.component';
 import {LoginComponent} from './views/login/login.component';
 import {DoctorsCreateComponent} from './views/doctors-create/doctors-create.component';
 import {PatientsCreateComponent} from './views/patients-create/patients-create.component';
-import {AdministratorComponent} from './views/administrator/administrator.component';
+import { AdministratorComponent} from './views/administrator/administrator.component';
+import { AppComponent } from './app.component';
 import {ProfileComponent} from './views/profile/profile.component';
+import { AuthGuardService as AuthGuard} from './services/auth/auth-guard.service';
+import { RoleGuardService } from './services/auth/role-guard.service';
 import {DashbordAppoinmentComponent} from './views/dashbord-appoinment/dashbord-appoinment.component';
 import {ListPatientsComponent} from './views/list-patients/list-patients.component';
 import {AppointmentComponent} from './views/appointment/appointment.component';
 import {AppointmentCreateComponent} from './views/appointment-create/appointment-create.component';
 
+import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
 const routes: Routes = [
   {path : '', redirectTo:'home',
   pathMatch:'full'},
@@ -23,17 +27,49 @@ const routes: Routes = [
   {path: 'doctors', component: DoctorsComponent},
   {path: 'medicaments', component: MedicamentsComponent},
   {path: 'about_us', component: AboutUsComponent},
-  {path: 'contact_us', component: ContactUsComponent},
+  {path: 'contact_us', component: ContactUsComponent}, 
   {path : 'login', component: LoginComponent},
-  {path: 'doctor_create', component: DoctorsCreateComponent},
+  
+  {path: 'doctor_create', component: DoctorsCreateComponent,
+    canActivate : [RoleGuardService],
+    data: {
+      expectedRole: ['manager']
+    }
+  },
   {path: 'patients_create', component: PatientsCreateComponent},
-  {path: 'administrator', component : AdministratorComponent}, 
+  {path: 'administrator', component : AdministratorComponent,
+    canActivate: [RoleGuardService],
+    data:{
+      expectedRole : ['manager']
+    }
+  }, 
+  {path: 'home_patients/appointment_create', component: AppointmentComponent,
+    canActivate : [RoleGuardService],
+    data:{
+      expectedRole : ['pathient']
+    }
+  },
+  {path: 'home_patients/appointment_create/:id', component: AppointmentComponent},
   {path: 'profile_patients/:id', component: ProfileComponent},
   {path: 'dashboard_appointment', component:DashbordAppoinmentComponent},
   {path: 'dashboard_appointment/appointment_create', component:AppointmentCreateComponent},
   {path: 'dashboard_appointment/appointment_create/:id', component:AppointmentComponent},
   {path: 'list_patients', component: ListPatientsComponent},
  
+  {path: 'dashboard_patients', component:DashbordAppoinmentComponent},
+  {path: 'profile_doctor', component : ProfileDoctorComponent,
+    canActivate : [RoleGuardService],
+    data:{
+      expectedRole : ['doctor', 'pathient']
+    }
+  },
+  {path: 'list_patients', component: ListPatientsComponent,
+    canActivate: [RoleGuardService],
+    data:{
+      expectedRole : ['doctor']
+    }
+  },
+  {path : '**' , redirectTo : 'home'}, 
 ];
 
 @NgModule({
