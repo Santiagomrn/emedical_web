@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]="frmappoinment" (ngSubmit)="saveAppointment()">
+    <form [formGroup]="frmappoinment" (ngSubmit)="AppoinmentCreate()">
         <div class="card" style="margin-top: 2em;" >
             <br>
             <h1 class="card-header" align="center">Citas</h1>
@@ -13,7 +13,7 @@
                                     <span class="input-group-text">Número de cita</span>
                                     <input
                                     type="text" id="number" class="validate" 
-                                    name="number" [(ngModel)]="appointments.turn"  required>
+                                    name="number" formControlName="frturn" required>
                                     <!-- value="{{appointments.number}}"  -->
                             </div>
                         </div>
@@ -21,13 +21,13 @@
                             <!-- Fecha de la cita-->
                             <div class="input-field col s6">
                                 <span class="input-group-text">Fecha</span>
-                                <input [(ngModel)]="appointments.date" class="validate" type="text" id="date" name="date" required>
+                                <input class="validate" formControlName="frdate" type="text" id="date" name="date" required>
                             </div>
                             
                             <!-- Hora de la cita -->
                             <div class="input-field col s6">
                                 <span class="input-group-text">Hora</span>
-                                <input [(ngModel)]="appointments.time"  type="time" id="time" class="validate" name="time" required>
+                                <input type="time" id="time" formControlName="frtime" class="validate" name="time" required>
                             </div>
                       </div>
                       <div class="row">

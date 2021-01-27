@@ -1,10 +1,15 @@
 export interface AppointmentInterface {
-    "id":number,
+    "QRCode": string,
+    "created_at":string,
+    "date":string,
+    "doctor": string,
     "doctorId":number,
+    "id":number,
+    "pathient":string,
     "pathientId":number,
-    "date":number,
     "time":string,
-    "number": number,
-    "created_at":number,
-    "updated_at":number
+    "turn": number,
+    "updated_at":string
 }
+
+

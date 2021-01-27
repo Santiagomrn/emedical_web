@@ -13,6 +13,8 @@ import {AdministratorComponent} from './views/administrator/administrator.compon
 import {ProfileComponent} from './views/profile/profile.component';
 import {DashbordAppoinmentComponent} from './views/dashbord-appoinment/dashbord-appoinment.component';
 import {ListPatientsComponent} from './views/list-patients/list-patients.component';
+import {AppointmentComponent} from './views/appointment/appointment.component';
+import {AppointmentCreateComponent} from './views/appointment-create/appointment-create.component';
 
 const routes: Routes = [
   {path : '', redirectTo:'home',
@@ -27,9 +29,11 @@ const routes: Routes = [
   {path: 'patients_create', component: PatientsCreateComponent},
   {path: 'administrator', component : AdministratorComponent}, 
   {path: 'profile_patients/:id', component: ProfileComponent},
-  {path: 'dashboard_patients', component:DashbordAppoinmentComponent},
-  {path: 'list_patients', component: ListPatientsComponent}
-  
+  {path: 'dashboard_appointment', component:DashbordAppoinmentComponent},
+  {path: 'dashboard_appointment/appointment_create', component:AppointmentCreateComponent},
+  {path: 'dashboard_appointment/appointment_create/:id', component:AppointmentComponent},
+  {path: 'list_patients', component: ListPatientsComponent},
+ 
 ];
 
 @NgModule({

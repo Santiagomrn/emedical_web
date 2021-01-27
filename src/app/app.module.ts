@@ -59,6 +59,8 @@ import { AdministratorComponent } from './views/administrator/administrator.comp
 import { ListPatientsComponent } from './views/list-patients/list-patients.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { DashbordAppoinmentComponent } from './views/dashbord-appoinment/dashbord-appoinment.component';
+import { AppointmentComponent} from './views/appointment/appointment.component';
+import { AppointmentCreateComponent } from './views/appointment-create/appointment-create.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,7 @@ import { DashbordAppoinmentComponent } from './views/dashbord-appoinment/dashbor
     AboutUsComponent,
     ListNewsComponent,
     ProfileComponent,
+    AppointmentComponent,
 
     FooterComponent,
     LoginComponent,
@@ -78,6 +81,7 @@ import { DashbordAppoinmentComponent } from './views/dashbord-appoinment/dashbor
     AdministratorComponent,
     ListPatientsComponent,
     DashbordAppoinmentComponent,
+    AppointmentCreateComponent,
   ],
   imports: [
     BrowserModule,

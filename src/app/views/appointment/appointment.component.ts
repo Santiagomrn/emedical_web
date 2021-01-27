@@ -1,8 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import M from 'materialize-css';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { AppointmentInterface } from "../../interfaces/appointment/appointment-interface";
 import { AppointmentService } from "../../services/appointment/appointment.service";
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+import { element } from 'protractor';
+import { threadId } from 'worker_threads';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-appointment',
@@ -10,7 +16,7 @@ import {FormBuilder} from '@angular/forms';
   styleUrls: ['./appointment.component.css']
 })
 export class AppointmentComponent implements OnInit {
-
+/*
   appointment:AppointmentInterface = {
     id: null,
     doctorId: null,
@@ -21,33 +27,63 @@ export class AppointmentComponent implements OnInit {
     created_at: null,
     updated_at: null
   };
-  id:any;
-  editing:boolean = false;
-  appointments:AppointmentInterface[];
 
+  */
+  id:any;
+  date_appoinment:Date;
+  editing:boolean = false;
+  appointments:AppointmentInterface;
+
+  // Hacemos uso de formularios   
+  frmappoinment = this.fb.group({
+    frturn: ['',Validators.required],
+    frdate:['',Validators.required],
+    frtime: ['',Validators.required],
+  });
 
   constructor(
-    private appointmentService:  AppointmentService,
-    private form: FormBuilder,
+    private appointmentServices:  AppointmentService,
+    private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this. getID();
+    this. getAppointmentId();
   }
 
-  getID = () =>{
-    this.id = this.route.snapshot.params['id'];
-    if(this.id){
-      this.appointmentService.getAppointment(null, true).subscribe((response:AppointmentInterface[]) => {
-        this.appointments = response;
-        this.appointment = this.appointments.find((m)=>{ return m.id==this.id});
-      }, (error) => {
-        alert("Error: " + error.statusText);
-      });
-    }
+  // Realizamos la busqueda de la información correspondiente de la cita
+  getAppointmentId = () =>{
+
+ // Obtenemos el id de la cita mediante la URL
+    this.id = this.route.snapshot.params['id'];    
+    console.log(this.id);
+
+    this.appointmentServices.getAppointmentId(this.id).subscribe((response) =>{
+      this.appointments = response; 
+
+    //  this.appointments.date =new Date(this.appointments.date).toLocaleDateString('en-GB');
+
+
+      /*
+
+      
+      dia = document.getElementById("dia").value;
+mes = document.getElementById("mes").value;
+annio = document.getElementById("annio").value;
+fecha_texto = annio+"-"+mes+"-"+dia;
+ms = Date.parse(fecha_texto);
+fecha = new Date(ms);
+      */
+    },(error) => {
+      alert("Error: " + error.statusText);
+    });
   }
+
+  // Para obtener todos los datos (null,true)
+  // Para obtener datos especificos mediante id (id,false)getAppointment = (id,data:boolean) 
+
+ 
 /*
   getNumber = () => {
     this.appointmentService.getAppointment("number", false).subscribe((response) => {  
@@ -77,9 +113,17 @@ export class AppointmentComponent implements OnInit {
       }
     }
     
-    cancelAppointmentCreate = () => {
-       this.router.navigateByUrl('\home_patients');
-    }
+    
 
-*/    
+*/
+
+// Guardamos la cita 
+saveAppointment = () => {
+
+}
+
+// Cancela una cita 
+cancelAppointment = () => {
+  this.router.navigateByUrl('\dashboard_appointment');
+}    
 }
