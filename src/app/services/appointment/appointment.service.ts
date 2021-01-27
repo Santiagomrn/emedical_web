@@ -12,7 +12,7 @@ import { rejects } from 'assert';
 }) 
 export class AppointmentService {
 
-  AccessToken = "";
+  AccessToken = localStorage.getItem("token");
 
   constructor(private http: HttpClient) {
   this.http = http

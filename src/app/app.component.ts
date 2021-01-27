@@ -42,13 +42,14 @@ ngOnInit(){
     }
   }
   logOut(){
-    // notificacion 
-    alert("Cerrar sesión...");
+    // obtener role
+    let role = localStorage.getItem("role");
     // Cerrar sesión
     localStorage.setItem("token", '0');
     localStorage.setItem("role", '0');
     // Reedirigir 
-    this.router.navigate(['login']);
+    let _url= '/login?role='+role;
+    this.router.navigateByUrl(_url);
     
   }
   ngAfterViewInit() {

@@ -17,6 +17,7 @@ import { AuthGuardService as AuthGuard} from './services/auth/auth-guard.service
 import { RoleGuardService } from './services/auth/role-guard.service';
 import {DashbordAppoinmentComponent} from './views/dashbord-appoinment/dashbord-appoinment.component';
 import {ListPatientsComponent} from './views/list-patients/list-patients.component';
+import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
 const routes: Routes = [
   {path : '', redirectTo:'home',
   pathMatch:'full'},
@@ -30,24 +31,35 @@ const routes: Routes = [
   {path: 'doctor_create', component: DoctorsCreateComponent,
     canActivate : [RoleGuardService],
     data: {
-      expectedRole: 'manager'
+      expectedRole: ['manager']
     }
   },
   {path: 'patients_create', component: PatientsCreateComponent},
   {path: 'administrator', component : AdministratorComponent,
     canActivate: [RoleGuardService],
     data:{
-      expectedRole : 'manager'
+      expectedRole : ['manager']
     }
   }, 
-  {path: 'home_patients/appointment_create', component: AppointmentComponent},
+  {path: 'home_patients/appointment_create', component: AppointmentComponent,
+    canActivate : [RoleGuardService],
+    data:{
+      expectedRole : ['pathient']
+    }
+  },
   {path: 'home_patients/appointment_create/:id', component: AppointmentComponent},
   {path: 'profile_patients/:id', component: ProfileComponent},
   {path: 'dashboard_patients', component:DashbordAppoinmentComponent},
+  {path: 'profile_doctor', component : ProfileDoctorComponent,
+    canActivate : [RoleGuardService],
+    data:{
+      expectedRole : ['doctor', 'pathient']
+    }
+  },
   {path: 'list_patients', component: ListPatientsComponent,
     canActivate: [RoleGuardService],
     data:{
-      expectedRole : 'doctor'
+      expectedRole : ['doctor']
     }
   },
   {path : '**' , redirectTo : 'home'}, 

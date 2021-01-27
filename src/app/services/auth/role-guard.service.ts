@@ -15,7 +15,8 @@ export class RoleGuardService {
   canActivate(route : ActivatedRouteSnapshot) : boolean {
     const expectedRole = route.data.expectedRole;
     const currentRole = localStorage.getItem('role');
-    if(!this.auth.isAuthenticated() || currentRole !== expectedRole){
+    // alert(currentRole + " "+ expectedRole.includes(currentRole));
+    if(!this.auth.isAuthenticated() || !expectedRole.includes(currentRole)){
       this.router.navigate(['login']);
       alert("No autenticado o Rol sin permisos");
       return false;

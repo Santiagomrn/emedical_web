@@ -60,6 +60,7 @@ import { AdministratorComponent } from './views/administrator/administrator.comp
 import { ListPatientsComponent } from './views/list-patients/list-patients.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { DashbordAppoinmentComponent } from './views/dashbord-appoinment/dashbord-appoinment.component';
+import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { DashbordAppoinmentComponent } from './views/dashbord-appoinment/dashbor
     
     ListPatientsComponent,
     DashbordAppoinmentComponent,
+    ProfileDoctorComponent,
   ],
   imports: [
     BrowserModule,

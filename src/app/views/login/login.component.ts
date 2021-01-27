@@ -56,11 +56,14 @@ export class LoginComponent implements OnInit {
       console.log(data); 
       let key = data.token;
       let role = self.role;
+      let id = data.id;
       localStorage.setItem('token', key );
       localStorage.setItem('role', role );
       localStorage.setItem('login', '1' );
+      localStorage.setItem('id' , id );
       // self.router.navigate([self.role]);
-      self.router.navigate(['home']);
+
+    this.router.navigate(['home']);
     },
     error => {
       alert("Usuario y/o contraseña erróneo");
