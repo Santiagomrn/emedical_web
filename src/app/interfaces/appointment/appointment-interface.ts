@@ -3,7 +3,7 @@ export interface AppointmentInterface {
     "created_at":string,
     "date":string,
     "doctor": string,
-    "doctorId"?:number,
+    "doctorId":number,
     "id":number,
     "pathient":string,
     "pathientId":number,

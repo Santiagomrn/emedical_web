@@ -37,6 +37,7 @@ export class AppointmentCreateComponent implements OnInit {
 
 
 doctor_data: _DoctorInterface;
+appointments:AppointmentInterface[];
 
 // Hacemos uso de formularios   
 frmappoinment;
@@ -57,38 +58,44 @@ selected: string;
       frturn: ['',Validators.required]
     });
 
-    
-
-   
   }
 
   ngOnInit(): void {
-    this.getDataDoctorCreate();
+    this.getDataDoctorAppoinmentCreate();
   }
 
   // Obtenemos todos los valores de los doctores 
-  getDataDoctorCreate = ()=>{
+  getDataDoctorAppoinmentCreate = ()=>{
     this.doctorServices.getDataDoctorsAppointmentCreate().subscribe((response)=>{
-      this.doctor_data = response;
-
-      
+      this.doctor_data = response;      
       console.log(Object.values(this.doctor_data));
       console.log(this.doctor_data);
+    },(error) => {
+      alert("Error: " + error.statusText);
     });
   }
 
+  // Obtenemos todas las citas disponibles
+  getAppoinmentDoctor = () =>{
+    this.appointmentServices.getAppointment().subscribe((response)=>{
+      this.appointments = response;
+
+
+    },(error) => {
+      alert("Error: " + error.statusText);
+    });
+
+  }
 
 
   AppoinmentCreate = ()=>{
     
-    //this.patients_input.name = this.frmpatients.get('frname').value;
-    //this.patients_input.lastName = this.frmpatients.get('frlastName').value;
-    
     this.appointment.turn = this.frmappoinment.get('frturn').value;
     this.appointment.date = this.frmappoinment.get('frdate').value;
     this.appointment.time = this.frmappoinment.get('frtime').value;
+    this.appointment.doctorId = parseInt(this.selected);
 
-console.log(this.selected);
+console.log(this.appointment.doctorId);
     console.log(this.appointment.turn);
     console.log(this.appointment.date);
      console.log(this.appointment.time);
