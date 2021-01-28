@@ -21,7 +21,7 @@ export class AdministratorComponent implements OnInit {
   valueMedicaments:string;
   total:number;
   searchForm;
-
+  role : string;
 
   /* Variable para pipe */
   conv_data:string;
@@ -54,6 +54,7 @@ export class AdministratorComponent implements OnInit {
     // this.selectComercial = '1';
     // this.selectStrip = '1';
     // this.selectActivePrim = 'true';
+    this.role  = this.readLocalStorageValue('role');
     this.getMedicaments("*");
   }
   // Usar servicio para obtener lista de usuarios
@@ -112,7 +113,9 @@ export class AdministratorComponent implements OnInit {
   //     })
     }
   
-    
+    readLocalStorageValue(key: string): string {
+      return localStorage.getItem(key);
+    }
     
     ngAfterViewInit() {
       var elems = document.querySelectorAll('select');
