@@ -77,6 +77,7 @@ import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/pr
     ListNewsComponent,
     ProfileComponent,
     AppointmentComponent,
+    AppointmentCreateComponent,
 
     FooterComponent,
     LoginComponent,

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AppointmentInterface } from "../../interfaces/appointment/appointment-interface";
+import { NotAvailable } from '../../interfaces/appointment/not-available';
 import { HttpClient, HttpClientModule,  HttpHeaders , HttpResponse} from '@angular/common/http';
 import { resourceLimits } from 'worker_threads';
 import { Interface } from 'readline';
@@ -19,8 +20,6 @@ export class AppointmentService {
   }
 
   // Obtenemos los datos de la cita de cada paciente
-  // Para obtener todos los datos (null,true)
-  // Para obtener datos especificos mediante id 
   getAppointment = () =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
@@ -31,6 +30,7 @@ export class AppointmentService {
     }
   }
 
+  // Obtención de datos mediante ID
   getAppointmentId = (id) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
@@ -41,7 +41,8 @@ export class AppointmentService {
     }
   }
 
-  createAppointment = (itfAppoinment: AppointmentInterface) =>{
+  // Creación de una nueva cita
+  createAppointment = (itfAppoinment) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
         'Content-Type': 'application/json',
@@ -51,6 +52,19 @@ export class AppointmentService {
     }
   }
 
+
+  // Obtenemos los turnos ocupados por fecha
+  getTurnNotAvailable = (date) =>{
+    
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.get<NotAvailable>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/turn/NotAvailable?date="+date, { headers: HeadersForPatientsAPI });
+    }
+  }
+  
 /*
 
   // Guardamos los datos de la cita 

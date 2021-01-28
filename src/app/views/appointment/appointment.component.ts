@@ -18,35 +18,50 @@ import { formatDate } from '@angular/common';
 export class AppointmentComponent implements OnInit {
 /*
   appointment:AppointmentInterface = {
+    QRCode: null,
+    created_at: null,
+    date: null,
     id: null,
     doctorId: null,
     pathientId: null,
-    date: null,
+    
     time: null,
-    number: null,
-    created_at: null,
+    turn: null,
+    
     updated_at: null
-  };
-
+  };*/
+/*
+  "": string,
+    "created_at":string,
+    "date":string,
+    "doctor": string,
+    "doctorId":number,
+    "id":number,
+    "pathient":string,
+    "pathientId":number,
+    "time":string,
+    "turn": number,
+    "updated_at":string
   */
   id:any;
-  date_appoinment:Date;
-  editing:boolean = false;
   appointments:AppointmentInterface;
 
   // Hacemos uso de formularios   
-  frmappoinment = this.fb.group({
-    frturn: ['',Validators.required],
-    frdate:['',Validators.required],
-    frtime: ['',Validators.required],
-  });
+  frmappoinment;
 
   constructor(
     private appointmentServices:  AppointmentService,
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) { 
+    this.frmappoinment = this.fb.group({
+      frturn: ['',Validators.required],
+      frdate:['',Validators.required],
+      frtime: ['',Validators.required],
+    });
+
+  }
 
   ngOnInit(): void {
     this. getAppointmentId();
@@ -62,7 +77,7 @@ export class AppointmentComponent implements OnInit {
     this.appointmentServices.getAppointmentId(this.id).subscribe((response) =>{
       this.appointments = response; 
 
-    //  this.appointments.date =new Date(this.appointments.date).toLocaleDateString('en-GB');
+      this.appointments.date = this.appointments.date.substr(0,10);
 
 
       /*
@@ -126,4 +141,10 @@ saveAppointment = () => {
 cancelAppointment = () => {
   this.router.navigateByUrl('\dashboard_appointment');
 }    
+
+//document.getElementById("fecha").value = "2018-03-08";
+
+ngAfterViewInit() {
+ //document.getElementById("date").value = 
+}
 }
