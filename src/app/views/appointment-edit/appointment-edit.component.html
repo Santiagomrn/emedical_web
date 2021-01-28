@@ -1,0 +1,58 @@
+<div class="selection container">
+    <!-- message text     -->
+    <div class="card" style="margin-top: 2em;" >
+        <br>
+        <h1 class="card-header" align="center">Citas</h1>
+        <div class="card-body">
+            <div class="row">
+                <form class="col s12" [formGroup]="frmappoinment">
+                    <div class="row">
+                        <!-- Fecha de la cita-->
+                        <div class="input-field col s6">
+                            <span class="input-group-text">Fecha</span>
+                            <input style="margin-top: -0.4em;" [(ngModel)]="appointments.date" (change)="getAppoinmentNotAvailable()" class="validate" formControlName="frdate" type="date"  id="date" name="date" min="{{appointments.date}}" max="2050-12-31" required>
+                        </div>
+
+                        <!-- Hora de cita-->
+                        <div class="input-field col s3">
+                            <span class="input-group-text">Turno de cita</span>
+                            <br>
+                                <mat-form-field class="validate">
+                                    <mat-select [(value)]="selected_turn" >
+                                      <mat-option>Escoger...</mat-option>
+                                      <mat-option *ngFor="let element of time_available_current" value="{{element}}">{{element}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                        </div>
+
+                        <!-- Doctor de la cita-->
+                        <div class="input-field col s3">
+                            <span class="input-group-text">Doctor</span>
+                            <br>
+                            <mat-form-field class="validate">
+                                <mat-select [(value)]="selected_doctor" [(ngModel)]="selected_doctor" formControlName="frdoctorID">
+                                  <mat-option>Escoger...</mat-option>
+                                  <mat-option *ngFor="let element of doctor_data" value="{{element.id}}">{{element.name}} ({{element.medicalArea}})</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8"></div>
+                        <div class="input-field col s2">
+                            <button class="btn waves-effect buttoms waves-light" (click)="saveAppointment()" type="submit" name="action">
+                                Guardar datos
+                            </button>
+                        </div>
+                        <div class="input-field col s2">
+                            <button (click)="cancelAppointmentEdit()" style="background-color: #CF4444;" class="btn waves-effect buttoms waves-light" type="submit" name="action">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import {FormBuilder} from '@angular/forms';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatSort} from '@angular/material/sort';
 import { element } from 'protractor';
 import { threadId } from 'worker_threads';
 
@@ -21,7 +22,7 @@ export class DashbordAppoinmentComponent implements OnInit {
   /* Paginación */
   response_resultados: any[];        
   dataSource: MatTableDataSource<any>;
-  displayedColumns: string[] = ['turn','date','time','crud'];
+  displayedColumns: string[] = ['id','turn','date','time','crud'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
@@ -35,14 +36,15 @@ export class DashbordAppoinmentComponent implements OnInit {
     this.getAppointmentId();
   }
 
+  // Obtenemos todas las citas mediante el ID
   getAppointmentId = () => 
   {
       // Hacemos uso del servicio para la obtención de datos de la interfaz
       this.appointmentService.getAppointment().subscribe((response)=>{
         // Respaldamos el resultado obtenido
         this.response_resultados = response;
-        console.log(this.appointments);
-
+        
+        console.log(this.response_resultados);
         // Realizamos paginación correspondiente
         this.dataSource = new MatTableDataSource(this.response_resultados);
         this.dataSource.paginator = this.paginator;
@@ -51,8 +53,17 @@ export class DashbordAppoinmentComponent implements OnInit {
       },(error) => {
         alert("Error: " + error.statusText);
       });
-    
-  }
+}
+
+  // Eliminamos la respectiva cita
+deleteAppointmentId = (id) =>{
+    console.log(id);
+    this.appointmentService.deleteAppointment(id).subscribe((response)=>{
+    },(error) => {
+      alert("Error: " + error.statusText);
+    });
+    window.location.reload();
+}
 
 
 }

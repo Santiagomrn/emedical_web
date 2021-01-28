@@ -16,7 +16,7 @@ import { AuthGuardService as AuthGuard} from './services/auth/auth-guard.service
 import { RoleGuardService } from './services/auth/role-guard.service';
 import {DashbordAppoinmentComponent} from './views/dashbord-appoinment/dashbord-appoinment.component';
 import {ListPatientsComponent} from './views/list-patients/list-patients.component';
-import {AppointmentComponent} from './views/appointment/appointment.component';
+import {AppointmentEditComponent} from './views/appointment-edit/appointment-edit.component';
 import {AppointmentCreateComponent} from './views/appointment-create/appointment-create.component';
 
 import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
@@ -43,17 +43,17 @@ const routes: Routes = [
       expectedRole : ['manager']
     }
   }, 
-  {path: 'home_patients/appointment_create', component: AppointmentComponent,
+  {path: 'home_patients/appointment_create', component: AppointmentEditComponent,
     canActivate : [RoleGuardService],
     data:{
       expectedRole : ['pathient']
     }
   },
-  {path: 'home_patients/appointment_create/:id', component: AppointmentComponent},
+  {path: 'home_patients/appointment_create/:id', component: AppointmentEditComponent},
   {path: 'profile_patients/:id', component: ProfileComponent},
   {path: 'dashboard_appointment', component:DashbordAppoinmentComponent},
   {path: 'dashboard_appointment/appointment_create', component:AppointmentCreateComponent},
-  {path: 'dashboard_appointment/appointment_create/:id', component:AppointmentComponent},
+  {path: 'dashboard_appointment/appointment_create/:id', component:AppointmentEditComponent},
   {path: 'list_patients', component: ListPatientsComponent},
  
   {path: 'dashboard_patients', component:DashbordAppoinmentComponent},

@@ -45,13 +45,13 @@ export class AppointmentService {
   createAppointment = (itfAppoinment) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
+        'Accept':'application/atom+xml',
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-      return this.http.post<AppointmentInterface>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/",itfAppoinment, { headers: HeadersForPatientsAPI });
+      return this.http.post("https://medicalportal.herokuapp.com/api/v1/medicalAppointment",JSON.stringify(itfAppoinment), { headers: HeadersForPatientsAPI });
     }
   }
-
 
   // Obtenemos los turnos ocupados por fecha
   getTurnNotAvailable = (date) =>{
@@ -65,6 +65,17 @@ export class AppointmentService {
     }
   }
   
+  // Cancelación de la cita
+  deleteAppointment = (id) =>{
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.delete("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/"+id,{ headers: HeadersForPatientsAPI });
+    }
+   }
+
 /*
 
   // Guardamos los datos de la cita 
@@ -89,15 +100,6 @@ export class AppointmentService {
     }
   }
   
-  // Cancelación de la cita
-  deleteAppointment = (id) =>{
-    if(this.AccessToken){
-      const HeadersForPatientsAPI = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + (this.AccessToken)
-      });
-      return this.http.delete<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment?id="+id,{ headers: HeadersForPatientsAPI });
-    }
-   }*/
+  */
 
 }

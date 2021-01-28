@@ -61,9 +61,9 @@ import { AdministratorComponent } from './views/administrator/administrator.comp
 import { ListPatientsComponent } from './views/list-patients/list-patients.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { DashbordAppoinmentComponent } from './views/dashbord-appoinment/dashbord-appoinment.component';
-import { AppointmentComponent} from './views/appointment/appointment.component';
 import { AppointmentCreateComponent } from './views/appointment-create/appointment-create.component';
 import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
+import { AppointmentEditComponent } from './views/appointment-edit/appointment-edit.component';
 
 
 @NgModule({
@@ -76,7 +76,6 @@ import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/pr
     AboutUsComponent,
     ListNewsComponent,
     ProfileComponent,
-    AppointmentComponent,
     AppointmentCreateComponent,
 
     FooterComponent,
@@ -91,6 +90,7 @@ import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/pr
     DashbordAppoinmentComponent,
     AppointmentCreateComponent,
     ProfileDoctorComponent,
+    AppointmentEditComponent,
   ],
   imports: [
     BrowserModule,

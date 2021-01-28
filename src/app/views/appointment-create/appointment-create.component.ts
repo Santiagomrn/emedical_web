@@ -23,18 +23,10 @@ import { NotAvailable } from 'src/app/interfaces/appointment/not-available';
 export class AppointmentCreateComponent implements OnInit {
 
   // Interfaz para creación de cita
-  appointments:AppointmentInterface = {
-    QRCode:null,
-    created_at: null,
+  appointments = {
     date: null,
-    doctor:null,
-    doctorId: null,
-    id: null,
-    pathient:null,
-    pathientId: null,
-    time: null,
     turn: null,
-    updated_at: null
+    doctorId: null,
   }
 
   // Interfaz para visualizaer lista de doctores
@@ -74,14 +66,13 @@ export class AppointmentCreateComponent implements OnInit {
     const day = (new Date()).getDate();
 
     // Respaldamos la fecha actual  
-    this.appointments.date = year + '-' + month_form[month] + '-' + day;
+    this.appointments.date = year + '-' + month_form[month] + '-' + (day+1);
 
     console.log(this.appointments.date);
 
     // Verificamos las citas disponibles en la fecha actual
     this.getAppoinmentNotAvailableCurrent(this.appointments.date);
 
-     //NO OLVIDAR VALIDAR SI EL DIA ACTUAL SE LLENA DE CITAS SE CAMBIA DE DIA
   }
 
   ngOnInit(): void {
@@ -119,6 +110,10 @@ export class AppointmentCreateComponent implements OnInit {
       },(error) => {
         alert("Error: " + error.statusText);
       });
+
+      // Redireccionamos
+      this.router.navigateByUrl('\dashboard_appointment');    
+  
 
     }else{
       alert("Error campos incompletos, llenar para continuar");
