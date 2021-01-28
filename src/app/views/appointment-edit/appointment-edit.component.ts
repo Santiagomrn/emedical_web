@@ -12,6 +12,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { element } from 'protractor';
 import { threadId } from 'worker_threads';
 import { formatDate } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-appointment-edit',
@@ -41,7 +42,7 @@ time_available_current: Array<string>;
 
 // Hacemos uso de las selecciones hechas por el usaurio
 selected_doctor: string;
-selected_turn: number;
+selected_turn: string;
 
 // Interfaz para la obtención de datos 
 appointment:AppointmentInterface;
@@ -60,10 +61,7 @@ appointmentDateCurrent: string;
    private route: ActivatedRoute
  ) { 
    this.frmappoinment = this.fb.group({
-     frdate:['',Validators.required],
-
-     frdoctorID:['',Validators.required],
-    
+     frdate:['',Validators.required], 
    });
 
    this. getAppointmentId();
@@ -80,13 +78,17 @@ getDataDoctorAppoinmentCreate = ()=>{
 
    // console.log(this.doctor_data);
   },(error) => {
-    alert("Error: " + error.statusText);
+    // Mostramos mensaje de error
+    Swal.fire('Error',error.statusText,'question')
   });
 }
 
 
  // Realizamos la busqueda de la información correspondiente de la cita
  getAppointmentId = () =>{
+  // Arreglo de datos de horas disponibles
+  const time_available = ['08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30'];
+  
   // Obtenemos el id de la cita mediante la URL
    this.id = this.route.snapshot.params['id'];    
    //console.log(this.id);
@@ -96,18 +98,22 @@ getDataDoctorAppoinmentCreate = ()=>{
      // Respaldamos la información filtrada para guardar en el objeto
      this.appointments.date = this.appointment.date.substr(0,10);
      this.appointments.doctorId = this.appointment.doctorId;
-     this.appointments.turn = this.appointments.turn;
+     this.appointments.turn = this.appointment.turn;
 
      // Respaldamos la visualización de los datos
-     this.selected_doctor = this.appointments.doctorId;
+     this.selected_doctor = this.appointments.doctorId.toString();
+     this.selected_turn =  time_available[this.appointments.turn-1];
+    
+     //console.log(this.selected_doctor);
+    // console.log(this.selected_turn);
+   //  console.log(time_available[this.selected_turn]);
 
-     console.log(this.selected_doctor);
-     //.log(this.appointment.doctorId);
      // Respaldamos la fecha actual a la que se quiere cambiar
-     this.getAppoinmentNotAvailableCurrent(this.appointments.date);
+     this.getAppoinmentNotAvailableCurrent(this.appointments.date,this.appointments.turn);
 
    },(error) => {
-     alert("Error: " + error.statusText);
+     // Mostramos mensaje de error
+     Swal.fire('Error',error.statusText,'question')
    });
  }
  
@@ -118,23 +124,35 @@ saveAppointment = () => {
   // Validamos valores obtenidos   
   if((this.frmappoinment.get('frdate').value != null)&&(this.selected_turn != null)&&(this.selected_doctor != null)){
    
+    // Obtenemos el id de la cita mediante la URL
+   this.id = this.route.snapshot.params['id'];   
+
     // Respaldamos la información obtenida
     this.appointments.doctorId = parseInt(this.selected_doctor);
     this.appointments.turn = time_available.indexOf(this.selected_turn.toString()) + 1;
-    this.appointments.date = this.frmappoinment.get('frdate').value;
+    this.appointments.date = this.frmappoinment.get('frdate').value;  
+
+
+   console.log(this.appointments.doctorId);
+   console.log(this.appointments.turn);
+   console.log(this.appointments.date);
+
+   this.appointmentServices.editAppointment(this.id,this.appointments).subscribe((response)=>{
+
+    // Mostramos mensaje de cita actualizada
+    Swal.fire({icon: 'info',title: 'Cita actualiza!',showConfirmButton: false,timer: 1250})
+
+       // Redireccionamos
+    this.router.navigateByUrl('\dashboard_appointment');  
+   },(error) => {
+    // Mostramos mensaje de error
+    Swal.fire('Error',error.statusText,'question')
+  });
 
    
-  // console.log(this.appointments.doctorId);
-   // console.log(this.appointments.turn);
-   // console.log(this.appointments.date);
-/*
-    this.appointmentServices.createAppointment(this.appointments).subscribe((response)=>{
-    },(error) => {
-      alert("Error: " + error.statusText);
-    });*/
-
   }else{
-    alert("Error campos incompletos, llenar para continuar");
+     // Generamos alerta para verificación de campos ya que existe alguno vacio
+     Swal.fire({icon: 'error',title: 'Oops...', text: 'Campos incompletos!'})
   }
 }
 
@@ -144,7 +162,7 @@ cancelAppointmentEdit = () => {
 }    
 
 // Realizamos la obtención de fechas y turnos disponibles para las citas de la fecha actual
-getAppoinmentNotAvailableCurrent = (date) =>{
+getAppoinmentNotAvailableCurrent = (date,id_current) =>{
   // Hacemos uso de arreglos de horas y turnos posiblemente disponibles
   const time_available = ['08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30'];
   const turn_available = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
@@ -163,6 +181,9 @@ getAppoinmentNotAvailableCurrent = (date) =>{
             for(let j = 0; j < (Object.keys(this.turn_notAvailable).length); j++){
               if(this.turn_notAvailable[j].turn == turn_available[i]){
 
+                if(turn_available[i] == id_current){
+                  ;
+                }else{
                   const data_remove_turn = turn_available.indexOf(turn_available[i]);
                   if ( data_remove_turn !== -1 ) {
                     turn_available.splice(data_remove_turn, 1 );
@@ -173,7 +194,7 @@ getAppoinmentNotAvailableCurrent = (date) =>{
                   if( data_remove_time !== -1){         
                     time_available.splice(data_remove_time , 1);
                   }
-                  
+                }
               }
             }
           }
@@ -182,7 +203,8 @@ getAppoinmentNotAvailableCurrent = (date) =>{
           this.time_available_current = time_available; 
         }
    },(error) => {
-      alert("Error: " + error.statusText);
+      // Mostramos mensaje de error
+     Swal.fire('Error',error.statusText,'question')
   }); 
 }
 
@@ -233,7 +255,8 @@ getAppoinmentNotAvailable = () => {
         this.time_available_current = time_available;         
       }
  },(error) => {
-    alert("Error: " + error.statusText);
+    // Mostramos mensaje de error
+    Swal.fire('Error',error.statusText,'question')
 }); 
 
 }

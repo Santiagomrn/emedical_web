@@ -8,7 +8,7 @@
                 <form class="col s12" [formGroup]="frmappoinment">
                     <div class="row">
                         <!-- Fecha de la cita-->
-                        <div class="input-field col s6">
+                        <div class="input-field col s6">  
                             <span class="input-group-text">Fecha</span>
                             <input style="margin-top: -0.4em;" [(ngModel)]="appointments.date" (change)="getAppoinmentNotAvailable()" class="validate" formControlName="frdate" type="date"  id="date" name="date" min="{{appointments.date}}" max="2050-12-31" required>
                         </div>
@@ -20,7 +20,7 @@
                                 <mat-form-field class="validate">
                                     <mat-select [(value)]="selected_turn" >
                                       <mat-option>Escoger...</mat-option>
-                                      <mat-option *ngFor="let element of time_available_current" value="{{element}}">{{element}}</mat-option>
+                                      <mat-option *ngFor="let element of time_available_current" value="{{element}}" >{{element}}</mat-option>
                                     </mat-select>
                                 </mat-form-field>
                         </div>
@@ -30,9 +30,9 @@
                             <span class="input-group-text">Doctor</span>
                             <br>
                             <mat-form-field class="validate">
-                                <mat-select [(value)]="selected_doctor" [(ngModel)]="selected_doctor" formControlName="frdoctorID">
+                                <mat-select [(value)]="selected_doctor">
                                   <mat-option>Escoger...</mat-option>
-                                  <mat-option *ngFor="let element of doctor_data" value="{{element.id}}">{{element.name}} ({{element.medicalArea}})</mat-option>
+                                  <mat-option *ngFor="let element of doctor_data" value="{{element.id}}"  >{{element.name}} ({{element.medicalArea}})</mat-option>
                                 </mat-select>
                             </mat-form-field>
                         </div>

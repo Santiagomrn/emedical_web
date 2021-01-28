@@ -9,6 +9,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import { element } from 'protractor';
 import { threadId } from 'worker_threads';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashbord-appoinment',
@@ -17,12 +18,16 @@ import { threadId } from 'worker_threads';
 })
 export class DashbordAppoinmentComponent implements OnInit {
 
+  // Utilizamos una variable que contiene la fecha actual
+  current_date:string;
+
+  // Hacemos uso de la interfaz de citas
   appointments:AppointmentInterface;
 
   /* Paginación */
   response_resultados: any[];        
   dataSource: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id','turn','date','time','crud'];
+  displayedColumns: string[] = ['turn','date','time','crud'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
@@ -30,10 +35,29 @@ export class DashbordAppoinmentComponent implements OnInit {
     private form: FormBuilder,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) { 
+
+    // Hacemos una arreglo para el mes 
+    const month_form = ["01","02","03","04","05","06","07","08","09","10","11","12"];
+
+    // Obtenemos la fecha actual
+    const year = (new Date()).getFullYear();
+    const month = (new Date()).getMonth();
+    const day = (new Date()).getDate();
+
+    // Respaldamos la fecha actual  
+    this.current_date = year + '-' + month_form[month] + '-' + (day+1);
+
+  }
 
   ngOnInit(): void {
     this.getAppointmentId();
+  }
+
+  // Obtención del código QR
+  getCodeQR = () =>{
+ 
+
   }
 
   // Obtenemos todas las citas mediante el ID
@@ -51,19 +75,12 @@ export class DashbordAppoinmentComponent implements OnInit {
         console.log(this.dataSource);
 
       },(error) => {
-        alert("Error: " + error.statusText);
+        // Mostramos mensaje de error
+        Swal.fire('Error',error.statusText,'question')
       });
 }
 
-  // Eliminamos la respectiva cita
-deleteAppointmentId = (id) =>{
-    console.log(id);
-    this.appointmentService.deleteAppointment(id).subscribe((response)=>{
-    },(error) => {
-      alert("Error: " + error.statusText);
-    });
-    window.location.reload();
-}
+ 
 
 
 }

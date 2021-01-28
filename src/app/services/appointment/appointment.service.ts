@@ -76,30 +76,16 @@ export class AppointmentService {
     }
    }
 
-/*
-
-  // Guardamos los datos de la cita 
-  saveAppointment = (result_appoinmtment: AppointmentInterface) =>{
+   // Editamos datos de la cita
+   editAppointment = (id,itfAppoinment) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-      return this.http.post<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/",result_appoinmtment ,{ headers: HeadersForPatientsAPI });
+      return this.http.put("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/"+id, JSON.stringify(itfAppoinment),{ headers: HeadersForPatientsAPI });
     }
   }
 
-  // Editamos datos de la cita
-  editAppointment = (id,result_appoinmtment: AppointmentInterface) =>{
-    if(this.AccessToken){
-      const HeadersForPatientsAPI = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + (this.AccessToken)
-      });
-      return this.http.put<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment?id="+id,result_appoinmtment ,{ headers: HeadersForPatientsAPI });
-    }
-  }
-  
-  */
 
 }

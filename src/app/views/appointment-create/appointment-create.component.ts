@@ -13,7 +13,7 @@ import { threadId } from 'worker_threads';
 import { formatDate, Time } from '@angular/common';
 import { FormControl } from '@angular/forms';
 import { NotAvailable } from 'src/app/interfaces/appointment/not-available';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-appointment-create',
@@ -51,7 +51,7 @@ export class AppointmentCreateComponent implements OnInit {
     private doctorServices: DoctorAPIService,
     private fb: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {
     this.frmappoinment = this.fb.group({
       frdate: ['',Validators.required],
@@ -86,7 +86,8 @@ export class AppointmentCreateComponent implements OnInit {
 
       console.log(this.doctor_data);
     },(error) => {
-      alert("Error: " + error.statusText);
+      // Mostramos mensaje de error
+      Swal.fire('Error',error.statusText,'question')
     });
   }
 
@@ -107,16 +108,23 @@ export class AppointmentCreateComponent implements OnInit {
       console.log(this.appointments.date);
 
       this.appointmentServices.createAppointment(this.appointments).subscribe((response)=>{
-      },(error) => {
-        alert("Error: " + error.statusText);
-      });
+
+      // Mostramos mensaje de cita creada
+      Swal.fire({icon: 'success',title: 'Cita creada!',showConfirmButton: false,timer: 1250})
 
       // Redireccionamos
       this.router.navigateByUrl('\dashboard_appointment');    
-  
+      
+      },(error) => {
+      // Mostramos mensaje de error
+      Swal.fire('Error',error.statusText,'question')
+        
+      });
+
 
     }else{
-      alert("Error campos incompletos, llenar para continuar");
+      // Generamos alerta para verificación de campos ya que existe alguno vacio
+      Swal.fire({icon: 'error',title: 'Oops...', text: 'Campos incompletos!'})
     }
 
     
@@ -169,7 +177,8 @@ export class AppointmentCreateComponent implements OnInit {
           }
 
      },(error) => {
-        alert("Error: " + error.statusText);
+      // Mostramos mensaje de error
+      Swal.fire('Error',error.statusText,'question')
     }); 
   }
 
@@ -220,7 +229,8 @@ export class AppointmentCreateComponent implements OnInit {
           this.time_available_current = time_available;         
         }
    },(error) => {
-      alert("Error: " + error.statusText);
+     // Mostramos mensaje de error
+     Swal.fire('Error',error.statusText,'question')
   }); 
 
   }

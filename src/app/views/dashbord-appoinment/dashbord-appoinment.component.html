@@ -4,80 +4,141 @@
             <br>
             <h1 class="card-header" align="center">Bitacora de citas</h1>
             <div class="card-body"> 
-                <a class="waves-effect waves-light btn" routerLink="./appointment_create" style="margin-left: 55em; width: 8em;">
+                <div class="row">
                     <div class="row">
+                        <div class="col s10"></div>
                         <div class="col s2">
-                            <i class="small material-icons">add_circle_outline</i>
-                        </div>
-                        <div class="col s6">
-                            Crear
-                        </div>
-                        <div class="col s4"></div>
-                    </div>    
-                </a>
-                <table mat-table [dataSource]="dataSource">
-                    <ng-container matColumnDef="id">
-                        <th mat-header-cell *matHeaderCellDef>Id</th>
-                        <td mat-cell *matCellDef="let element"> 
-                            {{ element.id}} 
-                        </td>
-                    </ng-container>
-                    <ng-container matColumnDef="turn">
-                        <th mat-header-cell *matHeaderCellDef>Turno</th>
-                        <td mat-cell *matCellDef="let element"> 
-                            {{ element.turn}} 
-                        </td>
-                    </ng-container>
-                    <ng-container matColumnDef="date">
-                        <th mat-header-cell *matHeaderCellDef>Fecha</th>
-                            <td class="trim-info" style="margin-top: 2.8em;" mat-cell *matCellDef="let element"> 
-                                {{element.date}}
-                            </td>
-                    </ng-container>
-                    <ng-container matColumnDef="time">
-                        <th mat-header-cell *matHeaderCellDef>Hora</th>
-                            <td mat-cell *matCellDef="let element"> 
-                                {{element.time}}
-                            </td>
-                    </ng-container>
-                    <ng-container matColumnDef="crud" class="col s2">
-                        <th mat-header-cell *matHeaderCellDef></th>
-                            <td mat-cell *matCellDef="let element"> 
-                                <div class="row">
-                                    <br>
-                                    <div class="col s3" style="margin-right: -8em;">
-                                        <a class="waves-effect waves-light btn" routerLink="./appointment_create/{{element.id}}">Editar</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col s3"  style="margin-right: -8em;">
-                                       <a class="waves-effect waves-light btn" (click)=" deleteAppointmentId(element.id)" style="background-color:#CF4444;" >Cancelar</a>
-                                    </div>
-                                </div>
-                            </td>
-                    </ng-container>
-
-                    <ng-container matColumnDef="loading">
-                        <mat-footer-cell *matFooterCellDef colspan="6">
-                            Cargando datos...
-                            <div class="preloader-wrapper big active" style="float: center;">
-                                <div class="spinner-layer spinner-blue-only">
-                                <div class="circle-clipper left">
-                                    <div class="circle"></div>
-                                </div><div class="gap-patch">
-                                    <div class="circle"></div>
-                                </div><div class="circle-clipper right">
-                                    <div class="circle"></div>
-                                </div>
-                                </div>
+                            <div class="row">
+                                <a class="waves-effect waves-light btn" routerLink="./appointment_create" style="margin-top: 1em;">
+                                    <ul>
+                                        <li style="margin-top: -1em; width: 6em;">
+                                            <div class="col s3"> <i class="small material-icons">add_circle_outline</i></div>
+                                            <div class="col s3">Crear</div>
+                                        </li>
+                                    </ul> 
+                                </a>
                             </div>
-                        </mat-footer-cell>
-                    </ng-container>
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                    <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide': response_resultados!=null}"></mat-footer-row>
-                </table>
-                <mat-paginator style="width: 70em;" [pageSizeOptions]="[3,6]" [pageSize]="6" showFirstLastButtons></mat-paginator>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: -2em;">
+                        <div class="col s12">
+                            <table mat-table [dataSource]="dataSource">
+                                <ng-container matColumnDef="turn">
+                                    <th mat-header-cell *matHeaderCellDef>Turno</th>
+                                    <td mat-cell *matCellDef="let element"> 
+                                        {{ element.turn}} 
+                                    </td>
+                                </ng-container>
+                                <ng-container matColumnDef="date">
+                                    <th mat-header-cell *matHeaderCellDef>Fecha</th>
+                                        <td class="trim-info" style="margin-top: 2.8em;" mat-cell *matCellDef="let element"> 
+                                            {{element.date}}
+                                        </td>
+                                </ng-container>
+                                <ng-container matColumnDef="time">
+                                    <th mat-header-cell *matHeaderCellDef>Hora</th>
+                                        <td mat-cell *matCellDef="let element"> 
+                                            {{element.time}}
+                                        </td>
+                                </ng-container>
+                                <ng-container matColumnDef="crud">
+                                    <th mat-header-cell *matHeaderCellDef style="width: 16em;"></th>
+                                        <td mat-cell *matCellDef="let element">
+                                            <div *ngIf="(element.date < current_date) else elseBlock">
+                                                <div class="row">
+                                                    <div class="col s4">
+                                                        <a style="color:#1BA468 ;">
+                                                            <ul>
+                                                                <li>
+                                                                    <p style="text-align: center;"><i class="small material-icons" style="filter: blur(0.8px);">create</i></p>
+                                                                    <p style="text-align: center; filter: blur(0.8px);">Editar</p>
+                                                                </li>
+                                                            </ul>  
+                                                        </a>
+                                                    </div>
+                                                    <div class="col s4">
+                                                        <a style="color:#CF4444;">
+                                                            <ul>
+                                                                <li>
+                                                                    <p style="text-align: center;"><i class="small material-icons" style="filter: blur(0.8px);">close</i></p>
+                                                                    <p style="text-align: center; filter: blur(0.8px);">Eliminar</p>
+                                                                </li>
+                                                            </ul>    
+                                                        </a>
+                                                    </div>
+                                                    <div class="col s4">
+                                                        <a style="color: #0F2DA5;">
+                                                            <ul>
+                                                                <li>
+                                                                    <p style="text-align: center;"><i class="small material-icons" style="filter: blur(0.8px);">filter_center_focus</i></p>
+                                                                    <p style="text-align: center; filter: blur(0.8px);">QR</p>
+                                                                </li>
+                                                            </ul>  
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ng-template #elseBlock>
+                                                <div class="row">
+                                                    <div class="col s4">
+                                                        <a routerLink="./appointment_create/{{element.id}}" style="color:#1BA468 ;">
+                                                            <ul>
+                                                                <li>
+                                                                    <p style="text-align: center;"><i class="small material-icons">create</i></p>
+                                                                    <p style="text-align: center;">Editar</p>
+                                                                </li>
+                                                            </ul>  
+                                                        </a>
+                                                    </div>
+                                                    <div class="col s4">
+                                                        <a routerLink="./appointment_delete/{{element.id}}" style="color:#CF4444;">
+                                                            <ul>
+                                                                <li>
+                                                                    <p style="text-align: center;"><i class="small material-icons">close</i></p>
+                                                                    <p style="text-align: center;">Eliminar</p>
+                                                                </li>
+                                                            </ul>    
+                                                        </a>
+                                                    </div>
+                                                    <div class="col s4">
+                                                        <a routerLink="#" style="color: #0F2DA5 ;">
+                                                            <ul>
+                                                                <li>
+                                                                    <p style="text-align: center;"><i class="small material-icons">filter_center_focus</i></p>
+                                                                    <p style="text-align: center;">QR</p>
+                                                                </li>
+                                                            </ul>  
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </ng-template>
+                                        </td>
+                                </ng-container>
+
+                                <ng-container matColumnDef="loading">
+                                    <mat-footer-cell *matFooterCellDef colspan="6">
+                                        Cargando datos...
+                                        <div class="preloader-wrapper big active" style="float: center;">
+                                            <div class="spinner-layer spinner-blue-only">
+                                            <div class="circle-clipper left">
+                                                <div class="circle"></div>
+                                            </div><div class="gap-patch">
+                                                <div class="circle"></div>
+                                            </div><div class="circle-clipper right">
+                                                <div class="circle"></div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </mat-footer-cell>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide': response_resultados!=null}"></mat-footer-row>
+                            </table>
+                            <mat-paginator style="width: 70em;" [pageSizeOptions]="[3,6]" [pageSize]="6" showFirstLastButtons></mat-paginator>
+                            </div>
+                    </div>   
+                </div>
             </div>
         </div>
     </div>
