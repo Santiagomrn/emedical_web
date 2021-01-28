@@ -42,8 +42,6 @@ export class MedicamentsComponent implements OnInit {
   displayedColumns: string[] = ['imagen','descrition'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  
-
   constructor( 
     private MedicamentService: MedicamentService,
     private router: Router,

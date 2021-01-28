@@ -53,7 +53,7 @@ export class PatientsService {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-      return this.http.put<PatientsInterface>("https://medicalportal.herokuapp.com/api/v1/pathient/"+id, data_patients, { headers: HeadersForPatientsAPI });
+      return this.http.put<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/"+id, data_patients, { headers: HeadersForPatientsAPI });
     }
   }
 

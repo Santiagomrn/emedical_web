@@ -10,13 +10,15 @@ import {LoginComponent} from './views/login/login.component';
 import {DoctorsCreateComponent} from './views/doctors-create/doctors-create.component';
 import {PatientsCreateComponent} from './views/patients-create/patients-create.component';
 import { AdministratorComponent} from './views/administrator/administrator.component';
-import {AppointmentComponent} from './views/appointment/appointment.component';
 import { AppComponent } from './app.component';
 import {ProfileComponent} from './views/profile/profile.component';
 import { AuthGuardService as AuthGuard} from './services/auth/auth-guard.service';
 import { RoleGuardService } from './services/auth/role-guard.service';
 import {DashbordAppoinmentComponent} from './views/dashbord-appoinment/dashbord-appoinment.component';
 import {ListPatientsComponent} from './views/list-patients/list-patients.component';
+import {AppointmentEditComponent} from './views/appointment-edit/appointment-edit.component';
+import {AppointmentCreateComponent} from './views/appointment-create/appointment-create.component';
+import {AppointmentDeleteComponent} from './views/appointment-delete/appointment-delete.component';
 import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
 const routes: Routes = [
   {path : '', redirectTo:'home',
@@ -38,14 +40,20 @@ const routes: Routes = [
   {path: 'doctors/list', component : AdministratorComponent,
     canActivate: [AuthGuard]
   }, 
-  {path: 'home_patients/appointment_create', component: AppointmentComponent,
+  {path: 'home_patients/appointment_create', component: AppointmentEditComponent,
     canActivate : [RoleGuardService],
     data:{
       expectedRole : ['pathient']
     }
   },
-  {path: 'home_patients/appointment_create/:id', component: AppointmentComponent},
+  {path: 'home_patients/appointment_create/:id', component: AppointmentEditComponent},
   {path: 'profile_patients/:id', component: ProfileComponent},
+  {path: 'dashboard_appointment', component:DashbordAppoinmentComponent},
+  {path: 'dashboard_appointment/appointment_create', component:AppointmentCreateComponent},
+  {path: 'dashboard_appointment/appointment_create/:id', component:AppointmentEditComponent},
+  {path: 'dashboard_appointment/appointment_delete/:id', component:AppointmentDeleteComponent},
+  {path: 'list_patients', component: ListPatientsComponent},
+ 
   {path: 'dashboard_patients', component:DashbordAppoinmentComponent},
   {path: 'profile_doctor', component : ProfileDoctorComponent,
     canActivate : [RoleGuardService],

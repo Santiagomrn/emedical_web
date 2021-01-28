@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AppointmentInterface } from "../../interfaces/appointment/appointment-interface";
+import { NotAvailable } from '../../interfaces/appointment/not-available';
 import { HttpClient, HttpClientModule,  HttpHeaders , HttpResponse} from '@angular/common/http';
 import { resourceLimits } from 'worker_threads';
 import { Interface } from 'readline';
@@ -19,41 +20,48 @@ export class AppointmentService {
   }
 
   // Obtenemos los datos de la cita de cada paciente
-  // Para obtener todos los datos (null,true)
-  // Para obtener datos especificos mediante id (id,false)
-  getAppointment = (id,data:boolean) =>{
+  getAppointment = () =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-        if(data == true){
-          return this.http.get<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/", { headers: HeadersForPatientsAPI });
-        }else if(data == false){
-          return this.http.get<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/"+id, { headers: HeadersForPatientsAPI });
-        }
+      return this.http.get<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/", { headers: HeadersForPatientsAPI });
     }
   }
 
-  // Guardamos los datos de la cita 
-  saveAppointment = (result_appoinmtment: AppointmentInterface) =>{
+  // Obtención de datos mediante ID
+  getAppointmentId = (id) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-      return this.http.post<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/",result_appoinmtment ,{ headers: HeadersForPatientsAPI });
+      return this.http.get<AppointmentInterface>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/" + id, { headers: HeadersForPatientsAPI });
     }
   }
 
-  // Editamos datos de la cita
-  editAppointment = (id,result_appoinmtment: AppointmentInterface) =>{
+  // Creación de una nueva cita
+  createAppointment = (itfAppoinment) =>{
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Accept':'application/atom+xml',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.post("https://medicalportal.herokuapp.com/api/v1/medicalAppointment",JSON.stringify(itfAppoinment), { headers: HeadersForPatientsAPI });
+    }
+  }
+
+  // Obtenemos los turnos ocupados por fecha
+  getTurnNotAvailable = (date) =>{
+    
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-      return this.http.put<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment?id="+id,result_appoinmtment ,{ headers: HeadersForPatientsAPI });
+      return this.http.get<NotAvailable>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/turn/NotAvailable?date="+date, { headers: HeadersForPatientsAPI });
     }
   }
   
@@ -64,8 +72,20 @@ export class AppointmentService {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + (this.AccessToken)
       });
-      return this.http.delete<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment?id="+id,{ headers: HeadersForPatientsAPI });
+      return this.http.delete("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/"+id,{ headers: HeadersForPatientsAPI });
     }
    }
+
+   // Editamos datos de la cita
+   editAppointment = (id,itfAppoinment) =>{
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.put("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/"+id, JSON.stringify(itfAppoinment),{ headers: HeadersForPatientsAPI });
+    }
+  }
+
 
 }

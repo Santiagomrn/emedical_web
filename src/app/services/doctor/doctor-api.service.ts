@@ -20,4 +20,15 @@ export class DoctorAPIService {
     }  
   }   
 
+  // Obtenemos el listado de todos los doctores disponibles
+  getDataDoctorsAppointmentCreate = () =>{
+    if(this.AccessToken){
+      const HeadersForDoctorsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.get<_DoctorInterface>("https://medicalportal.herokuapp.com/api/v1/doctor/", { headers: HeadersForDoctorsAPI });  
+    }  
+  }
+
 }

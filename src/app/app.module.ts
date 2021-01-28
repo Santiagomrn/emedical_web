@@ -6,6 +6,7 @@ import { HttpClientModule} from '@angular/common/http';
 
 import { MedicamentService} from "./services/medicament/medicament.service"
 import { PatientsService } from "./services/patients/patients.service";
+import {DoctorAPIService } from './services/doctor/doctor-api.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
@@ -60,7 +61,11 @@ import { AdministratorComponent } from './views/administrator/administrator.comp
 import { ListPatientsComponent } from './views/list-patients/list-patients.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { DashbordAppoinmentComponent } from './views/dashbord-appoinment/dashbord-appoinment.component';
+import { AppointmentCreateComponent } from './views/appointment-create/appointment-create.component';
 import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
+import { AppointmentEditComponent } from './views/appointment-edit/appointment-edit.component';
+import { AppointmentDeleteComponent } from './views/appointment-delete/appointment-delete.component';
+
 
 @NgModule({
   declarations: [
@@ -72,6 +77,7 @@ import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/pr
     AboutUsComponent,
     ListNewsComponent,
     ProfileComponent,
+    AppointmentCreateComponent,
 
     FooterComponent,
     LoginComponent,
@@ -83,7 +89,10 @@ import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/pr
     
     ListPatientsComponent,
     DashbordAppoinmentComponent,
+    AppointmentCreateComponent,
     ProfileDoctorComponent,
+    AppointmentEditComponent,
+    AppointmentDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -128,7 +137,7 @@ import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/pr
     MatTooltipModule,
     MatTreeModule
   ],
-  providers: [MedicamentService, PatientsService ],
+  providers: [MedicamentService, PatientsService,DoctorAPIService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
