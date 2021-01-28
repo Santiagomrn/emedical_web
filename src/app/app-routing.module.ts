@@ -35,11 +35,8 @@ const routes: Routes = [
     }
   },
   {path: 'patients_create', component: PatientsCreateComponent},
-  {path: 'administrator', component : AdministratorComponent,
-    canActivate: [RoleGuardService],
-    data:{
-      expectedRole : ['manager']
-    }
+  {path: 'doctors/list', component : AdministratorComponent,
+    canActivate: [AuthGuard]
   }, 
   {path: 'home_patients/appointment_create', component: AppointmentComponent,
     canActivate : [RoleGuardService],
