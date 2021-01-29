@@ -6,6 +6,9 @@ import { FormBuilder,FormControl, Validators } from '@angular/forms';
 import { threadId } from 'worker_threads';
 import Swal from 'sweetalert2';
 
+/**
+ * Componente de angular
+ */
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -66,6 +69,9 @@ export class ProfileComponent implements OnInit {
     this.get_patient_ID();
   }
 
+  /**
+   * Método de angular
+   */
   ngOnInit(): void {
   }
 
