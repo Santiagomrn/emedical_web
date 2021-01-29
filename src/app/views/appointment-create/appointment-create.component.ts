@@ -5,7 +5,7 @@ import { DoctorAPIService } from '../../services/doctor/doctor-api.service';
 import { AppointmentInterface } from "../../interfaces/appointment/appointment-interface";
 import { AppointmentService } from "../../services/appointment/appointment.service";
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
-import { FormBuilder,FormGroup, Validators} from '@angular/forms';
+import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { element } from 'protractor';
@@ -111,7 +111,7 @@ export class AppointmentCreateComponent implements OnInit {
   }
 
   /**
-   * Método que hace realiza la creación de la cita, mediante un POST a la API
+   * Método que realiza la creación de la cita, mediante un POST a la API
    */
   AppoinmentCreate = ()=>{
     const time_available = ['08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30']; 
