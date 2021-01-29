@@ -1,0 +1,695 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>medical-portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">medical-portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>PatientsCreateComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/views/patients-create/patients-create.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-patients-create</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./patients-create.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./patients-create.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#userCreateForm">userCreateForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createUser">createUser</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit">onSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, Pathient: <a href="../injectables/PatientsService.html">PatientsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>Pathient</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PatientsService.html" target="_self" >PatientsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createUser"></a>
+                    <span class="name">
+                        <b>
+                            createUser
+                        </b>
+                        <a href="#createUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createUser(crearUser: <a href="https://angular.io/api/forms/FormGroup" target="_blank">FormGroup</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>crearUser</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:55</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <b>
+                            onSubmit
+                        </b>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userCreateForm"></a>
+                        <span class="name">
+                            <b>
+                            userCreateForm</b>
+                            <a href="#userCreateForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormGroup({
+    name: new FormControl(&#x27;&#x27;),
+    lastName: new FormControl(&#x27;&#x27;),
+    phone: new FormControl(&#x27;&#x27;),
+    email: new FormControl(&#x27;&#x27;),
+    emergencyPhone: new FormControl(&#x27;&#x27;),
+    password: new FormControl(&#x27;&#x27;),
+    birthdate: new FormControl(&#x27;&#x27;),
+  })</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from &#x27;@angular/forms&#x27;;
+
+import { HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
+
+import { HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+import { PatientsService } from &#x27;../../services/patients/patients.service&#x27;;
+@Component({
+  selector: &#x27;app-patients-create&#x27;,
+  templateUrl: &#x27;./patients-create.component.html&#x27;,
+  styleUrls: [&#x27;./patients-create.component.css&#x27;]
+})
+export class PatientsCreateComponent implements OnInit {
+  
+  userCreateForm &#x3D; new FormGroup({
+    name: new FormControl(&#x27;&#x27;),
+    lastName: new FormControl(&#x27;&#x27;),
+    phone: new FormControl(&#x27;&#x27;),
+    email: new FormControl(&#x27;&#x27;),
+    emergencyPhone: new FormControl(&#x27;&#x27;),
+    password: new FormControl(&#x27;&#x27;),
+    birthdate: new FormControl(&#x27;&#x27;),
+  });
+
+  constructor( private http : HttpClient,
+    private Pathient : PatientsService
+    ) { }
+  onSubmit() {
+    this.createUser(this.userCreateForm.value);
+  }
+  createUser(crearUser : FormGroup){
+    console.warn(this.userCreateForm.value);
+    console.log(this.userCreateForm.get(&quot;name&quot;).value);
+    const body &#x3D; {
+      name : this.userCreateForm.get(&quot;name&quot;).value,
+      lastName : this.userCreateForm.get(&quot;lastName&quot;).value,
+      phone : this.userCreateForm.get(&quot;phone&quot;).value,
+      email : this.userCreateForm.get(&quot;email&quot;).value,
+      emergencyPhone : this.userCreateForm.get(&quot;emergencyPhone&quot;).value,
+      password : this.userCreateForm.get(&quot;password&quot;).value,
+      birthdate : this.userCreateForm.get(&quot;birthdate&quot;).value,
+    };
+    // Invocar servicio
+    this.Pathient.savePatient(body).subscribe((response) &#x3D;&gt; {
+        // Mostramos mensaje de paciente creada
+        Swal.fire({icon: &#x27;success&#x27;,title: &#x27;Paciente creado!&#x27;,showConfirmButton: false,timer: 1250})
+    
+    },(error) &#x3D;&gt; {
+      // Mostramos mensaje de error
+      Swal.fire(&#x27;Error&#x27;,error.statusText,&#x27;question&#x27;) 
+    });
+
+  }
+  ngOnInit(): void {
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+    &lt;!-- IMAGEN --&gt;
+    &lt;!-- &lt;img class&#x3D;&quot;image&quot; src&#x3D;&quot;../../../assets/img/contactus.jpg&quot; alt&#x3D;&quot;Not Found&quot; &gt; --&gt;
+    &lt;!--  CARD --&gt;
+    &lt;div class&#x3D;&quot;image&quot;&gt;&lt;/div&gt;  
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+        &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;margin-top: 2em;&quot; &gt;
+            &lt;h1 class&#x3D;&quot;card-header&quot; align&#x3D;&quot;center&quot;&gt;Registrar pacientes&lt;/h1&gt;
+            &lt;h2 class&#x3D;&quot;card-header&quot; style&#x3D;&quot;padding-left: 10px;&quot;&gt;Información personal&lt;/h2&gt;
+            &lt;div class&#x3D;&quot;card-body&quot;&gt; 
+                &lt;div class&#x3D;&quot;row&quot;&gt;
+                    &lt;form class&#x3D;&quot;col s12&quot;   action &#x3D; &quot;&quot; [formGroup] &#x3D; &quot;userCreateForm&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+                      &lt;div class&#x3D;&quot;row&quot;&gt;
+                            &lt;!-- Nombre del paciente --&gt;
+                            &lt;div class&#x3D;&quot;input-field col s6&quot;&gt;
+                                &lt;span class&#x3D;&quot;input-group-text&quot;&gt;Nombre(s)&lt;/span&gt;
+                                &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;name&quot; class&#x3D;&quot;validate&quot; name&#x3D;&quot;name&quot; formControlName&#x3D;&quot;name&quot; required&gt;
+                            &lt;/div&gt;
+                            &lt;!-- Apellido del paciente --&gt;
+                            &lt;div class&#x3D;&quot;input-field col s6&quot;&gt;
+                                &lt;span class&#x3D;&quot;input-group-text&quot;&gt;Apellido(s)&lt;/span&gt;
+                                &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;lastName&quot; class&#x3D;&quot;validate&quot; name&#x3D;&quot;lastName&quot; formControlName&#x3D;&quot;lastName&quot; required&gt;
+                            &lt;/div&gt;
+                      &lt;/div&gt;
+    
+                      &lt;div class&#x3D;&quot;row&quot;&gt;
+                            &lt;!-- Fecha de nacimiento del paciente --&gt;
+                            &lt;div class&#x3D;&quot;input-field col s6&quot;&gt;
+                                &lt;span class&#x3D;&quot;input-group-text&quot;&gt;Fecha de nacimiento&lt;/span&gt;
+                                &lt;input type&#x3D;&quot;date&quot; id&#x3D;&quot;birthdate&quot; class&#x3D;&quot;validate&quot; name&#x3D;&quot;birthdate&quot; formControlName&#x3D;&quot;birthdate&quot; required&gt;
+                            &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;div class&#x3D;&quot;row&quot;&gt;
+                            &lt;!-- Número de teléfono del paciente --&gt;
+                            &lt;div class&#x3D;&quot;input-field col s6&quot;&gt;
+                                &lt;span class&#x3D;&quot;input-group-text&quot;&gt;Teléfono&lt;/span&gt;
+                                &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;phone&quot; class&#x3D;&quot;validate&quot; name&#x3D;&quot;phone&quot; formControlName&#x3D;&quot;phone&quot; required&gt;
+                                &lt;span class&#x3D;&quot;helper-text&quot; data-success&#x3D;&quot;right&quot;&gt;Ejemplo.- 99999999&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;!-- Número de teléfono auxiliar del paciente --&gt;
+                            &lt;div class&#x3D;&quot;input-field col s6&quot;&gt;
+                            &lt;span class&#x3D;&quot;input-group-text&quot;&gt;Teléfono(Opcional)&lt;/span&gt;
+                                &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;emergencyphone&quot; class&#x3D;&quot;validate&quot; name&#x3D;&quot;emergencyphone&quot; formControlName&#x3D;&quot;emergencyPhone&quot; required&gt;
+                                &lt;span class&#x3D;&quot;helper-text&quot; data-success&#x3D;&quot;right&quot;&gt;Ejemplo.- 99999999&lt;/span&gt;
+                            &lt;/div&gt;
+                      &lt;/div&gt;
+    
+    
+                      &lt;h2 class&#x3D;&quot;card-header&quot;&gt;Información de cuenta&lt;/h2&gt;
+                      &lt;div class&#x3D;&quot;row&quot;&gt;
+                        &lt;!-- Correo del paciente --&gt;
+                        &lt;div class&#x3D;&quot;input-field col s12&quot;&gt;
+                                &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
+                                &lt;span class&#x3D;&quot;input-group-text&quot;&gt;Correo electrónico&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; class&#x3D;&quot;validate&quot;  formControlName&#x3D;&quot;email&quot; required&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                      
+                      &lt;div class&#x3D;&quot;row&quot;&gt;
+                                &lt;!-- Contraseña del paciente --&gt;
+                                &lt;div class&#x3D;&quot;input-field  col s6&quot;&gt;
+                                    &lt;span class&#x3D;&quot;input-group-text&quot;&gt;Contraseña&lt;/span&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;validate&quot; id&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot;  required&gt;
+                                    &lt;span class&#x3D;&quot;helper-text&quot; data-error&#x3D;&quot;
+                                    Tenga una longitud mayor o igual a 8 caracteres.
+                                    Utilice una combinación de letras mayúsculas y minúsculas,
+                                    incluya caracteres especiales.
+                                    &quot; data-success&#x3D;&quot;right&quot;&gt;&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;!-- Contraseña confirmada del paciente --&gt;
+                                &lt;div class&#x3D;&quot;input-field  col s6&quot;&gt;
+                                    &lt;span class&#x3D;&quot;input-group-text&quot;&gt;Confirmar contraseña&lt;/span&gt;
+                                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;validate&quot; id&#x3D;&quot;confirm_password&quot; name&#x3D;&quot;confirm_password&quot; formControlName&#x3D;&quot;password&quot;  required&gt;
+                                    &lt;span class&#x3D;&quot;helper-text&quot; data-error&#x3D;&quot;
+                                    Tenga una longitud mayor o igual a 8 caracteres.
+                                    Utilice una combinación de letras mayúsculas y minúsculas,
+                                    incluya caracteres especiales.
+                                    &quot; data-success&#x3D;&quot;right&quot;&gt;&lt;/span&gt;
+                                &lt;/div&gt;
+                      &lt;/div&gt;
+    
+                                              
+                      &lt;div class&#x3D;&quot;row&quot;&gt;
+                        &lt;div class&#x3D;&quot;col s9&quot;&gt;&lt;/div&gt;
+                        &lt;div class&#x3D;&quot;col s3 right-align&quot;&gt;
+                            &lt;button class&#x3D;&quot;btn waves-effect buttoms waves-light&quot; type&#x3D;&quot;submit&quot; name&#x3D;&quot;action&quot;&gt;
+                            Guardar datos
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; 
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./patients-create.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>    <!-- IMAGEN -->    <!-- <img class="image" src="../../../assets/img/contactus.jpg" alt="Not Found" > -->    <!--  CARD -->    <div class="image"></div>      <div class="container">        <div class="card" style="margin-top: 2em;" >            <h1 class="card-header" align="center">Registrar pacientes</h1>            <h2 class="card-header" style="padding-left: 10px;">Información personal</h2>            <div class="card-body">                 <div class="row">                    <form class="col s12"   action = "" [formGroup] = "userCreateForm" (ngSubmit)="onSubmit()">                      <div class="row">                            <!-- Nombre del paciente -->                            <div class="input-field col s6">                                <span class="input-group-text">Nombre(s)</span>                                <input type="text" id="name" class="validate" name="name" formControlName="name" required>                            </div>                            <!-- Apellido del paciente -->                            <div class="input-field col s6">                                <span class="input-group-text">Apellido(s)</span>                                <input type="text" id="lastName" class="validate" name="lastName" formControlName="lastName" required>                            </div>                      </div>                          <div class="row">                            <!-- Fecha de nacimiento del paciente -->                            <div class="input-field col s6">                                <span class="input-group-text">Fecha de nacimiento</span>                                <input type="date" id="birthdate" class="validate" name="birthdate" formControlName="birthdate" required>                            </div>                      </div>                      <div class="row">                            <!-- Número de teléfono del paciente -->                            <div class="input-field col s6">                                <span class="input-group-text">Teléfono</span>                                <input type="text" id="phone" class="validate" name="phone" formControlName="phone" required>                                <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>                            </div>                            <!-- Número de teléfono auxiliar del paciente -->                            <div class="input-field col s6">                            <span class="input-group-text">Teléfono(Opcional)</span>                                <input type="text" id="emergencyphone" class="validate" name="emergencyphone" formControlName="emergencyPhone" required>                                <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>                            </div>                      </div>                              <h2 class="card-header">Información de cuenta</h2>                      <div class="row">                        <!-- Correo del paciente -->                        <div class="input-field col s12">                                <div class="input-group-prepend">                                <span class="input-group-text">Correo electrónico</span>                                </div>                                <input type="text" id="email" name="email" class="validate"  formControlName="email" required>                        </div>                      </div>                                            <div class="row">                                <!-- Contraseña del paciente -->                                <div class="input-field  col s6">                                    <span class="input-group-text">Contraseña</span>                                    <input type="text" class="validate" id="password" name="password"  required>                                    <span class="helper-text" data-error="                                    Tenga una longitud mayor o igual a 8 caracteres.                                    Utilice una combinación de letras mayúsculas y minúsculas,                                    incluya caracteres especiales.                                    " data-success="right"></span>                                </div>                                <!-- Contraseña confirmada del paciente -->                                <div class="input-field  col s6">                                    <span class="input-group-text">Confirmar contraseña</span>                                    <input type="text" class="validate" id="confirm_password" name="confirm_password" formControlName="password"  required>                                    <span class="helper-text" data-error="                                    Tenga una longitud mayor o igual a 8 caracteres.                                    Utilice una combinación de letras mayúsculas y minúsculas,                                    incluya caracteres especiales.                                    " data-success="right"></span>                                </div>                      </div>                                                                        <div class="row">                        <div class="col s9"></div>                        <div class="col s3 right-align">                            <button class="btn waves-effect buttoms waves-light" type="submit" name="action">                            Guardar datos                            </button>                        </div>                    </div>                    </form>                </div>            </div>        </div>    </div> </div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentDeleteComponent', 'selector': 'app-appointment-delete'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PatientsCreateComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PatientsCreateComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
