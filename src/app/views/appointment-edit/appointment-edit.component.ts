@@ -14,6 +14,9 @@ import { threadId } from 'worker_threads';
 import { formatDate } from '@angular/common';
 import Swal from 'sweetalert2';
 
+/**
+ * Componente de angular
+ */
 @Component({
   selector: 'app-appointment-edit',
   templateUrl: './appointment-edit.component.html',
@@ -21,37 +24,59 @@ import Swal from 'sweetalert2';
 })
 export class AppointmentEditComponent implements OnInit {
 
-// Interfaz para creación de cita
+/**
+ * Valores para la creación de citas nuevas
+ */
 appointments = {
     date: null,
     turn: null,
     doctorId: null,
 }
 
-// Obtención del ID del método a modificar
+/**
+ * Valor para la obtención del ID del usuario
+ */
 id:any;
  
-// Interfaz para visualizaer lista de doctores
+/**
+ * Valor para la visualización de los datos de Doctores recibidos por una API
+ */
 doctor_data: _DoctorInterface;
  
-// Hacemos uso de la interfaz para obtener turnos no disponibles
+/**
+ * Valor para la visualización de los datos de Turnos no disponibles recibidos por la API
+ */
 turn_notAvailable: NotAvailable;
 
-// Obtenemos la cantidad de turnos disponiblesy fechas
+/**
+ * Valor de una arreglo para la lógica de horas y turnos disponibles
+ */
 time_available_current: Array<string>;
 
-// Hacemos uso de las selecciones hechas por el usaurio
+/**
+ * Valor para determinar la selección del usuario(Paciente) del doctor elegido
+ */
 selected_doctor: string;
+
+/**
+ * Valor para determinar la selección del usuario(Paciente) del turno elegido
+ */
 selected_turn: string;
 
-// Interfaz para la obtención de datos 
+/**
+ * Valor para la visualización de los datos de Pacientes recibidos por una API
+ */
 appointment:AppointmentInterface;
 
-// Hacemos uso de la fecha actual
+/**
+ * Valor para obtener la fecha actual
+ */
 appointmentDateCurrent: string;
 
- // Hacemos uso de formularios   
- frmappoinment;
+/**
+ * Valor para la creación del formulario para la obtención de la fecha que el paciente desee
+ */  
+frmappoinment;
 
  constructor(
    private appointmentServices:  AppointmentService,

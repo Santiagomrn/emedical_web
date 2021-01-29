@@ -6,6 +6,9 @@ import { FormBuilder,FormControl, Validators } from '@angular/forms';
 import { threadId } from 'worker_threads';
 import Swal from 'sweetalert2';
 
+/**
+ * Componente de angular
+ */
 @Component({
   selector: 'app-profile-patients-doctor',
   templateUrl: './profile-patients-doctor.component.html',
@@ -13,42 +16,50 @@ import Swal from 'sweetalert2';
 })
 export class ProfilePatientsDoctorComponent implements OnInit {
 
-  // Hacemos uso de una variable para obtener el ID del usaurio
+  /**
+   * Valor para la obtención del ID del usuario
+   */
   id:any;
 
-  // Obtenemos los datos de la búsqueda de citas programadas
+  /**
+   * Valor para la visualización de los datos recibidos por una ID, de parte del médico
+   */
   patients: PatientsInterface;
 
+   /**
+   * Constructor para utilizar modulos importados
+   * @param {PatientsService} result_service consumo del servicio de paciente
+   * @param {FormBuilder} fb consumo del modulo para formularios
+   * @param {Router} router  consumo del modulo para redireccionar
+   * @param {ActivatedRoute} route consumo del modulo obtención de ID
+   */
   constructor(
     private result_service:  PatientsService,
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
   ) { 
-    // Llamamos a los datos del paciente
     this.get_patient_appointment();
   }
 
+  /**
+   * Método de angular
+   */
   ngOnInit(): void {
   }
 
-
+  /**
+   * Método para la obtención de datos del paciente, solo a los que el doctor tenga acceso
+   * @returns los datos de los pacientes mediante una API
+   */
   get_patient_appointment = () =>{
-    // Obtenemos el id del paciente mediante la URL
     this.id = this.route.snapshot.params['id'];    
-    //console.log(this.id);
-    // Verificamos la existencia del parámetro 
-    if(this.id){
-      // Hacemos uso del servicio para la obtención de datos de la interfaz
-      this.result_service.getDataPatients(this.id).subscribe((response) =>{
-        // Respaldamos la información de todos los pacientes
-        this.patients = response;
-        //console.log(this.patients);
-      },(error) => {
-        // Mostramos mensaje de error
-        Swal.fire('Error',error.statusText,'question')
-     }); 
-    }
+      if(this.id){
+        this.result_service.getDataPatients(this.id).subscribe((response) =>{
+          this.patients = response;
+        },(error) => {
+          Swal.fire('Error',error.statusText,'question')
+      }); 
+      }
   }
-
 }

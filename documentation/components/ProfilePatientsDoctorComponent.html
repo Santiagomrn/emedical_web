@@ -64,6 +64,13 @@
     <code>src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de angular</p>
+
+    </p>
 
 
     <p class="comment">
@@ -176,12 +183,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts:27</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor para utilizar modulos importados</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -190,6 +199,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -204,6 +214,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>consumo del servicio de paciente</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>fb</td>
@@ -216,6 +230,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>consumo del modulo para formularios</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -228,6 +246,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>consumo del modulo para redireccionar</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>route</td>
@@ -240,6 +262,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>consumo del modulo obtención de ID</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -281,14 +307,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts:48</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método de angular</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -323,10 +351,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts:55</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método para la obtención de datos del paciente, solo a los que el doctor tenga acceso</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -350,10 +384,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts:22</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Valor para la obtención del ID del usuario</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -377,10 +417,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/views/profile-patients-doctor/profile-patients-doctor.component.ts:27</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Valor para la visualización de los datos recibidos por una ID, de parte del médico</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -398,6 +444,9 @@ import { FormBuilder,FormControl, Validators } from &#x27;@angular/forms&#x27;;
 import { threadId } from &#x27;worker_threads&#x27;;
 import Swal from &#x27;sweetalert2&#x27;;
 
+/**
+ * Componente de angular
+ */
 @Component({
   selector: &#x27;app-profile-patients-doctor&#x27;,
   templateUrl: &#x27;./profile-patients-doctor.component.html&#x27;,
@@ -405,44 +454,52 @@ import Swal from &#x27;sweetalert2&#x27;;
 })
 export class ProfilePatientsDoctorComponent implements OnInit {
 
-  // Hacemos uso de una variable para obtener el ID del usaurio
+  /**
+   * Valor para la obtención del ID del usuario
+   */
   id:any;
 
-  // Obtenemos los datos de la búsqueda de citas programadas
+  /**
+   * Valor para la visualización de los datos recibidos por una ID, de parte del médico
+   */
   patients: PatientsInterface;
 
+   /**
+   * Constructor para utilizar modulos importados
+   * @param {PatientsService} result_service consumo del servicio de paciente
+   * @param {FormBuilder} fb consumo del modulo para formularios
+   * @param {Router} router  consumo del modulo para redireccionar
+   * @param {ActivatedRoute} route consumo del modulo obtención de ID
+   */
   constructor(
     private result_service:  PatientsService,
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
   ) { 
-    // Llamamos a los datos del paciente
     this.get_patient_appointment();
   }
 
+  /**
+   * Método de angular
+   */
   ngOnInit(): void {
   }
 
-
+  /**
+   * Método para la obtención de datos del paciente, solo a los que el doctor tenga acceso
+   * @returns los datos de los pacientes mediante una API
+   */
   get_patient_appointment &#x3D; () &#x3D;&gt;{
-    // Obtenemos el id del paciente mediante la URL
     this.id &#x3D; this.route.snapshot.params[&#x27;id&#x27;];    
-    //console.log(this.id);
-    // Verificamos la existencia del parámetro 
-    if(this.id){
-      // Hacemos uso del servicio para la obtención de datos de la interfaz
-      this.result_service.getDataPatients(this.id).subscribe((response) &#x3D;&gt;{
-        // Respaldamos la información de todos los pacientes
-        this.patients &#x3D; response;
-        //console.log(this.patients);
-      },(error) &#x3D;&gt; {
-        // Mostramos mensaje de error
-        Swal.fire(&#x27;Error&#x27;,error.statusText,&#x27;question&#x27;)
-     }); 
-    }
+      if(this.id){
+        this.result_service.getDataPatients(this.id).subscribe((response) &#x3D;&gt;{
+          this.patients &#x3D; response;
+        },(error) &#x3D;&gt; {
+          Swal.fire(&#x27;Error&#x27;,error.statusText,&#x27;question&#x27;)
+      }); 
+      }
   }
-
 }
 </code></pre>
     </div>
