@@ -65,6 +65,7 @@ import { AppointmentCreateComponent } from './views/appointment-create/appointme
 import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
 import { AppointmentEditComponent } from './views/appointment-edit/appointment-edit.component';
 import { AppointmentDeleteComponent } from './views/appointment-delete/appointment-delete.component';
+import { ListAppointmentDoctorComponent } from './views/list-appointment-doctor/list-appointment-doctor.component';
 
 
 @NgModule({
@@ -93,6 +94,7 @@ import { AppointmentDeleteComponent } from './views/appointment-delete/appointme
     ProfileDoctorComponent,
     AppointmentEditComponent,
     AppointmentDeleteComponent,
+    ListAppointmentDoctorComponent,
   ],
   imports: [
     BrowserModule,
