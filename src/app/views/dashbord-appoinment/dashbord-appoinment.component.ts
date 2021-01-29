@@ -16,15 +16,18 @@ import Swal from 'sweetalert2';
   templateUrl: './dashbord-appoinment.component.html',
   styleUrls: ['./dashbord-appoinment.component.css']
 })
+
+/** Esta clase define el panel de control para visualizar las citas del paciente 
+ * @author: Francisco Eduardo Pech Chim
+ * @version: 28/01/2021/A
+ * @see <a href="https://medicalportal.herokuapp.com/api/v1/"></a>
+ */
+
 export class DashbordAppoinmentComponent implements OnInit {
 
-  // Utilizamos una variable que contiene la fecha actual
+  // Campos de la clase
   current_date:string;
-
-  // Hacemos uso de la interfaz de citas
   appointments:AppointmentInterface;
-
-  /* Paginación */
   response_resultados: any[];        
   dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = ['turn','date','time','crud'];
@@ -35,52 +38,39 @@ export class DashbordAppoinmentComponent implements OnInit {
     private form: FormBuilder,
     private router: Router,
     private route: ActivatedRoute
-  ) { 
-
-    // Hacemos una arreglo para el mes 
+  ){ 
     const month_form = ["01","02","03","04","05","06","07","08","09","10","11","12"];
-
-    // Obtenemos la fecha actual
     const year = (new Date()).getFullYear();
     const month = (new Date()).getMonth();
     const day = (new Date()).getDate();
-
-    // Respaldamos la fecha actual  
     this.current_date = year + '-' + month_form[month] + '-' + (day+1);
-
   }
 
   ngOnInit(): void {
-    this.getAppointmentId();
+    this.getAppointment();
   }
 
-  // Obtención del código QR
+  /**
+   * Generamos un código QR
+   */
   getCodeQR = () =>{
  
-
   }
 
-  // Obtenemos todas las citas mediante el ID
-  getAppointmentId = () => 
+  /** 
+  * Obtenemos un listado de citas de paciente mediante el consumo de una API Appoinment.
+  * @return response del resultado otorgado por la API
+  */
+  getAppointment = () => 
   {
-      // Hacemos uso del servicio para la obtención de datos de la interfaz
-      this.appointmentService.getAppointment().subscribe((response)=>{
-        // Respaldamos el resultado obtenido
-        this.response_resultados = response;
-        
-        console.log(this.response_resultados);
-        // Realizamos paginación correspondiente
-        this.dataSource = new MatTableDataSource(this.response_resultados);
-        this.dataSource.paginator = this.paginator;
-        console.log(this.dataSource);
-
-      },(error) => {
-        // Mostramos mensaje de error
-        Swal.fire('Error',error.statusText,'question')
-      });
-}
-
- 
-
-
+    this.appointmentService.getAppointment().subscribe((response)=>{
+      this.response_resultados = response;
+      //console.log(this.response_resultados);
+      this.dataSource = new MatTableDataSource(this.response_resultados);
+      this.dataSource.paginator = this.paginator;
+      console.log(this.dataSource);
+    },(error) => {
+      Swal.fire('Error',error.statusText,'question')
+    });
+  }
 }
