@@ -12,9 +12,9 @@
                             <tr>
                                 <th>Nombre(s)</th>
                                 <td style="text-decoration: underline;">
-                                    <input [(ngModel)]="doctor.name"  id="name" name="name" type="text"  />  
+                                    <input [(ngModel)]="doctor.name" readonly id="name" name="name" type="text"  />  
                                 </td>
-                                <td>
+                                <!-- <td>
                                     <div style="box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);  overflow: hidden;  border-radius: 8px;">
                                         
                                         <button type="submit" style="width: 40px; height: 40px; background: white; border: 0em;">
@@ -23,21 +23,16 @@
                                         </i>
                                         </button>
                                     </div>
-                                </td>
+                                </td> -->
                             </tr>
                             <tr>
                                 <th>Apellido(s)</th>
-                                <td style="text-decoration: underline;"><input [(ngModel)]="doctor.lastName"  id="lastName" name="lastName" /></td>
+                                <td style="text-decoration: underline;"><input [(ngModel)]="doctor.lastName" readonly id="lastName" name="lastName" /></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <th>Correo electrónico</th>
-                                <td><input readonly disabled [(ngModel)]="doctor.email"  id="email" name="email"   /></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>Contraseña</th>
-                                <td><input readonly disabled [(ngModel)]="doctor.password" type="password"  id="password" name="password"  style="filter: blur(6px);" /></td>
+                                <td><input readonly disabled [(ngModel)]="doctor.email" readonly  id="email" name="email"   /></td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -53,20 +48,40 @@
                                 <tbody>
                                     <tr>
                                         <th>Fecha de nacimiento</th>
-                                        {{doctor.birthdate}}
-                                        <td><input class="trim-info" [(ngModel)]="doctor.birthdate" id="birthdate" name="birthdate"  />
-                                        <hr style="margin-top: -0.70em;">
+                                        
+                                        <td>{{doctor.birthdate |date: 'dd/MM/yyyy'}}
+                                        <hr style="margin-top: 0.70em;">
                                         </td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <th>Teléfono</th>
-                                        <td><input [(ngModel)]="doctor.phone" id="phone" name="phone"   /></td>
+                                        <td><input [(ngModel)]="doctor.phone" id="phone" readonly name="phone"   /></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <th>Teléfono(Opcional)</th>
-                                        <td><input [(ngModel)]="doctor.emergencyPhone" id="emergencyPhone" name="emergencyPhone"  /></td>
+                                        <td><input [(ngModel)]="doctor.emergencyPhone" readonly id="emergencyPhone" name="emergencyPhone"  /></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Área Médica</th>
+                                        <td><input [(ngModel)]="doctor.medicalArea" readonly id="areaMedica" name="areaMedica"  /></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Descripción</th>
+                                        <td><input [(ngModel)]="doctor.description" readonly id="descripcion" name="descripcion"  /></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Título</th>
+                                        <td><input [(ngModel)]="doctor.jobTitle" readonly id="jobTitle" name="jobTitle"  /></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Cédula profesional</th>
+                                        <td><input [(ngModel)]="doctor.professionalLicense" readonly id="cedula" name="cedula"  /></td>
                                         <td></td>
                                     </tr>
                                 </tbody>
