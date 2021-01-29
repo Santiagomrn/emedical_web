@@ -11,21 +11,25 @@ import Swal from 'sweetalert2';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
+
 export class ProfileComponent implements OnInit {
 
-  patients_input:PatientsInterface= {
-    id: null,
+  /**
+   * Valores para la actualización de pacientes 
+   */
+  patients_input= {
     name: null,
     lastName: null,
     phone: null,
     email: null,
     emergencyPhone: null,
     password: null,
-    birthdate: null,
-    created_at: null,
-    updated_at: null
+    birthdate: null
   }
 
+  /**
+   * Valores para la obteneción de datos del formulario
+   */
   frmpatients = this.fb.group({
     frname: ['',Validators.required],
     frlastName:['',Validators.required],
@@ -36,50 +40,56 @@ export class ProfileComponent implements OnInit {
     fremergencyPhone: ['',Validators.required]
   });
 
-  
-  testing:any;
+  /**
+   * Valor para la obtención del ID del usuario
+   */
   id:any;
+
+  /**
+   * Valor para la visualización de los datos recibidos por una ID
+   */
   patients: PatientsInterface;
 
- 
+  /**
+   * Constructor para utilizar modulos importados
+   * @param {PatientsService} result_service consumo del servicio de paciente
+   * @param {FormBuilder} fb consumo del modulo para formularios
+   * @param {Router} router  consumo del modulo para redireccionar
+   * @param {ActivatedRoute} route consumo del modulo obtención de ID
+   */
   constructor(
     private result_service:  PatientsService,
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
   ) { 
-    // Llamamos a la obtención de los pacientes mediante ID
     this.get_patient_ID();
   }
 
   ngOnInit(): void {
   }
 
-  //Obtenemos los datos mediante el id
+  /**
+   * Método para la obtención de datos del paciente
+   * @returns los datos de los pacientes mediante una API
+   */
   get_patient_ID = () =>{
-    // Obtenemos el id del paciente mediante la URL
     this.id = this.route.snapshot.params['id'];    
-    console.log(this.id);
-    // Verificamos la existencia del parámetro 
-    if(this.id){
-      // Hacemos uso del servicio para la obtención de datos de la interfaz
-      this.result_service.getDataPatients(this.id).subscribe((response) =>{
-        // Respaldamos la información de todos los pacientes
-        this.patients = response;
-        console.log(this.patients);
-      },(error) => {
-        // Mostramos mensaje de error
-        Swal.fire('Error',error.statusText,'question')
-        // Redireccionamos
-       this.router.navigateByUrl('\dashboard_appointment'); 
-     }); 
+    if(this.id)
+    {
+        this.result_service.getDataPatients(this.id).subscribe((response) =>{
+          this.patients = response;
+        },(error) => {
+          Swal.fire('Error',error.statusText,'question')
+          this.router.navigateByUrl('\dashboard_appointment'); 
+        }); 
     }
   }
 
-  // Respaldamos los datos del paciente 
+  /**
+   *  Método para guardar los cambios realizados por los usuarios(Pacientes) 
+   */
   save_patients_data = () =>{
-
-    // Respaldamos los datos del formulario, mediante un fórmulario reactivo
     this.patients_input.name = this.frmpatients.get('frname').value;
     this.patients_input.lastName = this.frmpatients.get('frlastName').value;
     this.patients_input.email = this.frmpatients.get('fremail').value;
@@ -87,23 +97,12 @@ export class ProfileComponent implements OnInit {
     this.patients_input.birthdate = this.frmpatients.get('frbirthdate').value;
     this.patients_input.phone = this.frmpatients.get('frphone').value;
     this.patients_input.emergencyPhone = this.frmpatients.get('fremergencyPhone').value;
-
-    console.log(this.patients);
-  
     this.id = this.route.snapshot.params['id'];   
-    // Guardamos los datos de los pacientes, según el objeto local
-  this.result_service.saveDataPatients(this.id,this.patients).subscribe((response) =>{
-      // Msotramos mensaje de confirmación del usuario
-      confirm('¿Esta segur@ de guardar datos?');
-      // Redireccionamos a alguna vista
-      this.router.navigateByUrl('\home');  
-    },(error) => {
-      // Mostramos mensaje de error
-      Swal.fire('Error',error.statusText,'question')
-   });
-
+      this.result_service.saveDataPatients(this.id,this.patients).subscribe((response) =>{
+        confirm('¿Esta segur@ de guardar datos?');
+        this.router.navigateByUrl('\home');  
+      },(error) => {
+        Swal.fire('Error',error.statusText,'question')
+      });
   }
-
-  
-
 }
