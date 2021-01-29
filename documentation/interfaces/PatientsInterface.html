@@ -64,6 +64,13 @@
             <code>src/app/interfaces/patients/patients-interface.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interfaz para obtener los datos de los pacientes</p>
+
+            </p>
 
 
         <section>
@@ -146,6 +153,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Fecha de nacimiento del paciente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -175,6 +188,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Fecha de creación del paciente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -204,6 +223,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Email del paciente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -233,6 +258,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Número de emergencia del paciente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -262,6 +293,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Identificar del paciente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -291,6 +328,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Apellido del paciente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -320,6 +363,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Nombre del paciente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -349,6 +398,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Contraseña del paciente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -378,6 +433,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Teléfono principal del paciente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -407,6 +468,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Última actualización del paciente</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -415,15 +482,65 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface PatientsInterface {
+    /**
+     * Fecha de nacimiento del paciente
+     * @param {birthdate}
+     * @type string
+     */
     &quot;birthdate&quot;: string,
+    /**
+     * Fecha de creación del paciente
+     * @param {created_at}
+     * @type string
+     */
     &quot;created_at&quot;: string,
+    /**
+     * Email del paciente
+     * @param {email}
+     * @type string
+     */
     &quot;email&quot;: string,
+    /**
+     * Número de emergencia del paciente
+     * @param {emergencyPhone}
+     * @type string
+     */
     &quot;emergencyPhone&quot;: string,
+    /**
+     * Identificar del paciente
+     * @param {id}
+     * @type number
+     */
     &quot;id&quot;: number,
+    /**
+     * Apellido del paciente
+     * @param {lastName}
+     * @type string
+     */
     &quot;lastName&quot;: string,
+    /**
+     * Nombre del paciente
+     * @param {name}
+     * @type string
+     */
     &quot;name&quot;: string,
+    /**
+     * Contraseña del paciente
+     * @param {password}
+     * @type string
+     */
     &quot;password&quot;: string,
+    /**
+     * Teléfono principal del paciente
+     * @param {phone}
+     * @type string
+     */
     &quot;phone&quot;: string,
+    /**
+     * Última actualización del paciente
+     * @param {updated_at}
+     * @type string
+     */
     &quot;updated_at&quot;: string
 }
 

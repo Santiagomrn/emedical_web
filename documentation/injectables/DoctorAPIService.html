@@ -59,6 +59,13 @@
             <code>src/app/services/doctor/doctor-api.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Inyección de angular</p>
+
+            </p>
 
 
 
@@ -107,12 +114,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:15</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor que invoca otros modulos</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -121,6 +130,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -135,6 +145,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>se utiliza para la autorización del token</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -170,10 +184,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:9</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:15</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Valor del token que se mandará a la API</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -196,10 +216,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:29</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método que realiza el servicio de obtener los datos de la API</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -222,10 +248,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:43</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método que realiza el servicio de obtener los datos de la API</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -239,14 +271,30 @@
 import { _DoctorInterface } from &quot;../../interfaces/doctor/_doctor-interface&quot;;
 import { HttpClient, HttpClientModule, HttpHeaders } from &#x27;@angular/common/http&#x27;;
 
+/**
+ * Inyección de angular
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class DoctorAPIService {
+  /**
+   * Valor del token que se mandará a la API
+   */
   AccessToken &#x3D; localStorage.getItem(&quot;token&quot;);
+  
+  /**
+   * Constructor que invoca otros modulos
+   * @param {HttpClient} http se utiliza para la autorización del token
+   */
   constructor(private http : HttpClient) {
     this.http &#x3D; http
   }
+
+  /**
+   * Método que realiza el servicio de obtener los datos de la API
+   * @return un JSON con los datos de los doctores 
+   */
   getDataDoctors &#x3D; (id) &#x3D;&gt; {
     if(this.AccessToken){
       const HeadersForDoctorsAPI &#x3D; new HttpHeaders({
@@ -257,7 +305,10 @@ export class DoctorAPIService {
     }  
   }   
 
-  // Obtenemos el listado de todos los doctores disponibles
+  /**
+   * Método que realiza el servicio de obtener los datos de la API
+   * @return un JSON datos de los doctores para la creación de una cita
+   */
   getDataDoctorsAppointmentCreate &#x3D; () &#x3D;&gt;{
     if(this.AccessToken){
       const HeadersForDoctorsAPI &#x3D; new HttpHeaders({
