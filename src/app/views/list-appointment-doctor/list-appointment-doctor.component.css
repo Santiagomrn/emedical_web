@@ -1,0 +1,9 @@
+.trim-info {
+    max-width: 70px;
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 1em;
+    white-space: nowrap;  
+    line-height: 50px;
+    position:relative;
+ }

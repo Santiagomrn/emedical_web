@@ -4,7 +4,7 @@ import { PatientsInterface } from "../../interfaces/patients/patients-interface"
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import { FormBuilder,FormControl, Validators } from '@angular/forms';
 import { threadId } from 'worker_threads';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-profile',
@@ -62,12 +62,17 @@ export class ProfileComponent implements OnInit {
     console.log(this.id);
     // Verificamos la existencia del parámetro 
     if(this.id){
-        // Hacemos uso del servicio para la obtención de datos de la interfaz
-        this.result_service.getDataPatients(this.id).subscribe((response) =>{
+      // Hacemos uso del servicio para la obtención de datos de la interfaz
+      this.result_service.getDataPatients(this.id).subscribe((response) =>{
         // Respaldamos la información de todos los pacientes
         this.patients = response;
         console.log(this.patients);
-      }); 
+      },(error) => {
+        // Mostramos mensaje de error
+        Swal.fire('Error',error.statusText,'question')
+        // Redireccionamos
+       this.router.navigateByUrl('\dashboard_appointment'); 
+     }); 
     }
   }
 
@@ -93,8 +98,9 @@ export class ProfileComponent implements OnInit {
       // Redireccionamos a alguna vista
       this.router.navigateByUrl('\home');  
     },(error) => {
-      alert("Error: " + error.statusText);
-    });
+      // Mostramos mensaje de error
+      Swal.fire('Error',error.statusText,'question')
+   });
 
   }
 

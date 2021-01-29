@@ -9,17 +9,20 @@ import {ContactUsComponent} from './views/contact-us/contact-us.component';
 import {LoginComponent} from './views/login/login.component';
 import {DoctorsCreateComponent} from './views/doctors-create/doctors-create.component';
 import {PatientsCreateComponent} from './views/patients-create/patients-create.component';
-import { AdministratorComponent} from './views/administrator/administrator.component';
-import { AppComponent } from './app.component';
+import {AdministratorComponent} from './views/administrator/administrator.component';
+import {AppComponent} from './app.component';
 import {ProfileComponent} from './views/profile/profile.component';
-import { AuthGuardService as AuthGuard} from './services/auth/auth-guard.service';
-import { RoleGuardService } from './services/auth/role-guard.service';
+import {AuthGuardService as AuthGuard} from './services/auth/auth-guard.service';
+import {RoleGuardService} from './services/auth/role-guard.service';
 import {DashbordAppoinmentComponent} from './views/dashbord-appoinment/dashbord-appoinment.component';
 import {ListPatientsComponent} from './views/list-patients/list-patients.component';
 import {AppointmentEditComponent} from './views/appointment-edit/appointment-edit.component';
 import {AppointmentCreateComponent} from './views/appointment-create/appointment-create.component';
 import {AppointmentDeleteComponent} from './views/appointment-delete/appointment-delete.component';
-import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
+import {ProfileDoctorComponent} from './views/profile-doctor/profile-doctor/profile-doctor.component';
+import {ListAppointmentDoctorComponent } from './views/list-appointment-doctor/list-appointment-doctor.component';
+import {ProfilePatientsDoctorComponent} from './views/profile-patients-doctor/profile-patients-doctor.component';
+
 const routes: Routes = [
   {path : '', redirectTo:'home',
   pathMatch:'full'},
@@ -53,11 +56,13 @@ const routes: Routes = [
   {path: 'dashboard_appointment/appointment_create/:id', component:AppointmentEditComponent},
   {path: 'dashboard_appointment/appointment_delete/:id', component:AppointmentDeleteComponent},
   {path: 'list_patients', component: ListPatientsComponent},
- 
+  {path: 'list_appointment_doctor', component:ListAppointmentDoctorComponent},
+  {path: 'list_appointment_doctor/profile_patients/:id', component: ProfilePatientsDoctorComponent},
+
   {path: 'dashboard_patients', component:DashbordAppoinmentComponent},
   {path: 'profile_doctor', component : ProfileDoctorComponent,
     canActivate : [RoleGuardService],
-    data:{
+    data:{ 
       expectedRole : ['doctor', 'pathient']
     }
   },

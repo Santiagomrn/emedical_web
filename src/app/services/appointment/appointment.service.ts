@@ -87,5 +87,15 @@ export class AppointmentService {
     }
   }
 
+  // Obtenemos todas las citas del doctor
+  getAppointmentDoctor = ()=>{
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.get<AppointmentInterface[]>("https://medicalportal.herokuapp.com/api/v1/medicalAppointment/", { headers: HeadersForPatientsAPI });
+    }
+  }
 
 }

@@ -39,7 +39,7 @@ export class AppointmentDeleteComponent implements OnInit {
 deleteAppointmentId = (id) =>{
   console.log(id);
   this.appointmentService.deleteAppointment(id).subscribe((response)=>{
-    // Mostramos mensaje de cita creada
+    // Mostramos mensaje de cita eliminada
     Swal.fire({icon: 'error',title: 'Cita eliminada!',showConfirmButton: false,timer: 1250})
 
     // Redireccionamos
