@@ -52,6 +52,9 @@ export class ProfileComponent implements OnInit {
     this.get_patient_ID();
   }
 
+  /**
+   * Método parte de angular, refresca al consumir componente
+   */
   ngOnInit(): void {
   }
 
