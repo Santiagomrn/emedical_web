@@ -56,6 +56,15 @@ export class PatientsService {
       return this.http.put<PatientsInterface[]>("https://medicalportal.herokuapp.com/api/v1/pathient/"+id, data_patients, { headers: HeadersForPatientsAPI });
     }
   }
+  // Crear un paciente
+  savePatient  = (body) => {
+    if(this.AccessToken){
+      const HeadersForPatientsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+      });
+      return this.http.post("https://medicalportal.herokuapp.com/api/v1/pathient",JSON.stringify(body), { headers: HeadersForPatientsAPI });
+    }
+  }
 
   
 }
