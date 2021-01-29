@@ -64,6 +64,13 @@
             <code>src/app/interfaces/appointment/not-available.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interface para saber el turno disponible para la cita</p>
+
+            </p>
 
 
         <section>
@@ -119,6 +126,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Turno disponible</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -127,6 +140,10 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface NotAvailable {
+    /**
+     * Turno disponible
+     * @param {number}
+     */
     &quot;turn&quot;: number
 }
 </code></pre>

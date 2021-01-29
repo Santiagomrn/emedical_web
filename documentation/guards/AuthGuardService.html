@@ -61,6 +61,13 @@
                 <code>src/app/services/auth/auth-guard.service.ts</code>
             </p>
 
+                <p class="comment">
+                <h3>Description</h3>
+                </p>
+                <p class="comment">
+                    <p>Servicio de retorno al login en caso de no estar logueado</p>
+
+                </p>
 
 
 
@@ -123,12 +130,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/services/auth/auth-guard.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/auth/auth-guard.service.ts:11</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -137,6 +146,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -151,6 +161,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Se importa el servicio de autenticación </p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -163,6 +177,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Se importa el router</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -200,17 +218,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/services/auth/auth-guard.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/services/auth/auth-guard.service.ts:24</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Función que activa el login en caso de no estar logueado</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Se valida si el usuario está logueado, en caso de negativa se reedirecciona </p>
 
                     </div>
                 </td>
@@ -226,13 +252,25 @@
 import { Router, CanActivate } from &#x27;@angular/router&#x27;;
 import { iif } from &#x27;rxjs&#x27;;
 import { AuthService } from &#x27;./auth.service&#x27;;
+/**
+ * Servicio de retorno al login en caso de no estar logueado
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class AuthGuardService implements CanActivate {
-
+/**
+ * Constructor
+ * @param auth Se importa el servicio de autenticación 
+ * @param router  Se importa el router
+ */
   constructor(public auth: AuthService, public router: Router) { }
   // Provee un servicio de redirección verificando si existe un token 
+  /**
+   * Función que activa el login en caso de no estar logueado
+   * 
+   * @returns {boolean} Se valida si el usuario está logueado, en caso de negativa se reedirecciona 
+   */
   canActivate() : boolean{
     if(!this.auth.isAuthenticated()){
       this.router.navigate([&#x27;login&#x27;]);
