@@ -59,6 +59,13 @@
             <code>src/app/services/auth/role-guard.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio para saber el rol del usuario </p>
+
+            </p>
 
 
 
@@ -120,12 +127,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/auth/role-guard.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/auth/role-guard.service.ts:15</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -134,6 +143,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -148,6 +158,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Se importa el servicio de autenticación</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -160,6 +174,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Se importa el router para la reedirección</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -197,14 +215,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/services/auth/role-guard.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/services/auth/role-guard.service.ts:28</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Función para verificar si el usuario tiene el rol necesario para acceder
+a la página que está trantando de ingresar</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -239,7 +260,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Se retorna si el usuario cuenta con el rol correcto</p>
+
                     </div>
                 </td>
             </tr>
@@ -272,10 +294,15 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/auth/role-guard.service.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/auth/role-guard.service.ts:21</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">Se importa el servicio de autenticación</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -300,10 +327,15 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/auth/role-guard.service.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/services/auth/role-guard.service.ts:21</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">Se importa el router para la reedirección</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -320,17 +352,29 @@ import {
   ActivatedRouteSnapshot
 } from &#x27;@angular/router&#x27;;
 import { AuthService } from &#x27;./auth.service&#x27;;
+/**
+ * Servicio para saber el rol del usuario 
+ * 
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class RoleGuardService {
-
+/**
+ * Constructor
+ * @param auth Se importa el servicio de autenticación
+ * @param router  Se importa el router para la reedirección
+ */
   constructor(public auth: AuthService, public router: Router) { }
-
+/**
+ * Función para verificar si el usuario tiene el rol necesario para acceder
+ * a la página que está trantando de ingresar
+ * @param {route} 
+ * @returns {boolean} Se retorna si el usuario cuenta con el rol correcto
+ */
   canActivate(route : ActivatedRouteSnapshot) : boolean {
     const expectedRole &#x3D; route.data.expectedRole;
     const currentRole &#x3D; localStorage.getItem(&#x27;role&#x27;);
-    // alert(currentRole + &quot; &quot;+ expectedRole.includes(currentRole));
     if(!this.auth.isAuthenticated() || !expectedRole.includes(currentRole)){
       this.router.navigate([&#x27;login&#x27;]);
       alert(&quot;No autenticado o Rol sin permisos&quot;);

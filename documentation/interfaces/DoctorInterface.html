@@ -64,6 +64,13 @@
             <code>src/app/interfaces/doctor/doctor-interface.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interface para obtener los datos del doctor desde una API externa [Primera entrega]</p>
+
+            </p>
 
 
         <section>
@@ -122,6 +129,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Información adicional del DR</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -151,6 +164,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Array de resultados</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -159,35 +178,161 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface DoctorInterface {
+  /**
+   * Array de resultados
+   * @type Array
+   * @param results
+   * 
+   */
   &quot;results&quot;: Array&lt;{
+    /**
+     * Género del doctor
+     * @type String
+     * @param gender
+     */
     &quot;gender&quot;: string,
+    /**
+     * Objeto con los deatos del doctor
+     * @type Object 
+     * @param name
+     */
     &quot;name&quot;: {
+      /**
+       * Título del doctor
+       * @param title
+       * @type string
+       */
       &quot;title&quot;: string,
+      /**
+       * Nombre del doctor
+       * @param first
+       * @type string
+       */
       &quot;first&quot;: string,
+      /**
+       * Apellido del doctor
+       * @param last
+       * @type string
+       */
       &quot;last&quot;: string
     },
+    /**
+     * Correo del doctor
+     * @param email
+     * @type string
+     */
     &quot;email&quot;: string,
+    /**
+     * Objeto con información respecto a edad
+     * @param dob
+     * @type object
+     */
     &quot;dob&quot;: {
+      /**
+       * Cumpleaños de Dr
+       * @param date
+       * @type string
+       */
       &quot;date&quot;: string,
+      /**
+       * Edad del Dr
+       * @param age
+       * @type number
+       */
       &quot;age&quot;: number
     },
+    /**
+     * Información respecto a registro de cédula
+     * @param registered
+     * @type object
+     */
     &quot;registered&quot;: {
+      /**
+       * Fecha de titulación
+       * @param date
+       * @type string
+       */
       &quot;date&quot;: string,
+      /**
+       * Años de experiencia
+       * @param age
+       * @type number
+       */
       &quot;age&quot;: number
     },
+    /**
+     * teléfono del DR
+     * @param phone
+     * @type string
+     */
     &quot;phone&quot;: string,
+    /**
+     * celular del DR
+     * @param cell
+     * @type string
+     */
     &quot;cell&quot;: string,
+    /**
+     * Imagen del DR
+     * @param picture
+     * @type object
+     */
     &quot;picture&quot;: {
+      /**
+       * Imagen grande del DR
+       * @param large
+       * @type URL
+       */
       &quot;large&quot;: string,
+      /**
+       * Imagen pequeña del DR
+       * @param medium
+       * @type url
+       */
       &quot;medium&quot;: string,
-      &quot;thumbnail&quot;: string
     },
+    /**
+     * Thumbnail 
+     * @param thumbnail
+     * @type string
+     */
+    &quot;thumbnail&quot;: string
+    /**
+     * Nat
+     * @param nat
+     * @type string
+     */
     &quot;nat&quot;: string
   }&gt;
+  /**
+   * Información adicional del DR
+   * @param info
+   * @type object
+   */
   &quot;info&quot;: {
+    /**
+     * seed 
+     * @param seed
+     * @type string
+     */
     &quot;seed&quot;: string,
+    /**
+     * Número de Doctores [información API]
+     * @param results
+     * @type number
+     */
     &quot;results&quot;: number,
+    /**
+     * Página visualizada de Doctores [información API]
+     * @param page
+     * @type number
+     */
     &quot;page&quot;: number,
+    /**
+     * Versión 
+     * @param version
+     * @type string
+     */
     &quot;version&quot;: string
   }
 }

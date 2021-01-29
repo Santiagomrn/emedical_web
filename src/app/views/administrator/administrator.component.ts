@@ -11,112 +11,141 @@ import { element } from 'protractor';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
+/**
+ * Componente de administración. 
+ * 
+ * El manager es capaz de crear nuevos doctores
+ * 
+ * Puede visualizar los doctores
+ * @class AdministratorComponent
+ * @implements {onInit}
+ */
 @Component({
   selector: 'app-administrator',
   templateUrl: './administrator.component.html',
   styleUrls: ['./administrator.component.css']
 })
-export class AdministratorComponent implements OnInit {
-  medicaments:MedicamentInterface;
-  valueMedicaments:string;
-  total:number;
+/**
+ * Componente de administración
+ */
+export class AdministratorComponent implements OnInit { 
+/**
+ * Variable de formulario
+ * @type {form}
+ */
   searchForm;
+  /**
+   * Variable para verificar el rolk
+   * @type {string}
+   */
   role : string;
 
-  /* Variable para pipe */
+  /**
+   * Variable de búsqueda 
+   * @type {string}
+   */
   conv_data:string;
-
+/**
+ *  Dirección de la API de NodeJS
+ */
   url: string = 'https://medicalportal.herokuapp.com/api/v1/doctor/';
-  totalAngularPackages; // <---
+  /**
+   * Variable de error
+   */
   error;
-  /* Paginación */
-  public response_resultados: any[] ;        
+  /**
+   * Paginación 
+   * @type {any}
+   */
+  public response_resultados: any[] ;
+  /** 
+   * Inicializador de la tabla
+   */        
   dataSource: MatTableDataSource<any>;
+  /**
+   * Nombre de la cabecera de la tabla
+   */
   displayedColumns: string[] = ['nombre','descripcion'];
+  /**
+   * Variable necesaria para la paginación
+   */
   @ViewChild(MatPaginator) paginator: MatPaginator;
-
+  /**
+   * Constructor del componente
+   * @param {router} Router
+   * @param {route} Route
+   * @param {formBuilder} FormBuilder
+   * @param {http} http
+   */
   constructor( 
-    private MedicamentService: MedicamentService,
     private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private http: HttpClient,
     ) { 
-
+      /**
+       * Variable donde se almacena formulario
+       */
       this.searchForm = this.formBuilder.group({
         query: ''
       });
-    this.total=0
+      /**
+       *  Variable para instanciar el módulo HTTP
+       */
     this.http = http
   }
-
+  /**
+   * Se ejecuta al iniciar 
+   * Método de angular
+   * @return void
+   */
   ngOnInit(): void {
-    // this.selectComercial = '1';
-    // this.selectStrip = '1';
-    // this.selectActivePrim = 'true';
     this.role  = this.readLocalStorageValue('role');
-    this.getMedicaments("*");
+    this.getDoctors("*");
   }
   // Usar servicio para obtener lista de usuarios
-  // El servicio equivale a los métodos de JS
   // Cada petición requiere servicio, por tanto. Se requiere servicio de Login.
   // 
-
-
-
-  // getComercial(){
-  //   this.selectComercial = this.comercial;
-  //   console.log(this.selectComercial);
-  //   }
-
-  // this.dataSource = new MatTableDataSource(this.response_resultados);
-  // this.dataSource.paginator = this.paginator;
-  // console.log(this.dataSource);
-    getMedicaments(data){
-      this.conv_data = data.toUpperCase();
-      let _url = this.url+this.searchForm.get('query').value;
+  /**
+   * Método que devuele los doctores
+   * @param {data}
+   * 
+   * @returns Se retornan los doctores para ser mostrados en tabla
+   */
+    getDoctors(data){
+        this.conv_data = data.toUpperCase();
+        let _url = this.url+this.searchForm.get('query').value;
       this.http.get<any>(_url).subscribe(data => {
-        console.log(data);
-        this.response_resultados = data;
-        if(this.searchForm.get('query').value != ""){
-          this.dataSource = new MatTableDataSource([data]);
-          return;
+          console.log(data);
+
+          this.response_resultados = data;
+          if(this.searchForm.get('query').value != ""){
+            this.dataSource = new MatTableDataSource([data]);
+            return;
+          }
+          console.log(this.response_resultados);
+        this.dataSource = new MatTableDataSource(this.response_resultados);
+        this.dataSource.paginator = this.paginator;
+      },
+        error => {
+        this.dataSource = new MatTableDataSource([]);
+        this.error = error;
         }
-        console.log(this.response_resultados);
-       this.dataSource = new MatTableDataSource(this.response_resultados);
-       this.dataSource.paginator = this.paginator;
-     },
-     error => {
-    this.dataSource = new MatTableDataSource([]);
-     this.error = error;
-     }
-     );
-      // this.response_resultados = [{ 'nombre' : 'Alejandro', 'descripcion' : 'test@test.com'}];
-
-      // this.http.get("https://reqres.in/api/users?page=2")
-      // .toPromise()
-      // .then((response) => {
-      //   this.cachedValues[medicament]=response
-      //   resolve(response as MedicamentInterface )
-      // }, (error) => {
-      //   reject(error);
-      // })
-
-  //     this.MedicamentService.getMedicaments(data,this.selectComercial,this.selectStrip,this.selectActivePrim ).then((response) => {  
-  //       this.response_resultados = response.resultados;
-  // // console.log(this.dataSource);
-        
-  //       // this.medicaments = response;
-  //       this.total=response.totalFilas;
-  //     }, (error) => {
-  //       alert("Error: " + error.statusText);
-  //     })
+        );
     }
-  
+  /**
+   * Método para leer el localStorage
+   * @param key (rol)
+   * @returns El valor del localstorage, para saber el rol que se tiene
+   */
     readLocalStorageValue(key: string): string {
       return localStorage.getItem(key);
     }
-    
+    /**
+     * Inicializador de la tabla
+     * @param null
+     * @returns null
+     */
     ngAfterViewInit() {
       var elems = document.querySelectorAll('select');
       var instances = M.FormSelect.init(elems, {});

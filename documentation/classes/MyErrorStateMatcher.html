@@ -137,14 +137,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="9"
-                            class="link-to-prism">src/app/views/login/login.component.ts:9</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/views/login/login.component.ts:108</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Variable que valida el correo</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -191,7 +193,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>boolean</p>
+
                     </div>
                 </td>
             </tr>
@@ -213,43 +216,66 @@ import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from &#x
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
 import {ErrorStateMatcher} from &#x27;@angular/material/core&#x27;;
 import { HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
-/** Error when invalid control is dirty, touched, or submitted. */
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted &#x3D; form &amp;&amp; form.submitted;
-    return !!(control &amp;&amp; control.invalid &amp;&amp; (control.dirty || control.touched || isSubmitted));
-  }
-}
-
+/**
+ * Componente de Login
+ * 
+ * 
+ * Inicio de sesión
+ */
 @Component({
   selector: &#x27;app-login&#x27;,
   templateUrl: &#x27;./login.component.html&#x27;,
   styleUrls: [&#x27;./login.component.css&#x27;]
 })
 export class LoginComponent implements OnInit {
+  /**
+   * Rol del usuario
+   */
   role : string;
+  /**
+   * Validadores de email
+   */
   emailFormControl &#x3D; new FormControl(&#x27;&#x27;, [
     Validators.required,
     Validators.email,
   ]);
+  /**
+   * Formulario de Inicio de sesión
+   */
   loginForm &#x3D; new FormGroup({
     mail: new FormControl(&#x27;&#x27;),
     pass: new FormControl(&#x27;&#x27;),
   });
-
+  /**
+   *  Variable de material ui
+   */
   matcher &#x3D; new MyErrorStateMatcher();
+  /**
+   * Constructor de componente
+   * @param route 
+   * @param router 
+   * @param http 
+   */
   constructor(private route: ActivatedRoute, private router: Router, private http : HttpClient) { }
-  
+  /**
+   * Método Angular
+   */
   ngOnInit(): void {
   }
+  /**
+   * Método enlazado a botón para enviar formulario
+   * @returns invocación a LoginUser()
+   */
   onSubmit() {
     this.loginUser(this.loginForm.value);
   }
+  /**
+   * Funcion que recibe el formulario para realizar la petición
+   * @param {login}
+   * @return POST al login
+   */
   loginUser(login : FormGroup){
     const headers &#x3D; new Headers;
-    // headers.append(&#x27;Access-Control-Allow-Origin&#x27;, &#x27;*&#x27;);
-    console.log(&quot;Hi From submit&quot;);
-    console.warn(this.loginForm.value);
     // Acceder al query params
     this.role &#x3D;  this.route.snapshot.queryParamMap.get(&#x27;role&#x27;);
     // Validar mediante API
@@ -262,7 +288,6 @@ export class LoginComponent implements OnInit {
       password : this.loginForm.get(&quot;pass&quot;).value,
       }
       ).subscribe(data &#x3D;&gt; {
-      console.log(data); 
       let key &#x3D; data.token;
       let role &#x3D; self.role;
       let id &#x3D; data.id;
@@ -270,8 +295,6 @@ export class LoginComponent implements OnInit {
       localStorage.setItem(&#x27;role&#x27;, role );
       localStorage.setItem(&#x27;login&#x27;, &#x27;1&#x27; );
       localStorage.setItem(&#x27;id&#x27; , id );
-      // self.router.navigate([self.role]);
-
     this.router.navigate([&#x27;home&#x27;]);
     },
     error &#x3D;&gt; {
@@ -281,20 +304,24 @@ export class LoginComponent implements OnInit {
     }
    );
 
-
-
-
-
-
-    // Guardar token 
-    // let key &#x3D; &#x27;1&#x27;;
-    // localStorage.setItem(&#x27;token&#x27;, key);
-    // let route &#x3D; this.role;
-    // this.router.navigate([route]);
   }
 
 }
-</code></pre>
+/** 
+ * Error when invalid control is dirty, touched, or submitted. 
+ **/
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  /**
+   * Variable que valida el correo
+   * @param control 
+   * @param form 
+   * @returns boolean
+   */
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted &#x3D; form &amp;&amp; form.submitted;
+    return !!(control &amp;&amp; control.invalid &amp;&amp; (control.dirty || control.touched || isSubmitted));
+  }
+}</code></pre>
     </div>
 </div>
 
