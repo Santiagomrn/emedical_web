@@ -29,16 +29,6 @@ export class ProfileDoctorComponent implements OnInit {
     "updated_at": null
   }
 
-  // frmpatients = this.fb.group({
-  //   frname: ['',Validators.required],
-  //   frlastName:['',Validators.required],
-  //   fremail: ['',Validators.required],
-  //   frpassword: ['',Validators.required],
-  //   frbirthdate: ['',Validators.required],
-  //   frphone: ['',Validators.required],
-  //   fremergencyPhone: ['',Validators.required]
-  // });
-
   constructor(
     private result_service:  DoctorAPIService,
     private fb: FormBuilder,
@@ -61,7 +51,7 @@ export class ProfileDoctorComponent implements OnInit {
           // Hacemos uso del servicio para la obtención de datos de la interfaz
           this.result_service.getDataDoctors(this.id).subscribe((response) =>{
           // Respaldamos la información de todos los pacientes
-          alert(response);
+          
           this.doctor = response;
           console.log(this.doctor);
         }); 
