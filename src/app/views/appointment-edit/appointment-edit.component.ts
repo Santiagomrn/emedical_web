@@ -78,7 +78,15 @@ appointmentDateCurrent: string;
  */  
 frmappoinment;
 
- constructor(
+/**
+ * Constructor para utilizar modulos importados
+ * @param {AppointmentService} appointmentServices consumo del servicio de citas
+ * @param {DoctorAPIService} doctorServices consumo del servicio de doctores
+ * @param {FormBuilder} fb consumo del modulo para formularios
+ * @param {Router} router  consumo del modulo para redireccionar
+ * @param {ActivatedRoute} route consumo del modulo obtención de ID
+*/
+constructor(
    private appointmentServices:  AppointmentService,
    private doctorServices: DoctorAPIService,
    private fb: FormBuilder,
@@ -88,22 +96,24 @@ frmappoinment;
    this.frmappoinment = this.fb.group({
      frdate:['',Validators.required], 
    });
-
    this. getAppointmentId();
  }
 
+ /**
+   * Método de angular
+   */
  ngOnInit(): void {
    this.getDataDoctorAppoinmentCreate();
  }
 
-// Obtenemos todos los valores de los doctores 
+/**
+ * Método para la obtención de datos de los doctores disponibles
+ * @returns los datos de los doctor mediante una API
+ */ 
 getDataDoctorAppoinmentCreate = ()=>{
   this.doctorServices.getDataDoctorsAppointmentCreate().subscribe((response)=>{
     this.doctor_data = response;      
-
-   // console.log(this.doctor_data);
   },(error) => {
-    // Mostramos mensaje de error
     Swal.fire('Error',error.statusText,'question')
   });
 }
@@ -141,6 +151,9 @@ getDataDoctorAppoinmentCreate = ()=>{
      Swal.fire('Error',error.statusText,'question')
    });
  }
+
+
+ 
  
 // Guardamos la cita 
 saveAppointment = () => {
