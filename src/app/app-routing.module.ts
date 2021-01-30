@@ -94,8 +94,6 @@ const routes: Routes = [
   }
   },
   
-
-  {path: 'dashboard_patients', component:DashbordAppoinmentComponent},
   {path: 'profile_doctor', component : ProfileDoctorComponent,
     canActivate : [RoleGuardService],
     data:{ 
