@@ -59,6 +59,13 @@
             <code>src/app/services/doctor/doctor.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Inyección de angular</p>
+
+            </p>
 
 
 
@@ -104,12 +111,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/doctor/doctor.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/doctor/doctor.service.ts:18</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor que invoca otros modulos</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -118,6 +127,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -132,6 +142,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>se utiliza para la autorización del token</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -173,10 +187,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/doctor/doctor.service.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/doctor/doctor.service.ts:16</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Valor que es un arreglo para realizar la busqueda de doctres y usar promesas</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -199,11 +219,48 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/doctor/doctor.service.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/services/doctor/doctor.service.ts:34</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método para la obtención de doctores que se visualizan en la vista de doctores</p>
+</div>
+                    </td>
+                </tr>
 
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>results</td>
+                                                        <td>
+                                                                <code><p>que son los datos a buscar</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>page</td>
+                                                        <td>
+                                                                <code><p>en la página que se desea, existen varios</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
             </tbody>
         </table>
 </section>
@@ -216,19 +273,35 @@
 import { DoctorInterface } from &quot;../../interfaces/doctor/doctor-interface&quot;;
 import { HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
 
-
+/**
+ * Inyección de angular
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class DoctorService {
 
+  /**
+   * Valor que es un arreglo para realizar la busqueda de doctres y usar promesas
+   */
   cachedValues: Array&lt;{
-    [query: string]: DoctorInterface // Hacer referencia a la interface
+    [query: string]: DoctorInterface 
   }&gt; &#x3D; [];
+  
+   /**
+   * Constructor que invoca otros modulos
+   * @param {HttpClient} http se utiliza para la autorización del token
+   */
   constructor(private http: HttpClient) {
     this.http &#x3D; http
   }
 
+  /**
+   * Método para la obtención de doctores que se visualizan en la vista de doctores
+   * @param {string} results que son los datos a buscar
+   * @param {string} page en la página que se desea, existen varios
+   * @return la información de los doctores mediante una API
+   */
   getDoctors &#x3D; (results: string, page: string): Promise&lt;DoctorInterface&gt; &#x3D;&gt; {
     let promise &#x3D; new Promise &lt;DoctorInterface&gt;((resolve, reject) &#x3D;&gt; {
       if (this.cachedValues[results+page]) {
