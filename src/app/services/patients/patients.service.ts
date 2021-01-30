@@ -6,21 +6,34 @@ import { resourceLimits } from 'worker_threads';
 import { resolve } from 'dns';
 import { rejects } from 'assert';
 
-
+/**
+ * Servicios del paciente
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class PatientsService {
 
-  // AccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJkb2N0b3IiLCJpZCI6MSwiaWF0IjoxNjExNjgwNjQwLCJleHAiOjE2MTE2ODI0NDB9.5qEH2A20WL67bbSm4Z2O0vWNlvkPQgqHynC2ug7347Q";
+  /**
+   * Variable que almacena el token del usuario
+   */
   AccessToken = localStorage.getItem("token");
-
+/**
+ * Constructor
+ * @param http 
+ */
   constructor(private http: HttpClient) {
     this.http = http;
    }
 
   // Filtramos todos los datos de los pacientes, omitimos las promesas ya que no comprometemos una búsqueda
   // específica, realizamos filtrado de solo un paciente
+  /**
+   * Se filtran los datos de los pacientes
+   * 
+   * @param id 
+   * @returns PatientsInterface
+   */
   getDataPatients = (id) => {
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
@@ -32,6 +45,12 @@ export class PatientsService {
   }   
 
   // Realizamos el filtrado de diversos pacientes para la visualización del doctor
+  /**
+   * Se realiza el filtrado de diversos pacientes para la visualización del doctor
+   * @param id 
+   * @param data 
+   * @returns PatientsInterface
+   */
   getDataListPatients = (id,data:boolean) => {
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
@@ -46,7 +65,9 @@ export class PatientsService {
     }
   }
 
-  // Realizamos el guardado de los datos del paciente, pasando un objeto
+  /**
+   * Realizamos el guardado de los datos del paciente, pasando un objeto
+   *  */ 
   saveDataPatients = (id,data_patients) =>{  
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
@@ -57,6 +78,11 @@ export class PatientsService {
     }
   }
   // Crear un paciente
+  /**
+   * Crear un paciente
+   * @param body 
+   * @returns response
+   */
   savePatient  = (body) => {
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
