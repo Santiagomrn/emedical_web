@@ -64,6 +64,13 @@
     <code>src/app/views/patients-create/patients-create.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de creación de paciente</p>
+
+    </p>
 
 
     <p class="comment">
@@ -176,12 +183,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:29</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -190,6 +199,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -204,6 +214,8 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>Pathient</td>
@@ -216,6 +228,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Interfaz de paciente</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -257,14 +273,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:51</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método para la creación de un usuario [paciente]</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -299,7 +317,8 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Pathient</p>
+
                     </div>
                 </td>
             </tr>
@@ -327,14 +346,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:77</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método de angular</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -366,14 +387,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:43</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Botón de enviar formulario</p>
+<p>Invoca la función createUser()</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -416,10 +440,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:21</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Formulario para la creación de un usuario</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -437,13 +467,18 @@ import { HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
 import { HttpHeaders } from &#x27;@angular/common/http&#x27;;
 import Swal from &#x27;sweetalert2&#x27;;
 import { PatientsService } from &#x27;../../services/patients/patients.service&#x27;;
+/**
+ * Componente de creación de paciente
+ */
 @Component({
   selector: &#x27;app-patients-create&#x27;,
   templateUrl: &#x27;./patients-create.component.html&#x27;,
   styleUrls: [&#x27;./patients-create.component.css&#x27;]
 })
 export class PatientsCreateComponent implements OnInit {
-  
+  /**
+   * Formulario para la creación de un usuario
+   */
   userCreateForm &#x3D; new FormGroup({
     name: new FormControl(&#x27;&#x27;),
     lastName: new FormControl(&#x27;&#x27;),
@@ -453,13 +488,27 @@ export class PatientsCreateComponent implements OnInit {
     password: new FormControl(&#x27;&#x27;),
     birthdate: new FormControl(&#x27;&#x27;),
   });
-
+  /**
+   * Constructor
+   * @param http 
+   * @param Pathient Interfaz de paciente
+   */
   constructor( private http : HttpClient,
     private Pathient : PatientsService
     ) { }
+    /**
+     * Botón de enviar formulario
+     * 
+     * Invoca la función createUser()
+     */
   onSubmit() {
     this.createUser(this.userCreateForm.value);
   }
+  /**
+   * Método para la creación de un usuario [paciente]
+   * @param crearUser 
+   * @returns Pathient
+   */
   createUser(crearUser : FormGroup){
     console.warn(this.userCreateForm.value);
     console.log(this.userCreateForm.get(&quot;name&quot;).value);
@@ -483,6 +532,9 @@ export class PatientsCreateComponent implements OnInit {
     });
 
   }
+  /**
+   * Método de angular
+   */
   ngOnInit(): void {
   }
 

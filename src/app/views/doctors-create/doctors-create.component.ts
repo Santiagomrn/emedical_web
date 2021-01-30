@@ -4,18 +4,28 @@ import {Location} from '@angular/common';
 // import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from '@angular/forms';
 import { HttpClient, HttpClientModule,  HttpHeaders , HttpResponse} from '@angular/common/http';
+/**
+ * Componente de Creación de Doctor
+ * Usado por el manager 
+ */
 @Component({
   selector: 'app-doctors-create',
   templateUrl: './doctors-create.component.html',
   styleUrls: ['./doctors-create.component.css']
 })
 export class DoctorsCreateComponent implements OnInit,AfterViewInit {
-
+  /**
+   * Constructor
+   * @param _location Variable necesaria para retornar a la página previa
+   * @param http 
+   */
   constructor( 
     private _location : Location,
     private http: HttpClient,
     ) { }
-
+/**
+ * Formulario para la creación de Doctor
+ */
   doctorForm = new FormGroup({
     name: new FormControl('nuevo d3'),
     lastName: new FormControl('last name3'),
@@ -31,22 +41,38 @@ export class DoctorsCreateComponent implements OnInit,AfterViewInit {
     nationality: new FormControl('mexicana'),
     maritalStatus: new FormControl('casado'),
   });
+  /**
+   * Método de Angular
+   */
   ngOnInit(): void {
   }
-
+/**
+ * Se inicializa Materialize CSS
+ */
   ngAfterViewInit() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, {});
   }
+  /**
+   * Se retorna una página previa en el historial del usuario
+   */
   volver(){
-    // alert("Regresando...");
     this._location.back();
   }
+  /**
+   * Ejecución para el envío del formulario de creación de un doctor
+   * Invoca a CrearDoctor()
+   */
   onSubmit(){
     this.crearDoctor(this.doctorForm.value);
   }
+  /**
+   * 
+   * Se crea un doctor con los datos proporcionados por el Manager
+   * Se requiere el Token y el Rol
+   * @param doctor Se pasa como parámetro el formulario llenado previamente
+   */
   crearDoctor(doctor : FormGroup){
-    // obtener Token y rol 
     const token = localStorage.getItem("token");
     const role = localStorage.getItem("role");
     console.log(this.doctorForm.get("name").value);
@@ -55,32 +81,10 @@ export class DoctorsCreateComponent implements OnInit,AfterViewInit {
     console.log(this.doctorForm.get("medicalArea").value);
     const _url = "https://medicalportal.herokuapp.com/api/v1/doctor";
     var self = this;
-    // const httpOptions = new Headers({
-    //   'Content-Type': 'application/json',
-    //   'Authorization': `Bearer ${token}`
-    // })
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     "Accept" : "application/vnd.api+json",
-    //     "Content-Type" : "application/json",
-    //     "Authorization": 'Bearer ' + localStorage.getItem("token")
-    //   })
-    // };
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     "Accept" : "application/vnd.api+json",
-    //     "Content-Type" : "application/json",
-    //     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJtYW5hZ2VyIiwiaWQiOjEsImlhdCI6MTYxMTU5NzUyNiwiZXhwIjoxNjExNTk5MzI2fQ.miUHMNe7WzhkQrgTrN-RYwb4Qks1qv3V6Z2INTfjGPw"
-    //   })
-    // };
     const HeadersForPatientsAPI = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + (token)
     });
-    // var headers = new Headers();
-    // headers.append('Authorization', 'Bearer ' + localStorage.getItem("token"));
-    // headers.append('Content-Type', 'application/json');
-    // let options = new RequestOptions({headers : headers});
     const body = {
       name : this.doctorForm.get("name").value,
       lastName : this.doctorForm.get("lastName").value,

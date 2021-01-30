@@ -64,6 +64,13 @@
     <code>src/app/views/doctors/doctors.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Compoentne de doctores </p>
+
+    </p>
 
 
     <p class="comment">
@@ -180,12 +187,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/views/doctors/doctors.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/views/doctors/doctors.component.ts:23</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -194,6 +203,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -208,6 +218,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Interfaz doctor</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -220,6 +234,8 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -261,14 +277,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/views/doctors/doctors.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/views/doctors/doctors.component.ts:55</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Se inicializa Materialize CSS</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -300,14 +318,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/views/doctors/doctors.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/views/doctors/doctors.component.ts:36</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método de angular</p>
+<p>Ejecuta un llamado a getDoctors()</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -343,10 +364,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/views/doctors/doctors.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/views/doctors/doctors.component.ts:19</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Variable que almacena la interfaz doctor</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -369,10 +396,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/views/doctors/doctors.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/views/doctors/doctors.component.ts:43</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Se obtiene los doctores del sistema para que el paciente pueda observarlos</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -396,10 +429,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/views/doctors/doctors.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/views/doctors/doctors.component.ts:23</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Número que representa el total de doctores</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -414,22 +453,43 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from &#x27;@a
 import { ActivatedRoute,Router } from &#x27;@angular/router&#x27;;
 import { DoctorInterface } from &quot;../../interfaces/doctor/doctor-interface&quot;;
 import {DoctorService} from &quot;../../services/doctor/doctor.service&quot;;
-
+/**
+ * Compoentne de doctores 
+ */
 @Component({
   selector: &#x27;app-doctors&#x27;,
   templateUrl: &#x27;./doctors.component.html&#x27;,
   styleUrls: [&#x27;./doctors.component.css&#x27;]
 })
 export class DoctorsComponent implements OnInit, AfterViewInit{
+  /**
+   * Variable que almacena la interfaz doctor
+   * @type DoctorInterface
+   */
   doctors:DoctorInterface;
+  /**
+   * Número que representa el total de doctores
+   */
   total:number;
-
+/**
+ * Constructor
+ * @param DoctorService Interfaz doctor
+ * @param router 
+ */
   constructor(private DoctorService:DoctorService,private router: Router) { 
     }
-
+    /**
+     * Método de angular
+     * 
+     * Ejecuta un llamado a getDoctors()
+     */
   ngOnInit(): void {
     this.getDoctors()
   }
+  /**
+   * Se obtiene los doctores del sistema para que el paciente pueda observarlos
+   *  @returns DoctorInterface
+   */
   getDoctors&#x3D;()&#x3D;&gt;{
     this.DoctorService.getDoctors(&quot;4&quot;,&quot;1&quot;).then((response) &#x3D;&gt; {
       this.doctors &#x3D; response;
@@ -439,6 +499,9 @@ export class DoctorsComponent implements OnInit, AfterViewInit{
       alert(&quot;Error: &quot; + error.statusText);
     })
   }
+  /**
+   * Se inicializa Materialize CSS
+   */
   ngAfterViewInit() {
     let elems &#x3D; document.querySelectorAll(&#x27;.carousel&#x27;);
     let instances &#x3D; M.Carousel.init(elems,{ fullWidth: true, indicators:true, shift: 2, numVisible: 4, noWrap: false });
