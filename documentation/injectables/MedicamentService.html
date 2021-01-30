@@ -59,6 +59,13 @@
             <code>src/app/services/medicament/medicament.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Inyección de angular</p>
+
+            </p>
 
 
 
@@ -104,12 +111,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/medicament/medicament.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/medicament/medicament.service.ts:17</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor que invoca otros modulos</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -118,6 +127,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -132,6 +142,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>se utiliza para la autorización del token</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -173,10 +187,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/medicament/medicament.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/services/medicament/medicament.service.ts:15</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Valor que es un arreglo para realizar la busqueda de doctres y usar promesas</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -199,11 +219,62 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/medicament/medicament.service.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/services/medicament/medicament.service.ts:35</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método para la obtención de medicamentos, que se visualizan en la vista de medicamentos</p>
+</div>
+                    </td>
+                </tr>
 
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>medicament</td>
+                                                        <td>
+                                                                <code><p>para filtrar mediante nombre</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>selection_comerc</td>
+                                                        <td>
+                                                                <code><p>para filtrar mediante nombre y selecciones</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>selection_strip</td>
+                                                        <td>
+                                                                <code><p>para filtrar mediante nombre y selecciones</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>selection_active</td>
+                                                        <td>
+                                                                <code><p>para filtrar mediante nombre y selecciones</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
             </tbody>
         </table>
 </section>
@@ -216,17 +287,36 @@
 import { MedicamentInterface} from &quot;../../interfaces/medicament/medicament-interface&quot;;
 import { HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
 
-
+/**
+ * Inyección de angular
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class MedicamentService {
+  /**
+   * Valor que es un arreglo para realizar la busqueda de doctres y usar promesas
+   */
   cachedValues: Array&lt;{
     [query: string]: MedicamentInterface // Hacer referencia a la interface
   }&gt; &#x3D; [];
+   
+   /**
+   * Constructor que invoca otros modulos
+   * @param {HttpClient} http se utiliza para la autorización del token
+   */
   constructor(private http: HttpClient) {
     this.http &#x3D; http
   }  
+
+  /**
+   * Método para la obtención de medicamentos, que se visualizan en la vista de medicamentos
+   * @param {string} medicament para filtrar mediante nombre
+   * @param {string} selection_comerc para filtrar mediante nombre y selecciones
+   * @param {string} selection_strip para filtrar mediante nombre y selecciones
+   * @param {string} selection_active para filtrar mediante nombre y selecciones
+   * @return los medicamentos disponibles en la API
+   */
   getMedicaments &#x3D; (medicament:string,selection_comerc: string, selection_strip: string,selection_active: string ): Promise&lt;MedicamentInterface &gt; &#x3D;&gt; {
     let promise &#x3D; new Promise &lt;MedicamentInterface&gt;((resolve, reject) &#x3D;&gt; {
       if (this.cachedValues[medicament]) {

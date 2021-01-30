@@ -618,7 +618,7 @@ export class AppointmentService {
    * @param {string} id de la cita a buscar
    * @return un JSON con los valores de la API
    */
-  getAppointmentId &#x3D; (id: string) &#x3D;&gt;{
+  getAppointmentId &#x3D; (id) &#x3D;&gt;{
     if(this.AccessToken){
       const HeadersForPatientsAPI &#x3D; new HttpHeaders({
         &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
@@ -650,7 +650,7 @@ export class AppointmentService {
    * @type string
    * @return de las citas ocupadas mediante turnos
    */
-  getTurnNotAvailable &#x3D; (date:string) &#x3D;&gt;{
+  getTurnNotAvailable &#x3D; (date) &#x3D;&gt;{
     
     if(this.AccessToken){
       const HeadersForPatientsAPI &#x3D; new HttpHeaders({
@@ -666,7 +666,7 @@ export class AppointmentService {
   * @param id hace la petición de eliminar los datos mediante ID
   * @type string
   */
-  deleteAppointment &#x3D; (id:string) &#x3D;&gt;{
+  deleteAppointment &#x3D; (id) &#x3D;&gt;{
     if(this.AccessToken){
       const HeadersForPatientsAPI &#x3D; new HttpHeaders({
         &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
@@ -683,7 +683,7 @@ export class AppointmentService {
     * @param itfAppoinment son los datos que se envian para actualizar la cita
     * @type Object
     */
-   editAppointment &#x3D; (id:string,itfAppoinment) &#x3D;&gt;{
+   editAppointment &#x3D; (id,itfAppoinment) &#x3D;&gt;{
     if(this.AccessToken){
       const HeadersForPatientsAPI &#x3D; new HttpHeaders({
         &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
