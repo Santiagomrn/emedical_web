@@ -84,7 +84,7 @@ export class ProfileComponent implements OnInit {
    * @returns los datos de los pacientes mediante una API
    */
   get_patient_ID = () =>{
-    this.id = this.route.snapshot.params['id'];    
+    this.id = localStorage.getItem("id");      
     if(this.id)
     {
         this.result_service.getDataPatients(this.id).subscribe((response) =>{

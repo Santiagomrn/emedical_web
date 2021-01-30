@@ -23,7 +23,8 @@ export class AppComponent {
    */
   constructor(private MedicamentService: MedicamentService, private route: ActivatedRoute, private router: Router,
     private result_service:  PatientsService  
-    ){}
+    ){
+    }
     /**
      * Variable donde se guarda el estado de Login
      *  @param {string}
@@ -76,15 +77,16 @@ ngOnInit(){
    * Retorna al login al cerrar sesión
    */
   logOut(){
+    
     // obtener role
     let role = localStorage.getItem("role");
     // Cerrar sesión
     localStorage.setItem("token", '0');
     localStorage.setItem("role", '0');
     // Reedirigir 
-    let _url= '/login?role='+role;
+    const _url= '/login?role='+role;
+    // Redireccionamiento
     this.router.navigateByUrl(_url);
-    
   }
   /**
    * Variables necesarias para los componentes de Materialize CSS
