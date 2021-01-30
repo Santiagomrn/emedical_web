@@ -64,6 +64,13 @@
             <code>src/app/interfaces/appointment/appointment-interface.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interfaz que se utiliza para los datos de citas</p>
+
+            </p>
 
 
         <section>
@@ -149,6 +156,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Fecha de creación del archivo</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -178,6 +191,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Fecha de la cita</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -207,6 +226,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Arreglo del doctor que atiede la cita</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -236,6 +261,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Identificador del doctor </p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -265,6 +296,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Identificado de la cita</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -294,6 +331,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Arreglo del paciente que hizo la cita</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -323,6 +366,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Identificador del paciente </p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -352,6 +401,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Código QR de la cita</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -381,6 +436,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Horario de la cita (Este es cada 30min)</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -410,6 +471,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Turno de la cita</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -439,6 +506,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Última actualización de la cita</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -447,16 +520,71 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface AppointmentInterface {
+    /**
+     * Código QR de la cita
+     * @param {QRCode}
+     * @type string
+     */
     &quot;QRCode&quot;: string,
+    /**
+     *  Fecha de creación del archivo
+     * @param {created_at}
+     * @type string
+     */
     &quot;created_at&quot;:string,
+    /**
+     * Fecha de la cita
+     * @param {date}
+     * @type string
+     */
     &quot;date&quot;:string,
+    /**
+     * Arreglo del doctor que atiede la cita
+     * @param {doctor}
+     * @type string
+     */
     &quot;doctor&quot;: string,
+    /**
+     * Identificador del doctor 
+     * @param {doctorID}
+     * @type number
+     */
     &quot;doctorId&quot;:number,
+    /**
+     * Identificado de la cita
+     * @param {id}
+     * @type number
+     */
     &quot;id&quot;:number,
+    /**
+     * Arreglo del paciente que hizo la cita
+     * @param {pathiet}
+     * @type string
+     */
     &quot;pathient&quot;:string,
+    /**
+     * Identificador del paciente 
+     * @param {pathientId}
+     * @type number
+     */
     &quot;pathientId&quot;:number,
+    /**
+     * Horario de la cita (Este es cada 30min)
+     * @param {time}
+     * @type string
+     */
     &quot;time&quot;:string,
+    /**
+     * Turno de la cita
+     * @param {turn}
+     * @type number
+     */
     &quot;turn&quot;: number,
+    /**
+     * Última actualización de la cita
+     * @param {updated_at}
+     * @type string
+     */
     &quot;updated_at&quot;:string
 }
 

@@ -1120,7 +1120,7 @@ saveAppointment &#x3D; () &#x3D;&gt; {
  * @param {number} id_current determinamos el turno que queremos editar
  * @returns de las horas disponibles y turnos disponibles al actualizar una cita
  */
-getAppoinmentNotAvailableCurrent &#x3D; (date:string,id_current:number) &#x3D;&gt;{
+getAppoinmentNotAvailableCurrent &#x3D; (date,id_current) &#x3D;&gt;{
   const time_available &#x3D; [&#x27;08:00&#x27;,&#x27;08:30&#x27;,&#x27;09:00&#x27;,&#x27;09:30&#x27;,&#x27;10:00&#x27;,&#x27;10:30&#x27;,&#x27;11:00&#x27;,&#x27;11:30&#x27;,&#x27;12:00&#x27;,&#x27;12:30&#x27;,&#x27;13:00&#x27;,&#x27;13:30&#x27;,&#x27;14:00&#x27;,&#x27;14:30&#x27;,&#x27;15:00&#x27;,&#x27;15:30&#x27;];
   const turn_available &#x3D; [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
     this.appointmentServices.getTurnNotAvailable(date).subscribe((response)&#x3D;&gt;{

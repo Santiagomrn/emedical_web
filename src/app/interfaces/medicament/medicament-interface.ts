@@ -1,7 +1,30 @@
+/**
+ * Interfaz para obtener los medicamentos necesarios 
+ */
 export interface MedicamentInterface {
+    /**
+     * Cantidad de medicamentos diponibles
+     * @param {totalFilas}
+     * @type number
+     */
     "totalFilas": number,
+    /**
+     * Página de medicamentos
+     * @param {pagina}
+     * @type number
+     */
     "pagina": number,
+    /**
+     * Tamaño de la página de los medicamentos
+     * @param {tamanioPagina}
+     * @type number
+     */
     "tamanioPagina": number,
+    /**
+     * Arreglo de datos de las medicinas disponibles
+     * @param {resultados}
+     * @type array
+     */
     "resultados": Array<
         {
             "nregistro": string,

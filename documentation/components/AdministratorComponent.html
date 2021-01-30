@@ -187,6 +187,9 @@
                                 <a href="#getDoctors">getDoctors</a>
                             </li>
                             <li>
+                                <a href="#getMedicaments">getMedicaments</a>
+                            </li>
+                            <li>
                                 <a href="#ngAfterViewInit">ngAfterViewInit</a>
                             </li>
                             <li>
@@ -376,6 +379,75 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getMedicaments"></a>
+                    <span class="name">
+                        <b>
+                            getMedicaments
+                        </b>
+                        <a href="#getMedicaments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMedicaments(data)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/app/views/administrator/administrator.component.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Metodo para la obtención de medicamentos</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>los medicamentos diponibles</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngAfterViewInit"></a>
                     <span class="name">
                         <b>
@@ -394,8 +466,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="149"
-                            class="link-to-prism">src/app/views/administrator/administrator.component.ts:149</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">src/app/views/administrator/administrator.component.ts:176</a></div>
                 </td>
             </tr>
 
@@ -489,8 +561,8 @@ Método de angular</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="141"
-                            class="link-to-prism">src/app/views/administrator/administrator.component.ts:141</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="168"
+                            class="link-to-prism">src/app/views/administrator/administrator.component.ts:168</a></div>
                 </td>
             </tr>
 
@@ -996,6 +1068,33 @@ export class AdministratorComponent implements OnInit {
         this.error &#x3D; error;
         }
         );
+    }
+
+
+    /**
+     * Metodo para la obtención de medicamentos
+     * @param data 
+     * @returns los medicamentos diponibles
+     */
+    getMedicaments(data){
+      this.conv_data &#x3D; data.toUpperCase();
+      let _url &#x3D; this.url+this.searchForm.get(&#x27;query&#x27;).value;
+      this.http.get&lt;any&gt;(_url).subscribe(data &#x3D;&gt; {
+        console.log(data);
+        this.response_resultados &#x3D; data;
+        if(this.searchForm.get(&#x27;query&#x27;).value !&#x3D; &quot;&quot;){
+          this.dataSource &#x3D; new MatTableDataSource([data]);
+          return;
+        }
+        console.log(this.response_resultados);
+       this.dataSource &#x3D; new MatTableDataSource(this.response_resultados);
+       this.dataSource.paginator &#x3D; this.paginator;
+     },
+     error &#x3D;&gt; {
+    this.dataSource &#x3D; new MatTableDataSource([]);
+     this.error &#x3D; error;
+     }
+     );
     }
   /**
    * Método para leer el localStorage

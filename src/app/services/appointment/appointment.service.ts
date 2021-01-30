@@ -7,19 +7,31 @@ import { Interface } from 'readline';
 import { resolve } from 'dns';
 import { rejects } from 'assert';
 
-
+/**
+ * Inyección de angular
+ */
 @Injectable({
   providedIn: 'root'
 }) 
 export class AppointmentService {
 
+  /**
+   * Valor del token que se mandará a la API
+   */
   AccessToken = localStorage.getItem("token");
 
+  /**
+   * Constructor que invoca otros modulos
+   * @param {HttpClient} http se utiliza para la autorización del token
+   */
   constructor(private http: HttpClient) {
   this.http = http
   }
 
-  // Obtenemos los datos de la cita de cada paciente
+  /**
+   * Método que realiza el servicio de obtener los datos de la API
+   * @return un JSON con los valores de la API
+   */
   getAppointment = () =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
@@ -30,7 +42,11 @@ export class AppointmentService {
     }
   }
 
-  // Obtención de datos mediante ID
+  /**
+   * Método que realiza el servicio de obtener los datos de la API mediante un ID
+   * @param {string} id de la cita a buscar
+   * @return un JSON con los valores de la API
+   */
   getAppointmentId = (id) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
@@ -41,7 +57,11 @@ export class AppointmentService {
     }
   }
 
-  // Creación de una nueva cita
+  /**
+   * Método que realiza el servicio de envíar datos a la API
+   * @param itfAppoinment el dato que se desea envíar mediante POST
+   * @type Objet
+   */
   createAppointment = (itfAppoinment) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
@@ -53,7 +73,12 @@ export class AppointmentService {
     }
   }
 
-  // Obtenemos los turnos ocupados por fecha
+    /**
+   * Método que realiza la obtención de datos de turnos de una API
+   * @param date se hace uso de la fecha para recibir los datos
+   * @type string
+   * @return de las citas ocupadas mediante turnos
+   */
   getTurnNotAvailable = (date) =>{
     
     if(this.AccessToken){
@@ -65,7 +90,11 @@ export class AppointmentService {
     }
   }
   
-  // Cancelación de la cita
+ /**
+  * Método que realiza el servicio de envíar datos a la API
+  * @param id hace la petición de eliminar los datos mediante ID
+  * @type string
+  */
   deleteAppointment = (id) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
@@ -76,7 +105,13 @@ export class AppointmentService {
     }
    }
 
-   // Editamos datos de la cita
+   /**
+    * Método que realiza el servicio de envíar datos a la API
+    * @param id para escoger el dato que se modificara
+    * @type string
+    * @param itfAppoinment son los datos que se envian para actualizar la cita
+    * @type Object
+    */
    editAppointment = (id,itfAppoinment) =>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
@@ -87,7 +122,10 @@ export class AppointmentService {
     }
   }
 
-  // Obtenemos todas las citas del doctor
+  /**
+   * Método que realiza la obtención de datos de una API
+   * @return de todas las citas disponibles para un doctor en especifico
+   */
   getAppointmentDoctor = ()=>{
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({

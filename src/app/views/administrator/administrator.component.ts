@@ -133,6 +133,33 @@ export class AdministratorComponent implements OnInit {
         }
         );
     }
+
+
+    /**
+     * Metodo para la obtención de medicamentos
+     * @param data 
+     * @returns los medicamentos diponibles
+     */
+    getMedicaments(data){
+      this.conv_data = data.toUpperCase();
+      let _url = this.url+this.searchForm.get('query').value;
+      this.http.get<any>(_url).subscribe(data => {
+        console.log(data);
+        this.response_resultados = data;
+        if(this.searchForm.get('query').value != ""){
+          this.dataSource = new MatTableDataSource([data]);
+          return;
+        }
+        console.log(this.response_resultados);
+       this.dataSource = new MatTableDataSource(this.response_resultados);
+       this.dataSource.paginator = this.paginator;
+     },
+     error => {
+    this.dataSource = new MatTableDataSource([]);
+     this.error = error;
+     }
+     );
+    }
   /**
    * Método para leer el localStorage
    * @param key (rol)

@@ -136,7 +136,7 @@ export class AppointmentCreateComponent implements OnInit {
    * @param {string} date turno que se desea tomar según la fecha y hora
    * @returns de las horas disponibles y turnos disponibles al crear una cita 
    */
-  getAppoinmentNotAvailableCurrent = (date: string) =>{
+  getAppoinmentNotAvailableCurrent = (date) =>{
     const time_available = ['08:00','08:30','09:00','09:30','10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30'];
     const turn_available = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
       this.appointmentServices.getTurnNotAvailable(date).subscribe((response)=>{
