@@ -67,6 +67,7 @@ import { AppointmentEditComponent } from './views/appointment-edit/appointment-e
 import { AppointmentDeleteComponent } from './views/appointment-delete/appointment-delete.component';
 import { ListAppointmentDoctorComponent } from './views/list-appointment-doctor/list-appointment-doctor.component';
 import { ProfilePatientsDoctorComponent } from './views/profile-patients-doctor/profile-patients-doctor.component';
+import { QRCodeModule } from 'angularx-qrcode';
 
 
 @NgModule({
@@ -99,6 +100,7 @@ import { ProfilePatientsDoctorComponent } from './views/profile-patients-doctor/
     ProfilePatientsDoctorComponent,
   ],
   imports: [
+    QRCodeModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,

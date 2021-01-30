@@ -70,7 +70,11 @@ export class ProfileComponent implements OnInit {
   }
 
   /**
+<<<<<<< HEAD
    * Método de angular
+=======
+   * Método parte de angular, refresca al consumir componente
+>>>>>>> paco-develop
    */
   ngOnInit(): void {
   }

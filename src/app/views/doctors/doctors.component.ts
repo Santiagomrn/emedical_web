@@ -56,5 +56,4 @@ export class DoctorsComponent implements OnInit, AfterViewInit{
     let elems = document.querySelectorAll('.carousel');
     let instances = M.Carousel.init(elems,{ fullWidth: true, indicators:true, shift: 2, numVisible: 4, noWrap: false });
   }
-  
 }
