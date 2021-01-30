@@ -64,7 +64,6 @@ import { DashbordAppoinmentComponent } from './views/dashbord-appoinment/dashbor
 import { AppointmentCreateComponent } from './views/appointment-create/appointment-create.component';
 import { ProfileDoctorComponent } from './views/profile-doctor/profile-doctor/profile-doctor.component';
 import { AppointmentEditComponent } from './views/appointment-edit/appointment-edit.component';
-import { AppointmentDeleteComponent } from './views/appointment-delete/appointment-delete.component';
 import { ListAppointmentDoctorComponent } from './views/list-appointment-doctor/list-appointment-doctor.component';
 import { ProfilePatientsDoctorComponent } from './views/profile-patients-doctor/profile-patients-doctor.component';
 import { QRCodeModule } from 'angularx-qrcode';
@@ -95,7 +94,6 @@ import { QRCodeModule } from 'angularx-qrcode';
     AppointmentCreateComponent,
     ProfileDoctorComponent,
     AppointmentEditComponent,
-    AppointmentDeleteComponent,
     ListAppointmentDoctorComponent,
     ProfilePatientsDoctorComponent,
   ],

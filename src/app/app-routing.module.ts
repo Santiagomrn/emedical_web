@@ -18,7 +18,6 @@ import {DashbordAppoinmentComponent} from './views/dashbord-appoinment/dashbord-
 import {ListPatientsComponent} from './views/list-patients/list-patients.component';
 import {AppointmentEditComponent} from './views/appointment-edit/appointment-edit.component';
 import {AppointmentCreateComponent} from './views/appointment-create/appointment-create.component';
-import {AppointmentDeleteComponent} from './views/appointment-delete/appointment-delete.component';
 import {ProfileDoctorComponent} from './views/profile-doctor/profile-doctor/profile-doctor.component';
 import {ListAppointmentDoctorComponent } from './views/list-appointment-doctor/list-appointment-doctor.component';
 import {ProfilePatientsDoctorComponent} from './views/profile-patients-doctor/profile-patients-doctor.component';
@@ -54,7 +53,6 @@ const routes: Routes = [
   {path: 'dashboard_appointment', component:DashbordAppoinmentComponent},
   {path: 'dashboard_appointment/appointment_create', component:AppointmentCreateComponent},
   {path: 'dashboard_appointment/appointment_create/:id', component:AppointmentEditComponent},
-  {path: 'dashboard_appointment/appointment_delete/:id', component:AppointmentDeleteComponent},
   {path: 'list_patients', component: ListPatientsComponent},
   {path: 'list_appointment_doctor', component:ListAppointmentDoctorComponent},
   {path: 'list_appointment_doctor/profile_patients/:id', component: ProfilePatientsDoctorComponent},
