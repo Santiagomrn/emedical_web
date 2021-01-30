@@ -64,6 +64,13 @@
     <code>src/app/views/home/home.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente principal [vista Home]</p>
+
+    </p>
 
 
     <p class="comment">
@@ -160,12 +167,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/views/home/home.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/views/home/home.component.ts:12</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor del componente</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -229,14 +238,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/views/home/home.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/views/home/home.component.ts:28</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Se inicializa el carousel</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -268,14 +279,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/views/home/home.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/views/home/home.component.ts:22</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Método Angular</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -294,19 +307,30 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import M from &#x27;materialize-css&#x27;;
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute,Router } from &#x27;@angular/router&#x27;;
-
+/**
+ * Componente principal [vista Home]
+ */
 @Component({
   selector: &#x27;app-home&#x27;,
   templateUrl: &#x27;./home.component.html&#x27;,
   styleUrls: [&#x27;./home.component.css&#x27;]
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  /**
+   * Constructor del componente
+   * @param router 
+   */
   constructor(private router: Router) {
    }
-
+   /**
+    * Método Angular
+    */
   ngOnInit(): void {
     //this.getNews();
   }
+  /**
+   * Se inicializa el carousel
+   */
   ngAfterViewInit() {
     let elems &#x3D; document.querySelectorAll(&#x27;.carousel&#x27;);
     let instances &#x3D; M.Carousel.init(elems, { fullWidth: true,

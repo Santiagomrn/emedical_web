@@ -6,13 +6,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { PatientsService } from '../../services/patients/patients.service';
+/**
+ * Componente de creación de paciente
+ */
 @Component({
   selector: 'app-patients-create',
   templateUrl: './patients-create.component.html',
   styleUrls: ['./patients-create.component.css']
 })
 export class PatientsCreateComponent implements OnInit {
-  
+  /**
+   * Formulario para la creación de un usuario
+   */
   userCreateForm = new FormGroup({
     name: new FormControl(''),
     lastName: new FormControl(''),
@@ -22,13 +27,27 @@ export class PatientsCreateComponent implements OnInit {
     password: new FormControl(''),
     birthdate: new FormControl(''),
   });
-
+  /**
+   * Constructor
+   * @param http 
+   * @param Pathient Interfaz de paciente
+   */
   constructor( private http : HttpClient,
     private Pathient : PatientsService
     ) { }
+    /**
+     * Botón de enviar formulario
+     * 
+     * Invoca la función createUser()
+     */
   onSubmit() {
     this.createUser(this.userCreateForm.value);
   }
+  /**
+   * Método para la creación de un usuario [paciente]
+   * @param crearUser 
+   * @returns Pathient
+   */
   createUser(crearUser : FormGroup){
     console.warn(this.userCreateForm.value);
     console.log(this.userCreateForm.get("name").value);
@@ -52,6 +71,9 @@ export class PatientsCreateComponent implements OnInit {
     });
 
   }
+  /**
+   * Método de angular
+   */
   ngOnInit(): void {
   }
 

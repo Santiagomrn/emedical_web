@@ -1,5 +1,4 @@
 /**
- * @interface
  * Interface para obtener los datos del doctor 
  */
 export interface _DoctorInterface {

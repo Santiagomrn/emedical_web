@@ -4,12 +4,23 @@ import { _DoctorInterface } from "../../../interfaces/doctor/_doctor-interface";
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import { FormBuilder,FormControl, Validators } from '@angular/forms';
 import { threadId } from 'worker_threads';
+/**
+ * Componente
+ * 
+ * Perfil del doctor 
+ * 
+ */
 @Component({
   selector: 'app-profile-doctor',
   templateUrl: './profile-doctor.component.html',
   styleUrls: ['./profile-doctor.component.css']
 })
 export class ProfileDoctorComponent implements OnInit {
+  /**
+   * Interfaz del doctor
+   * @type _DoctorInterface
+   * @param patients_input
+   */
   patients_input:_DoctorInterface= {
     "id": null,
     "name": null,
@@ -28,7 +39,13 @@ export class ProfileDoctorComponent implements OnInit {
     "created_at": null,
     "updated_at": null
   }
-
+/**
+ * Constructor 
+ * @param result_service Servicio de recuperación del doctor
+ * @param fb  Formbuilder
+ * @param router  Router
+ * @param route Route
+ */
   constructor(
     private result_service:  DoctorAPIService,
     private fb: FormBuilder,
@@ -37,11 +54,28 @@ export class ProfileDoctorComponent implements OnInit {
   ) {
     this.get_doctor_ID();
    }
+   /**
+    * Variable que almacena los datos del doctor
+    * @type _DoctorInterface
+    */
   doctor: _DoctorInterface;
+  /**
+   * Identificador del doctor
+   * @type any
+   */
   id:any;
+  /**
+   * Método Angular
+   * @return void
+   */
   ngOnInit(): void {
   }
     //Obtenemos los datos mediante el id
+    /**
+     * Obtener el doctor por un ID
+     * @param null
+     * @returns _DoctorInterface
+     */
     get_doctor_ID = () =>{
       // Obtenemos el id del paciente mediante la URL
       this.id =localStorage.getItem("id");    
