@@ -59,6 +59,13 @@
             <code>src/app/services/news/news.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Inyección de angular</p>
+
+            </p>
 
 
 
@@ -104,12 +111,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/news/news.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/news/news.service.ts:18</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor que invoca otros modulos</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -118,6 +127,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -132,6 +142,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>se utiliza para la autorización del token</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -173,10 +187,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/news/news.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/news/news.service.ts:16</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Valor que es un arreglo para realizar la busqueda de noticias y usar promesas</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -199,11 +219,53 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/news/news.service.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/services/news/news.service.ts:34</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método para la obtención de noticias que se visualizan en la vista home</p>
+</div>
+                    </td>
+                </tr>
 
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>limit</td>
+                                                        <td>
+                                                                <code><p>de las noticias a visualizar</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>offset</td>
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>country</td>
+                                                        <td>
+                                                                <code><p>de las noticias</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
             </tbody>
         </table>
 </section>
@@ -216,25 +278,40 @@
 import { NewsInterface } from &quot;../../interfaces/news/news-interface&quot;;
 import { HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
 
+/**
+ * Inyección de angular
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class NewsService {
 
+   /**
+   * Valor que es un arreglo para realizar la busqueda de noticias y usar promesas
+   */
   cachedValues: Array&lt;{
-    [query: string]: NewsInterface // Hacer referencia a la interface
+    [query: string]: NewsInterface 
   }&gt; &#x3D; [];
 
+  /**
+   * Constructor que invoca otros modulos
+   * @param {HttpClient} http se utiliza para la autorización del token
+   */
   constructor(private http: HttpClient) {
     this.http &#x3D; http
   }
 
+  /**
+   * Método para la obtención de noticias que se visualizan en la vista home
+   * @param limit de las noticias a visualizar
+   * @param offset 
+   * @param country de las noticias
+   */
   getNews &#x3D; (limit: string, offset: string, country: string): Promise&lt;NewsInterface&gt; &#x3D;&gt; {
     let promise &#x3D; new Promise &lt;NewsInterface&gt;((resolve, reject) &#x3D;&gt; {
       if (this.cachedValues[limit+offset+country]) {
         resolve(this.cachedValues[limit+offset+country])
       } else {
-        //this.http.get(&#x27;http://api.coronatracker.com/news/trending?limit&#x3D;&#x27; + limit + &#x27;&amp;country&#x3D;&#x27; + country + &#x27;&amp;offset&#x3D;&#x27; + offset)
         this.http.get(&#x27;/news&#x27;+ &#x27;trending?limit&#x3D;&#x27; + limit + &#x27;&amp;country&#x3D;&#x27; + country + &#x27;&amp;offset&#x3D;&#x27; + offset)  
         .toPromise()
           .then((response) &#x3D;&gt; {
