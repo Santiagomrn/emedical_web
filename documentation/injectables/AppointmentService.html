@@ -103,6 +103,9 @@
                                 <a href="#getAppointmentId">getAppointmentId</a>
                             </li>
                             <li>
+                                <a href="#getAppointmentQRLink">getAppointmentQRLink</a>
+                            </li>
+                            <li>
                                 <a href="#getTurnNotAvailable">getTurnNotAvailable</a>
                             </li>
                         </ul>
@@ -511,6 +514,38 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="getAppointmentQRLink"></a>
+                        <span class="name">
+                            <b>
+                            getAppointmentQRLink</b>
+                            <a href="#getAppointmentQRLink"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">src/app/services/appointment/appointment.service.ts:143</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método que realiza la obtención de datos de una API</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getTurnNotAvailable"></a>
                         <span class="name">
                             <b>
@@ -706,6 +741,20 @@ export class AppointmentService {
       return this.http.get&lt;AppointmentInterface[]&gt;(&quot;https://medicalportal.herokuapp.com/api/v1/medicalAppointment/&quot;, { headers: HeadersForPatientsAPI });
     }
   }
+
+   /**
+   * Método que realiza la obtención de datos de una API
+   * @return de el código QR de las citas
+   */
+    getAppointmentQRLink &#x3D; (id)&#x3D;&gt;{
+      if(this.AccessToken){
+        const HeadersForPatientsAPI &#x3D; new HttpHeaders({
+          &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+          &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + (this.AccessToken)
+        });
+        return this.http.get&lt;AppointmentInterface[]&gt;(&quot;https://medicalportal.herokuapp.com/api/v1/medicalAppointment/&quot;+id+&quot;/QR&quot;, { headers: HeadersForPatientsAPI });
+      }
+    }
 
 }
 </code></pre>

@@ -136,7 +136,10 @@ export class AppointmentService {
     }
   }
 
-    // Obtenemos el link abierto de la cita
+   /**
+   * Método que realiza la obtención de datos de una API
+   * @return de el código QR de las citas
+   */
     getAppointmentQRLink = (id)=>{
       if(this.AccessToken){
         const HeadersForPatientsAPI = new HttpHeaders({

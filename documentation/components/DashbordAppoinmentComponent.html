@@ -146,13 +146,29 @@
                                 <a href="#dataSource">dataSource</a>
                             </li>
                             <li>
+                                <a href="#deleteMedicalApp">deleteMedicalApp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog">dialog</a>
+                            </li>
+                            <li>
                                 <a href="#displayedColumns">displayedColumns</a>
                             </li>
                             <li>
-                                <a href="#getAppointment">getAppointment</a>
+                                <a href="#getAppointmentById">getAppointmentById</a>
+                            </li>
+                            <li>
+                                <a href="#getAppointmentQRLink">getAppointmentQRLink</a>
+                            </li>
+                            <li>
+                                <a href="#getAppointments">getAppointments</a>
                             </li>
                             <li>
                                 <a href="#getCodeQR">getCodeQR</a>
+                            </li>
+                            <li>
+                                <a href="#myAngularxQrCode">myAngularxQrCode</a>
                             </li>
                             <li>
                                 <a href="#paginator">paginator</a>
@@ -193,12 +209,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(appointmentService: <a href="../injectables/AppointmentService.html">AppointmentService</a>, form: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+<code>constructor(appointmentService: <a href="../injectables/AppointmentService.html">AppointmentService</a>, form: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, dialog: MatDialog)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:51</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -282,6 +298,22 @@
 </code>
                                                         </td>
                                                 </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>consumo del modulo para el código QR</p>
+</code>
+                                                        </td>
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -322,8 +354,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="76"
-                            class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:76</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:89</a></div>
                 </td>
             </tr>
 
@@ -361,13 +393,13 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../interfaces/AppointmentInterface.html" target="_self" >AppointmentInterface</a></code>
+                            <i>Type : </i>        <code><a href="../interfaces/AppointmentInterface.html" target="_self" >AppointmentInterface[]</a></code>
 
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:40</a></div>
                             </td>
                         </tr>
 
@@ -400,7 +432,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -433,7 +465,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:41</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -441,6 +473,95 @@
                     <td class="col-md-4">
                         <div class="io-description"><p>Valor para obtener la tabla que se visualizará</p>
 </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteMedicalApp"></a>
+                        <span class="name">
+                            <b>
+                            deleteMedicalApp</b>
+                            <a href="#deleteMedicalApp"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:104</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método que elimina una cita</p>
+</div>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                        <td>
+                                                                <code><p>para eliminar una cita mediante un DELETE</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dialog</b>
+                            <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatDialog</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:75</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">consumo del modulo para el código QR</div>
                     </td>
                 </tr>
 
@@ -471,7 +592,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:55</a></div>
                             </td>
                         </tr>
 
@@ -488,11 +609,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="getAppointment"></a>
+                        <a name="getAppointmentById"></a>
                         <span class="name">
                             <b>
-                            getAppointment</b>
-                            <a href="#getAppointment"><span class="icon ion-ios-link"></span></a>
+                            getAppointmentById</b>
+                            <a href="#getAppointmentById"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -503,13 +624,125 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:91</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:133</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Método para obtenet un listado de citas de paciente mediante el consumo de una API Appoinment.</p>
+                        <div class="io-description"><p>Método para la obtención del código QR en una API</p>
+</div>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                        <td>
+                                                                <code><p>de la cita que se hará código QR</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAppointmentQRLink"></a>
+                        <span class="name">
+                            <b>
+                            getAppointmentQRLink</b>
+                            <a href="#getAppointmentQRLink"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="145" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:145</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método que obtiene el código QR para visualizarlo en la vista </p>
+</div>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                        <td>
+                                                                <code><p>de la cita que se hará código QR</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAppointments"></a>
+                        <span class="name">
+                            <b>
+                            getAppointments</b>
+                            <a href="#getAppointments"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:117</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método para obtener un listado de citas de paciente mediante el consumo de una API Appoinment.</p>
 </div>
                     </td>
                 </tr>
@@ -535,13 +768,51 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:83</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:96</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>Generamos un código QR</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="myAngularxQrCode"></a>
+                        <span class="name">
+                            <b>
+                            myAngularxQrCode</b>
+                            <a href="#myAngularxQrCode"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Valor para visualizar el código QR</p>
 </div>
                     </td>
                 </tr>
@@ -577,7 +848,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:51</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -610,7 +881,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/views/dashbord-appoinment/dashbord-appoinment.component.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -630,10 +901,10 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import M from &#x27;materialize-css&#x27;;
-import { Component, OnInit,ViewChild } from &#x27;@angular/core&#x27;;
+import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
 import { AppointmentInterface } from &quot;../../interfaces/appointment/appointment-interface&quot;;
 import { AppointmentService } from &quot;../../services/appointment/appointment.service&quot;;
-import { ActivatedRoute,Router,ParamMap } from &#x27;@angular/router&#x27;;
+import { ActivatedRoute, Router, ParamMap } from &#x27;@angular/router&#x27;;
 import { FormBuilder } from &#x27;@angular/forms&#x27;;
 import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
 import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
@@ -641,6 +912,8 @@ import { MatSort } from &#x27;@angular/material/sort&#x27;;
 import { element } from &#x27;protractor&#x27;;
 import { threadId } from &#x27;worker_threads&#x27;;
 import Swal from &#x27;sweetalert2&#x27;;
+import {MatDialog, MAT_DIALOG_DATA} from &#x27;@angular/material/dialog&#x27;;
+import {Inject} from &#x27;@angular/core&#x27;;
 
 /**
  * Componente de angular
@@ -651,15 +924,22 @@ import Swal from &#x27;sweetalert2&#x27;;
   styleUrls: [&#x27;./dashbord-appoinment.component.css&#x27;]
 })
 export class DashbordAppoinmentComponent implements OnInit {
+
 /**
  * Valor obtener la fecha actual 
  */
 current_date:string;
 
 /**
+ * Valor para visualizar el código QR
+ */
+myAngularxQrCode: string &#x3D; null;
+
+
+/**
  * Valor para la visualización de los datos de Citas recibidos por una API
  */
-appointments:AppointmentInterface;
+appointments:AppointmentInterface[];
 
 /**
  * Valor para el resultado de la páginación
@@ -687,47 +967,89 @@ displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;date&#x27;,&#x27;time&
    * @param {FormBuilder} form consumo del modulo para formularios
    * @param {Router} router  consumo del modulo para redireccionar
    * @param {ActivatedRoute} route consumo del modulo obtención de ID
+   * @param {MatDialog} dialog consumo del modulo para el código QR
    */
   constructor(
-    private appointmentService:  AppointmentService,
+    private appointmentService: AppointmentService,
     private form: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute
-  ){ 
-    const month_form &#x3D; [&quot;01&quot;,&quot;02&quot;,&quot;03&quot;,&quot;04&quot;,&quot;05&quot;,&quot;06&quot;,&quot;07&quot;,&quot;08&quot;,&quot;09&quot;,&quot;10&quot;,&quot;11&quot;,&quot;12&quot;];
+    private route: ActivatedRoute,
+    public dialog: MatDialog
+    
+  ) {
+    const month_form &#x3D; [&quot;01&quot;, &quot;02&quot;, &quot;03&quot;, &quot;04&quot;, &quot;05&quot;, &quot;06&quot;, &quot;07&quot;, &quot;08&quot;, &quot;09&quot;, &quot;10&quot;, &quot;11&quot;, &quot;12&quot;];
     const year &#x3D; (new Date()).getFullYear();
     const month &#x3D; (new Date()).getMonth();
     const day &#x3D; (new Date()).getDate();
-    this.current_date &#x3D; year + &#x27;-&#x27; + month_form[month] + &#x27;-&#x27; + (day+1);
+    this.myAngularxQrCode&#x3D;null;
+    this.current_date &#x3D; year + &#x27;-&#x27; + month_form[month] + &#x27;-&#x27; + (day + 1);
   }
 
   /**
    * Método de angular
    */
   ngOnInit(): void {
-    this.getAppointment();
+    this.getAppointments();
   }
 
-  /**
+   /**
    * Generamos un código QR
    */
-  getCodeQR &#x3D; () &#x3D;&gt;{
- 
+  getCodeQR &#x3D; (id) &#x3D;&gt; {
+    this.getAppointmentQRLink(id);
+  }
+  
+  /**
+   * Método que elimina una cita
+   * @param id para eliminar una cita mediante un DELETE
+   */
+  deleteMedicalApp &#x3D; (id) &#x3D;&gt; {
+    this.appointmentService.deleteAppointment(id).subscribe((response) &#x3D;&gt; {
+      Swal.fire({ icon: &#x27;error&#x27;, title: &#x27;Cita eliminada!&#x27;, showConfirmButton: false, timer: 1250 })
+      this.getAppointments();
+    }, (error) &#x3D;&gt; {
+      Swal.fire(&#x27;Error&#x27;, error.statusText, &#x27;question&#x27;)
+    });
   }
 
   /** 
-  * Método para obtenet un listado de citas de paciente mediante el consumo de una API Appoinment.
+  * Método para obtener un listado de citas de paciente mediante el consumo de una API Appoinment.
   * @return del resultado de las citas otorgado por la API
   */
-  getAppointment &#x3D; () &#x3D;&gt; 
-  {
-    this.appointmentService.getAppointment().subscribe((response)&#x3D;&gt;{
-      this.response_resultados &#x3D; response;
+  getAppointments &#x3D; () &#x3D;&gt; {
+    this.appointmentService.getAppointment().subscribe((response) &#x3D;&gt; {
+      this.appointments&#x3D;response;
+      this.response_resultados &#x3D; this.appointments;
       this.dataSource &#x3D; new MatTableDataSource(this.response_resultados);
       this.dataSource.paginator &#x3D; this.paginator;
-      console.log(this.dataSource);
-    },(error) &#x3D;&gt; {
-      Swal.fire(&#x27;Error&#x27;,error.statusText,&#x27;question&#x27;)
+    }, (error) &#x3D;&gt; {
+      Swal.fire(&#x27;Error&#x27;, error.statusText, &#x27;question&#x27;)
+    });
+  }
+
+/**
+ * Método para la obtención del código QR en una API
+ * @param {string} id de la cita que se hará código QR
+ * @return el código QR de la cita según el id
+ */
+  getAppointmentById &#x3D;(id) &#x3D;&gt;{
+      this.appointmentService.getAppointmentQRLink(id).subscribe((response) &#x3D;&gt; {
+      }, (error) &#x3D;&gt; {
+        Swal.fire(&#x27;Error&#x27;, error.statusText, &#x27;question&#x27;)
+      });
+  }
+
+  /**
+   * Método que obtiene el código QR para visualizarlo en la vista 
+   * @param {string} id de la cita que se hará código QR
+   * @return obtiene los resultado de la vista que se visualizan en la tabla
+   */
+  getAppointmentQRLink &#x3D; (id) &#x3D;&gt; {
+    this.appointmentService.getAppointmentQRLink(id).subscribe((response) &#x3D;&gt; {
+      this.response_resultados &#x3D; response;
+      this.myAngularxQrCode&#x3D;this.response_resultados[&#x27;link&#x27;];
+    }, (error) &#x3D;&gt; {
+      Swal.fire(&#x27;Error&#x27;, error.statusText, &#x27;question&#x27;)
     });
   }
 }
@@ -735,151 +1057,154 @@ displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;date&#x27;,&#x27;time&
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;image&quot;&gt;&lt;/div&gt;  
-    &lt;div class&#x3D;&quot;container&quot;&gt;
-        &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;margin-top: 2em;&quot; &gt;
-            &lt;br&gt;
-            &lt;h1 class&#x3D;&quot;card-header&quot; align&#x3D;&quot;center&quot;&gt;Bitacora de citas&lt;/h1&gt;
-            &lt;div class&#x3D;&quot;card-body&quot;&gt; 
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;image&quot;&gt;&lt;/div&gt;
+&lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;margin-top: 2em;&quot;&gt;
+        &lt;br&gt;
+        &lt;h1 class&#x3D;&quot;card-header&quot; align&#x3D;&quot;center&quot;&gt;Bitacora de citas&lt;/h1&gt;
+        &lt;ng-template [ngIf]&#x3D;&quot;myAngularxQrCode&quot;&gt;
+            &lt;div align&#x3D;&quot;center&quot;&gt;
+                &lt;qrcode [qrdata]&#x3D;&quot;myAngularxQrCode&quot; [width]&#x3D;&quot;256&quot; [errorCorrectionLevel]&#x3D;&quot;&#x27;M&#x27;&quot;&gt;&lt;/qrcode&gt;
+            &lt;/div&gt;
+        &lt;/ng-template&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
                 &lt;div class&#x3D;&quot;row&quot;&gt;
-                    &lt;div class&#x3D;&quot;row&quot;&gt;
-                        &lt;div class&#x3D;&quot;col s10&quot;&gt;&lt;/div&gt;
-                        &lt;div class&#x3D;&quot;col s2&quot;&gt;
-                            &lt;div class&#x3D;&quot;row&quot;&gt;
-                                &lt;a class&#x3D;&quot;waves-effect waves-light btn&quot; routerLink&#x3D;&quot;./appointment_create&quot; style&#x3D;&quot;margin-top: 1em;&quot;&gt;
-                                    &lt;ul&gt;
-                                        &lt;li style&#x3D;&quot;margin-top: -1em; width: 6em;&quot;&gt;
-                                            &lt;div class&#x3D;&quot;col s3&quot;&gt; &lt;i class&#x3D;&quot;small material-icons&quot;&gt;add_circle_outline&lt;/i&gt;&lt;/div&gt;
-                                            &lt;div class&#x3D;&quot;col s3&quot;&gt;Crear&lt;/div&gt;
-                                        &lt;/li&gt;
-                                    &lt;/ul&gt; 
-                                &lt;/a&gt;
-                            &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col s10&quot;&gt;&lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col s2&quot;&gt;
+                        &lt;div class&#x3D;&quot;row&quot;&gt;
+                            &lt;a class&#x3D;&quot;waves-effect waves-light btn&quot; routerLink&#x3D;&quot;./appointment_create&quot;
+                                style&#x3D;&quot;margin-top: 1em;&quot;&gt;
+                                &lt;ul&gt;
+                                    &lt;li style&#x3D;&quot;margin-top: -1em; width: 6em;&quot;&gt;
+                                        &lt;div class&#x3D;&quot;col s3&quot;&gt; &lt;i class&#x3D;&quot;small material-icons&quot;&gt;add_circle_outline&lt;/i&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class&#x3D;&quot;col s3&quot;&gt;Crear&lt;/div&gt;
+                                    &lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/a&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
-                    &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-top: -2em;&quot;&gt;
-                        &lt;div class&#x3D;&quot;col s12&quot;&gt;
-                            &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot;&gt;
-                                &lt;ng-container matColumnDef&#x3D;&quot;turn&quot;&gt;
-                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Turno&lt;/th&gt;
-                                    &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; 
-                                        {{ element.turn}} 
-                                    &lt;/td&gt;
-                                &lt;/ng-container&gt;
-                                &lt;ng-container matColumnDef&#x3D;&quot;date&quot;&gt;
-                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Fecha&lt;/th&gt;
-                                        &lt;td class&#x3D;&quot;trim-info&quot; style&#x3D;&quot;margin-top: 2.8em;&quot; mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; 
-                                            {{element.date}}
-                                        &lt;/td&gt;
-                                &lt;/ng-container&gt;
-                                &lt;ng-container matColumnDef&#x3D;&quot;time&quot;&gt;
-                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Hora&lt;/th&gt;
-                                        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; 
-                                            {{element.time}}
-                                        &lt;/td&gt;
-                                &lt;/ng-container&gt;
-                                &lt;ng-container matColumnDef&#x3D;&quot;crud&quot;&gt;
-                                    &lt;th mat-header-cell *matHeaderCellDef style&#x3D;&quot;width: 16em;&quot;&gt;&lt;/th&gt;
-                                        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
-                                            &lt;div *ngIf&#x3D;&quot;(element.date &lt; current_date) else elseBlock&quot;&gt;
-                                                &lt;div class&#x3D;&quot;row&quot;&gt;
-                                                    &lt;div class&#x3D;&quot;col s4&quot;&gt;
-                                                        &lt;a style&#x3D;&quot;color: #C1C3CA;&quot;&gt;
-                                                            &lt;ul&gt;
-                                                                &lt;li&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i class&#x3D;&quot;small material-icons&quot;&gt;create&lt;/i&gt;&lt;/p&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;Editar&lt;/p&gt;
-                                                                &lt;/li&gt;
-                                                            &lt;/ul&gt;  
-                                                        &lt;/a&gt;
-                                                    &lt;/div&gt;
-                                                    &lt;div class&#x3D;&quot;col s4&quot;&gt;
-                                                        &lt;a style&#x3D;&quot;color:#C1C3CA;&quot;&gt;
-                                                            &lt;ul&gt;
-                                                                &lt;li&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i class&#x3D;&quot;small material-icons&quot;&gt;close&lt;/i&gt;&lt;/p&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;Eliminar&lt;/p&gt;
-                                                                &lt;/li&gt;
-                                                            &lt;/ul&gt;    
-                                                        &lt;/a&gt;
-                                                    &lt;/div&gt;
-                                                    &lt;div class&#x3D;&quot;col s4&quot;&gt;
-                                                        &lt;a style&#x3D;&quot;color: #C1C3CA;&quot;&gt;
-                                                            &lt;ul&gt;
-                                                                &lt;li&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i class&#x3D;&quot;small material-icons&quot;&gt;filter_center_focus&lt;/i&gt;&lt;/p&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;QR&lt;/p&gt;
-                                                                &lt;/li&gt;
-                                                            &lt;/ul&gt;  
-                                                        &lt;/a&gt;
-                                                    &lt;/div&gt;
-                                                &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-top: -2em;&quot;&gt;
+                    &lt;div class&#x3D;&quot;col s12&quot;&gt;
+                        &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot;&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;turn&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef&gt;Turno&lt;/th&gt;
+                                &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    {{ element.turn}}
+                                &lt;/td&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;date&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef&gt;Fecha&lt;/th&gt;
+                                &lt;td class&#x3D;&quot;trim-info&quot; style&#x3D;&quot;margin-top: 2.8em;&quot; mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    {{element.date}}
+                                &lt;/td&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;time&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef&gt;Hora&lt;/th&gt;
+                                &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    {{element.time}}
+                                &lt;/td&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;crud&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef style&#x3D;&quot;width: 16em;&quot;&gt;&lt;/th&gt;
+                                &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;div *ngIf&#x3D;&quot;(element.date &lt; current_date) else elseBlock&quot;&gt;
+                                        &lt;div class&#x3D;&quot;row&quot;&gt;
+                                            &lt;div class&#x3D;&quot;col s4&quot;&gt;
+                                                &lt;a style&#x3D;&quot;color: #C1C3CA;&quot;&gt;
+                                                    &lt;ul&gt;
+                                                        &lt;li&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i
+                                                                    class&#x3D;&quot;small material-icons&quot;&gt;create&lt;/i&gt;&lt;/p&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;Editar&lt;/p&gt;
+                                                        &lt;/li&gt;
+                                                    &lt;/ul&gt;
+                                                &lt;/a&gt;
                                             &lt;/div&gt;
-                                            &lt;ng-template #elseBlock&gt;
-                                                &lt;div class&#x3D;&quot;row&quot;&gt;
-                                                    &lt;div class&#x3D;&quot;col s4&quot;&gt;
-                                                        &lt;a routerLink&#x3D;&quot;./appointment_create/{{element.id}}&quot; style&#x3D;&quot;color:#1BA468 ;&quot;&gt;
-                                                            &lt;ul&gt;
-                                                                &lt;li&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i class&#x3D;&quot;small material-icons&quot;&gt;create&lt;/i&gt;&lt;/p&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;Editar&lt;/p&gt;
-                                                                &lt;/li&gt;
-                                                            &lt;/ul&gt;  
-                                                        &lt;/a&gt;
-                                                    &lt;/div&gt;
-                                                    &lt;div class&#x3D;&quot;col s4&quot;&gt;
-                                                        &lt;a routerLink&#x3D;&quot;./appointment_delete/{{element.id}}&quot; style&#x3D;&quot;color:#CF4444;&quot;&gt;
-                                                            &lt;ul&gt;
-                                                                &lt;li&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i class&#x3D;&quot;small material-icons&quot;&gt;close&lt;/i&gt;&lt;/p&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;Eliminar&lt;/p&gt;
-                                                                &lt;/li&gt;
-                                                            &lt;/ul&gt;    
-                                                        &lt;/a&gt;
-                                                    &lt;/div&gt;
-                                                    &lt;div class&#x3D;&quot;col s4&quot;&gt;
-                                                        &lt;a routerLink&#x3D;&quot;#&quot; style&#x3D;&quot;color: #0F2DA5 ;&quot;&gt;
-                                                            &lt;ul&gt;
-                                                                &lt;li&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i class&#x3D;&quot;small material-icons&quot;&gt;filter_center_focus&lt;/i&gt;&lt;/p&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;QR&lt;/p&gt;
-                                                                &lt;/li&gt;
-                                                            &lt;/ul&gt;  
-                                                        &lt;/a&gt;
-                                                    &lt;/div&gt;
-                                                &lt;/div&gt;
-                                            &lt;/ng-template&gt;
-                                        &lt;/td&gt;
-                                &lt;/ng-container&gt;
-
-                                &lt;ng-container matColumnDef&#x3D;&quot;loading&quot;&gt;
-                                    &lt;mat-footer-cell *matFooterCellDef colspan&#x3D;&quot;6&quot;&gt;
-                                        Cargando datos...
-                                        &lt;div class&#x3D;&quot;preloader-wrapper big active&quot; style&#x3D;&quot;float: center;&quot;&gt;
-                                            &lt;div class&#x3D;&quot;spinner-layer spinner-blue-only&quot;&gt;
-                                            &lt;div class&#x3D;&quot;circle-clipper left&quot;&gt;
-                                                &lt;div class&#x3D;&quot;circle&quot;&gt;&lt;/div&gt;
-                                            &lt;/div&gt;&lt;div class&#x3D;&quot;gap-patch&quot;&gt;
-                                                &lt;div class&#x3D;&quot;circle&quot;&gt;&lt;/div&gt;
-                                            &lt;/div&gt;&lt;div class&#x3D;&quot;circle-clipper right&quot;&gt;
-                                                &lt;div class&#x3D;&quot;circle&quot;&gt;&lt;/div&gt;
+                                            &lt;div class&#x3D;&quot;col s4&quot;&gt;
+                                                &lt;a style&#x3D;&quot;color:#C1C3CA;&quot;&gt;
+                                                    &lt;ul&gt;
+                                                        &lt;li&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i
+                                                                    class&#x3D;&quot;small material-icons&quot;&gt;close&lt;/i&gt;&lt;/p&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;Eliminar&lt;/p&gt;
+                                                        &lt;/li&gt;
+                                                    &lt;/ul&gt;
+                                                &lt;/a&gt;
                                             &lt;/div&gt;
+                                            &lt;div class&#x3D;&quot;col s4&quot;&gt;
+                                                &lt;a style&#x3D;&quot;color: #C1C3CA;&quot;&gt;
+                                                    &lt;ul&gt;
+                                                        &lt;li&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i
+                                                                    class&#x3D;&quot;small material-icons&quot;&gt;filter_center_focus&lt;/i&gt;
+                                                            &lt;/p&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;QR&lt;/p&gt;
+                                                        &lt;/li&gt;
+                                                    &lt;/ul&gt;
+                                                &lt;/a&gt;
                                             &lt;/div&gt;
                                         &lt;/div&gt;
-                                    &lt;/mat-footer-cell&gt;
-                                &lt;/ng-container&gt;
-                                &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
-                                &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
-                                &lt;mat-footer-row *matFooterRowDef&#x3D;&quot;[&#x27;loading&#x27;]&quot; [ngClass]&#x3D;&quot;{&#x27;hide&#x27;: response_resultados!&#x3D;null}&quot;&gt;&lt;/mat-footer-row&gt;
-                            &lt;/table&gt;
-                            &lt;mat-paginator style&#x3D;&quot;width: 70em;&quot; [pageSizeOptions]&#x3D;&quot;[3,6]&quot; [pageSize]&#x3D;&quot;6&quot; showFirstLastButtons&gt;&lt;/mat-paginator&gt;
-                            &lt;/div&gt;
-                    &lt;/div&gt;   
+                                    &lt;/div&gt;
+                                    &lt;ng-template #elseBlock&gt;
+                                        &lt;div class&#x3D;&quot;row&quot;&gt;
+                                            &lt;div class&#x3D;&quot;col s4&quot;&gt;
+                                                &lt;a routerLink&#x3D;&quot;./appointment_create/{{element.id}}&quot;
+                                                    style&#x3D;&quot;color:#1BA468 ;&quot;&gt;
+                                                    &lt;ul&gt;
+                                                        &lt;li&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i
+                                                                    class&#x3D;&quot;small material-icons&quot;&gt;create&lt;/i&gt;&lt;/p&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;Editar&lt;/p&gt;
+                                                        &lt;/li&gt;
+                                                    &lt;/ul&gt;
+                                                &lt;/a&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class&#x3D;&quot;col s4&quot;&gt;
+                                                &lt;a (click)&#x3D;&#x27;deleteMedicalApp(element.id)&#x27; style&#x3D;&quot;color:#CF4444;&quot;&gt;
+                                                    &lt;ul&gt;
+                                                        &lt;li&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i
+                                                                    class&#x3D;&quot;small material-icons&quot;&gt;close&lt;/i&gt;&lt;/p&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;Eliminar&lt;/p&gt;
+                                                        &lt;/li&gt;
+                                                    &lt;/ul&gt;
+                                                &lt;/a&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class&#x3D;&quot;col s4&quot;&gt;
+                                                &lt;a (click)&#x3D;&quot;getCodeQR(element.id)&quot; style&#x3D;&quot;color: #0F2DA5 ;&quot;&gt;
+                                                    &lt;ul&gt;
+                                                        &lt;li&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i
+                                                                    class&#x3D;&quot;small material-icons&quot;&gt;filter_center_focus&lt;/i&gt;
+                                                            &lt;/p&gt;
+                                                            &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;QR&lt;/p&gt;
+                                                        &lt;/li&gt;
+                                                    &lt;/ul&gt;
+                                                &lt;/a&gt;
+
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/ng-template&gt;
+                                &lt;/td&gt;
+                            &lt;/ng-container&gt;
+
+                            
+                            &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+                            &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+                            &lt;mat-footer-row 
+                                [ngClass]&#x3D;&quot;{&#x27;hide&#x27;: response_resultados!&#x3D;null}&quot;&gt;&lt;/mat-footer-row&gt;
+                        &lt;/table&gt;
+                        &lt;mat-paginator style&#x3D;&quot;width: 70em;&quot; [pageSizeOptions]&#x3D;&quot;[3,6]&quot; [pageSize]&#x3D;&quot;6&quot;
+                            showFirstLastButtons&gt;&lt;/mat-paginator&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -894,7 +1219,11 @@ displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;date&#x27;,&#x27;time&
     white-space: nowrap;  
     line-height: 50px;
     position:relative;
- }</code></pre>
+ }
+
+ a:hover {
+    cursor: pointer;
+  }</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -922,8 +1251,8 @@ displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;date&#x27;,&#x27;time&
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="image"></div>      <div class="container">        <div class="card" style="margin-top: 2em;" >            <br>            <h1 class="card-header" align="center">Bitacora de citas</h1>            <div class="card-body">                 <div class="row">                    <div class="row">                        <div class="col s10"></div>                        <div class="col s2">                            <div class="row">                                <a class="waves-effect waves-light btn" routerLink="./appointment_create" style="margin-top: 1em;">                                    <ul>                                        <li style="margin-top: -1em; width: 6em;">                                            <div class="col s3"> <i class="small material-icons">add_circle_outline</i></div>                                            <div class="col s3">Crear</div>                                        </li>                                    </ul>                                 </a>                            </div>                        </div>                    </div>                    <div class="row" style="margin-top: -2em;">                        <div class="col s12">                            <table mat-table [dataSource]="dataSource">                                <ng-container matColumnDef="turn">                                    <th mat-header-cell *matHeaderCellDef>Turno</th>                                    <td mat-cell *matCellDef="let element">                                         {{ element.turn}}                                     </td>                                </ng-container>                                <ng-container matColumnDef="date">                                    <th mat-header-cell *matHeaderCellDef>Fecha</th>                                        <td class="trim-info" style="margin-top: 2.8em;" mat-cell *matCellDef="let element">                                             {{element.date}}                                        </td>                                </ng-container>                                <ng-container matColumnDef="time">                                    <th mat-header-cell *matHeaderCellDef>Hora</th>                                        <td mat-cell *matCellDef="let element">                                             {{element.time}}                                        </td>                                </ng-container>                                <ng-container matColumnDef="crud">                                    <th mat-header-cell *matHeaderCellDef style="width: 16em;"></th>                                        <td mat-cell *matCellDef="let element">                                            <div *ngIf="(element.date < current_date) else elseBlock">                                                <div class="row">                                                    <div class="col s4">                                                        <a style="color: #C1C3CA;">                                                            <ul>                                                                <li>                                                                    <p style="text-align: center;"><i class="small material-icons">create</i></p>                                                                    <p style="text-align: center;">Editar</p>                                                                </li>                                                            </ul>                                                          </a>                                                    </div>                                                    <div class="col s4">                                                        <a style="color:#C1C3CA;">                                                            <ul>                                                                <li>                                                                    <p style="text-align: center;"><i class="small material-icons">close</i></p>                                                                    <p style="text-align: center;">Eliminar</p>                                                                </li>                                                            </ul>                                                            </a>                                                    </div>                                                    <div class="col s4">                                                        <a style="color: #C1C3CA;">                                                            <ul>                                                                <li>                                                                    <p style="text-align: center;"><i class="small material-icons">filter_center_focus</i></p>                                                                    <p style="text-align: center;">QR</p>                                                                </li>                                                            </ul>                                                          </a>                                                    </div>                                                </div>                                            </div>                                            <ng-template #elseBlock>                                                <div class="row">                                                    <div class="col s4">                                                        <a routerLink="./appointment_create/{{element.id}}" style="color:#1BA468 ;">                                                            <ul>                                                                <li>                                                                    <p style="text-align: center;"><i class="small material-icons">create</i></p>                                                                    <p style="text-align: center;">Editar</p>                                                                </li>                                                            </ul>                                                          </a>                                                    </div>                                                    <div class="col s4">                                                        <a routerLink="./appointment_delete/{{element.id}}" style="color:#CF4444;">                                                            <ul>                                                                <li>                                                                    <p style="text-align: center;"><i class="small material-icons">close</i></p>                                                                    <p style="text-align: center;">Eliminar</p>                                                                </li>                                                            </ul>                                                            </a>                                                    </div>                                                    <div class="col s4">                                                        <a routerLink="#" style="color: #0F2DA5 ;">                                                            <ul>                                                                <li>                                                                    <p style="text-align: center;"><i class="small material-icons">filter_center_focus</i></p>                                                                    <p style="text-align: center;">QR</p>                                                                </li>                                                            </ul>                                                          </a>                                                    </div>                                                </div>                                            </ng-template>                                        </td>                                </ng-container>                                <ng-container matColumnDef="loading">                                    <mat-footer-cell *matFooterCellDef colspan="6">                                        Cargando datos...                                        <div class="preloader-wrapper big active" style="float: center;">                                            <div class="spinner-layer spinner-blue-only">                                            <div class="circle-clipper left">                                                <div class="circle"></div>                                            </div><div class="gap-patch">                                                <div class="circle"></div>                                            </div><div class="circle-clipper right">                                                <div class="circle"></div>                                            </div>                                            </div>                                        </div>                                    </mat-footer-cell>                                </ng-container>                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>                                <mat-footer-row *matFooterRowDef="[\'loading\']" [ngClass]="{\'hide\': response_resultados!=null}"></mat-footer-row>                            </table>                            <mat-paginator style="width: 70em;" [pageSizeOptions]="[3,6]" [pageSize]="6" showFirstLastButtons></mat-paginator>                            </div>                    </div>                   </div>            </div>        </div>    </div></div>'
-    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentDeleteComponent', 'selector': 'app-appointment-delete'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
+        var COMPONENT_TEMPLATE = '<div><div class="image"></div><div class="container">    <div class="card" style="margin-top: 2em;">        <br>        <h1 class="card-header" align="center">Bitacora de citas</h1>        <ng-template [ngIf]="myAngularxQrCode">            <div align="center">                <qrcode [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="\'M\'"></qrcode>            </div>        </ng-template>        <div class="card-body">            <div class="row">                <div class="row">                    <div class="col s10"></div>                    <div class="col s2">                        <div class="row">                            <a class="waves-effect waves-light btn" routerLink="./appointment_create"                                style="margin-top: 1em;">                                <ul>                                    <li style="margin-top: -1em; width: 6em;">                                        <div class="col s3"> <i class="small material-icons">add_circle_outline</i>                                        </div>                                        <div class="col s3">Crear</div>                                    </li>                                </ul>                            </a>                        </div>                    </div>                </div>                <div class="row" style="margin-top: -2em;">                    <div class="col s12">                        <table mat-table [dataSource]="dataSource">                            <ng-container matColumnDef="turn">                                <th mat-header-cell *matHeaderCellDef>Turno</th>                                <td mat-cell *matCellDef="let element">                                    {{ element.turn}}                                </td>                            </ng-container>                            <ng-container matColumnDef="date">                                <th mat-header-cell *matHeaderCellDef>Fecha</th>                                <td class="trim-info" style="margin-top: 2.8em;" mat-cell *matCellDef="let element">                                    {{element.date}}                                </td>                            </ng-container>                            <ng-container matColumnDef="time">                                <th mat-header-cell *matHeaderCellDef>Hora</th>                                <td mat-cell *matCellDef="let element">                                    {{element.time}}                                </td>                            </ng-container>                            <ng-container matColumnDef="crud">                                <th mat-header-cell *matHeaderCellDef style="width: 16em;"></th>                                <td mat-cell *matCellDef="let element">                                    <div *ngIf="(element.date < current_date) else elseBlock">                                        <div class="row">                                            <div class="col s4">                                                <a style="color: #C1C3CA;">                                                    <ul>                                                        <li>                                                            <p style="text-align: center;"><i                                                                    class="small material-icons">create</i></p>                                                            <p style="text-align: center;">Editar</p>                                                        </li>                                                    </ul>                                                </a>                                            </div>                                            <div class="col s4">                                                <a style="color:#C1C3CA;">                                                    <ul>                                                        <li>                                                            <p style="text-align: center;"><i                                                                    class="small material-icons">close</i></p>                                                            <p style="text-align: center;">Eliminar</p>                                                        </li>                                                    </ul>                                                </a>                                            </div>                                            <div class="col s4">                                                <a style="color: #C1C3CA;">                                                    <ul>                                                        <li>                                                            <p style="text-align: center;"><i                                                                    class="small material-icons">filter_center_focus</i>                                                            </p>                                                            <p style="text-align: center;">QR</p>                                                        </li>                                                    </ul>                                                </a>                                            </div>                                        </div>                                    </div>                                    <ng-template #elseBlock>                                        <div class="row">                                            <div class="col s4">                                                <a routerLink="./appointment_create/{{element.id}}"                                                    style="color:#1BA468 ;">                                                    <ul>                                                        <li>                                                            <p style="text-align: center;"><i                                                                    class="small material-icons">create</i></p>                                                            <p style="text-align: center;">Editar</p>                                                        </li>                                                    </ul>                                                </a>                                            </div>                                            <div class="col s4">                                                <a (click)=\'deleteMedicalApp(element.id)\' style="color:#CF4444;">                                                    <ul>                                                        <li>                                                            <p style="text-align: center;"><i                                                                    class="small material-icons">close</i></p>                                                            <p style="text-align: center;">Eliminar</p>                                                        </li>                                                    </ul>                                                </a>                                            </div>                                            <div class="col s4">                                                <a (click)="getCodeQR(element.id)" style="color: #0F2DA5 ;">                                                    <ul>                                                        <li>                                                            <p style="text-align: center;"><i                                                                    class="small material-icons">filter_center_focus</i>                                                            </p>                                                            <p style="text-align: center;">QR</p>                                                        </li>                                                    </ul>                                                </a>                                            </div>                                        </div>                                    </ng-template>                                </td>                            </ng-container>                                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>                            <mat-footer-row                                 [ngClass]="{\'hide\': response_resultados!=null}"></mat-footer-row>                        </table>                        <mat-paginator style="width: 70em;" [pageSizeOptions]="[3,6]" [pageSize]="6"                            showFirstLastButtons></mat-paginator>                    </div>                </div>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DashbordAppoinmentComponent'};
 </script>

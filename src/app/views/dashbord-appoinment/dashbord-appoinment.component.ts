@@ -22,6 +22,7 @@ import {Inject} from '@angular/core';
   styleUrls: ['./dashbord-appoinment.component.css']
 })
 export class DashbordAppoinmentComponent implements OnInit {
+
 /**
  * Valor obtener la fecha actual 
  */
@@ -30,7 +31,7 @@ current_date:string;
 /**
  * Valor para visualizar el código QR
  */
-public myAngularxQrCode: string = null;
+myAngularxQrCode: string = null;
 
 
 /**
@@ -64,6 +65,7 @@ displayedColumns: string[] = ['turn','date','time','crud'];
    * @param {FormBuilder} form consumo del modulo para formularios
    * @param {Router} router  consumo del modulo para redireccionar
    * @param {ActivatedRoute} route consumo del modulo obtención de ID
+   * @param {MatDialog} dialog consumo del modulo para el código QR
    */
   constructor(
     private appointmentService: AppointmentService,
@@ -94,22 +96,22 @@ displayedColumns: string[] = ['turn','date','time','crud'];
   getCodeQR = (id) => {
     this.getAppointmentQRLink(id);
   }
-  //delete MedicalApp
+  
+  /**
+   * Método que elimina una cita
+   * @param id para eliminar una cita mediante un DELETE
+   */
   deleteMedicalApp = (id) => {
-    console.log(id);
     this.appointmentService.deleteAppointment(id).subscribe((response) => {
-      // Mostramos mensaje de cita eliminada
       Swal.fire({ icon: 'error', title: 'Cita eliminada!', showConfirmButton: false, timer: 1250 })
       this.getAppointments();
     }, (error) => {
-      // Mostramos mensaje de error
       Swal.fire('Error', error.statusText, 'question')
-
-    })
+    });
   }
 
   /** 
-  * Método para obtenet un listado de citas de paciente mediante el consumo de una API Appoinment.
+  * Método para obtener un listado de citas de paciente mediante el consumo de una API Appoinment.
   * @return del resultado de las citas otorgado por la API
   */
   getAppointments = () => {
