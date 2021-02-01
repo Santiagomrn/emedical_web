@@ -82,9 +82,11 @@ ngOnInit(){
     let role = localStorage.getItem("role");
     // Cerrar sesión
     localStorage.setItem("token", '0');
+    localStorage.setItem("login", '0');
     localStorage.setItem("role", '0');
     // Reedirigir 
     const _url= '/login?role='+role;
+    this.login = "0";
     // Redireccionamiento
     this.router.navigateByUrl(_url);
   }
@@ -93,7 +95,7 @@ ngOnInit(){
    */
   ngAfterViewInit() {
       var elems = document.querySelectorAll('.dropdown-trigger');
-      var instances = M.Dropdown.init(elems, {hover: true});
+      var instances = M.Dropdown.init(elems, {hover: false});
   }
 }
 

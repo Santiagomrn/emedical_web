@@ -16,6 +16,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   /**
    * Rol del usuario
    */
@@ -58,14 +59,20 @@ export class LoginComponent implements OnInit {
     this.loginUser(this.loginForm.value);
   }
   /**
+   * Función para cambiar el query param
+   * @param data
+   */
+  changeRoute(data){
+    this.role = data;
+  }
+  /**
    * Funcion que recibe el formulario para realizar la petición
    * @param {login}
    * @return POST al login
    */
   loginUser(login : FormGroup){
     const headers = new Headers;
-    // Acceder al query params
-    this.role =  this.route.snapshot.queryParamMap.get('role');
+
     // Validar mediante API
     console.log("https://medicalportal.herokuapp.com/api/v1/login/"+this.role);
     let _url ="https://medicalportal.herokuapp.com/api/v1/login/"+this.role;
@@ -83,7 +90,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('role', role );
       localStorage.setItem('login', '1' );
       localStorage.setItem('id' , id );
-    this.router.navigate(['home']);
+      this.router.navigate(['home']);
     },
     error => {
     Swal.fire({icon: 'error',title: 'Usuario y/o contraseña erróneo',showConfirmButton: true})

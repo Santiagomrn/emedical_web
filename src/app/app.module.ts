@@ -69,6 +69,7 @@ import { ProfilePatientsDoctorComponent } from './views/profile-patients-doctor/
 import { QRCodeModule } from 'angularx-qrcode';
 import { ProfileDoctorsPatientComponent } from './views/profile-doctors-patient/profile-doctors-patient.component';
 import { ListAppoinrmentPatientsComponent } from './views/list-appoinrment-patients/list-appoinrment-patients.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -100,6 +101,7 @@ import { ListAppoinrmentPatientsComponent } from './views/list-appoinrment-patie
     ProfilePatientsDoctorComponent,
     ProfileDoctorsPatientComponent,
     ListAppoinrmentPatientsComponent,
+    NavbarComponent,
   ],
   imports: [
     QRCodeModule,

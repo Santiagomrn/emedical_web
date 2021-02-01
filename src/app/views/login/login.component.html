@@ -17,6 +17,18 @@
                             <input id="password" type="password" class="validate"  formControlName="pass">
                             <label for="password">Password</label>
                         </div>
+                        <br><br>
+                        <div class="input-field col s12">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Select an option</mat-label>
+                                <mat-select [(value)]="role" (selectionChange) = "changeRoute($event.value)">
+                                    <mat-option value="pathient">Patient</mat-option>
+                                    <mat-option value="doctor">Doctor</mat-option>
+                                    <mat-option value="manager">Manager</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                                <p>Rol Seleccionado: {{role}}</p>
+                        </div>
                     </div>
                 </div>
             </mat-card-content>
