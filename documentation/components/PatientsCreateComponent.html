@@ -178,12 +178,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, Pathient: <a href="../injectables/PatientsService.html">PatientsService</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, Pathient: <a href="../injectables/PatientsService.html">PatientsService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -233,6 +233,22 @@
 </code>
                                                         </td>
                                                 </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>enrutamiento </p>
+</code>
+                                                        </td>
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -273,8 +289,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:52</a></div>
                 </td>
             </tr>
 
@@ -346,8 +362,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="77"
-                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:77</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:78</a></div>
                 </td>
             </tr>
 
@@ -387,8 +403,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:44</a></div>
                 </td>
             </tr>
 
@@ -440,7 +456,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/views/patients-create/patients-create.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -461,9 +477,8 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from &#x27;@angular/forms&#x27;;
-
 import { HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
-
+import { ActivatedRoute,Router,ParamMap } from &#x27;@angular/router&#x27;;
 import { HttpHeaders } from &#x27;@angular/common/http&#x27;;
 import Swal from &#x27;sweetalert2&#x27;;
 import { PatientsService } from &#x27;../../services/patients/patients.service&#x27;;
@@ -492,9 +507,11 @@ export class PatientsCreateComponent implements OnInit {
    * Constructor
    * @param http 
    * @param Pathient Interfaz de paciente
+   * @param router enrutamiento 
    */
   constructor( private http : HttpClient,
-    private Pathient : PatientsService
+    private Pathient : PatientsService,
+    private router: Router,
     ) { }
     /**
      * Botón de enviar formulario
@@ -524,8 +541,8 @@ export class PatientsCreateComponent implements OnInit {
     // Invocar servicio
     this.Pathient.savePatient(body).subscribe((response) &#x3D;&gt; {
         // Mostramos mensaje de paciente creada
-        Swal.fire({icon: &#x27;success&#x27;,title: &#x27;Paciente creado!&#x27;,showConfirmButton: false,timer: 1250})
-    
+        Swal.fire({icon: &#x27;success&#x27;,title: &#x27;Cuenta creada!&#x27;,showConfirmButton: false,timer: 1250})
+        this.router.navigateByUrl(&#x27;/home&#x27;);  
     },(error) &#x3D;&gt; {
       // Mostramos mensaje de error
       Swal.fire(&#x27;Error&#x27;,error.statusText,&#x27;question&#x27;) 
@@ -675,7 +692,7 @@ export class PatientsCreateComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div>    <!-- IMAGEN -->    <!-- <img class="image" src="../../../assets/img/contactus.jpg" alt="Not Found" > -->    <!--  CARD -->    <div class="image"></div>      <div class="container">        <div class="card" style="margin-top: 2em;" >            <h1 class="card-header" align="center">Registrar pacientes</h1>            <h2 class="card-header" style="padding-left: 10px;">Información personal</h2>            <div class="card-body">                 <div class="row">                    <form class="col s12"   action = "" [formGroup] = "userCreateForm" (ngSubmit)="onSubmit()">                      <div class="row">                            <!-- Nombre del paciente -->                            <div class="input-field col s6">                                <span class="input-group-text">Nombre(s)</span>                                <input type="text" id="name" class="validate" name="name" formControlName="name" required>                            </div>                            <!-- Apellido del paciente -->                            <div class="input-field col s6">                                <span class="input-group-text">Apellido(s)</span>                                <input type="text" id="lastName" class="validate" name="lastName" formControlName="lastName" required>                            </div>                      </div>                          <div class="row">                            <!-- Fecha de nacimiento del paciente -->                            <div class="input-field col s6">                                <span class="input-group-text">Fecha de nacimiento</span>                                <input type="date" id="birthdate" class="validate" name="birthdate" formControlName="birthdate" required>                            </div>                      </div>                      <div class="row">                            <!-- Número de teléfono del paciente -->                            <div class="input-field col s6">                                <span class="input-group-text">Teléfono</span>                                <input type="text" id="phone" class="validate" name="phone" formControlName="phone" required>                                <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>                            </div>                            <!-- Número de teléfono auxiliar del paciente -->                            <div class="input-field col s6">                            <span class="input-group-text">Teléfono(Opcional)</span>                                <input type="text" id="emergencyphone" class="validate" name="emergencyphone" formControlName="emergencyPhone" required>                                <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>                            </div>                      </div>                              <h2 class="card-header">Información de cuenta</h2>                      <div class="row">                        <!-- Correo del paciente -->                        <div class="input-field col s12">                                <div class="input-group-prepend">                                <span class="input-group-text">Correo electrónico</span>                                </div>                                <input type="text" id="email" name="email" class="validate"  formControlName="email" required>                        </div>                      </div>                                            <div class="row">                                <!-- Contraseña del paciente -->                                <div class="input-field  col s6">                                    <span class="input-group-text">Contraseña</span>                                    <input type="text" class="validate" id="password" name="password"  required>                                    <span class="helper-text" data-error="                                    Tenga una longitud mayor o igual a 8 caracteres.                                    Utilice una combinación de letras mayúsculas y minúsculas,                                    incluya caracteres especiales.                                    " data-success="right"></span>                                </div>                                <!-- Contraseña confirmada del paciente -->                                <div class="input-field  col s6">                                    <span class="input-group-text">Confirmar contraseña</span>                                    <input type="text" class="validate" id="confirm_password" name="confirm_password" formControlName="password"  required>                                    <span class="helper-text" data-error="                                    Tenga una longitud mayor o igual a 8 caracteres.                                    Utilice una combinación de letras mayúsculas y minúsculas,                                    incluya caracteres especiales.                                    " data-success="right"></span>                                </div>                      </div>                                                                        <div class="row">                        <div class="col s9"></div>                        <div class="col s3 right-align">                            <button class="btn waves-effect buttoms waves-light" type="submit" name="action">                            Guardar datos                            </button>                        </div>                    </div>                    </form>                </div>            </div>        </div>    </div> </div>'
-    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppoinrmentPatientsComponent', 'selector': 'app-list-appoinrment-patients'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfileDoctorsPatientComponent', 'selector': 'app-profile-doctors-patient'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PatientsCreateComponent'};
 </script>

@@ -55,13 +55,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-5b3e6775e8e5e00f596bd2f10ac79a29"' : 'data-target="#xs-components-links-module-AppModule-5b3e6775e8e5e00f596bd2f10ac79a29"' }>
+                                            'data-target="#components-links-module-AppModule-67827a75ee3d4d8fe5dc0ad2f464a80c"' : 'data-target="#xs-components-links-module-AppModule-67827a75ee3d4d8fe5dc0ad2f464a80c"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-5b3e6775e8e5e00f596bd2f10ac79a29"' :
-                                            'id="xs-components-links-module-AppModule-5b3e6775e8e5e00f596bd2f10ac79a29"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-67827a75ee3d4d8fe5dc0ad2f464a80c"' :
+                                            'id="xs-components-links-module-AppModule-67827a75ee3d4d8fe5dc0ad2f464a80c"' }>
                                             <li class="link">
                                                 <a href="components/AboutUsComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AboutUsComponent</a>
@@ -107,6 +107,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">HomeComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/ListAppoinrmentPatientsComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ListAppoinrmentPatientsComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/ListAppointmentDoctorComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ListAppointmentDoctorComponent</a>
                                             </li>
@@ -139,6 +143,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ProfileDoctorComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/ProfileDoctorsPatientComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ProfileDoctorsPatientComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/ProfilePatientsDoctorComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ProfilePatientsDoctorComponent</a>
                                             </li>
@@ -146,13 +154,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-AppModule-5b3e6775e8e5e00f596bd2f10ac79a29"' : 'data-target="#xs-injectables-links-module-AppModule-5b3e6775e8e5e00f596bd2f10ac79a29"' }>
+                                        'data-target="#injectables-links-module-AppModule-67827a75ee3d4d8fe5dc0ad2f464a80c"' : 'data-target="#xs-injectables-links-module-AppModule-67827a75ee3d4d8fe5dc0ad2f464a80c"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AppModule-5b3e6775e8e5e00f596bd2f10ac79a29"' :
-                                        'id="xs-injectables-links-module-AppModule-5b3e6775e8e5e00f596bd2f10ac79a29"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-AppModule-67827a75ee3d4d8fe5dc0ad2f464a80c"' :
+                                        'id="xs-injectables-links-module-AppModule-67827a75ee3d4d8fe5dc0ad2f464a80c"' }>
                                         <li class="link">
                                             <a href="injectables/DoctorAPIService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>DoctorAPIService</a>

@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>ListAppointmentDoctorComponent</li>
+  <li>ListAppoinrmentPatientsComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/views/list-appointment-doctor/list-appointment-doctor.component.ts</code>
+    <code>src/app/views/list-appoinrment-patients/list-appoinrment-patients.component.ts</code>
 </p>
 
     <p class="comment">
@@ -98,19 +98,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-list-appointment-doctor</code></td>
+                <td class="col-md-9"><code>app-list-appoinrment-patients</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./list-appointment-doctor.component.css</code></td>
+                <td class="col-md-9"><code>./list-appoinrment-patients.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./list-appointment-doctor.component.html</code></td>
+                <td class="col-md-9"><code>./list-appoinrment-patients.component.html</code></td>
             </tr>
 
 
@@ -137,9 +137,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#appointments">appointments</a>
-                            </li>
-                            <li>
                                 <a href="#current_date">current_date</a>
                             </li>
                             <li>
@@ -149,7 +146,10 @@
                                 <a href="#displayedColumns">displayedColumns</a>
                             </li>
                             <li>
-                                <a href="#getAppointmentDoctorAgent">getAppointmentDoctorAgent</a>
+                                <a href="#doctors">doctors</a>
+                            </li>
+                            <li>
+                                <a href="#getInfoDoctor">getInfoDoctor</a>
                             </li>
                             <li>
                                 <a href="#paginator">paginator</a>
@@ -190,12 +190,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(appointmentService: <a href="../injectables/AppointmentService.html">AppointmentService</a>, form: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+<code>constructor(doctorService: <a href="../injectables/DoctorAPIService.html">DoctorAPIService</a>, form: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/views/list-appointment-doctor/list-appointment-doctor.component.ts:52</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/views/list-appoinrment-patients/list-appoinrment-patients.component.ts:51</a></div>
                             </td>
                         </tr>
 
@@ -216,10 +216,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>appointmentService</td>
+                                                        <td>doctorService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/AppointmentService.html" target="_self" >AppointmentService</a></code>
+                                                                        <code><a href="../injectables/DoctorAPIService.html" target="_self" >DoctorAPIService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -227,8 +227,6 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>consumo del servicio de citas</p>
-</code>
                                                         </td>
                                                 </tr>
                                                 <tr>
@@ -319,8 +317,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="83"
-                            class="link-to-prism">src/app/views/list-appointment-doctor/list-appointment-doctor.component.ts:83</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/views/list-appoinrment-patients/list-appoinrment-patients.component.ts:81</a></div>
                 </td>
             </tr>
 
@@ -348,39 +346,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="appointments"></a>
-                        <span class="name">
-                            <b>
-                            appointments</b>
-                            <a href="#appointments"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../interfaces/AppointmentInterface.html" target="_self" >AppointmentInterface[]</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/views/list-appointment-doctor/list-appointment-doctor.component.ts:32</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Valor para la visualización de los datos de Citas recibidos por una API</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="current_date"></a>
                         <span class="name">
                             <b>
@@ -397,7 +362,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/views/list-appointment-doctor/list-appointment-doctor.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/views/list-appoinrment-patients/list-appoinrment-patients.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -430,7 +395,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/views/list-appointment-doctor/list-appointment-doctor.component.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/views/list-appoinrment-patients/list-appoinrment-patients.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -463,12 +428,12 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>[&#x27;turn&#x27;,&#x27;patient_info&#x27;,&#x27;date&#x27;,&#x27;time&#x27;,&#x27;crud&#x27;]</code>
+                            <i>Default value : </i><code>[&#x27;name&#x27;,&#x27;lastName&#x27;,&#x27;email&#x27;,&#x27;phone&#x27;,&#x27;crud&#x27;]</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/views/list-appointment-doctor/list-appointment-doctor.component.ts:47</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/views/list-appoinrment-patients/list-appoinrment-patients.component.ts:46</a></div>
                             </td>
                         </tr>
 
@@ -485,11 +450,44 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="getAppointmentDoctorAgent"></a>
+                        <a name="doctors"></a>
                         <span class="name">
                             <b>
-                            getAppointmentDoctorAgent</b>
-                            <a href="#getAppointmentDoctorAgent"><span class="icon ion-ios-link"></span></a>
+                            doctors</b>
+                            <a href="#doctors"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>_DoctorInterface[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/views/list-appoinrment-patients/list-appoinrment-patients.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Valor para la visualización de los datos del doctor por una API</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getInfoDoctor"></a>
+                        <span class="name">
+                            <b>
+                            getInfoDoctor</b>
+                            <a href="#getInfoDoctor"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -500,7 +498,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/views/list-appointment-doctor/list-appointment-doctor.component.ts:91</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/views/list-appoinrment-patients/list-appoinrment-patients.component.ts:88</a></div>
                             </td>
                         </tr>
 
@@ -542,7 +540,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/views/list-appointment-doctor/list-appointment-doctor.component.ts:52</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/views/list-appoinrment-patients/list-appoinrment-patients.component.ts:51</a></div>
                             </td>
                         </tr>
 
@@ -575,7 +573,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/views/list-appointment-doctor/list-appointment-doctor.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/views/list-appoinrment-patients/list-appoinrment-patients.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -596,8 +594,8 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import M from &#x27;materialize-css&#x27;;
 import { Component, OnInit,ViewChild } from &#x27;@angular/core&#x27;;
-import { AppointmentInterface } from &quot;../../interfaces/appointment/appointment-interface&quot;;
-import { AppointmentService } from &quot;../../services/appointment/appointment.service&quot;;
+import { DoctorAPIService } from &quot;../../services/doctor/doctor-api.service&quot;;
+import { _DoctorInterface } from &quot;../../interfaces/doctor/_doctor-interface&quot;;
 import { ActivatedRoute,Router,ParamMap } from &#x27;@angular/router&#x27;;
 import { FormBuilder } from &#x27;@angular/forms&#x27;;
 import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
@@ -611,21 +609,20 @@ import Swal from &#x27;sweetalert2&#x27;;
  * Componente de angular
  */
 @Component({
-  selector: &#x27;app-list-appointment-doctor&#x27;,
-  templateUrl: &#x27;./list-appointment-doctor.component.html&#x27;,
-  styleUrls: [&#x27;./list-appointment-doctor.component.css&#x27;]
+  selector: &#x27;app-list-appoinrment-patients&#x27;,
+  templateUrl: &#x27;./list-appoinrment-patients.component.html&#x27;,
+  styleUrls: [&#x27;./list-appoinrment-patients.component.css&#x27;]
 })
-export class ListAppointmentDoctorComponent implements OnInit {
-
+export class ListAppoinrmentPatientsComponent implements OnInit {
 /**
  * Valor obtener la fecha actual 
  */
 current_date:string;
   
 /**
- * Valor para la visualización de los datos de Citas recibidos por una API
+ * Valor para la visualización de los datos del doctor por una API
  */
-appointments:AppointmentInterface[];
+doctors:_DoctorInterface[];
 
 /**
  * Valor para el resultado de la páginación
@@ -640,22 +637,22 @@ dataSource: MatTableDataSource&lt;any&gt;;
 /**
  * Valor para determinar las columnas de la tabla a visualizar
  */
-displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;patient_info&#x27;,&#x27;date&#x27;,&#x27;time&#x27;,&#x27;crud&#x27;];
+displayedColumns: string[] &#x3D; [&#x27;name&#x27;,&#x27;lastName&#x27;,&#x27;email&#x27;,&#x27;phone&#x27;,&#x27;crud&#x27;];
 
 /**
  * Valor para realizar la petición de hacer paginación
  */
 @ViewChild(MatPaginator) paginator: MatPaginator;
 
- /**
+  /**
    * Constructor para utilizar modulos importados
-   * @param {AppointmentService} appointmentService consumo del servicio de citas
+   * @param {DoctorAPIService} appointmentService consumo del servicio de doctores
    * @param {FormBuilder} form consumo del modulo para formularios
    * @param {Router} router  consumo del modulo para redireccionar
    * @param {ActivatedRoute} route consumo del modulo obtención de ID
    */
   constructor(
-    private appointmentService:  AppointmentService,
+    private doctorService:  DoctorAPIService,
     private form: FormBuilder,
     private router: Router,
     private route: ActivatedRoute
@@ -670,31 +667,29 @@ displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;patient_info&#x27;,&#x
      }else{
       this.current_date &#x3D; year + &#x27;-&#x27; + month_form[month] + &#x27;-&#x27; + (day+1);
      }
-     
-   }
-
-   /**
+     this.getInfoDoctor();
+  }
+  /**
    * Método de angular
    */
   ngOnInit(): void {
-    this.getAppointmentDoctorAgent();
   }
 
   /** 
   * Método para obtener las citas asiganadas al doctor mediante el consumo de una API Appoinment.
   * @return del resultado de las citas otorgadas por la API
   */
-  getAppointmentDoctorAgent &#x3D; () &#x3D;&gt; 
-  {
-      this.appointmentService.getAppointmentDoctor().subscribe((response)&#x3D;&gt;{
-        this.appointments &#x3D; response;
-        this.response_resultados &#x3D; this.appointments;
-        this.dataSource &#x3D; new MatTableDataSource(this.response_resultados);
-        this.dataSource.paginator &#x3D; this.paginator;
-      },(error) &#x3D;&gt; {
-        Swal.fire(&#x27;Error&#x27;,error.statusText,&#x27;question&#x27;)
-      });
-  }
+ getInfoDoctor &#x3D; () &#x3D;&gt; 
+ {
+     this.doctorService.getInfoDoctors().subscribe((response)&#x3D;&gt;{
+       this.doctors &#x3D; response;
+       this.response_resultados &#x3D; this.doctors;
+       this.dataSource &#x3D; new MatTableDataSource(this.response_resultados);
+       this.dataSource.paginator &#x3D; this.paginator;
+     },(error) &#x3D;&gt; {
+       Swal.fire(&#x27;Error&#x27;,error.statusText,&#x27;question&#x27;)
+     });
+ }
 }
 </code></pre>
     </div>
@@ -704,45 +699,43 @@ displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;patient_info&#x27;,&#x
     &lt;div class&#x3D;&quot;container&quot;&gt;
         &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;margin-top: 2em;&quot; &gt;
             &lt;br&gt;
-            &lt;h1 class&#x3D;&quot;card-header&quot; align&#x3D;&quot;center&quot;&gt;Listado de citas&lt;/h1&gt;
+            &lt;h1 class&#x3D;&quot;card-header&quot; align&#x3D;&quot;center&quot;&gt;Listado de Doctores&lt;/h1&gt;
             &lt;br&gt;&lt;br&gt;&lt;br&gt;
             &lt;div class&#x3D;&quot;card-body&quot;&gt; 
                 &lt;div class&#x3D;&quot;row&quot;&gt;
                     &lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;margin-top: -2em;&quot;&gt;
                         &lt;div class&#x3D;&quot;col s12&quot;&gt;
                             &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot;&gt;
-                                &lt;ng-container matColumnDef&#x3D;&quot;turn&quot;&gt;
-                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Turno&lt;/th&gt;
+                                &lt;ng-container matColumnDef&#x3D;&quot;name&quot;&gt;
+                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Nombre&lt;/th&gt;
                                     &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; 
-                                        {{ element.turn}} 
+                                        {{ element.name}} 
                                     &lt;/td&gt;
                                 &lt;/ng-container&gt;
-                                &lt;ng-container matColumnDef&#x3D;&quot;patient_info&quot;&gt;
-                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Nombre del paciente&lt;/th&gt;
+                                &lt;ng-container matColumnDef&#x3D;&quot;lastName&quot;&gt;
+                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Apellido&lt;/th&gt;
                                         &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; 
-                                            {{element.pathient.name}}  {{element.pathient.lastName}}
+                                           {{element.lastName}}
                                         &lt;/td&gt;
                                 &lt;/ng-container&gt;
-                                &lt;ng-container matColumnDef&#x3D;&quot;date&quot;&gt;
-                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Fecha&lt;/th&gt;
+                                &lt;ng-container matColumnDef&#x3D;&quot;email&quot;&gt;
+                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Correo electrónico&lt;/th&gt;
                                         &lt;td class&#x3D;&quot;trim-info&quot; style&#x3D;&quot;margin-top: 2.4em;&quot; mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; 
-                                            {{element.date}}
+                                            {{element.email}}
                                         &lt;/td&gt;
                                 &lt;/ng-container&gt;
-                                &lt;ng-container matColumnDef&#x3D;&quot;time&quot;&gt;
-                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Hora&lt;/th&gt;
+                                &lt;ng-container matColumnDef&#x3D;&quot;phone&quot;&gt;
+                                    &lt;th mat-header-cell *matHeaderCellDef&gt;Teléfono&lt;/th&gt;
                                         &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; 
-                                            {{element.time}}
+                                            {{element.phone}}
                                         &lt;/td&gt;
                                 &lt;/ng-container&gt;
                                 &lt;ng-container matColumnDef&#x3D;&quot;crud&quot;&gt;
                                     &lt;th mat-header-cell *matHeaderCellDef style&#x3D;&quot;width: 8em;&quot;&gt;&lt;/th&gt;
                                         &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt;
-                                            &lt;div *ngIf&#x3D;&quot;(element.date &lt; current_date) else elseBlock&quot;&gt;
-                                                &lt;!-- No se da acceso a los usuarios que ya tomaron su cita--&gt;
                                                 &lt;div class&#x3D;&quot;row&quot;&gt;
                                                     &lt;div class&#x3D;&quot;col s12&quot;&gt;
-                                                        &lt;a style&#x3D;&quot;color:#C1C3CA;&quot;&gt;
+                                                        &lt;a routerLink&#x3D;&quot;./profile_doctor/{{element.id}}&quot; style&#x3D;&quot;color:#0F2DA5;&quot;&gt;
                                                             &lt;ul&gt;
                                                                 &lt;li&gt;
                                                                     &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i class&#x3D;&quot;small material-icons&quot;&gt;account_circle&lt;/i&gt;&lt;/p&gt;
@@ -752,22 +745,7 @@ displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;patient_info&#x27;,&#x
                                                         &lt;/a&gt;
                                                     &lt;/div&gt;
                                                 &lt;/div&gt;
-                                            &lt;/div&gt;
-                                            &lt;ng-template #elseBlock&gt;
-                                                &lt;!--- Se da acceso al perfil de las personas que tomaran una cita--&gt;
-                                                &lt;div class&#x3D;&quot;row&quot;&gt;
-                                                    &lt;div class&#x3D;&quot;col s12&quot;&gt;
-                                                        &lt;a routerLink&#x3D;&quot;./profile_patients/{{element.pathient.id}}&quot; style&#x3D;&quot;color:#0F2DA5;&quot;&gt;
-                                                            &lt;ul&gt;
-                                                                &lt;li&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;&lt;i class&#x3D;&quot;small material-icons&quot;&gt;account_circle&lt;/i&gt;&lt;/p&gt;
-                                                                    &lt;p style&#x3D;&quot;text-align: center;&quot;&gt;Profile&lt;/p&gt;
-                                                                &lt;/li&gt;
-                                                            &lt;/ul&gt;  
-                                                        &lt;/a&gt;
-                                                    &lt;/div&gt;
-                                                &lt;/div&gt;
-                                            &lt;/ng-template&gt;
+                                    
                                         &lt;/td&gt;
                                 &lt;/ng-container&gt;
 
@@ -803,7 +781,7 @@ displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;patient_info&#x27;,&#x
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./list-appointment-doctor.component.css</code>
+                    <code>./list-appoinrment-patients.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.trim-info {
     max-width: 70px;
@@ -841,10 +819,10 @@ displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;patient_info&#x27;,&#x
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="image"></div>      <div class="container">        <div class="card" style="margin-top: 2em;" >            <br>            <h1 class="card-header" align="center">Listado de citas</h1>            <br><br><br>            <div class="card-body">                 <div class="row">                    <div class="row" style="margin-top: -2em;">                        <div class="col s12">                            <table mat-table [dataSource]="dataSource">                                <ng-container matColumnDef="turn">                                    <th mat-header-cell *matHeaderCellDef>Turno</th>                                    <td mat-cell *matCellDef="let element">                                         {{ element.turn}}                                     </td>                                </ng-container>                                <ng-container matColumnDef="patient_info">                                    <th mat-header-cell *matHeaderCellDef>Nombre del paciente</th>                                        <td mat-cell *matCellDef="let element">                                             {{element.pathient.name}}  {{element.pathient.lastName}}                                        </td>                                </ng-container>                                <ng-container matColumnDef="date">                                    <th mat-header-cell *matHeaderCellDef>Fecha</th>                                        <td class="trim-info" style="margin-top: 2.4em;" mat-cell *matCellDef="let element">                                             {{element.date}}                                        </td>                                </ng-container>                                <ng-container matColumnDef="time">                                    <th mat-header-cell *matHeaderCellDef>Hora</th>                                        <td mat-cell *matCellDef="let element">                                             {{element.time}}                                        </td>                                </ng-container>                                <ng-container matColumnDef="crud">                                    <th mat-header-cell *matHeaderCellDef style="width: 8em;"></th>                                        <td mat-cell *matCellDef="let element">                                            <div *ngIf="(element.date < current_date) else elseBlock">                                                <!-- No se da acceso a los usuarios que ya tomaron su cita-->                                                <div class="row">                                                    <div class="col s12">                                                        <a style="color:#C1C3CA;">                                                            <ul>                                                                <li>                                                                    <p style="text-align: center;"><i class="small material-icons">account_circle</i></p>                                                                    <p style="text-align: center;">Profile</p>                                                                </li>                                                            </ul>                                                          </a>                                                    </div>                                                </div>                                            </div>                                            <ng-template #elseBlock>                                                <!--- Se da acceso al perfil de las personas que tomaran una cita-->                                                <div class="row">                                                    <div class="col s12">                                                        <a routerLink="./profile_patients/{{element.pathient.id}}" style="color:#0F2DA5;">                                                            <ul>                                                                <li>                                                                    <p style="text-align: center;"><i class="small material-icons">account_circle</i></p>                                                                    <p style="text-align: center;">Profile</p>                                                                </li>                                                            </ul>                                                          </a>                                                    </div>                                                </div>                                            </ng-template>                                        </td>                                </ng-container>                                <ng-container matColumnDef="loading">                                    <mat-footer-cell *matFooterCellDef colspan="6">                                        Cargando datos...                                        <div class="preloader-wrapper big active" style="float: center;">                                            <div class="spinner-layer spinner-blue-only">                                            <div class="circle-clipper left">                                                <div class="circle"></div>                                            </div><div class="gap-patch">                                                <div class="circle"></div>                                            </div><div class="circle-clipper right">                                                <div class="circle"></div>                                            </div>                                            </div>                                        </div>                                    </mat-footer-cell>                                </ng-container>                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>                                <mat-footer-row *matFooterRowDef="[\'loading\']" [ngClass]="{\'hide\': response_resultados!=null}"></mat-footer-row>                            </table>                            <mat-paginator style="width: 70em;" [pageSizeOptions]="[3,6]" [pageSize]="6" showFirstLastButtons></mat-paginator>                            </div>                    </div>                   </div>            </div>        </div>    </div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="image"></div>      <div class="container">        <div class="card" style="margin-top: 2em;" >            <br>            <h1 class="card-header" align="center">Listado de Doctores</h1>            <br><br><br>            <div class="card-body">                 <div class="row">                    <div class="row" style="margin-top: -2em;">                        <div class="col s12">                            <table mat-table [dataSource]="dataSource">                                <ng-container matColumnDef="name">                                    <th mat-header-cell *matHeaderCellDef>Nombre</th>                                    <td mat-cell *matCellDef="let element">                                         {{ element.name}}                                     </td>                                </ng-container>                                <ng-container matColumnDef="lastName">                                    <th mat-header-cell *matHeaderCellDef>Apellido</th>                                        <td mat-cell *matCellDef="let element">                                            {{element.lastName}}                                        </td>                                </ng-container>                                <ng-container matColumnDef="email">                                    <th mat-header-cell *matHeaderCellDef>Correo electrónico</th>                                        <td class="trim-info" style="margin-top: 2.4em;" mat-cell *matCellDef="let element">                                             {{element.email}}                                        </td>                                </ng-container>                                <ng-container matColumnDef="phone">                                    <th mat-header-cell *matHeaderCellDef>Teléfono</th>                                        <td mat-cell *matCellDef="let element">                                             {{element.phone}}                                        </td>                                </ng-container>                                <ng-container matColumnDef="crud">                                    <th mat-header-cell *matHeaderCellDef style="width: 8em;"></th>                                        <td mat-cell *matCellDef="let element">                                                <div class="row">                                                    <div class="col s12">                                                        <a routerLink="./profile_doctor/{{element.id}}" style="color:#0F2DA5;">                                                            <ul>                                                                <li>                                                                    <p style="text-align: center;"><i class="small material-icons">account_circle</i></p>                                                                    <p style="text-align: center;">Profile</p>                                                                </li>                                                            </ul>                                                          </a>                                                    </div>                                                </div>                                                                            </td>                                </ng-container>                                <ng-container matColumnDef="loading">                                    <mat-footer-cell *matFooterCellDef colspan="6">                                        Cargando datos...                                        <div class="preloader-wrapper big active" style="float: center;">                                            <div class="spinner-layer spinner-blue-only">                                            <div class="circle-clipper left">                                                <div class="circle"></div>                                            </div><div class="gap-patch">                                                <div class="circle"></div>                                            </div><div class="circle-clipper right">                                                <div class="circle"></div>                                            </div>                                            </div>                                        </div>                                    </mat-footer-cell>                                </ng-container>                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>                                <mat-footer-row *matFooterRowDef="[\'loading\']" [ngClass]="{\'hide\': response_resultados!=null}"></mat-footer-row>                            </table>                            <mat-paginator style="width: 70em;" [pageSizeOptions]="[3,6]" [pageSize]="6" showFirstLastButtons></mat-paginator>                            </div>                    </div>                   </div>            </div>        </div>    </div></div>'
     var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppoinrmentPatientsComponent', 'selector': 'app-list-appoinrment-patients'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfileDoctorsPatientComponent', 'selector': 'app-profile-doctors-patient'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'ListAppointmentDoctorComponent'};
+    var ACTUAL_COMPONENT = {'name': 'ListAppoinrmentPatientsComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -879,7 +857,7 @@ displayedColumns: string[] &#x3D; [&#x27;turn&#x27;,&#x27;patient_info&#x27;,&#x
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'ListAppointmentDoctorComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ListAppoinrmentPatientsComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -212,10 +212,10 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from &#x27;@angular/forms&#x27;;
-
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
 import {ErrorStateMatcher} from &#x27;@angular/material/core&#x27;;
 import { HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
 /**
  * Componente de Login
  * 
@@ -298,7 +298,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate([&#x27;home&#x27;]);
     },
     error &#x3D;&gt; {
-      alert(&quot;Usuario y/o contraseña erróneo&quot;);
+    Swal.fire({icon: &#x27;error&#x27;,title: &#x27;Usuario y/o contraseña erróneo&#x27;,showConfirmButton: true})
       localStorage.setItem(&#x27;login&#x27;, &#x27;0&#x27; );
     console.log(error);
     }

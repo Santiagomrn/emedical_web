@@ -576,10 +576,10 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from &#x27;@angular/forms&#x27;;
-
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
 import {ErrorStateMatcher} from &#x27;@angular/material/core&#x27;;
 import { HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
 /**
  * Componente de Login
  * 
@@ -662,7 +662,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate([&#x27;home&#x27;]);
     },
     error &#x3D;&gt; {
-      alert(&quot;Usuario y/o contraseña erróneo&quot;);
+    Swal.fire({icon: &#x27;error&#x27;,title: &#x27;Usuario y/o contraseña erróneo&#x27;,showConfirmButton: true})
       localStorage.setItem(&#x27;login&#x27;, &#x27;0&#x27; );
     console.log(error);
     }
@@ -713,6 +713,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
             &lt;/mat-card-content&gt;
             &lt;mat-card-actions&gt;
                 &lt;button mat-raised-button type&#x3D;&quot;submit&quot; &gt;Login&lt;/button&gt;
+                &lt;button routerLink&#x3D;&quot;./patients_create&quot; mat-raised-button type&#x3D;&quot;submit&quot; &gt;Sign in&lt;/button&gt;
             &lt;/mat-card-actions&gt;
         &lt;/form&gt;
     &lt;/mat-card&gt;
@@ -774,8 +775,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><img class="image" src="../../../assets/img/contactus.jpg" alt="Not Found"><!-- IMAGEN --><div class="row center-align">    <mat-card class="card login">        <mat-card-title>Login</mat-card-title>        <mat-card-subtitle>Ingrese correo y contraseña</mat-card-subtitle>        <form action="" [formGroup] = "loginForm" (ngSubmit)="onSubmit()">        <mat-card-content>                <div class="col s12">                    <div class="input-field inline" style="width: 65%;">                            <input id="email_inline" type="email" class="validate"  formControlName="mail">                            <label for="email_inline">Email</label>                            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>                        <br>                        <br><br>                        <div class="input-field col s12">                            <input id="password" type="password" class="validate"  formControlName="pass">                            <label for="password">Password</label>                        </div>                    </div>                </div>            </mat-card-content>            <mat-card-actions>                <button mat-raised-button type="submit" >Login</button>            </mat-card-actions>        </form>    </mat-card></div></div>'
-    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
+        var COMPONENT_TEMPLATE = '<div><img class="image" src="../../../assets/img/contactus.jpg" alt="Not Found"><!-- IMAGEN --><div class="row center-align">    <mat-card class="card login">        <mat-card-title>Login</mat-card-title>        <mat-card-subtitle>Ingrese correo y contraseña</mat-card-subtitle>        <form action="" [formGroup] = "loginForm" (ngSubmit)="onSubmit()">        <mat-card-content>                <div class="col s12">                    <div class="input-field inline" style="width: 65%;">                            <input id="email_inline" type="email" class="validate"  formControlName="mail">                            <label for="email_inline">Email</label>                            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>                        <br>                        <br><br>                        <div class="input-field col s12">                            <input id="password" type="password" class="validate"  formControlName="pass">                            <label for="password">Password</label>                        </div>                    </div>                </div>            </mat-card-content>            <mat-card-actions>                <button mat-raised-button type="submit" >Login</button>                <button routerLink="./patients_create" mat-raised-button type="submit" >Sign in</button>            </mat-card-actions>        </form>    </mat-card></div></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppoinrmentPatientsComponent', 'selector': 'app-list-appoinrment-patients'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfileDoctorsPatientComponent', 'selector': 'app-profile-doctors-patient'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>
