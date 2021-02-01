@@ -9,7 +9,7 @@ export interface _DoctorInterface {
      */
     "id": number,
     /**
-     *  Nombre del doctor
+     *  Nombre del doctor    
      * @type string
      * @param {name}
      */
