@@ -137,8 +137,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="108"
-                            class="link-to-prism">src/app/views/login/login.component.ts:108</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/views/login/login.component.ts:115</a></div>
                 </td>
             </tr>
 
@@ -228,6 +228,7 @@ import Swal from &#x27;sweetalert2&#x27;;
   styleUrls: [&#x27;./login.component.css&#x27;]
 })
 export class LoginComponent implements OnInit {
+
   /**
    * Rol del usuario
    */
@@ -270,14 +271,20 @@ export class LoginComponent implements OnInit {
     this.loginUser(this.loginForm.value);
   }
   /**
+   * Función para cambiar el query param
+   * @param data
+   */
+  changeRoute(data){
+    this.role &#x3D; data;
+  }
+  /**
    * Funcion que recibe el formulario para realizar la petición
    * @param {login}
    * @return POST al login
    */
   loginUser(login : FormGroup){
     const headers &#x3D; new Headers;
-    // Acceder al query params
-    this.role &#x3D;  this.route.snapshot.queryParamMap.get(&#x27;role&#x27;);
+
     // Validar mediante API
     console.log(&quot;https://medicalportal.herokuapp.com/api/v1/login/&quot;+this.role);
     let _url &#x3D;&quot;https://medicalportal.herokuapp.com/api/v1/login/&quot;+this.role;
@@ -295,7 +302,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem(&#x27;role&#x27;, role );
       localStorage.setItem(&#x27;login&#x27;, &#x27;1&#x27; );
       localStorage.setItem(&#x27;id&#x27; , id );
-    this.router.navigate([&#x27;home&#x27;]);
+      this.router.navigate([&#x27;home&#x27;]);
     },
     error &#x3D;&gt; {
     Swal.fire({icon: &#x27;error&#x27;,title: &#x27;Usuario y/o contraseña erróneo&#x27;,showConfirmButton: true})
