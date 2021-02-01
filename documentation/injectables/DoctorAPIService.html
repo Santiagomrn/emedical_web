@@ -90,6 +90,9 @@
                             <li>
                                 <a href="#getDataDoctorsAppointmentCreate">getDataDoctorsAppointmentCreate</a>
                             </li>
+                            <li>
+                                <a href="#getInfoDoctors">getInfoDoctors</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -216,7 +219,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:43</a></div>
                             </td>
                         </tr>
 
@@ -248,7 +251,39 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:57</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Método que realiza el servicio de obtener los datos de la API</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getInfoDoctors"></a>
+                        <span class="name">
+                            <b>
+                            getInfoDoctors</b>
+                            <a href="#getInfoDoctors"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/services/doctor/doctor-api.service.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -290,6 +325,20 @@ export class DoctorAPIService {
   constructor(private http : HttpClient) {
     this.http &#x3D; http
   }
+
+  /**
+   * Método que realiza el servicio de obtener los datos de la API
+   * @return un JSON con los datos de los doctores 
+   */
+  getInfoDoctors &#x3D; () &#x3D;&gt; {
+    if(this.AccessToken){
+      const HeadersForDoctorsAPI &#x3D; new HttpHeaders({
+        &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+        &#x27;Authorization&#x27;: &#x27;Bearer &#x27; + (this.AccessToken)
+      });
+      return this.http.get&lt;_DoctorInterface[]&gt;(&quot;https://medicalportal.herokuapp.com/api/v1/doctor/&quot;, { headers: HeadersForDoctorsAPI });  
+    }  
+  } 
 
   /**
    * Método que realiza el servicio de obtener los datos de la API

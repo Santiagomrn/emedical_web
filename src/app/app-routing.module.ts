@@ -21,7 +21,8 @@ import {AppointmentCreateComponent} from './views/appointment-create/appointment
 import {ProfileDoctorComponent} from './views/profile-doctor/profile-doctor/profile-doctor.component';
 import {ListAppointmentDoctorComponent } from './views/list-appointment-doctor/list-appointment-doctor.component';
 import {ProfilePatientsDoctorComponent} from './views/profile-patients-doctor/profile-patients-doctor.component';
-
+import {ListAppoinrmentPatientsComponent} from './views/list-appoinrment-patients/list-appoinrment-patients.component';
+import{ProfileDoctorsPatientComponent} from './views/profile-doctors-patient/profile-doctors-patient.component';
 const routes: Routes = [
   {path : '', redirectTo:'home',
   pathMatch:'full'},
@@ -44,7 +45,7 @@ const routes: Routes = [
     expectedRole : ['pathient']
     }
   },
-  {path: 'dashboard_appointment/appointment_create/:id', component:AppointmentEditComponent,
+  {path: 'dashboard_appointment/appointment_edit', component:AppointmentEditComponent,
   canActivate : [RoleGuardService],
   data:{
     expectedRole : ['pathient']
@@ -77,6 +78,20 @@ const routes: Routes = [
   canActivate : [RoleGuardService],
   data:{
     expectedRole : ['doctor']
+  }
+  },
+  
+  {path: 'list_info_doctor', component:ListAppoinrmentPatientsComponent,
+  canActivate : [RoleGuardService],
+  data:{
+    expectedRole : ['pathient']
+  }
+  },
+
+  {path: 'list_info_doctor/profile_doctor/:id', component:ProfileDoctorsPatientComponent,
+  canActivate : [RoleGuardService],
+  data:{
+    expectedRole : ['pathient']
   }
   },
   

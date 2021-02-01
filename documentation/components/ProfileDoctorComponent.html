@@ -187,7 +187,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:41</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:42</a></div>
                             </td>
                         </tr>
 
@@ -311,8 +311,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -362,7 +362,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:61</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:62</a></div>
                             </td>
                         </tr>
 
@@ -394,7 +394,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:79</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:80</a></div>
                             </td>
                         </tr>
 
@@ -446,7 +446,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:66</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:67</a></div>
                             </td>
                         </tr>
 
@@ -501,7 +501,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/views/profile-doctor/profile-doctor/profile-doctor.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -545,6 +545,7 @@ import { _DoctorInterface } from &quot;../../../interfaces/doctor/_doctor-interf
 import { ActivatedRoute,Router,ParamMap } from &#x27;@angular/router&#x27;;
 import { FormBuilder,FormControl, Validators } from &#x27;@angular/forms&#x27;;
 import { threadId } from &#x27;worker_threads&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
 /**
  * Componente
  * 
@@ -629,7 +630,9 @@ export class ProfileDoctorComponent implements OnInit {
           
           this.doctor &#x3D; response;
           console.log(this.doctor);
-        }); 
+        },(error) &#x3D;&gt; {
+          Swal.fire(&#x27;Error&#x27;,error.statusText,&#x27;question&#x27;)
+      }); 
       }
     }
 
@@ -654,6 +657,7 @@ export class ProfileDoctorComponent implements OnInit {
                                 &lt;td style&#x3D;&quot;text-decoration: underline;&quot;&gt;
                                     &lt;input [(ngModel)]&#x3D;&quot;doctor.name&quot; readonly id&#x3D;&quot;name&quot; name&#x3D;&quot;name&quot; type&#x3D;&quot;text&quot;  /&gt;  
                                 &lt;/td&gt;
+                                
                                 &lt;!-- &lt;td&gt;
                                     &lt;div style&#x3D;&quot;box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);  overflow: hidden;  border-radius: 8px;&quot;&gt;
                                         
@@ -672,7 +676,7 @@ export class ProfileDoctorComponent implements OnInit {
                             &lt;/tr&gt;
                             &lt;tr&gt;
                                 &lt;th&gt;Correo electrónico&lt;/th&gt;
-                                &lt;td&gt;&lt;input readonly disabled [(ngModel)]&#x3D;&quot;doctor.email&quot; readonly  id&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot;   /&gt;&lt;/td&gt;
+                                &lt;td&gt;&lt;input readonly [(ngModel)]&#x3D;&quot;doctor.email&quot; readonly  id&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot;   /&gt;&lt;/td&gt;
                                 &lt;td&gt;&lt;/td&gt;
                             &lt;/tr&gt;
                         &lt;/tbody&gt;
@@ -729,7 +733,7 @@ export class ProfileDoctorComponent implements OnInit {
                         &lt;/div&gt;
                     &lt;/div&gt;
                     &lt;div class&#x3D;&quot;col s6&quot;&gt;
-                            &lt;h2 style&#x3D;&quot;margin-top: -6.8em; margin-left: 14em;&quot;&gt;Configuración&lt;/h2&gt;
+                            &lt;h2 style&#x3D;&quot;margin-top: -1.8em; margin-left: 14em;&quot;&gt;Configuración&lt;/h2&gt;
                             &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;margin-top: -0.7em; margin-left: 20em; width: 30rem; &quot;&gt;
                                 &lt;table&gt;
                                     &lt;thead&gt;
@@ -782,7 +786,13 @@ export class ProfileDoctorComponent implements OnInit {
                 <p class="comment">
                     <code>./profile-doctor.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.img_profile {
+    width:160px;
+    height:160px;
+    border-radius:150px;
+    margin-top: 6em;
+    margin-left: 13em;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -810,8 +820,8 @@ export class ProfileDoctorComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">    <!-- <form [formGroup]="frmpatients" (ngSubmit)="save_patients_data()"> -->    <form >        <div class="row">            <div class="col s6">                <h2 style="margin-top: 4em; margin-left: -2.9em;">Información Básica</h2>                <div class="card" style="margin-top: -0.7em; margin-left: -4.2em; width: 30rem; ">                    <table>                        <thead>                        </thead>                        <tbody>                            <tr>                                <th>Nombre(s)</th>                                <td style="text-decoration: underline;">                                    <input [(ngModel)]="doctor.name" readonly id="name" name="name" type="text"  />                                  </td>                                <!-- <td>                                    <div style="box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);  overflow: hidden;  border-radius: 8px;">                                                                                <button type="submit" style="width: 40px; height: 40px; background: white; border: 0em;">                                        <i class="small material-icons">                                            create_new_folder                                        </i>                                        </button>                                    </div>                                </td> -->                            </tr>                            <tr>                                <th>Apellido(s)</th>                                <td style="text-decoration: underline;"><input [(ngModel)]="doctor.lastName" readonly id="lastName" name="lastName" /></td>                                <td></td>                            </tr>                            <tr>                                <th>Correo electrónico</th>                                <td><input readonly disabled [(ngModel)]="doctor.email" readonly  id="email" name="email"   /></td>                                <td></td>                            </tr>                        </tbody>                    </table>                </div>                <div class="row">                    <div class="col s6">                        <h2 style="margin-top: 1em;margin-left: -2.9em;">Información Adicional</h2>                        <div class="card" style="margin-top: -0.7em; margin-left: -4.2em; width: 30rem; ">                            <table>                                <thead>                                </thead>                                <tbody>                                    <tr>                                        <th>Fecha de nacimiento</th>                                                                                <td>{{doctor.birthdate |date: \'dd/MM/yyyy\'}}                                        <hr style="margin-top: 0.70em;">                                        </td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Teléfono</th>                                        <td><input [(ngModel)]="doctor.phone" id="phone" readonly name="phone"   /></td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Teléfono(Opcional)</th>                                        <td><input [(ngModel)]="doctor.emergencyPhone" readonly id="emergencyPhone" name="emergencyPhone"  /></td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Área Médica</th>                                        <td><input [(ngModel)]="doctor.medicalArea" readonly id="areaMedica" name="areaMedica"  /></td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Descripción</th>                                        <td><input [(ngModel)]="doctor.description" readonly id="descripcion" name="descripcion"  /></td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Título</th>                                        <td><input [(ngModel)]="doctor.jobTitle" readonly id="jobTitle" name="jobTitle"  /></td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Cédula profesional</th>                                        <td><input [(ngModel)]="doctor.professionalLicense" readonly id="cedula" name="cedula"  /></td>                                        <td></td>                                    </tr>                                </tbody>                            </table>                        </div>                    </div>                    <div class="col s6">                            <h2 style="margin-top: -6.8em; margin-left: 14em;">Configuración</h2>                            <div class="card" style="margin-top: -0.7em; margin-left: 20em; width: 30rem; ">                                <table>                                    <thead>                                    </thead>                                    <tbody>                                        <tr>                                            <th>Lenguaje</th>                                            <td>Español</td>                                            <td></td>                                        </tr>                                        <tr>                                            <th>Política de privacidad</th>                                            <td>                                                <p>Los doctores y administradores</p>                                                <p>del portal web cuenta con</p>                                                <p>acceso a este perfil, ningún</p>                                                <p>otro paciente cuenta con acceso.</p>                                            </td>                                                                    <td></td>                                        </tr>                                                <tr>                                            <th>Condiciones</th>                                            <td>                                                <p>El uso correcto de este portal</p>                                                <p>web, es responsabilidad de cada</p>                                                <p>usuario.</p>                                                <p>Se recomienda el cambio de </p>                                                <p>contraseña una vez por mes.</p>                                            </td>                                        </tr>                                               </tbody>                                </table>                            </div>                    </div>                </div>            </div>                <div class="col s6">                <img src="assets/img/perfil2.jpg" class="img_profile"/>                <p style="margin-left: 18em; text-decoration: underline; color: blue">                    Perfil                </p>            </div>        </div>    </form></div></div>'
-    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container">    <!-- <form [formGroup]="frmpatients" (ngSubmit)="save_patients_data()"> -->    <form >        <div class="row">            <div class="col s6">                <h2 style="margin-top: 4em; margin-left: -2.9em;">Información Básica</h2>                <div class="card" style="margin-top: -0.7em; margin-left: -4.2em; width: 30rem; ">                    <table>                        <thead>                        </thead>                        <tbody>                            <tr>                                <th>Nombre(s)</th>                                <td style="text-decoration: underline;">                                    <input [(ngModel)]="doctor.name" readonly id="name" name="name" type="text"  />                                  </td>                                                                <!-- <td>                                    <div style="box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);  overflow: hidden;  border-radius: 8px;">                                                                                <button type="submit" style="width: 40px; height: 40px; background: white; border: 0em;">                                        <i class="small material-icons">                                            create_new_folder                                        </i>                                        </button>                                    </div>                                </td> -->                            </tr>                            <tr>                                <th>Apellido(s)</th>                                <td style="text-decoration: underline;"><input [(ngModel)]="doctor.lastName" readonly id="lastName" name="lastName" /></td>                                <td></td>                            </tr>                            <tr>                                <th>Correo electrónico</th>                                <td><input readonly [(ngModel)]="doctor.email" readonly  id="email" name="email"   /></td>                                <td></td>                            </tr>                        </tbody>                    </table>                </div>                <div class="row">                    <div class="col s6">                        <h2 style="margin-top: 1em;margin-left: -2.9em;">Información Adicional</h2>                        <div class="card" style="margin-top: -0.7em; margin-left: -4.2em; width: 30rem; ">                            <table>                                <thead>                                </thead>                                <tbody>                                    <tr>                                        <th>Fecha de nacimiento</th>                                                                                <td>{{doctor.birthdate |date: \'dd/MM/yyyy\'}}                                        <hr style="margin-top: 0.70em;">                                        </td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Teléfono</th>                                        <td><input [(ngModel)]="doctor.phone" id="phone" readonly name="phone"   /></td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Teléfono(Opcional)</th>                                        <td><input [(ngModel)]="doctor.emergencyPhone" readonly id="emergencyPhone" name="emergencyPhone"  /></td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Área Médica</th>                                        <td><input [(ngModel)]="doctor.medicalArea" readonly id="areaMedica" name="areaMedica"  /></td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Descripción</th>                                        <td><input [(ngModel)]="doctor.description" readonly id="descripcion" name="descripcion"  /></td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Título</th>                                        <td><input [(ngModel)]="doctor.jobTitle" readonly id="jobTitle" name="jobTitle"  /></td>                                        <td></td>                                    </tr>                                    <tr>                                        <th>Cédula profesional</th>                                        <td><input [(ngModel)]="doctor.professionalLicense" readonly id="cedula" name="cedula"  /></td>                                        <td></td>                                    </tr>                                </tbody>                            </table>                        </div>                    </div>                    <div class="col s6">                            <h2 style="margin-top: -1.8em; margin-left: 14em;">Configuración</h2>                            <div class="card" style="margin-top: -0.7em; margin-left: 20em; width: 30rem; ">                                <table>                                    <thead>                                    </thead>                                    <tbody>                                        <tr>                                            <th>Lenguaje</th>                                            <td>Español</td>                                            <td></td>                                        </tr>                                        <tr>                                            <th>Política de privacidad</th>                                            <td>                                                <p>Los doctores y administradores</p>                                                <p>del portal web cuenta con</p>                                                <p>acceso a este perfil, ningún</p>                                                <p>otro paciente cuenta con acceso.</p>                                            </td>                                                                    <td></td>                                        </tr>                                                <tr>                                            <th>Condiciones</th>                                            <td>                                                <p>El uso correcto de este portal</p>                                                <p>web, es responsabilidad de cada</p>                                                <p>usuario.</p>                                                <p>Se recomienda el cambio de </p>                                                <p>contraseña una vez por mes.</p>                                            </td>                                        </tr>                                               </tbody>                                </table>                            </div>                    </div>                </div>            </div>                <div class="col s6">                <img src="assets/img/perfil2.jpg" class="img_profile"/>                <p style="margin-left: 18em; text-decoration: underline; color: blue">                    Perfil                </p>            </div>        </div>    </form></div></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppoinrmentPatientsComponent', 'selector': 'app-list-appoinrment-patients'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfileDoctorsPatientComponent', 'selector': 'app-profile-doctors-patient'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProfileDoctorComponent'};
 </script>

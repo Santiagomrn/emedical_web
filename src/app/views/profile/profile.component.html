@@ -31,12 +31,7 @@
                             </tr>
                             <tr>
                                 <th>Correo electrónico</th>
-                                <td><input oncopy="return false" onpaste="return false" readonly disabled [(ngModel)]="patients.email"  id="email" name="email"  formControlName="fremail" /></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>Contraseña</th>
-                                <td><input class="disable-selection" oncopy="return false" onpaste="return false" readonly disabled [(ngModel)]="patients.password"  id="password" name="password" formControlName="frpassword" style="filter: blur(6px);" /></td>
+                                <td><input [(ngModel)]="patients.email"  id="email" name="email"  formControlName="fremail" /></td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -72,7 +67,7 @@
                         </div>
                     </div>
                     <div class="col s6">
-                            <h2 style="margin-top: -6.8em; margin-left: 14em;">Configuración</h2>
+                            <h2 style="margin-top: -4.8em; margin-left: 14em;">Configuración</h2>
                             <div class="card" style="margin-top: -0.7em; margin-left: 20em; width: 30rem; ">
                                 <table>
                                     <thead>

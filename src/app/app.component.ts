@@ -1,5 +1,5 @@
 import M from 'materialize-css';
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { MedicamentService} from "./services/medicament/medicament.service";
 import { ActivatedRoute, Router } from '@angular/router';
 import { PatientsService } from "./services/patients/patients.service";
@@ -13,7 +13,7 @@ import { PatientsService } from "./services/patients/patients.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   /**
    * Constructor de componente
    * @param MedicamentService 

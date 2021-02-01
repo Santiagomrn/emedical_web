@@ -84,10 +84,16 @@ export class AppointmentCreateComponent implements OnInit {
       frdate: ['',Validators.required],
     });
     const month_form = ["01","02","03","04","05","06","07","08","09","10","11","12"];
+    const day_form = ["01","02","03","04","05","06","07","08","09"];
     const year = (new Date()).getFullYear();
     const month = (new Date()).getMonth();
     const day = (new Date()).getDate();
+    if(day < 10){
+    this.appointments.date = year + '-' + month_form[month] + '-' + day_form[day];
+    }else{
     this.appointments.date = year + '-' + month_form[month] + '-' + (day+1);
+    }
+    console.log(this.appointments.date);
     this.getAppoinmentNotAvailableCurrent(this.appointments.date);
   }
 

@@ -26,6 +26,20 @@ export class DoctorAPIService {
    * Método que realiza el servicio de obtener los datos de la API
    * @return un JSON con los datos de los doctores 
    */
+  getInfoDoctors = () => {
+    if(this.AccessToken){
+      const HeadersForDoctorsAPI = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + (this.AccessToken)
+      });
+      return this.http.get<_DoctorInterface[]>("https://medicalportal.herokuapp.com/api/v1/doctor/", { headers: HeadersForDoctorsAPI });  
+    }  
+  } 
+
+  /**
+   * Método que realiza el servicio de obtener los datos de la API
+   * @return un JSON con los datos de los doctores 
+   */
   getDataDoctors = (id) => {
     if(this.AccessToken){
       const HeadersForDoctorsAPI = new HttpHeaders({

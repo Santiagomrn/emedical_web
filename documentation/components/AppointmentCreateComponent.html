@@ -350,8 +350,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="97"
-                            class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:97</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:103</a></div>
                 </td>
             </tr>
 
@@ -394,7 +394,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:116</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:122</a></div>
                             </td>
                         </tr>
 
@@ -468,7 +468,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="207" class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:207</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="213" class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:213</a></div>
                             </td>
                         </tr>
 
@@ -560,7 +560,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="173" class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:173</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="179" class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:179</a></div>
                             </td>
                         </tr>
 
@@ -593,7 +593,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:139</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="145" class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:145</a></div>
                             </td>
                         </tr>
 
@@ -650,7 +650,7 @@ las limitaciones de la API, en este caso se obtiene la fecha actual evitando esc
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:105</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/views/appointment-create/appointment-create.component.ts:111</a></div>
                             </td>
                         </tr>
 
@@ -887,10 +887,16 @@ export class AppointmentCreateComponent implements OnInit {
       frdate: [&#x27;&#x27;,Validators.required],
     });
     const month_form &#x3D; [&quot;01&quot;,&quot;02&quot;,&quot;03&quot;,&quot;04&quot;,&quot;05&quot;,&quot;06&quot;,&quot;07&quot;,&quot;08&quot;,&quot;09&quot;,&quot;10&quot;,&quot;11&quot;,&quot;12&quot;];
+    const day_form &#x3D; [&quot;01&quot;,&quot;02&quot;,&quot;03&quot;,&quot;04&quot;,&quot;05&quot;,&quot;06&quot;,&quot;07&quot;,&quot;08&quot;,&quot;09&quot;];
     const year &#x3D; (new Date()).getFullYear();
     const month &#x3D; (new Date()).getMonth();
     const day &#x3D; (new Date()).getDate();
+    if(day &lt; 10){
+    this.appointments.date &#x3D; year + &#x27;-&#x27; + month_form[month] + &#x27;-&#x27; + day_form[day];
+    }else{
     this.appointments.date &#x3D; year + &#x27;-&#x27; + month_form[month] + &#x27;-&#x27; + (day+1);
+    }
+    console.log(this.appointments.date);
     this.getAppoinmentNotAvailableCurrent(this.appointments.date);
   }
 
@@ -1115,7 +1121,7 @@ export class AppointmentCreateComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="selection container">    <!-- message text     -->    <div class="card" style="margin-top: 2em;" >        <br>        <h1 class="card-header" align="center">Citas</h1>        <div class="card-body">            <div class="row">                <form class="col s12" [formGroup]="frmappoinment">                    <div class="row">                        <!-- Fecha de la cita-->                        <div class="input-field col s6">                            <span class="input-group-text">Fecha</span>                            <input style="margin-top: -0.4em;" [(ngModel)]="appointments.date" (change)="getAppoinmentNotAvailable()" class="validate" formControlName="frdate" type="date"  id="date" name="date" min="{{appointments.date}}" max="2050-12-31" required>                        </div>                        <!-- Hora de cita-->                        <div class="input-field col s3">                            <span class="input-group-text">Turno de cita</span>                            <br>                                <mat-form-field class="validate">                                    <mat-select [(value)]="selected_turn">                                      <mat-option>Escoger...</mat-option>                                      <mat-option *ngFor="let element of time_available_current" value="{{element}}">{{element}}</mat-option>                                    </mat-select>                                </mat-form-field>                        </div>                        <!-- Doctor de la cita-->                        <div class="input-field col s3">                            <span class="input-group-text">Doctor</span>                            <br>                            <mat-form-field class="validate">                                <mat-select [(value)]="selected_doctor">                                  <mat-option>Escoger...</mat-option>                                  <mat-option *ngFor="let element of doctor_data" value="{{element.id}}">{{element.name}} ({{element.medicalArea}})</mat-option>                                </mat-select>                            </mat-form-field>                        </div>                    </div>                    <div class="row">                        <div class="input-field col s8"></div>                        <div class="input-field col s2">                            <button class="btn waves-effect buttoms waves-light" (click)="AppoinmentCreate()" type="submit" name="action">                                Guardar datos                            </button>                        </div>                        <div class="input-field col s2">                            <button (click)="cancelAppointmentCreate()" style="background-color: #CF4444;" class="btn waves-effect buttoms waves-light" type="submit" name="action">                                Cancelar                            </button>                        </div>                    </div>                </form>            </div>        </div>    </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppoinrmentPatientsComponent', 'selector': 'app-list-appoinrment-patients'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfileDoctorsPatientComponent', 'selector': 'app-profile-doctors-patient'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppointmentCreateComponent'};
 </script>

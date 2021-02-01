@@ -1,9 +1,10 @@
 import M from 'materialize-css';
 import {AfterViewInit,Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
-// import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from '@angular/forms';
 import { HttpClient, HttpClientModule,  HttpHeaders , HttpResponse} from '@angular/common/http';
+import Swal from 'sweetalert2';
 /**
  * Componente de Creación de Doctor
  * Usado por el manager 
@@ -17,29 +18,31 @@ export class DoctorsCreateComponent implements OnInit,AfterViewInit {
   /**
    * Constructor
    * @param _location Variable necesaria para retornar a la página previa
+   * @param {Router} router  consumo del modulo para redireccionar
    * @param http 
    */
   constructor( 
     private _location : Location,
+    private router: Router,
     private http: HttpClient,
     ) { }
 /**
  * Formulario para la creación de Doctor
  */
   doctorForm = new FormGroup({
-    name: new FormControl('nuevo d3'),
-    lastName: new FormControl('last name3'),
-    phone: new FormControl('123334542'),
-    email: new FormControl('sa3@hotmail.com'),
-    emergencyPhone: new FormControl('123456772'),
-    password: new FormControl('1234'),
-    birthdate: new FormControl('2020-11-13'),
-    medicalArea: new FormControl('médico general'),
-    description: new FormControl('hola soy una prueba'),
-    jobTitle: new FormControl('medico'),
-    professionalLicense: new FormControl('123343243'),
-    nationality: new FormControl('mexicana'),
-    maritalStatus: new FormControl('casado'),
+    name: new FormControl(''),
+    lastName: new FormControl(''),
+    phone: new FormControl(''),
+    email: new FormControl(''),
+    emergencyPhone: new FormControl(''),
+    password: new FormControl(''),
+    birthdate: new FormControl(''),
+    medicalArea: new FormControl(''),
+    description: new FormControl(''),
+    jobTitle: new FormControl(''),
+    professionalLicense: new FormControl(''),
+    nationality: new FormControl(''),
+    maritalStatus: new FormControl(''),
   });
   /**
    * Método de Angular
@@ -100,11 +103,13 @@ export class DoctorsCreateComponent implements OnInit,AfterViewInit {
       nationality : this.doctorForm.get("nationality").value,
       maritalStatus : this.doctorForm.get("maritalStatus").value,
     }
-    this.http.post<any>(_url, body, { headers: HeadersForPatientsAPI } ).subscribe(data => {
-      console.log(data); 
+    this.http.post<any>(_url, JSON.stringify(body), { headers: HeadersForPatientsAPI } ).subscribe(data => {
+      
+      Swal.fire({icon: 'success',title: 'Cuenta creada!',showConfirmButton: false,timer: 1250})
+        this.router.navigateByUrl('/home');  
     },
     error => {
-    console.log(error);
+      Swal.fire('Email existente',error.statusText,'question')
     }
    );
   }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from '@angular/forms';
-
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import { HttpHeaders } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { PatientsService } from '../../services/patients/patients.service';
@@ -31,9 +30,11 @@ export class PatientsCreateComponent implements OnInit {
    * Constructor
    * @param http 
    * @param Pathient Interfaz de paciente
+   * @param router enrutamiento 
    */
   constructor( private http : HttpClient,
-    private Pathient : PatientsService
+    private Pathient : PatientsService,
+    private router: Router,
     ) { }
     /**
      * Botón de enviar formulario
@@ -63,8 +64,8 @@ export class PatientsCreateComponent implements OnInit {
     // Invocar servicio
     this.Pathient.savePatient(body).subscribe((response) => {
         // Mostramos mensaje de paciente creada
-        Swal.fire({icon: 'success',title: 'Paciente creado!',showConfirmButton: false,timer: 1250})
-    
+        Swal.fire({icon: 'success',title: 'Cuenta creada!',showConfirmButton: false,timer: 1250})
+        this.router.navigateByUrl('/home');  
     },(error) => {
       // Mostramos mensaje de error
       Swal.fire('Error',error.statusText,'question') 

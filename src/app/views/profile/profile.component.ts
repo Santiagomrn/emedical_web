@@ -26,22 +26,13 @@ export class ProfileComponent implements OnInit {
     phone: null,
     email: null,
     emergencyPhone: null,
-    password: null,
     birthdate: null
   }
 
   /**
    * Valores para la obteneción de datos del formulario
    */
-  frmpatients = this.fb.group({
-    frname: ['',Validators.required],
-    frlastName:['',Validators.required],
-    fremail: ['',Validators.required],
-    frpassword: ['',Validators.required],
-    frbirthdate: ['',Validators.required],
-    frphone: ['',Validators.required],
-    fremergencyPhone: ['',Validators.required]
-  });
+  frmpatients;
 
   /**
    * Valor para la obtención del ID del usuario
@@ -66,15 +57,20 @@ export class ProfileComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
   ) { 
+    this.frmpatients = this.fb.group({
+      frname: ['',Validators.required],
+      frlastName:['',Validators.required],
+      fremail: ['',Validators.required],
+      frpassword: ['',Validators.required],
+      frbirthdate: ['',Validators.required],
+      frphone: ['',Validators.required],
+      fremergencyPhone: ['',Validators.required]
+    });
     this.get_patient_ID();
   }
 
   /**
-<<<<<<< HEAD
-   * Método de angular
-=======
    * Método parte de angular, refresca al consumir componente
->>>>>>> paco-develop
    */
   ngOnInit(): void {
   }
@@ -103,16 +99,25 @@ export class ProfileComponent implements OnInit {
     this.patients_input.name = this.frmpatients.get('frname').value;
     this.patients_input.lastName = this.frmpatients.get('frlastName').value;
     this.patients_input.email = this.frmpatients.get('fremail').value;
-    this.patients_input.password = this.frmpatients.get('frpassword').value;
-    this.patients_input.birthdate = this.frmpatients.get('frbirthdate').value;
+    this.patients_input.birthdate = this.frmpatients.get('frbirthdate').value.substr(0,10);
     this.patients_input.phone = this.frmpatients.get('frphone').value;
     this.patients_input.emergencyPhone = this.frmpatients.get('fremergencyPhone').value;
-    this.id = this.route.snapshot.params['id'];   
-      this.result_service.saveDataPatients(this.id,this.patients).subscribe((response) =>{
-        confirm('¿Esta segur@ de guardar datos?');
-        this.router.navigateByUrl('\home');  
+    this.id = localStorage.getItem("id");  
+    console.log(this.id);
+      this.result_service.saveDataPatients(this.id,this.patients_input).subscribe((response) =>{
+        Swal.fire({ title: '¿Esta segur@ de guardar datos?',showDenyButton: true,showCancelButton: true,
+          confirmButtonText: `Save`,denyButtonText: `Don't save`,}).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire('Guardados!', '', 'success')
+            this.router.navigateByUrl('\home');  
+          } else if (result.isDenied) {
+            Swal.fire('No guardados', '', 'info')
+          }
+        });
+
+        
       },(error) => {
-        Swal.fire('Error',error.statusText,'question')
+        Swal.fire('Email existente',error.statusText,'question')
       });
   }
 }

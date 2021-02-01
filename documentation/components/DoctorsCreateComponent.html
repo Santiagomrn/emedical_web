@@ -186,12 +186,12 @@ Usado por el manager </p>
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_location: <a href="https://angular.io/api/common/Location" target="_blank">Location</a>, http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+<code>constructor(_location: <a href="https://angular.io/api/common/Location" target="_blank">Location</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -224,6 +224,22 @@ Usado por el manager </p>
                                                     
                                                         <td>
                                                                 <code><p>Variable necesaria para retornar a la página previa</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>consumo del modulo para redireccionar</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -281,8 +297,8 @@ Usado por el manager </p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:78</a></div>
                 </td>
             </tr>
 
@@ -359,8 +375,8 @@ Se requiere el Token y el Rol</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:55</a></div>
                 </td>
             </tr>
 
@@ -400,8 +416,8 @@ Se requiere el Token y el Rol</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:50</a></div>
                 </td>
             </tr>
 
@@ -441,8 +457,8 @@ Se requiere el Token y el Rol</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:69</a></div>
                 </td>
             </tr>
 
@@ -483,8 +499,8 @@ Invoca a CrearDoctor()</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:62</a></div>
                 </td>
             </tr>
 
@@ -523,25 +539,25 @@ Invoca a CrearDoctor()</p>
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>new FormGroup({
-    name: new FormControl(&#x27;nuevo d3&#x27;),
-    lastName: new FormControl(&#x27;last name3&#x27;),
-    phone: new FormControl(&#x27;123334542&#x27;),
-    email: new FormControl(&#x27;sa3@hotmail.com&#x27;),
-    emergencyPhone: new FormControl(&#x27;123456772&#x27;),
-    password: new FormControl(&#x27;1234&#x27;),
-    birthdate: new FormControl(&#x27;2020-11-13&#x27;),
-    medicalArea: new FormControl(&#x27;médico general&#x27;),
-    description: new FormControl(&#x27;hola soy una prueba&#x27;),
-    jobTitle: new FormControl(&#x27;medico&#x27;),
-    professionalLicense: new FormControl(&#x27;123343243&#x27;),
-    nationality: new FormControl(&#x27;mexicana&#x27;),
-    maritalStatus: new FormControl(&#x27;casado&#x27;),
+    name: new FormControl(&#x27;&#x27;),
+    lastName: new FormControl(&#x27;&#x27;),
+    phone: new FormControl(&#x27;&#x27;),
+    email: new FormControl(&#x27;&#x27;),
+    emergencyPhone: new FormControl(&#x27;&#x27;),
+    password: new FormControl(&#x27;&#x27;),
+    birthdate: new FormControl(&#x27;&#x27;),
+    medicalArea: new FormControl(&#x27;&#x27;),
+    description: new FormControl(&#x27;&#x27;),
+    jobTitle: new FormControl(&#x27;&#x27;),
+    professionalLicense: new FormControl(&#x27;&#x27;),
+    nationality: new FormControl(&#x27;&#x27;),
+    maritalStatus: new FormControl(&#x27;&#x27;),
   })</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/views/doctors-create/doctors-create.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -563,9 +579,10 @@ Invoca a CrearDoctor()</p>
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import M from &#x27;materialize-css&#x27;;
 import {AfterViewInit,Component, OnInit } from &#x27;@angular/core&#x27;;
 import {Location} from &#x27;@angular/common&#x27;;
-// import { HttpClient, HttpClientModule, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { ActivatedRoute,Router,ParamMap } from &#x27;@angular/router&#x27;;
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from &#x27;@angular/forms&#x27;;
 import { HttpClient, HttpClientModule,  HttpHeaders , HttpResponse} from &#x27;@angular/common/http&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
 /**
  * Componente de Creación de Doctor
  * Usado por el manager 
@@ -579,29 +596,31 @@ export class DoctorsCreateComponent implements OnInit,AfterViewInit {
   /**
    * Constructor
    * @param _location Variable necesaria para retornar a la página previa
+   * @param {Router} router  consumo del modulo para redireccionar
    * @param http 
    */
   constructor( 
     private _location : Location,
+    private router: Router,
     private http: HttpClient,
     ) { }
 /**
  * Formulario para la creación de Doctor
  */
   doctorForm &#x3D; new FormGroup({
-    name: new FormControl(&#x27;nuevo d3&#x27;),
-    lastName: new FormControl(&#x27;last name3&#x27;),
-    phone: new FormControl(&#x27;123334542&#x27;),
-    email: new FormControl(&#x27;sa3@hotmail.com&#x27;),
-    emergencyPhone: new FormControl(&#x27;123456772&#x27;),
-    password: new FormControl(&#x27;1234&#x27;),
-    birthdate: new FormControl(&#x27;2020-11-13&#x27;),
-    medicalArea: new FormControl(&#x27;médico general&#x27;),
-    description: new FormControl(&#x27;hola soy una prueba&#x27;),
-    jobTitle: new FormControl(&#x27;medico&#x27;),
-    professionalLicense: new FormControl(&#x27;123343243&#x27;),
-    nationality: new FormControl(&#x27;mexicana&#x27;),
-    maritalStatus: new FormControl(&#x27;casado&#x27;),
+    name: new FormControl(&#x27;&#x27;),
+    lastName: new FormControl(&#x27;&#x27;),
+    phone: new FormControl(&#x27;&#x27;),
+    email: new FormControl(&#x27;&#x27;),
+    emergencyPhone: new FormControl(&#x27;&#x27;),
+    password: new FormControl(&#x27;&#x27;),
+    birthdate: new FormControl(&#x27;&#x27;),
+    medicalArea: new FormControl(&#x27;&#x27;),
+    description: new FormControl(&#x27;&#x27;),
+    jobTitle: new FormControl(&#x27;&#x27;),
+    professionalLicense: new FormControl(&#x27;&#x27;),
+    nationality: new FormControl(&#x27;&#x27;),
+    maritalStatus: new FormControl(&#x27;&#x27;),
   });
   /**
    * Método de Angular
@@ -662,11 +681,13 @@ export class DoctorsCreateComponent implements OnInit,AfterViewInit {
       nationality : this.doctorForm.get(&quot;nationality&quot;).value,
       maritalStatus : this.doctorForm.get(&quot;maritalStatus&quot;).value,
     }
-    this.http.post&lt;any&gt;(_url, body, { headers: HeadersForPatientsAPI } ).subscribe(data &#x3D;&gt; {
-      console.log(data); 
+    this.http.post&lt;any&gt;(_url, JSON.stringify(body), { headers: HeadersForPatientsAPI } ).subscribe(data &#x3D;&gt; {
+      
+      Swal.fire({icon: &#x27;success&#x27;,title: &#x27;Cuenta creada!&#x27;,showConfirmButton: false,timer: 1250})
+        this.router.navigateByUrl(&#x27;/home&#x27;);  
     },
     error &#x3D;&gt; {
-    console.log(error);
+      Swal.fire(&#x27;Email existente&#x27;,error.statusText,&#x27;question&#x27;)
     }
    );
   }
@@ -818,11 +839,7 @@ export class DoctorsCreateComponent implements OnInit,AfterViewInit {
                             &lt;/div&gt;                            
                   &lt;/div&gt;
                   &lt;div class&#x3D;&quot;row&quot;&gt;
-                    &lt;div class&#x3D;&quot;col s9&quot;&gt;
-                        &lt;button class&#x3D;&quot;btn waves-effect buttoms waves-light&quot; type&#x3D;&quot;submit&quot; name&#x3D;&quot;action&quot; (click) &#x3D; &quot;volver()&quot;&gt; 
-                        Regresar
-                        &lt;/button&gt;
-                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col s9&quot;&gt;&lt;/div&gt;
                     &lt;div class&#x3D;&quot;col s3 right-align&quot;&gt;
                         &lt;button class&#x3D;&quot;btn waves-effect buttoms waves-light&quot; type&#x3D;&quot;submit&quot; name&#x3D;&quot;action&quot; &gt;
                         Guardar datos
@@ -882,8 +899,8 @@ export class DoctorsCreateComponent implements OnInit,AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div>    <!-- IMAGEN -->    <!-- <img class="image" src="../../../assets/img/contactus.jpg" alt="Not Found" > -->    <!--  CARD --><div class="image"></div>  <div class="container">    <div class="card" style="margin-top: 2em;" >        <h1 class="card-header" align="center">Registrar médicos</h1>        <h2 class="card-header" style="padding-left: 10px;">Información personal</h2>        <div class="card-body">             <div class="row">                <form class="col s12" [formGroup] = "doctorForm" (ngSubmit)="onSubmit()">                  <div class="row">                        <!-- Nombre del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Nombre(s)</span>                            <input type="text" id="name" class="validate" name="name"  formControlName="name" required>                        </div>                        <!-- Apellido del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Apellido(s)</span>                            <input type="text" id="lastName" class="validate" name="lastName"  formControlName="lastName" required>                        </div>                  </div>                  <div class="row">                        <!-- Nacionalidad del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Nacionalidad</span>                            <input type="text" id="nationality" class="validate" name="nationality"  formControlName ="nationality">                         </div>                        <!-- Estado del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Estado civil</span>                            <select formControlName ="maritalStatus">                              <option value="" disabled selected>Escoger...</option>                              <option value="casado">Casado</option>                              <option value="soltero">Soltero</option>                              <option value="divorciado">Divorciado</option>                              <option value="viudo">Viudo</option>                              <option value="concubinato">Concubinato</option>                              <option value="separacion_en_proceso">Separación en proceso judicial</option>                            </select>                        </div>                  </div>                  <div class="row">                        <!-- Fecha de nacimiento del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Fecha de nacimiento</span>                            <input type="date" id="birthdate" class="validate" name="birthdate" formControlName = "birthdate" required>                        </div>                  </div>                  <div class="row">                        <!-- Número de teléfono del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Teléfono</span>                            <input type="text" id="phone" class="validate" name="phone" formControlName = "phone" required>                            <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>                        </div>                        <!-- Número de teléfono auxiliar del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Teléfono(Opcional)</span>                            <input type="text" id="emergencyphone" class="validate" name="emergencyPhone" formControlName = "emergencyPhone" required>                            <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>                        </div>                  </div>                  <h2 class="card-header">Información de cuenta</h2>                  <div class="row">                    <!-- Correo del médico -->                    <div class="input-field col s12">                            <div class="input-group-prepend">                            <span class="input-group-text">Correo electrónico</span>                            </div>                            <input type="text" id="email" name="email" class="validate" formControlName = "email" required>                    </div>                  </div>                                    <div class="row">                            <!-- Contraseña del médico -->                            <div class="input-field  col s6">                                <span class="input-group-text">Contraseña</span>                                <input type="text" class="validate" id="password" name="password" required>                                <span class="helper-text" data-error="                                Tenga una longitud mayor o igual a 8 caracteres.                                Utilice una combinación de letras mayúsculas y minúsculas,                                incluya caracteres especiales.                                " data-success="right"></span>                            </div>                            <!-- Contraseña confirmada del médico -->                            <div class="input-field  col s6">                                <span class="input-group-text">Confirmar contraseña</span>                                <input type="text" class="validate" id="confirm_password" name="confirm_password" formControlName ="password" required>                                <span class="helper-text" data-error="                                Tenga una longitud mayor o igual a 8 caracteres.                                Utilice una combinación de letras mayúsculas y minúsculas,                                incluya caracteres especiales.                                " data-success="right"></span>                            </div>                  </div>                  <h2 class="card-header">Información adicional</h2>                  <div class="row">                            <!-- Licencia profesional del médico -->                            <div class="input-field col s6">                                <div class="input-group-prepend">                                <span class="input-group-text">Licencia profesional</span>                                </div>                                <input type="text" id="professionalLicense" name="professionalLicense" class="validate" formControlName = "professionalLicense" required>                            </div>                                                        <!-- Areá a postular del médico -->                            <div class="input-field col s6">                                <span class="input-group-text">Areá a postularse</span>                                <select formControlName = "medicalArea" >                                  <option value="" disabled selected>Escoger...</option>                                  <option value="médico general">Médico general</option>                                  <option value="dentista">Dentista</option>                                  <option value="pediatra">Pediatra</option>                                  <option value="nutriologo">Nutriólogo</option>                                  <option value="cardiologo">Cardiólogo</option>                                  <option value="medico_obsteta">Médico obsteta</option>                                  <option value="otorrinolaringologo">Otorrinolaringólogo</option>                                  <option value="medico_casos_especiales">Médico de casos especiales</option>                                </select>                            </div>                  </div>                  <div class="row">                            <!-- Descripción del médico -->                            <div class="input-field col s6">                                <span class="input-group-text">Descripción</span>                                <input type="text" id="description" class="validate" name="description" formControlName = "description">                            </div>                            <!-- Especialidad del médico -->                            <div class="input-field col s6">                                <div class="input-group-prepend">                                <span class="input-group-text">Especialidad</span>                                </div>                                <input type="text" id="jobTitle" name="jobTitle" class="validate" formControlName = "jobTitle">                            </div>                                              </div>                  <div class="row">                    <div class="col s9">                        <button class="btn waves-effect buttoms waves-light" type="submit" name="action" (click) = "volver()">                         Regresar                        </button>                    </div>                    <div class="col s3 right-align">                        <button class="btn waves-effect buttoms waves-light" type="submit" name="action" >                        Guardar datos                        </button>                    </div>                </div>                </form>            </div>        </div>    </div></div> </div>'
-    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
+        var COMPONENT_TEMPLATE = '<div>    <!-- IMAGEN -->    <!-- <img class="image" src="../../../assets/img/contactus.jpg" alt="Not Found" > -->    <!--  CARD --><div class="image"></div>  <div class="container">    <div class="card" style="margin-top: 2em;" >        <h1 class="card-header" align="center">Registrar médicos</h1>        <h2 class="card-header" style="padding-left: 10px;">Información personal</h2>        <div class="card-body">             <div class="row">                <form class="col s12" [formGroup] = "doctorForm" (ngSubmit)="onSubmit()">                  <div class="row">                        <!-- Nombre del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Nombre(s)</span>                            <input type="text" id="name" class="validate" name="name"  formControlName="name" required>                        </div>                        <!-- Apellido del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Apellido(s)</span>                            <input type="text" id="lastName" class="validate" name="lastName"  formControlName="lastName" required>                        </div>                  </div>                  <div class="row">                        <!-- Nacionalidad del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Nacionalidad</span>                            <input type="text" id="nationality" class="validate" name="nationality"  formControlName ="nationality">                         </div>                        <!-- Estado del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Estado civil</span>                            <select formControlName ="maritalStatus">                              <option value="" disabled selected>Escoger...</option>                              <option value="casado">Casado</option>                              <option value="soltero">Soltero</option>                              <option value="divorciado">Divorciado</option>                              <option value="viudo">Viudo</option>                              <option value="concubinato">Concubinato</option>                              <option value="separacion_en_proceso">Separación en proceso judicial</option>                            </select>                        </div>                  </div>                  <div class="row">                        <!-- Fecha de nacimiento del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Fecha de nacimiento</span>                            <input type="date" id="birthdate" class="validate" name="birthdate" formControlName = "birthdate" required>                        </div>                  </div>                  <div class="row">                        <!-- Número de teléfono del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Teléfono</span>                            <input type="text" id="phone" class="validate" name="phone" formControlName = "phone" required>                            <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>                        </div>                        <!-- Número de teléfono auxiliar del médico -->                        <div class="input-field col s6">                            <span class="input-group-text">Teléfono(Opcional)</span>                            <input type="text" id="emergencyphone" class="validate" name="emergencyPhone" formControlName = "emergencyPhone" required>                            <span class="helper-text" data-success="right">Ejemplo.- 99999999</span>                        </div>                  </div>                  <h2 class="card-header">Información de cuenta</h2>                  <div class="row">                    <!-- Correo del médico -->                    <div class="input-field col s12">                            <div class="input-group-prepend">                            <span class="input-group-text">Correo electrónico</span>                            </div>                            <input type="text" id="email" name="email" class="validate" formControlName = "email" required>                    </div>                  </div>                                    <div class="row">                            <!-- Contraseña del médico -->                            <div class="input-field  col s6">                                <span class="input-group-text">Contraseña</span>                                <input type="text" class="validate" id="password" name="password" required>                                <span class="helper-text" data-error="                                Tenga una longitud mayor o igual a 8 caracteres.                                Utilice una combinación de letras mayúsculas y minúsculas,                                incluya caracteres especiales.                                " data-success="right"></span>                            </div>                            <!-- Contraseña confirmada del médico -->                            <div class="input-field  col s6">                                <span class="input-group-text">Confirmar contraseña</span>                                <input type="text" class="validate" id="confirm_password" name="confirm_password" formControlName ="password" required>                                <span class="helper-text" data-error="                                Tenga una longitud mayor o igual a 8 caracteres.                                Utilice una combinación de letras mayúsculas y minúsculas,                                incluya caracteres especiales.                                " data-success="right"></span>                            </div>                  </div>                  <h2 class="card-header">Información adicional</h2>                  <div class="row">                            <!-- Licencia profesional del médico -->                            <div class="input-field col s6">                                <div class="input-group-prepend">                                <span class="input-group-text">Licencia profesional</span>                                </div>                                <input type="text" id="professionalLicense" name="professionalLicense" class="validate" formControlName = "professionalLicense" required>                            </div>                                                        <!-- Areá a postular del médico -->                            <div class="input-field col s6">                                <span class="input-group-text">Areá a postularse</span>                                <select formControlName = "medicalArea" >                                  <option value="" disabled selected>Escoger...</option>                                  <option value="médico general">Médico general</option>                                  <option value="dentista">Dentista</option>                                  <option value="pediatra">Pediatra</option>                                  <option value="nutriologo">Nutriólogo</option>                                  <option value="cardiologo">Cardiólogo</option>                                  <option value="medico_obsteta">Médico obsteta</option>                                  <option value="otorrinolaringologo">Otorrinolaringólogo</option>                                  <option value="medico_casos_especiales">Médico de casos especiales</option>                                </select>                            </div>                  </div>                  <div class="row">                            <!-- Descripción del médico -->                            <div class="input-field col s6">                                <span class="input-group-text">Descripción</span>                                <input type="text" id="description" class="validate" name="description" formControlName = "description">                            </div>                            <!-- Especialidad del médico -->                            <div class="input-field col s6">                                <div class="input-group-prepend">                                <span class="input-group-text">Especialidad</span>                                </div>                                <input type="text" id="jobTitle" name="jobTitle" class="validate" formControlName = "jobTitle">                            </div>                                              </div>                  <div class="row">                    <div class="col s9"></div>                    <div class="col s3 right-align">                        <button class="btn waves-effect buttoms waves-light" type="submit" name="action" >                        Guardar datos                        </button>                    </div>                </div>                </form>            </div>        </div>    </div></div> </div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AdministratorComponent', 'selector': 'app-administrator'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppointmentCreateComponent', 'selector': 'app-appointment-create'},{'name': 'AppointmentEditComponent', 'selector': 'app-appointment-edit'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DashbordAppoinmentComponent', 'selector': 'app-dashbord-appoinment'},{'name': 'DoctorsComponent', 'selector': 'app-doctors'},{'name': 'DoctorsCreateComponent', 'selector': 'app-doctors-create'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListAppoinrmentPatientsComponent', 'selector': 'app-list-appoinrment-patients'},{'name': 'ListAppointmentDoctorComponent', 'selector': 'app-list-appointment-doctor'},{'name': 'ListNewsComponent', 'selector': 'app-list-news'},{'name': 'ListPatientsComponent', 'selector': 'app-list-patients'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MedicamentsComponent', 'selector': 'app-medicaments'},{'name': 'PatientsCreateComponent', 'selector': 'app-patients-create'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileDoctorComponent', 'selector': 'app-profile-doctor'},{'name': 'ProfileDoctorsPatientComponent', 'selector': 'app-profile-doctors-patient'},{'name': 'ProfilePatientsDoctorComponent', 'selector': 'app-profile-patients-doctor'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DoctorsCreateComponent'};
 </script>

@@ -1,5 +1,6 @@
 <div class="container">
-    <form class="disable-selection" oncopy="return false" onpaste="return false">
+    <!-- <form [formGroup]="frmpatients" (ngSubmit)="save_patients_data()"> -->
+    <form >
         <div class="row">
             <div class="col s6">
                 <h2 style="margin-top: 4em; margin-left: -2.9em;">Información Básica</h2>
@@ -11,19 +12,28 @@
                             <tr>
                                 <th>Nombre(s)</th>
                                 <td style="text-decoration: underline;">
-                                    <input readonly disabled [(ngModel)]="patients.name" id="name" name="name" type="text"  />  
+                                    <input [(ngModel)]="doctor.name" readonly disabled id="name" name="name" type="text"  />  
                                 </td>
-                                <td>
-                                </td>
+                                
+                                <!-- <td>
+                                    <div style="box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);  overflow: hidden;  border-radius: 8px;">
+                                        
+                                        <button type="submit" style="width: 40px; height: 40px; background: white; border: 0em;">
+                                        <i class="small material-icons">
+                                            create_new_folder
+                                        </i>
+                                        </button>
+                                    </div>
+                                </td> -->
                             </tr>
                             <tr>
                                 <th>Apellido(s)</th>
-                                <td style="text-decoration: underline;"><input readonly disabled [(ngModel)]="patients.lastName"  id="lastName" name="lastName" /></td>
+                                <td style="text-decoration: underline;"><input [(ngModel)]="doctor.lastName" readonly disabled id="lastName" name="lastName" /></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <th>Correo electrónico</th>
-                                <td><input readonly disabled [(ngModel)]="patients.email"  id="email" name="email"/></td>
+                                <td><input readonly disabled [(ngModel)]="doctor.email" id="email" name="email"   /></td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -39,19 +49,40 @@
                                 <tbody>
                                     <tr>
                                         <th>Fecha de nacimiento</th>
-                                        <td><input readonly disabled class="trim-info" [(ngModel)]="patients.birthdate" id="birthdate" name="birthdate" />
-                                        <hr style="margin-top: -0.70em; border-top:1px dotted #ADADAF;">
+                                        
+                                        <td readonly disabled><input readonly disabled  class="trim-info" [(ngModel)]="doctor.birthdate" id="birthdate" name="birthdate "/>
+                                            <hr style="margin-top: -0.70em; border-top:1px dotted #ADADAF;">
                                         </td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <th>Teléfono</th>
-                                        <td><input readonly disabled [(ngModel)]="patients.phone" id="phone" name="phone" /></td>
+                                        <td><input readonly disabled [(ngModel)]="doctor.phone" id="phone" name="phone"   /></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <th>Teléfono(Opcional)</th>
-                                        <td><input readonly disabled [(ngModel)]="patients.emergencyPhone" id="emergencyPhone" name="emergencyPhone" /></td>
+                                        <td><input [(ngModel)]="doctor.emergencyPhone" readonly disabled id="emergencyPhone" name="emergencyPhone"  /></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Área Médica</th>
+                                        <td><input [(ngModel)]="doctor.medicalArea" readonly disabled id="areaMedica" name="areaMedica"  /></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Descripción</th>
+                                        <td><input [(ngModel)]="doctor.description" readonly disabled id="descripcion" name="descripcion"  /></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Título</th>
+                                        <td><input [(ngModel)]="doctor.jobTitle" readonly disabled id="jobTitle" name="jobTitle"  /></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Cédula profesional</th>
+                                        <td><input [(ngModel)]="doctor.professionalLicense" readonly disabled id="cedula" name="cedula"  /></td>
                                         <td></td>
                                     </tr>
                                 </tbody>
@@ -59,7 +90,7 @@
                         </div>
                     </div>
                     <div class="col s6">
-                            <h2 style="margin-top: -6.8em; margin-left: 14em;">Configuración</h2>
+                            <h2 style="margin-top: -1.8em; margin-left: 14em;">Configuración</h2>
                             <div class="card" style="margin-top: -0.7em; margin-left: 20em; width: 30rem; ">
                                 <table>
                                     <thead>
@@ -105,3 +136,4 @@
         </div>
     </form>
 </div>
+
