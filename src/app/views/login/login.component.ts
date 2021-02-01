@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from '@angular/forms';
-
 import { ActivatedRoute, Router } from '@angular/router';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import Swal from 'sweetalert2';
 /**
  * Componente de Login
  * 
@@ -86,7 +86,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['home']);
     },
     error => {
-      alert("Usuario y/o contraseña erróneo");
+    Swal.fire({icon: 'error',title: 'Usuario y/o contraseña erróneo',showConfirmButton: true})
       localStorage.setItem('login', '0' );
     console.log(error);
     }

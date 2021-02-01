@@ -69,6 +69,7 @@ export class PatientsService {
    * Realizamos el guardado de los datos del paciente, pasando un objeto
    *  */ 
   saveDataPatients = (id,data_patients) =>{  
+    console.log(JSON.stringify(data_patients));
     if(this.AccessToken){
       const HeadersForPatientsAPI = new HttpHeaders({
         'Content-Type': 'application/json',

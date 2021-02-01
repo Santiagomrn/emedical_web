@@ -4,6 +4,7 @@ import { _DoctorInterface } from "../../../interfaces/doctor/_doctor-interface";
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import { FormBuilder,FormControl, Validators } from '@angular/forms';
 import { threadId } from 'worker_threads';
+import Swal from 'sweetalert2';
 /**
  * Componente
  * 
@@ -88,7 +89,9 @@ export class ProfileDoctorComponent implements OnInit {
           
           this.doctor = response;
           console.log(this.doctor);
-        }); 
+        },(error) => {
+          Swal.fire('Error',error.statusText,'question')
+      }); 
       }
     }
 

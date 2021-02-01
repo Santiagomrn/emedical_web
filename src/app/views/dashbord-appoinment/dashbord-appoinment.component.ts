@@ -75,11 +75,16 @@ displayedColumns: string[] = ['turn','date','time','crud'];
     public dialog: MatDialog
   ) {
     const month_form = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    const day_form = ["01","02","03","04","05","06","07","08","09"];
     const year = (new Date()).getFullYear();
     const month = (new Date()).getMonth();
     const day = (new Date()).getDate();
     this.myAngularxQrCode=null;
-    this.current_date = year + '-' + month_form[month] + '-' + (day + 1);
+    if(day < 10){
+      this.current_date = year + '-' + month_form[month] + '-' + day_form[day];
+    }else{
+      this.current_date = year + '-' + month_form[month] + '-' + (day + 1);
+    }
   }
 
   /**
